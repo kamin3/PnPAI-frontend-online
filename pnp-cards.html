@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <title>Smarty v5</title>
+    <meta name="description" content="...">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/core.min.css">
+    <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+
+    <link rel="stylesheet" href="create-model-stye.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+  </head>
+
+
+  <!--
+
+    Layout Admin
+      .layout-admin   (required)
+
+      .aside-sticky           - sidebar : fixed and push header
+      .header-sticky          - header : always visible on top (acting as old .header-focus)
+
+    ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+    SCROLL TO TOP BUTTON [optional styling]
+
+      data-s2t-disable="true"
+      data-s2t-position="start|end"
+      data-s2t-class="btn-secondary btn-sm"   (default)
+      data-s2t-class="btn-secondary rounded-circle"
+      data-s2t-class="btn-warning rounded-circle"
+
+    ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++ ++
+
+  -->
+  <body class="layout-admin aside-sticky bg-lime header-sticky" data-s2t-class="btn-primary btn-sm bg-gradient-default rounded-circle border-0">
+
+    <div id="wrapper" class="d-flex align-items-stretch flex-column">
+
+
+      <!--  header -->
+      <header id="header" class="d-flex align-items-center shadow-xs">
+
+        <!-- Navbar -->
+        <div class="container-fluid position-relative">
+
+          <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+
+            <!-- logo, navigation toggler -->
+            <div class="align-items-start">
+              
+              <!-- sidebar toggler -->
+              <a href="#aside-main" class="btn-sidebar-toggle h-100 d-inline-block d-lg-none justify-content-center align-items-center p-2">
+                <span>
+                  <svg width="25" height="25" viewBox="0 0 20 20">
+                    <path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z"></path>
+                    <path d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z"></path>
+                    <path d="M 19.9876 13.9977 L -0.0108 13.9977 L -0.0108 11.9978 L 19.9876 11.9978 L 19.9876 13.9977 Z"></path>
+                    <path d="M 19.9876 19.9976 L -0.0108 19.9976 L -0.0108 17.9976 L 19.9876 17.9976 L 19.9876 19.9976 Z"></path>
+                  </svg>
+                </span>
+              </a>
+
+              <!-- logo : mobile only -->
+              <a class="navbar-brand d-inline-block d-lg-none mx-2" href="index.html">
+                <img src="assets/images/logo/logo_sm.svg" width="38" height="38" alt="...">
+              </a>
+
+            </div>
+
+            <!-- navbar : navigation -->
+            <div class="collapse navbar-collapse" id="navbarMainNav">
+
+   
+            </div>
+            <!-- /navbar : navigation -->
+
+
+          </nav>
+
+        </div>
+        <!-- /Navbar -->
+
+      </header>
+      <!-- /Header -->
+
+
+      <!-- content -->
+      <div id="wrapper_content" class="d-flex flex-fill">
+
+
+        <!-- sidebar -->
+        <aside id="aside-main" class="aside-start aside-hide-xs bg-white shadow-sm d-flex flex-column px-2 h-auto">
+
+
+
+        </aside>
+        <!-- /sidebar -->
+
+
+        <!-- main -->
+        <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite;">
+
+
+          <!-- PAGE TITLE -->
+          <header>
+            <h1 class="h4">Your Model Cards</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb small">
+                <!-- <li class="breadcrumb-item text-muted active" aria-current="page">Ready to start!</li> -->
+              </ol>
+            </nav>
+          </header>
+
+
+          <div class="row">
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #2d9700;">
+
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-excel-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">customer-churn-prediction-v4</p>
+                      <p class="pnp-datasource-details-p text-align-start">Customer Churn Prediction</p>
+                    </div>
+                  </div>
+                  
+                  <div class="pnp-toggle-container dropstart" >
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu " style="left: -120px !important;">
+                         <ul class="list-unstyled m-0 p-0">
+                          <li class="dropdown-item">
+                            <a class="dropdown-link" href="./pnp-dashboard.html">Dashboard</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a class="dropdown-link" href="#">Retrain</a>
+                          </li>
+                          <li class="dropdown-item dropstart">
+                            <a class="dropdown-link dropstart" href="#" data-bs-toggle="dropdown">URL</a>
+                    
+                            <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                              <li class="dropdown-item ">
+                                <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/customer-churn-prediction-v4?12a55</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>           
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <div class="pnp-lable-card-container">
+                    <img src="./assets/icons/ecomm.svg" width="30">
+                    <p style="margin-bottom: 0px !important; margin-left: 15px;">E-commerce</p>
+                  </div>
+                  <label class="d-flex align-items-center mb-3">
+                    <input class="d-none-cloaked" type="checkbox" name="switch-checkbox" id="switch-checkbox" data-bs-toggle="modal"  data-bs-target="#modalCentered" onchange="toggleModal()" checked>
+                    <i class="switch-icon switch-icon-success"></i>
+                  </label>
+                </div>  
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #8a8a8a;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">recommender-system-user-v2</p>
+                      <p class="pnp-datasource-details-p text-align-start">Recommender System - User Based</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Dashboard</a>
+                       </li>
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Retrain</a>
+                       </li>
+
+                       <li class="dropdown-item dropstart">
+                         <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                 
+                         <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/recommender-system-user-v2?55sa5</a>
+                          </li>
+                        </ul>
+                       </li>
+                 
+                     </ul>
+                    </div>
+                  </div>           
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <div class="pnp-lable-card-container">
+                    <img src="./assets/icons/ecomm.svg" width="30">
+                    <p style="margin-bottom: 0px !important; margin-left: 15px;">E-commerce</p>
+                  </div>
+                  <label class="d-flex align-items-center ">
+                    <input class="d-none-cloaked" type="checkbox" name="switch-checkbox" value="0" >
+                    <i class="switch-icon"></i>
+                  </label>
+                </div>  
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #3742a7;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p"> recommender-system-product-v3 </p>
+                      <p class="pnp-datasource-details-p text-align-start">System - Product Based</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Dashboard</a>
+                       </li>
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Retrain</a>
+                       </li>
+
+                       <li class="dropdown-item dropstart">
+                         <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                 
+                         <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/ recommender-system-product-v3?12a55</a>
+                          </li>
+                        </ul>
+                       </li>
+                 
+                     </ul>
+                    </div>
+                  </div>     
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <div class="pnp-lable-card-container">
+                    <img src="./assets/icons/ecomm.svg" width="30">
+                    <p style="margin-bottom: 0px !important; margin-left: 15px;">E-commerce</p>
+                  </div>
+                  <label class="d-flex align-items-center">
+                    <i class="fi fi-loading-dots me-3"></i>
+                    In Training...
+                  </label>
+                </div>  
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #bb1c1c;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-api-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">sentiment-analysis-v9</p>
+                      <p class="pnp-datasource-details-p text-align-start">Sentiment Analysis</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Dashboard</a>
+                       </li>
+                       <li class="dropdown-item">
+                         <a class="dropdown-link" href="#">Retrain</a>
+                       </li>
+
+                       <li class="dropdown-item dropstart">
+                         <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                 
+                         <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/sentiment-analysis-v9v4?12a55</a>
+                          </li>
+                        </ul>
+                       </li>
+                 
+                     </ul>
+                    </div>
+                  </div>            
+                </div>
+
+                <div class="d-flex justify-content-between mt-4">
+                  <div class="pnp-lable-card-container">
+                    <img src="./assets/icons/ecomm.svg" width="30">
+                    <p style="margin-bottom: 0px !important; margin-left: 15px;">E-commerce</p>
+                  </div>
+                  <label class="d-flex align-items-center text-red-800">
+                    <i class="fi fi-round-info-full me-2 text-red-800"></i> 
+                    An error happened!
+                  </label> 
+                </div>  
+
+              </div>
+            </div>
+
+          </div>
+
+
+            <div class="modal fade" id="modalCentered" data-bs-keyboard="false" data-bs-focus="false" tabindex="-1" aria-labelledby="modalCenteredLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenteredLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="modalMessage"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        
+            
+          <script>
+            function toggleModal() {
+              var checkbox = document.getElementById('switch-checkbox');
+              var modalMessage = document.getElementById('modalMessage');
+        
+              if (checkbox.checked) {
+                modalMessage.innerText = 'Switch is ON';
+              } else {
+                modalMessage.innerText = 'Switch is OFF';
+              }
+        
+              // Show the modal
+              var modal = new bootstrap.Modal(document.getElementById('modalCentered'));
+              modal.show();
+            }
+          </script> 
+
+        </main>
+        <!-- /main -->
+
+      </div>
+      <!-- /content -->
+
+
+      <!-- footer -->
+      <footer id="footer" class="bg-white shadow">
+        <div class="p-3">
+          <span class="small fw-medium">PNP</span>
+        </div>
+      </footer>
+      <!-- /footer -->
+
+
+    </div><!-- /#wrapper -->
+
+
+    <!-- offcanvas : chat -->
+    <div class="offcanvas offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasChat" aria-labelledby="offcanvasChatLabel">
+      
+      <!-- offcanvas : header -->
+      <div class="offcanvas-header border-bottom align-items-baseline">
+        
+        <h6 class="offcanvas-title d-flex align-items-center" id="offcanvasChatLabel">
+          <!-- <span class="bull bg-gray-600 me-2"></span>  -->
+          <span class="bull bg-success animate-blink me-2"></span> 
+          <a href="#">
+            <span class="fw-medium">Mellisa Doe</span> 
+            <small class="fw-normal text-muted">(Active)</small>
+          </a>
+        </h6>
+
+        <div class="d-flex align-items-center">
+        
+          <!-- dropdown options -->
+          <div class="dropdown mx-2">
+            <button type="button" class="dropdown-toggle btn btn-sm px-2 py-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="options">
+              <span class="m-0">
+                <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">  
+                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-clean">
+              <a href="#" class="dropdown-item">Add Contact</a>
+              <a href="#" class="dropdown-item">Groups</a>
+              <a href="#" class="dropdown-item">Notifications</a>
+              <a href="#" class="dropdown-item">Settings</a>
+            </div>
+          </div>
+          <!-- /dropdown options -->
+
+          <!-- close -->
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        
+        </div>
+      </div>
+
+      <!-- 
+
+        offcanvas : body 
+
+        conversations loaded via ajax.
+        Remove .js-ajax class and data-ajax-url for non-ajax 
+
+      -->
+      <div class="offcanvas-body js-ajax" data-ajax-url="_ajax/offcanvas_chat_conversations.html">
+        <!-- data loaded via ajax -->
+      </div>
+
+      <!-- offcanvas : footer -->
+      <div class="offcanvas-footer p-3 border-top">
+        <div class="d-flex align-items-center">
+        
+          <input type="text" class="form-control bg-white p-2 border-top-0 border-bottom-0 border-start-0 border-2 rounded-0 shadow-none" placeholder="Type a message" style="font-size:.875em">
+        
+          <div class="d-flex align-items-center ms-2">
+            <button type="button" class="btn bn-sm px-2 py-1 link-normal">
+              <span class="m-0">
+                <svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <rect x="0" y="0" width="24" height="24"></rect>
+                    <path fill="currentColor" fill-rule="nonzero" d="M14,16 L12,16 L12,12.5 C12,11.6715729 11.3284271,11 10.5,11 C9.67157288,11 9,11.6715729 9,12.5 L9,17.5 C9,19.4329966 10.5670034,21 12.5,21 C14.4329966,21 16,19.4329966 16,17.5 L16,7.5 C16,5.56700338 14.4329966,4 12.5,4 L12,4 C10.3431458,4 9,5.34314575 9,7 L7,7 C7,4.23857625 9.23857625,2 12,2 L12.5,2 C15.5375661,2 18,4.46243388 18,7.5 L18,17.5 C18,20.5375661 15.5375661,23 12.5,23 C9.46243388,23 7,20.5375661 7,17.5 L7,12.5 C7,10.5670034 8.56700338,9 10.5,9 C12.4329966,9 14,10.5670034 14,12.5 L14,16 Z" transform="translate(12.500000, 12.500000) rotate(-315.000000) translate(-12.500000, -12.500000) "></path>
+                  </g>
+                </svg>
+              </span>
+            </button>
+
+            <button type="button" class="btn bn-sm btn-primary px-2 py-1">
+              <small>Send</small>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- /offcanvas : chat -->
+
+
+    <!-- offcanvas : demos -->
+    <div class="offcanvas offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasDemos" aria-labelledby="offcanvasDemosLabel">
+      
+      <!-- offcanvas : header -->
+      <div class="offcanvas-header border-bottom">
+        <div class="offcanvas-title lh-1" id="offcanvasDemosLabel">
+          <span class="d-block fs-4 mb-1 text-danger-gradient fw-bold">Smarty 5</span>
+          <span class="d-block small fw-medium">Frontend + Admin</span>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <!-- 
+
+        offcanvas : body 
+
+        content loaded via ajax.
+        Remove .js-ajax class and data-ajax-url for non-ajax 
+
+      -->
+      <div class="offcanvas-body p-4 p-xl-5 js-ajax" data-ajax-url="_ajax/offcanvas_demos.html">
+        <!-- data loaded via ajax -->
+      </div>
+
+    </div>
+    <!-- /offcanvas : demos -->
+
+
+
+    <!-- Core javascripts -->
+    <script src="assets/js/core.min.js"></script>
+    <script src="assets/js/vendor_bundle.min.js"></script>
+
+    <!-- Your custom javascripts -->
+
+  </body>
+</html>

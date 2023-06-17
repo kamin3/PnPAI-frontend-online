@@ -1,0 +1,456 @@
+{
+  "Industries": [
+    {
+      "industryID": 1,
+      "industry": "Healthcare",
+      "logoLink": "./assets/icons/health.svg",
+      "useCases": [
+        {
+          "useCaseId": 1,
+          "useCase": "Symptoms Checker"
+        },
+        {
+          "useCaseId": 2,
+          "useCase": "Predictive Analytics - Patient Data"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Healthcare Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 1,
+              "configName": "Configuration 1"
+            },
+            {
+              "configId": 2,
+              "configName": "Configuration 2"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Healthcare Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 3,
+              "configName": "Configuration 3"
+            },
+            {
+              "configId": 4,
+              "configName": "Configuration 4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 2,
+      "industry": "Manufacturing",
+      "logoLink": "./assets/icons/manuf.svg",
+      "useCases": [
+        {
+          "useCaseId": 3,
+          "useCase": "Predictive Maintenance"
+        },
+        {
+          "useCaseId": 4,
+          "useCase": "Defect Detection"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Manufacturing Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 5,
+              "configName": "Configuration 5"
+            },
+            {
+              "configId": 6,
+              "configName": "Configuration 6"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Manufacturing Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 7,
+              "configName": "Configuration 7"
+            },
+            {
+              "configId": 8,
+              "configName": "Configuration 8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 3,
+      "industry": "Cross-industry (Generic)",
+      "logoLink": "./assets/icons/cross.svg",
+      "useCases": [
+        {
+          "useCaseId": 5,
+          "useCase": "Computer Vision Algorithms"
+        },
+        {
+          "useCaseId": 6,
+          "useCase": "Object Detection"
+        },
+        {
+          "useCaseId": 7,
+          "useCase": "Image Classification"
+        },
+        {
+          "useCaseId": 8,
+          "useCase": "Optical Character Recognition - OCR"
+        },
+        {
+          "useCaseId": 9,
+          "useCase": "Natural Language Processing (NLP)"
+        },
+        {
+          "useCaseId": 10,
+          "useCase": "Sentiment Analysis"
+        },
+        {
+          "useCaseId": 11,
+          "useCase": "Text Classification"
+        },
+        {
+          "useCaseId": 12,
+          "useCase": "Named Entity Recognition"
+        },
+        {
+          "useCaseId": 13,
+          "useCase": "Text Summarization"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Generic Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 9,
+              "configName": "Configuration 9"
+            },
+            {
+              "configId": 10,
+              "configName": "Configuration 10"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Generic Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 11,
+              "configName": "Configuration 11"
+            },
+            {
+              "configId": 12,
+              "configName": "Configuration 12"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 4,
+      "industry": "Marketing and Advertising",
+      "logoLink": "./assets/icons/ad.svg",
+      "useCases": [
+        {
+          "useCaseId": 14,
+          "useCase": "Customer Segmentation"
+        },
+        {
+          "useCaseId": 15,
+          "useCase": "Predictive Analytics"
+        },
+        {
+          "useCaseId": 16,
+          "useCase": "A/B Testing Optimization"
+        },
+        {
+          "useCaseId": 17,
+          "useCase": "Customer Sentiment Analysis"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Marketing Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 13,
+              "configName": "Configuration 13"
+            },
+            {
+              "configId": 14,
+              "configName": "Configuration 14"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Marketing Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 15,
+              "configName": "Configuration 15"
+            },
+            {
+              "configId": 16,
+              "configName": "Configuration 16"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 5,
+      "industry": "Retail",
+      "logoLink": "./assets/icons/retail.svg",
+      "useCases": [
+        {
+          "useCaseId": 18,
+          "useCase": "Demand Forecasting"
+        },
+        {
+          "useCaseId": 19,
+          "useCase": "Supply Chain Optimization"
+        },
+        {
+          "useCaseId": 20,
+          "useCase": "Customer Sentiment Analysis"
+        },
+        {
+          "useCaseId": 21,
+          "useCase": "Personalized Recommendations - Recommender System - User Based"
+        },
+        {
+          "useCaseId": 22,
+          "useCase": "Recommender System - Product Based"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Retail Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 17,
+              "configName": "Configuration 17"
+            },
+            {
+              "configId": 18,
+              "configName": "Configuration 18"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Retail Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 19,
+              "configName": "Configuration 19"
+            },
+            {
+              "configId": 20,
+              "configName": "Configuration 20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 6,
+      "industry": "Banking",
+      "logoLink": "./assets/icons/bank.svg",
+      "useCases": [
+        {
+          "useCaseId": 23,
+          "useCase": "Fraud Detection"
+        },
+        {
+          "useCaseId": 24,
+          "useCase": "Risk Assessment and Credit Scoring"
+        },
+        {
+          "useCaseId": 25,
+          "useCase": "Customer Segmentation"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Banking Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 21,
+              "configName": "Configuration 21"
+            },
+            {
+              "configId": 22,
+              "configName": "Configuration 22"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Banking Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 23,
+              "configName": "Configuration 23"
+            },
+            {
+              "configId": 24,
+              "configName": "Configuration 24"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 7,
+      "industry": "E-commerce",
+      "logoLink": "./assets/icons/ecomm.svg",
+      "useCases": [
+        {
+          "useCaseId": 26,
+          "useCase": "Personalized Recommendations - Product-based"
+        },
+        {
+          "useCaseId": 27,
+          "useCase": "Personalized Recommendations - User-based"
+        },
+        {
+          "useCaseId": 28,
+          "useCase": "Customer Segmentation"
+        },
+        {
+          "useCaseId": 29,
+          "useCase": "Customer Churn Prediction"
+        },
+        {
+          "useCaseId": 30,
+          "useCase": "Customer Sentiment Analysis"
+        },
+        {
+          "useCaseId": 31,
+          "useCase": "Price Optimization"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "E-commerce Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 25,
+              "configName": "Configuration 25"
+            },
+            {
+              "configId": 26,
+              "configName": "Configuration 26"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "E-commerce Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 27,
+              "configName": "Configuration 27"
+            },
+            {
+              "configId": 28,
+              "configName": "Configuration 28"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "industryID": 8,
+      "industry": "Telecommunication",
+      "logoLink": "./assets/icons/tele.svg",
+      "useCases": [
+        {
+          "useCaseId": 32,
+          "useCase": "Predictive Maintenance - Weather Data Based"
+        },
+        {
+          "useCaseId": 33,
+          "useCase": "Network Anomaly Detection"
+        },
+        {
+          "useCaseId": 34,
+          "useCase": "Customer Segmentation"
+        },
+        {
+          "useCaseId": 35,
+          "useCase": "Churn Prediction"
+        }
+      ],
+      "dataSources": [
+        {
+          "dataSourceId": 1,
+          "dataSourceName": "Telecommunication Data Source 1",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 29,
+              "configName": "Configuration 29"
+            },
+            {
+              "configId": 30,
+              "configName": "Configuration 30"
+            }
+          ]
+        },
+        {
+          "dataSourceId": 2,
+          "dataSourceName": "Telecommunication Data Source 2",
+          "logoDataSource": "",
+          "configurations": [
+            {
+              "configId": 31,
+              "configName": "Configuration 31"
+            },
+            {
+              "configId": 32,
+              "configName": "Configuration 32"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
