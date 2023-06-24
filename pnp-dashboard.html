@@ -582,8 +582,6 @@
 
         <!-- main -->
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite;">
-
-
           <!-- PAGE TITLE -->
           <header>
             <h1 class="h4">Customer-churn-prediction-v4</h1>
@@ -593,6 +591,7 @@
               </ol>
             </nav>
           </header>
+
           <div>
             <div class="row">
               <div class="col-lg-6 mb-3">
@@ -609,13 +608,13 @@
 
             <div class="row">
               <div class="col-lg-6 mb-3">
-                <div class="bg-white shadow rounded-3 p-3">
+                <div class="bg-white shadow rounded-3 p-3 pnp-graph-container-parent">
                   <div class="pnp-graph-container-2" id="pnp-container-area-3"></div>
                 </div>
               </div>
 
               <div class="col-lg-6 mb-3">
-                <div class="bg-white shadow rounded-3 p-3">
+                <div class="bg-white shadow rounded-3 p-3 pnp-graph-container-parent">
                   <table class="table table-borderless">
                     <thead>
                       <tr>
@@ -671,10 +670,8 @@
                 </div>
               </div>
           </div>
-        </div>
+          </div>
 
-           
-          </script> 
         </main>
         <!-- /main -->
 
@@ -804,9 +801,8 @@
     <!-- Core javascripts -->
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/vendor_bundle.min.js"></script>
+
     <script>
-
-
       anychart.onDocumentReady(function () {
 
             // create data
@@ -863,7 +859,7 @@
           // create a line series and set the data
           var series = chart.area(data);
 
-          series.fill("#ffbc57");
+          series.fill("#f72483");
           // set the chart title
           chart.title("Average House Price Prediction Rate (/second)");
 
@@ -906,7 +902,7 @@
         // create a line series and set the data
         var series = chart.area(data);
 
-        series.fill("#ffbc57");
+        series.fill("#7109b6");
         // set the chart title
         chart.title("Standard Score (Z-Score)");
 
@@ -960,7 +956,7 @@
 
         gauge
           .axis()
-          .fill('#ffbc57')
+          .fill('#4acaef')
           .width(1)
           .ticks({ type: 'line', fill: 'white', length: 2 });
 
@@ -977,7 +973,7 @@
           from: 0,
           to: 120,
           position: 'inside',
-          fill: '#261d5c',
+          fill: '#4acaef',
           startSize: 50,
           endSize: 50,
           radius: 90
@@ -1078,8 +1074,7 @@
   
     // draw the chart
       gauge.container("pnp-gauge-graph-2").draw();
-  });
-            
+  });        
     </script>
 
     <!-- Your custom javascripts -->

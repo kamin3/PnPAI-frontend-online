@@ -63,7 +63,7 @@ fetch('data.json')
         useCaseElement.classList.add('usecase-card');
         useCaseElement.innerHTML = `
           <button class=" shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id=${useCase.useCaseId}>
-            <p class="mt-3">${useCase.useCase}</p>
+            <p class="">${useCase.useCase}</p>
           </button>
         `;
         useCasesElement.appendChild(useCaseElement);
@@ -107,5 +107,12 @@ $(document).ready(function () {
       $(".pnp-container-loader").css("display", "none");
       $(".pnp-container-data-table-testing").css("display", "inherit");
     }, 5000);
+  });
+
+
+
+  $('.pnp-start-training-btn').click(function () {
+    $('.pnp-container-data-table-testing').css("display", "none");
+    $('.pnp-create-model-training-loader').css("display", "flex");
   });
 });

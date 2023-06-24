@@ -987,6 +987,8 @@
             <h1 class="h4">Creating Model Process</h1>
           </header>
 
+      
+
           <div class="pnp-container-model-process bg-white shadow-md text-dark p-5 rounded border-0">
             <div class="container overflow-hidden">
               <!--multisteps-form-->
@@ -1024,6 +1026,7 @@
                           <div class="button-row d-flex mt-4 justify-content-end">
                             <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
                           </div>
+
                         </div>
                       </div>
         
@@ -1031,25 +1034,20 @@
                       <div class="multisteps-form__panel p-4 rounded" data-animation="fadeIn">
 
                         <label for="exampleFormControlInput1" class="form-label">Choose Your Case</label>
-
                         <div class="multisteps-form__content row" >
                           <div class="row" id="useCasesContainer"></div>
                          
-
                           <div class="button-row d-flex mt-4 justify-content-between">
                             <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
                             <button class="btn btn-primary ml-auto  js-btn-next" type="button" title="Next">Next</button>
                           </div>
-
                         </div>
+
                       </div>
                       
-        
                       <!--Data Source-->
                       <div class="multisteps-form__panel  p-4 rounded" data-animation="fadeIn">
- 
                         <div class="multisteps-form__content">
-
                           <div class="row">
 
                             <div class="col-lg-6 mb-3">
@@ -1059,8 +1057,7 @@
                                 </div>
                                   <div style="margin-left: 20px;">
                                     <div class="d-flex align-items-center">
-                                      <p class="pnp-datasource-name-p">Woocommerce</p>
-                                      
+                                      <p class="pnp-datasource-name-p">Woocommerce</p>                                
                                     </div>
                                     <p class="pnp-datasource-details-p">Connect to your woocommerce store</p>
                                   </div>
@@ -1094,7 +1091,6 @@
                                   </div>
                               </div>
                             </div>
-
                             <div class="col-lg-6 mb-3">
                               <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
                                 <div>
@@ -1136,44 +1132,46 @@
                                     <p class="pnp-datasource-details-p">Connect to you own API</p>
                                   </div>
                               </div>
-                            </div>
-                            
-              
+                            </div> 
+
                           </div>
+
                           <div class="row">
                             <div class="button-row d-flex mt-4 col-12 justify-content-between">
                               <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
                               <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
                             </div>
                           </div>
+
                         </div>
                       </div>
         
                       <!--Configuratiob-->
                       <div class="multisteps-form__panel  p-4 rounded bg-white" data-animation="fadeIn">
                         <div class="multisteps-form__content">
-                          <div>
-                            <div class="mb-6">
-                              <label for="exampleFormControlInput1" class="form-label">Website URL</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the website URL..">
-                            </div>
-                            <div class="mb-6">
-                              <label for="exampleFormControlInput1" class="form-label">Requested Data</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Requested Data..">
-                            </div>
-                            <div class="mb-6">
-                              <label for="exampleFormControlInput1" class="form-label">Consumer Key</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Key..">
-                            </div>
-                            <div class="mb-6">
-                              <label for="exampleFormControlInput1" class="form-label">Consumer Secret</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Secret..">
-                            </div>
+
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Website URL</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the website URL..">
                           </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Requested Data</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Requested Data..">
+                          </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Consumer Key</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Key..">
+                          </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Consumer Secret</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Secret..">
+                          </div>
+
                           <div class="button-row d-flex mt-4 justify-content-between">
                             <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
                             <button class="btn btn-primary ml-auto pnp-start-button" type="button" title="Send">See Samples</button>
                           </div>
+
                         </div>
                       </div>
         
@@ -1185,6 +1183,7 @@
             </div>
           </div>
 
+          <!--Sample Loader-->
           <div class="pnp-container-loader">
             <div class="lds-ring">
               <div></div>
@@ -1197,6 +1196,8 @@
             </div>
           </div>
 
+
+          <!--Sample Table-->
           <div class="pnp-container-data-table-testing ">
             <table class="table-datatable table table-bordered table-hover table-striped bg-white"
                 data-lng-empty="No data available in table"
@@ -1717,8 +1718,31 @@
 
             <div class="button-row d-flex mt-4 justify-content-between">
               <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Back</button>
-              <button class="btn btn-primary ml-auto pnp-start-button" type="button" title="Send">Start Training</button>
+              <button class="btn btn-primary ml-auto apnp-start-button pnp-start-training-btn">Start Training</button>
             </div>
+          </div>
+
+          <!-- Training Loader -->
+          <div class=" pnp-create-model-training-loader" style="flex-direction: column; margin-top: 80px;align-items: center;">
+            <div class="loader">
+              <div class="loader_overlay"></div>
+              <div class="loader_cogs">
+                <div class="loader_cogs__top">
+                  <div class="top_part"></div>
+                  <div class="top_hole"></div>
+                </div>
+                <div class="loader_cogs__left">
+                  <div class="left_part"></div>
+                  <div class="left_hole"></div>
+                </div>
+                <div class="loader_cogs__bottom">
+                  <div class="bottom_part"></div>
+                  <div class="bottom_hole"></div>
+                </div>
+              </div>
+            </div>
+            <p class="pnp-datasource-name-p" style="margin-right: 60px !important;margin-top: 170px;"> The training process may take a while, we will notify you immediately after it is finished  </p>
+            <button class="btn btn-primary ml-auto col-2" href="./pnp-index.html"  style="margin-top: 30px;">Your Dashboard</button>
           </div>
           
         </main>
@@ -1741,11 +1765,6 @@
 
 
 
-
-
-
-
-
     <!-- Core javascripts -->
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/vendor_bundle.min.js"></script>
@@ -1753,192 +1772,190 @@
 
     <script >
       //DOM elements
-    const DOMstrings = {
-      stepsBtnClass: 'multisteps-form__progress-btn',
-      stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
-      stepsBar: document.querySelector('.multisteps-form__progress'),
-      stepsForm: document.querySelector('.multisteps-form__form'),
-      stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
-      stepFormPanelClass: 'multisteps-form__panel',
-      stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
-      stepPrevBtnClass: 'js-btn-prev',
-      stepNextBtnClass: 'js-btn-next' };
-    
-    
-    //remove class from a set of items
-    const removeClasses = (elemSet, className) => {
-    
-      elemSet.forEach(elem => {
-    
-        elem.classList.remove(className);
-    
-      });
-    
-    };
-    
-    //return exect parent node of the element
-    const findParent = (elem, parentClass) => {
-    
-      let currentNode = elem;
-    
-      while (!currentNode.classList.contains(parentClass)) {
-        currentNode = currentNode.parentNode;
-      }
-    
-      return currentNode;
-    
-    };
-    
-    //get active button step number
-    const getActiveStep = elem => {
-      return Array.from(DOMstrings.stepsBtns).indexOf(elem);
-    };
-    
-    //set all steps before clicked (and clicked too) to active
-    const setActiveStep = activeStepNum => {
-    
-      //remove active state from all the state
-      removeClasses(DOMstrings.stepsBtns, 'js-active');
-    
-      //set picked items to active
-      DOMstrings.stepsBtns.forEach((elem, index) => {
-    
-        if (index <= activeStepNum) {
-          elem.classList.add('js-active');
-        }
-    
-      });
-    };
-    
-    //get active panel
-    const getActivePanel = () => {
-    
-      let activePanel;
-    
-      DOMstrings.stepFormPanels.forEach(elem => {
-    
-        if (elem.classList.contains('js-active')) {
-    
-          activePanel = elem;
-    
-        }
-    
-      });
-    
-      return activePanel;
-    
-    };
-    
-    //open active panel (and close unactive panels)
-    const setActivePanel = activePanelNum => {
-    
-      //remove active class from all the panels
-      removeClasses(DOMstrings.stepFormPanels, 'js-active');
-    
-      //show active panel
-      DOMstrings.stepFormPanels.forEach((elem, index) => {
-        if (index === activePanelNum) {
-    
-          elem.classList.add('js-active');
-    
-          setFormHeight(elem);
-    
-        }
-      });
-    
-    };
-    
-    //set form height equal to current panel height
-    const formHeight = activePanel => {
-    
-      const activePanelHeight = activePanel.offsetHeight;
-    
-      DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
-    
-    };
-    
-    const setFormHeight = () => {
-      const activePanel = getActivePanel();
-    
-      formHeight(activePanel);
-    };
-    
-    //STEPS BAR CLICK FUNCTION
-    DOMstrings.stepsBar.addEventListener('click', e => {
-    
-      //check if click target is a step button
-      const eventTarget = e.target;
-    
-      if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
-        return;
-      }
-    
-      //get active button step number
-      const activeStep = getActiveStep(eventTarget);
-    
-      //set all steps before clicked (and clicked too) to active
-      setActiveStep(activeStep);
-    
-      //open active panel
-      setActivePanel(activeStep);
-    });
-    
-    //PREV/NEXT BTNS CLICK
-    DOMstrings.stepsForm.addEventListener('click', e => {
-    
-      const eventTarget = e.target;
-    
-      //check if we clicked on `PREV` or NEXT` buttons
-      if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)))
-      {
-        return;
-      }
-    
-      //find active panel
-      const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
-    
-      let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
-    
-      //set active step and active panel onclick
-      if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
-        activePanelNum--;
-    
-      } else {
-    
-        activePanelNum++;
-    
-      }
-    
-      setActiveStep(activePanelNum);
-      setActivePanel(activePanelNum);
-    
-    });
-    
-    //SETTING PROPER FORM HEIGHT ONLOAD
-    window.addEventListener('load', setFormHeight, false);
-    
-    //SETTING PROPER FORM HEIGHT ONRESIZE
-    window.addEventListener('resize', setFormHeight, false);
-    
-    //changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
-    
-    const setAnimationType = newType => {
-      DOMstrings.stepFormPanels.forEach(elem => {
-        elem.dataset.animation = newType;
-      });
-    };
-    
-    //selector onchange - changing animation
-    const animationSelect = document.querySelector('.pick-animation__select');
-    
-    animationSelect.addEventListener('change', () => {
+          const DOMstrings = {
+            stepsBtnClass: 'multisteps-form__progress-btn',
+            stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
+            stepsBar: document.querySelector('.multisteps-form__progress'),
+            stepsForm: document.querySelector('.multisteps-form__form'),
+            stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
+            stepFormPanelClass: 'multisteps-form__panel',
+            stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
+            stepPrevBtnClass: 'js-btn-prev',
+            stepNextBtnClass: 'js-btn-next' };
+          
+          
+          //remove class from a set of items
+          const removeClasses = (elemSet, className) => {
+          
+            elemSet.forEach(elem => {
+          
+              elem.classList.remove(className);
+          
+            });
+          
+          };
+          
+          //return exect parent node of the element
+          const findParent = (elem, parentClass) => {
+          
+            let currentNode = elem;
+          
+            while (!currentNode.classList.contains(parentClass)) {
+              currentNode = currentNode.parentNode;
+            }
+          
+            return currentNode;
+          
+          };
+          
+          //get active button step number
+          const getActiveStep = elem => {
+            return Array.from(DOMstrings.stepsBtns).indexOf(elem);
+          };
+          
+          //set all steps before clicked (and clicked too) to active
+          const setActiveStep = activeStepNum => {
+          
+            //remove active state from all the state
+            removeClasses(DOMstrings.stepsBtns, 'js-active');
+          
+            //set picked items to active
+            DOMstrings.stepsBtns.forEach((elem, index) => {
+          
+              if (index <= activeStepNum) {
+                elem.classList.add('js-active');
+              }
+          
+            });
+          };
+          
+          //get active panel
+          const getActivePanel = () => {
+          
+            let activePanel;
+          
+            DOMstrings.stepFormPanels.forEach(elem => {
+          
+              if (elem.classList.contains('js-active')) {
+          
+                activePanel = elem;
+          
+              }
+          
+            });
+          
+            return activePanel;
+          
+          };
+          
+          //open active panel (and close unactive panels)
+          const setActivePanel = activePanelNum => {
+          
+            //remove active class from all the panels
+            removeClasses(DOMstrings.stepFormPanels, 'js-active');
+          
+            //show active panel
+            DOMstrings.stepFormPanels.forEach((elem, index) => {
+              if (index === activePanelNum) {
+          
+                elem.classList.add('js-active');
+          
+                setFormHeight(elem);
+          
+              }
+            });
+          
+          };
+          
+          //set form height equal to current panel height
+          const formHeight = activePanel => {
+          
+            const activePanelHeight = activePanel.offsetHeight;
+          
+            DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
+          
+          };
+          
+          const setFormHeight = () => {
+            const activePanel = getActivePanel();
+          
+            formHeight(activePanel);
+          };
+          
+          //STEPS BAR CLICK FUNCTION
+          DOMstrings.stepsBar.addEventListener('click', e => {
+          
+            //check if click target is a step button
+            const eventTarget = e.target;
+          
+            if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
+              return;
+            }
+          
+            //get active button step number
+            const activeStep = getActiveStep(eventTarget);
+          
+            //set all steps before clicked (and clicked too) to active
+            setActiveStep(activeStep);
+          
+            //open active panel
+            setActivePanel(activeStep);
+          });
+          
+          //PREV/NEXT BTNS CLICK
+          DOMstrings.stepsForm.addEventListener('click', e => {
+          
+            const eventTarget = e.target;
+          
+            //check if we clicked on `PREV` or NEXT` buttons
+            if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)))
+            {
+              return;
+            }
+          
+            //find active panel
+            const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
+          
+            let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
+          
+            //set active step and active panel onclick
+            if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
+              activePanelNum--;
+          
+            } else {
+          
+              activePanelNum++;
+          
+            }
+          
+            setActiveStep(activePanelNum);
+            setActivePanel(activePanelNum);
+          
+          });
+          
+          //SETTING PROPER FORM HEIGHT ONLOAD
+          window.addEventListener('load', setFormHeight, false);
+          
+          //SETTING PROPER FORM HEIGHT ONRESIZE
+          window.addEventListener('resize', setFormHeight, false);
+          
+          //changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
+          
+          const setAnimationType = newType => {
+            DOMstrings.stepFormPanels.forEach(elem => {
+              elem.dataset.animation = newType;
+            });
+          };
+          
+          //selector onchange - changing animation
+          const animationSelect = document.querySelector('.pick-animation__select');
+          
+          animationSelect.addEventListener('change', () => {
       const newAnimationType = animationSelect.value;
     
       setAnimationType(newAnimationType);
     });
     </script>
-
-    <!-- Your custom javascripts -->
 
   </body>
 </html>
