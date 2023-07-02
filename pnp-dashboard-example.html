@@ -318,8 +318,8 @@
             </a>
             <div class="collapse" id="ui-basic2">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Overview</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Tickets</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pnp-support-center-page.html">Overview</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pnp-ticket-page.html">Tickets</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Tutorial</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">FAQ</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">License</a></li>
@@ -370,7 +370,7 @@
             <div class="row">
               <div class="col-lg-6 mb-3">
                 <div class="bg-white shadow rounded-3 p-3 pnp-graph-container-parent">
-                  <div class="pnp-graph-container-2" id="pnp-container-area-3"></div>
+                  <div class="pnp-graph-container-2" id="pnp-gauge-graph-3"></div>
                 </div>
               </div>
 
@@ -387,24 +387,24 @@
                       <tr>
                         <td >
                           <div class="pnp-cell-container">
-                            False Positive (FP)
+                            5235
                           </div>
                         </td>
                         <td >
                           <div class="pnp-cell-container-2">
-                            False Positive (FP)
+                            3201
                           </div>
                         </td>
                       </tr>
                       <tr> 
                         <td >
                           <div class="pnp-cell-container-2">
-                            False Positive (FP)
+                            239
                           </div>
                         </td>
                         <td >
                           <div class="pnp-cell-container">
-                            False Positive (FP)
+                            713
                           </div>
                         </td>
                       </tr>
@@ -639,6 +639,9 @@
 
     
 <script>
+
+// first-area chart
+
   anychart.onDocumentReady(function () {
 
         // create data
@@ -658,7 +661,7 @@
         var series = chart.area(data);
 
         // set the chart title
-        chart.title("Average House Price Prediction Amount (USD)");
+        chart.title("Data Volume");
 
         series.fill("#261d5c");
           // enable major grids
@@ -697,7 +700,7 @@
 
       series.fill("#f64e60");
       // set the chart title
-      chart.title("Average House Price Prediction Rate (/second)");
+      chart.title("Number of Calls");
 
       // enable major grids
       chart.xGrid().enabled(true);
@@ -740,7 +743,7 @@
 
     series.fill("#7109b6");
     // set the chart title
-    chart.title("Standard Score (Z-Score)");
+    chart.title("");
 
     // enable major grids
     chart.xGrid().enabled(true);
@@ -762,7 +765,8 @@
     chart.draw();
     });
 
-  
+
+
   anychart.onDocumentReady(function () {
 
 // create data set on our data
@@ -772,13 +776,13 @@
 
   var gauge = anychart.gauges.circular();
 
-  gauge.title("Min Prediction");
+  gauge.title("Overall customer satisfaction");
 
     gauge
       .fill('#fff')
       .stroke(null)
       .padding(0)
-      .margin(50)
+      .margin(60)
       .startAngle(270)
       .sweepAngle(180);
 
@@ -788,7 +792,7 @@
       .padding(5)
       .fontSize(14)
       .position('outside')
-      .format('${%Value}k');
+      .format('{%Value}%');
 
     gauge
       .axis()
@@ -807,7 +811,81 @@
 
     gauge.range(2, {
       from: 0,
-      to: 120,
+      to: 96,
+      position: 'inside',
+      fill: '#7109b6',
+      startSize: 50,
+      endSize: 50,
+      radius: 90
+    });
+
+
+    gauge
+      .label(3)
+      .text('96%')
+      .fontColor('#212121')
+      .fontSize(18)
+      .offsetY('10%')
+      .offsetX(25)
+
+ 
+  // axis settings
+  var axis = gauge.axis();
+  axis.radius(95)
+  axis.width(1);
+
+  // scale settings
+  axis.scale().minimum(0).maximum(100);
+
+// draw the chart
+  gauge.container("pnp-gauge-graph-3").draw();
+});
+  
+  anychart.onDocumentReady(function () {
+
+// create data set on our data
+  var dataSet = anychart.data.set([50]);
+  
+
+
+  var gauge = anychart.gauges.circular();
+
+  gauge.title("Will Churn");
+
+    gauge
+      .fill('#fff')
+      .stroke(null)
+      .padding(0)
+      .margin(30)
+      .startAngle(270)
+      .sweepAngle(180);
+
+    gauge
+      .axis()
+      .labels()
+      .padding(5)
+      .fontSize(14)
+      .position('outside')
+      .format('{%Value}%');
+
+    gauge
+      .axis()
+      .fill('#4acaef')
+      .width(1)
+      .ticks({ type: 'line', fill: 'white', length: 2 });
+
+  
+    gauge
+      .title()
+      .useHtml(true)
+      .padding(0)
+      .fontColor('#808080')
+      .hAlign('center')
+      .margin([0, 0, 10, 0]);
+
+    gauge.range(2, {
+      from: 0,
+      to: 12,
       position: 'inside',
       fill: '#4acaef',
       startSize: 50,
@@ -818,11 +896,11 @@
 
     gauge
       .label(3)
-      .text('$34.6k')
+      .text('12%')
       .fontColor('#212121')
       .fontSize(18)
-      .offsetY('20%')
-      .offsetX(10)
+      .offsetY('13%')
+      .offsetX(25)
 
  
   // axis settings
@@ -831,7 +909,7 @@
   axis.width(1);
 
   // scale settings
-  axis.scale().minimum(0).maximum(120);
+  axis.scale().minimum(0).maximum(100);
 
 // draw the chart
   gauge.container("pnp-gauge-graph").draw();
@@ -847,13 +925,13 @@
 
   var gauge = anychart.gauges.circular();
 
-  gauge.title("Max Prediction");
+  gauge.title("Model Accuracy");
 
     gauge
       .fill('#fff')
       .stroke(null)
       .padding(0)
-      .margin(50)
+      .margin(30)
       .startAngle(270)
       .sweepAngle(180);
 
@@ -863,7 +941,7 @@
       .padding(5)
       .fontSize(14)
       .position('outside')
-      .format('${%Value}k');
+      .format('{%Value}%');
 
     gauge
       .axis()
@@ -882,7 +960,7 @@
 
     gauge.range(2, {
       from: 0,
-      to: 120,
+      to: 84,
       position: 'inside',
       fill: '#261d5c',
       startSize: 50,
@@ -893,10 +971,10 @@
 
     gauge
       .label(3)
-      .text('$124.6k')
+      .text('84%')
       .fontColor('#212121')
       .fontSize(18)
-      .offsetY('22%')
+      .offsetY('12%')
       .offsetX(10)
 
  
@@ -906,7 +984,7 @@
   axis.width(1);
 
   // scale settings
-  axis.scale().minimum(0).maximum(120);
+  axis.scale().minimum(0).maximum(100);
 
 // draw the chart
   gauge.container("pnp-gauge-graph-2").draw();
