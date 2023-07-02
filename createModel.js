@@ -49,8 +49,7 @@ fetch('data.json')
     function showUseCases(industry) {
       // Clear existing use cases
       const useCasesContainer = document.getElementById('useCasesContainer');
-      useCasesContainer.innerHTML = '';
-
+      
       // Create and display use cases
       const useCasesElement = document.createElement('div');
       useCasesElement.classList.add('use-cases');
@@ -69,6 +68,13 @@ fetch('data.json')
         useCasesElement.appendChild(useCaseElement);
       });
 
+      $(document).ready(function() {
+        $('.pnp-usecase-option').click(function() {
+          $('.pnp-usecase-option').removeClass('pnp-usecase-option-selected');
+          $(this).addClass('pnp-usecase-option-selected');
+        });
+      });
+
       useCasesContainer.appendChild(useCasesElement);
     }
 
@@ -80,22 +86,22 @@ fetch('data.json')
   
 
 $(document).ready(function () {
+  
+    $('.pnp-industry-big-sqr').click(function () {
+      $('.pnp-industry-big-sqr').removeClass('pnp-industry-big-sqr-selected');
+      $(this).addClass('pnp-industry-big-sqr-selected');
+    });
 
   $('.pnp-btn-datasource-option').click(function () {
     $('.pnp-btn-datasource-option').removeClass('pnp-btn-datasource-option-selected');
     $(this).addClass('pnp-btn-datasource-option-selected');
   });
 
-  $('.pnp-industry-big-sqr').click(function () {
-    $('.pnp-industry-big-sqr').removeClass('pnp-industry-big-sqr-selected');
-    $(this).addClass('pnp-industry-big-sqr-selected');
+  $('.pnp-connector-modal').click(function () {
+    $('.pnp-connector-modal').removeClass('pnp-connector-modal-selected');
+    $(this).addClass('pnp-connector-modal-selected');
   });
 
-
-  $('.pnp-usecase-option').click(function() {
-    $('.pnp-usecase-option').removeClass('pnp-usecase-option-selected');
-    $(this).addClass('pnp-usecase-option-selected');
-  });
 
 
   $('.pnp-container-loader').css("display", "none");

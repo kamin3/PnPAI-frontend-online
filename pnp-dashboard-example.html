@@ -4,11 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Layout</title>
+    <title>Dashboard</title>
     <!-- plugins:css -->
 
     
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="./assets/logos/pnp-color-mark.svg">
     
     <!-- up to 10% speed up for external res -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
@@ -28,11 +28,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 
+
+
     
     <link rel="stylesheet" href="create-model-stye.css">
     <link rel="stylesheet" href="style-layout.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="createModel.js"></script>
+
+
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-circular-gauge.min.js"></script>
+    <link href="https://cdn.anychart.com/releases/v8/css/anychart-ui.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.anychart.com/releases/v8/fonts/css/anychart-font.min.css" type="text/css" rel="stylesheet">
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-cartesian.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+
 
 
   </head>
@@ -269,7 +284,7 @@
           </button>
           
           <li class="nav-item menu-items mb-3 ">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="pnp-main-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-squared-unequal"></i>
               </span>
@@ -277,7 +292,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3 active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-models-page.html">
               <span class="menu-icon">
                 <i class="fi fi-squared-graph"></i>
               </span>
@@ -285,7 +300,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-connectors-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-3dots"></i>
               </span>
@@ -329,7 +344,94 @@
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding-top: 35px; padding-left: 20px;">
           
 
-        
+          <header class="mb-3">
+            <h1 class="h4">Customer-churn-prediction-v4</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb small">
+                <li class="breadcrumb-item text-muted active" aria-current="page">Use Case : Customer Segmentation</li>
+              </ol>
+            </nav>
+          </header>
+
+          <div>
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3">
+                  <div class="pnp-graph-container" id="pnp-container-area"></div>
+                </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3">
+                  <div class="pnp-graph-container" id="pnp-container-area-2"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3 pnp-graph-container-parent">
+                  <div class="pnp-graph-container-2" id="pnp-container-area-3"></div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3 pnp-graph-container-parent">
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col" style="text-align: center;">Positive</th>
+                        <th scope="col" style="text-align: center;">Negative</th> 
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td >
+                          <div class="pnp-cell-container">
+                            False Positive (FP)
+                          </div>
+                        </td>
+                        <td >
+                          <div class="pnp-cell-container-2">
+                            False Positive (FP)
+                          </div>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td >
+                          <div class="pnp-cell-container-2">
+                            False Positive (FP)
+                          </div>
+                        </td>
+                        <td >
+                          <div class="pnp-cell-container">
+                            False Positive (FP)
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div style="width: 100%;text-align: center;">
+                    <p style="font-weight: bold;" >
+                      True Label
+                    </p>
+                  </div>          
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3">
+                  <div class="pnp-gauge-graph" id="pnp-gauge-graph"></div>
+                </div>
+              </div>
+              <div class="col-lg-6 mb-3">
+                <div class="bg-white shadow rounded-3 p-3">
+                  <div class="pnp-gauge-graph" id="pnp-gauge-graph-2"></div>       
+                </div>
+              </div>
+          </div>
+          </div>
           
         </main>
         <!-- main-panel ends -->
@@ -534,6 +636,282 @@
       setAnimationType(newAnimationType);
     });
     </script>
+
+    
+<script>
+  anychart.onDocumentReady(function () {
+
+        // create data
+        var data = [
+          ["08:50", 7000],
+          ["08:55", 2000],
+          ["09:00", 10000],
+          ["09:05", 11000],
+          ["09:10", 19000],
+          ["09:15", 12000],
+        ];
+
+        // create a chart
+        var chart = anychart.area();
+
+        // create a line series and set the data
+        var series = chart.area(data);
+
+        // set the chart title
+        chart.title("Average House Price Prediction Amount (USD)");
+
+        series.fill("#261d5c");
+          // enable major grids
+          chart.xGrid().enabled(true);
+          chart.yGrid().enabled(true);
+          // enable minor grids
+          chart.xMinorGrid().enabled(true);
+          chart.yMinorGrid().enabled(true);
+
+  
+
+        chart.container("pnp-container-area");
+
+        // initiate drawing the chart
+        chart.draw();
+        });
+
+
+  anychart.onDocumentReady(function () {
+
+      // create data
+      var data = [
+        ["08:50", 10000],
+        ["08:55", 12000],
+        ["09:00",0],
+        ["09:05", 0],
+        ["09:10", 9000],
+        ["09:15", 0],
+      ];
+
+      // create a chart
+      var chart = anychart.area();
+
+      // create a line series and set the data
+      var series = chart.area(data);
+
+      series.fill("#f64e60");
+      // set the chart title
+      chart.title("Average House Price Prediction Rate (/second)");
+
+      // enable major grids
+      chart.xGrid().enabled(true);
+      chart.yGrid().enabled(true);
+      // enable minor grids
+      chart.xMinorGrid().enabled(true);
+      chart.yMinorGrid().enabled(true);
+
+      // // set the titles of the axes
+      // var xAxis = chart.xAxis();
+      // xAxis.title("Month");
+      // var yAxis = chart.yAxis();
+      // yAxis.title("Sales, $");
+
+      // set the container id
+      chart.container("pnp-container-area-2");
+
+      // initiate drawing the chart
+      chart.draw();
+      });
+
+
+  anychart.onDocumentReady(function () {
+
+    // create data
+    var data = [
+      ["08:50", 10000],
+      ["08:55", 12000],
+      ["09:00",0],
+      ["09:05", 0],
+      ["09:10", 9000],
+      ["09:15", 0],
+    ];
+
+    // create a chart
+    var chart = anychart.area();
+
+    // create a line series and set the data
+    var series = chart.area(data);
+
+    series.fill("#7109b6");
+    // set the chart title
+    chart.title("Standard Score (Z-Score)");
+
+    // enable major grids
+    chart.xGrid().enabled(true);
+    chart.yGrid().enabled(true);
+    // enable minor grids
+    chart.xMinorGrid().enabled(true);
+    chart.yMinorGrid().enabled(true);
+
+    // // set the titles of the axes
+    // var xAxis = chart.xAxis();
+    // xAxis.title("Month");
+    // var yAxis = chart.yAxis();
+    // yAxis.title("Sales, $");
+
+    // set the container id
+    chart.container("pnp-container-area-3");
+
+    // initiate drawing the chart
+    chart.draw();
+    });
+
+  
+  anychart.onDocumentReady(function () {
+
+// create data set on our data
+  var dataSet = anychart.data.set([50]);
+  
+
+
+  var gauge = anychart.gauges.circular();
+
+  gauge.title("Min Prediction");
+
+    gauge
+      .fill('#fff')
+      .stroke(null)
+      .padding(0)
+      .margin(50)
+      .startAngle(270)
+      .sweepAngle(180);
+
+    gauge
+      .axis()
+      .labels()
+      .padding(5)
+      .fontSize(14)
+      .position('outside')
+      .format('${%Value}k');
+
+    gauge
+      .axis()
+      .fill('#4acaef')
+      .width(1)
+      .ticks({ type: 'line', fill: 'white', length: 2 });
+
+  
+    gauge
+      .title()
+      .useHtml(true)
+      .padding(0)
+      .fontColor('#808080')
+      .hAlign('center')
+      .margin([0, 0, 10, 0]);
+
+    gauge.range(2, {
+      from: 0,
+      to: 120,
+      position: 'inside',
+      fill: '#4acaef',
+      startSize: 50,
+      endSize: 50,
+      radius: 90
+    });
+
+
+    gauge
+      .label(3)
+      .text('$34.6k')
+      .fontColor('#212121')
+      .fontSize(18)
+      .offsetY('20%')
+      .offsetX(10)
+
+ 
+  // axis settings
+  var axis = gauge.axis();
+  axis.radius(95)
+  axis.width(1);
+
+  // scale settings
+  axis.scale().minimum(0).maximum(120);
+
+// draw the chart
+  gauge.container("pnp-gauge-graph").draw();
+});
+
+
+  anychart.onDocumentReady(function () {
+
+// create data set on our data
+  var dataSet = anychart.data.set([50]);
+  
+
+
+  var gauge = anychart.gauges.circular();
+
+  gauge.title("Max Prediction");
+
+    gauge
+      .fill('#fff')
+      .stroke(null)
+      .padding(0)
+      .margin(50)
+      .startAngle(270)
+      .sweepAngle(180);
+
+    gauge
+      .axis()
+      .labels()
+      .padding(5)
+      .fontSize(14)
+      .position('outside')
+      .format('${%Value}k');
+
+    gauge
+      .axis()
+      .fill('#ffbc57')
+      .width(1)
+      .ticks({ type: 'line', fill: 'white', length: 2 });
+
+  
+    gauge
+      .title()
+      .useHtml(true)
+      .padding(0)
+      .fontColor('#808080')
+      .hAlign('center')
+      .margin([0, 0, 10, 0]);
+
+    gauge.range(2, {
+      from: 0,
+      to: 120,
+      position: 'inside',
+      fill: '#261d5c',
+      startSize: 50,
+      endSize: 50,
+      radius: 90
+    });
+
+
+    gauge
+      .label(3)
+      .text('$124.6k')
+      .fontColor('#212121')
+      .fontSize(18)
+      .offsetY('22%')
+      .offsetX(10)
+
+ 
+  // axis settings
+  var axis = gauge.axis();
+  axis.radius(95)
+  axis.width(1);
+
+  // scale settings
+  axis.scale().minimum(0).maximum(120);
+
+// draw the chart
+  gauge.container("pnp-gauge-graph-2").draw();
+});        
+</script>
 
 
     

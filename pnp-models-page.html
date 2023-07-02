@@ -4,11 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Layout</title>
+    <title>Models Page</title>
     <!-- plugins:css -->
 
     
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="./assets/logos/pnp-color-mark.svg">
     
     <!-- up to 10% speed up for external res -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
@@ -269,7 +269,7 @@
           </button>
           
           <li class="nav-item menu-items mb-3 ">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="pnp-main-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-squared-unequal"></i>
               </span>
@@ -277,7 +277,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3 active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-models-page.html">
               <span class="menu-icon">
                 <i class="fi fi-squared-graph"></i>
               </span>
@@ -285,7 +285,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-connectors-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-3dots"></i>
               </span>
@@ -327,9 +327,303 @@
       <div class="page-body-wrapper">    
         <!-- main-panel ends -->    
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding-top: 35px; padding-left: 20px;">
-          
 
-        
+          <div >
+            <a class="shadow-md rounded text-center border-0 pnp-new-btn" href="pnp-create-model-process.html" style="width: 300px; margin-left: 10px;" >
+              <span class="d-inline-flex align-items-center justify-content-center bg-light text-gray-900 rounded-circle" style="width:35px;height:35px;margin-right: 20px;" >
+                <i class="fi fi-pie-chart" style="font-size: 25px;color: #2d3e93;font-weight: bold !important;"></i>
+              </span>
+              <p class=" m-0">+ Create New Model</p>
+            </a>
+            
+          </div>
+        <!-- PAGE TITLE -->
+            <header class="mt-5 mb-3">
+              <h1 class="h6 ms-3">Your Model Cards</h1>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb small">
+                  <!-- <li class="breadcrumb-item text-muted active" aria-current="page">Ready to start!</li> -->
+                </ol>
+              </nav>
+            </header>
+
+          <div class="row m-0">
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #2d9700;">
+
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-excel-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">customer-churn-prediction-v4</p>
+                      <p class="pnp-datasource-details-p text-align-start">Customer Churn Prediction</p>
+                    </div>
+                  </div>
+                  
+                  <div class="pnp-toggle-container dropstart" >
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu " style="left: -120px !important;">
+                        <ul class="list-unstyled m-0 p-0">
+                          <li class="dropdown-item">
+                            <a class="dropdown-link" href="pnp-dashboard-example.html"> Dashboard</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a class="dropdown-link" href="#">Retrain</a>
+                          </li>
+                          <li class="dropdown-item dropstart">
+                            <a class="dropdown-link dropstart" href="#" data-bs-toggle="dropdown">URL</a>
+                    
+                            <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                              <li class="dropdown-item ">
+                                <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/customer-churn-prediction-v4?12a55</a>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                    </div>
+                  </div>           
+                </div>
+
+                <div>
+                  <div class="pnp-lable-card-container col-4">
+                    <img src="./assets/icons/ecomm.svg" width="20">
+                    <p class="pnp-tag-p">E-commerce</p>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="pnp-lable-card-container col-md-6 " style="background-color: #f3f3ff !important">
+                      <i class="fi fi-time" ></i>
+                      <p class="pnp-tag-p"><span class="fw-bold">Last Trained:</span> 13/08/2023 10:12PM</p>
+                    </div>
+                    <label class="d-flex align-items-center justify-content-end">
+                      <input class="d-none-cloaked" type="checkbox" name="switch-checkbox" id="switch-checkbox" data-bs-toggle="modal"  data-bs-target="#modalCentered" onchange="toggleModal()" checked>
+                      <i class="switch-icon switch-icon-success"></i>
+                    </label>
+                  </div>  
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #8a8a8a;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">recommender-system-user-v2</p>
+                      <p class="pnp-datasource-details-p text-align-start">Recommender System - User Based</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Dashboard</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Retrain</a>
+                      </li>
+
+                      <li class="dropdown-item dropstart">
+                        <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                
+                        <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/recommender-system-user-v2?55sa5</a>
+                          </li>
+                        </ul>
+                      </li>
+                
+                    </ul>
+                    </div>
+                  </div>           
+                </div>
+
+                <div class="mt-4">
+                  <div class="pnp-lable-card-container col-4">
+                    <img src="./assets/icons/ecomm.svg" width="20">
+                    <p class="pnp-tag-p">E-commerce</p>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="pnp-lable-card-container col-md-6 " style="background-color: #f3f3ff !important">
+                      <i class="fi fi-time" ></i>
+                      <p class="pnp-tag-p"><span class="fw-bold">Last Trained:</span> 13/08/2023 10:12PM</p>
+                    </div>
+                    <label class="d-flex align-items-center ">
+                      <input class="d-none-cloaked" type="checkbox" name="switch-checkbox" value="0" >
+                      <i class="switch-icon"></i>
+                    </label>
+                  </div>  
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #3742a7;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p"> recommender-system-product-v3 </p>
+                      <p class="pnp-datasource-details-p text-align-start">System - Product Based</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Dashboard</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Retrain</a>
+                      </li>
+
+                      <li class="dropdown-item dropstart">
+                        <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                
+                        <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/ recommender-system-product-v3?12a55</a>
+                          </li>
+                        </ul>
+                      </li>
+                
+                    </ul>
+                    </div>
+                  </div>     
+                </div>
+                <div class="mt-4">
+                  <div class="pnp-lable-card-container col-4">
+                    <img src="./assets/icons/ecomm.svg" width="20">
+                    <p class="pnp-tag-p">E-commerce</p>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="pnp-lable-card-container col-md-4 " style="background-color: #f3f3ff !important">
+                      <label class="d-flex align-items-center pnp-tag-p" style="margin-left: 0px;">
+                        <i class="fi fi-spin fi-orbit text-primary" style="margin-right: 10px; padding-top: 4px;"></i> In Training
+                      </label>
+                    </div>
+                  </div>  
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-3">
+              <div class="bg-white shadow-md text-dark rounded text-center p-4 pnp-card" style="border-left: 6px solid #bb1c1c;">
+                <div class="d-flex align-items-center justify-content-between" style="width: 100%;">
+                  <div class="d-flex">
+                    <img src="./assets/logos/pnp-create-model-api-logo.svg" class="pnp-create-model-logo mt-1"/>
+                    <div class="pnp-card-details-container d-flex flex-column align-items-start justify-content-between"  style="margin-left: 20px;">
+                      <p class="pnp-datasource-name-p">sentiment-analysis-v9</p>
+                      <p class="pnp-datasource-details-p text-align-start">Sentiment Analysis</p>
+                    </div>
+                  </div>
+                  <div class="pnp-toggle-container dropstart">
+                    <a href="#" class="btn bg-white" data-bs-toggle="dropdown" style="position: relative; left: 22px;">
+                      <i class="fi fi-dots-vertical-full"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-click-update">
+                      <ul class="list-unstyled m-0 p-0">
+
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Dashboard</a>
+                      </li>
+                      <li class="dropdown-item">
+                        <a class="dropdown-link" href="#">Retrain</a>
+                      </li>
+
+                      <li class="dropdown-item dropstart">
+                        <a class="dropdown-link dropup" href="#" data-bs-toggle="dropdown">URL</a>
+                
+                        <ul class="dropdown-menu dropdown-menu-hover shadow-lg border-0 m-0" style="position: absolute; left: -250px !important; top:30px !important ; padding: 8px !important;">
+                          <li class="dropdown-item ">
+                            <a class="dropdown-link" style="font-size: 12px;" href="#">https://pnp.com/modelCards/ec/sentiment-analysis-v9v4?12a55</a>
+                          </li>
+                        </ul>
+                      </li>
+                
+                    </ul>
+                    </div>
+                  </div>            
+                </div>
+
+                <div class="mt-4">
+                  <div class="pnp-lable-card-container col-4">
+                    <img src="./assets/icons/ecomm.svg" width="20">
+                    <p class="pnp-tag-p">E-commerce</p>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <div class="pnp-lable-card-container col-md-6 " style="background-color: #f3f3ff !important">
+                      <i class="fi fi-time" ></i>
+                      <p class="pnp-tag-p"><span class="fw-bold">Last Trained:</span> 13/08/2023 10:12PM</p>
+                    </div>
+                    <div class="pnp-lable-card-container" style="background-color: #ffeded !important;">
+                      <i class="fi fi-round-info-full me-2 text-red-800"></i> 
+                      <p style="margin-bottom: 0px !important; margin-left: 10x; font-size: 12px;">An error occured!</p>
+                    </div>
+                  </div>  
+                </div>
+
+                
+              
+                <!-- <label class="d-flex align-items-center justify-content-end text-red-800">
+                  <i class="fi fi-round-info-full me-2 text-red-800"></i> 
+                  An error occured!
+                </label>  -->
+
+              </div>
+            </div>
+
+          </div>
+
+
+          <!-- <div class="modal fade" id="modalCentered" data-bs-keyboard="false" data-bs-focus="false" tabindex="-1" aria-labelledby="modalCenteredLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalCenteredLabel">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalMessage"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <script>
+            function toggleModal() {
+              var checkbox = document.getElementById('switch-checkbox');
+              var modalMessage = document.getElementById('modalMessage');
+
+              if (checkbox.checked) {
+                modalMessage.innerText = 'Switch is ON';
+              } else {
+                modalMessage.innerText = 'Switch is OFF';
+              }
+
+              // Show the modal
+              var modal = new bootstrap.Modal(document.getElementById('modalCentered'));
+              modal.show();
+            }
+          </script> 
+                  
           
         </main>
         <!-- main-panel ends -->

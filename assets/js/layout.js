@@ -151,3 +151,12 @@
 
 
 
+
+
+
+$(document).ready(function () {
+  $('.pnp-notify').click(function () {
+    $('.pnp-notify-icon-alert').css("display", "none");
+    $('.pnp-notify-icon-alert').css("transition", "0.4s");
+  });
+});
