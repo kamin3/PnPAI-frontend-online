@@ -983,7 +983,7 @@
             </div>
       
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="chooseConnector">
                 <i class="fi fi-check"></i>
                 Save
               </button>
@@ -1010,7 +1010,16 @@
     <script src="assets/js/vendor.datatables.js"></script>
 
     
-
+    <script>
+      $(document).on('click', '#chooseConnector', function(e) {
+			swal(
+			
+				'Your connector is selected',
+        
+				'success'
+			)
+		});
+    </script>
     <!-- Your custom javascripts -->
   </body>
 </html>
