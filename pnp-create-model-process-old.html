@@ -4,11 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Create New Model</title>
+    <title>Create Model</title>
     <!-- plugins:css -->
 
     
     <link rel="shortcut icon" href="./assets/logos/pnp-color-mark.png">
+
     
     <!-- up to 10% speed up for external res -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
@@ -22,156 +23,14 @@
     <link rel="stylesheet" href="assets/css/core.min.css">
     <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     
     <link rel="stylesheet" href="create-model-stye.css">
     <link rel="stylesheet" href="style-layout.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="createModel.js"></script>
-
-    <style>
-      fieldset{
-        margin-top: 20px !important;
-      }
-#heading {
-    text-transform: uppercase;
-    color: #673AB7;
-    font-weight: normal
-}
-
-#msform {
-    text-align: center;
-    position: relative;
-    margin-top: -14px;
-    padding: 20px;
-}
-
-#msform fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 0.5rem;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 20px;
-    position: relative
-}
-
-.form-card {
-    text-align: left
-}
-
-#msform fieldset:not(:first-of-type) {
-    display: none
-}
-
-
-#msform .action-button:hover,
-#msform .action-button:focus {
-    background-color: #311B92
-}
-
-
-.card {
-    z-index: 0;
-    border: none;
-    position: relative
-}
-
-.fs-title {
-    font-size: 25px;
-    color: #673AB7;
-    margin-bottom: 15px;
-    font-weight: normal;
-    text-align: left
-}
-
-.purple-text {
-    color: #673AB7;
-    font-weight: normal
-}
-
-.steps {
-    font-size: 25px;
-    color: gray;
-    margin-bottom: 10px;
-    font-weight: normal;
-    text-align: right
-}
-
-.fieldlabels {
-    color: gray;
-    text-align: left
-}
-
-#progressbar {
-    margin-bottom: 20px;
-    overflow: hidden;
-    color: lightgrey
-}
-
-#progressbar .active {
-    color: #673AB7
-}
-
-#progressbar li {
-    list-style-type: none;
-    font-size: 15px;
-    width: 25%;
-    float: left;
-    position: relative;
-    font-weight: 400
-}
-
-
-#progressbar li:before {
-    width: 50px;
-    height: 50px;
-    line-height: 45px;
-    display: block;
-    font-size: 20px;
-    color: #ffffff;
-    background: lightgray;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    padding: 2px
-}
-
-#progressbar li:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: lightgray;
-    position: absolute;
-    left: 0;
-    top: 25px;
-    z-index: -1
-}
-
-#progressbar li.active:before,
-#progressbar li.active:after {
-    background: #673AB7
-}
-
-.progress {
-    height: 12px
-}
-
-.progress-bar {
-    background-color: #f64e60
-}
-
-.fit-image {
-    width: 100%;
-    object-fit: cover
-}
-
-    </style>
 
 
   </head>
@@ -416,7 +275,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3 active">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-create-model.html">
               <span class="menu-icon">
                 <i class="fi fi-squared-graph"></i>
               </span>
@@ -424,7 +283,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-connectors-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-3dots"></i>
               </span>
@@ -442,8 +301,8 @@
             </a>
             <div class="collapse" id="ui-basic2">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pnp-support-center-page.html">Overview</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pnp-ticket-page.html">Tickets</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Overview</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Tickets</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Tutorial</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">FAQ</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">License</a></li>
@@ -467,206 +326,220 @@
         <!-- main-panel ends -->    
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding-top: 35px; padding-left: 20px;">
           
-          <div class="container-fluid pnp-container-model-process">
-            <div class="row justify-content-center">
-                <div class=" text-center p-0 mt-3 mb-2">
-                    <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-                        
-                        <div id="msform">
-                            <!-- progressbar -->
-                            <ul id="progressbar">
-                                <li class="active"><strong>Model Details</strong></li>
-                                <li ><strong>Use Case</strong></li>
-                                <li ><strong>Data Source</strong></li>
-                                <li><strong>Configuration</strong></li>
-                            </ul>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div> 
-                            <br> 
-                            
-                            <!-- Industry Details -->
-                            <fieldset>
-                                <div class="form-card">
 
+          <header class="mb-2" >
+            <h1 class="h5">Creating Model Process</h1>
+          </header>
 
-                                  <div class="mb-6">
-                                    <label for="exampleFormControlInput1" class="form-label">Model Name</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the model name..">
-                                  </div>
+      
+
+          <div class="pnp-container-model-process bg-white shadow-md text-dark p-5 rounded border-0">
+            <div class="container overflow-hidden">
+              <!--multisteps-form-->
+              <div class="multisteps-form">
+                <!--progress bar-->
+                <div class="row justify-content-center mt-3">
+                  <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+                    <div class="multisteps-form__progress">
+                      <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Model Details</button>
+                      <button class="multisteps-form__progress-btn" type="button" title="Address">Use Case</button>
+                      <button class="multisteps-form__progress-btn" type="button" title="Order Info">Data Source</button>
+                      <button class="multisteps-form__progress-btn" type="button" title="Comments">Configuration</button>
+                    </div>
+                  </div>
+                </div>
+                
+                <!--form panels-->
+                <div class="row">
+                  <div class="col-12 m-auto">
+                    <div class="multisteps-form__form" >
         
-                                  <label for="exampleFormControlInput1" class="form-label">Choose Your industry</label>
-                                  <div class="row row-flex" id="industryModelContainer">
-                                  </div>
+                      <!--Industry-->
+                      <div class="multisteps-form__panel  p-4 rounded js-active pnp-first-step" data-animation="fadeIn">
+                        <div class="multisteps-form__content">
+        
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Model Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the model name..">
+                          </div>
 
-                                </div> 
-                                
-                                <button class="btn btn-primary ml-auto next action-button float-end" type="button" title="Next">Next</button>
-                                   
-                            </fieldset>
+                          <label for="exampleFormControlInput1" class="form-label">Choose Your industry</label>
+                          <div class="row row-flex" id="industryModelContainer">
+                          </div>
+        
+                          <div class="button-row d-flex mt-4 justify-content-end">
+                            <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                          </div>
 
-                            <!-- UseCases -->
-                            <fieldset>
-                                <div class="form-card">
-                                  <label for="exampleFormControlInput1" class="form-label mb-3">Choose Your Case</label>
-                                  <div class="row" id="useCasesContainer"></div>
-                                </div> 
+                        </div>
+                      </div>
+        
+                      <!--Use Case-->
+                      <div class="multisteps-form__panel p-4 rounded" data-animation="fadeIn">
 
-                                <button class="btn btn-primary ml-auto next action-button float-end" type="button" title="Next">Next</button>
-                                <button class="btn btn--oultine-primary previous action-button-previous float-start " type="button" title="Prev">Prev</button>
+                        <label for="exampleFormControlInput1" class="form-label">Choose Your Case</label>
+                        <div class="multisteps-form__content row" >
+                          <div class="row" id="useCasesContainer"></div>
+                         
+                          <div class="button-row d-flex mt-4 justify-content-between">
+                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                            <button class="btn btn-primary ml-auto  js-btn-next" type="button" title="Next">Next</button>
+                          </div>
+                        </div>
 
-
-                            </fieldset>
-
-                            <!-- Datasources -->
-                            <fieldset>
-                                <div class="form-card">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="fs-title">Image Upload:</h2>
-                                        </div>
-                                        <div class="col-5">
-                                            <h2 class="steps">Step 3 - 4</h2>
-                                        </div>
-                                    </div> 
-                                    <div class="row">
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer"  data-bs-toggle="modal" data-bs-target="#myConnectors">
-                                          <div>
-                                            <i class="fi fi-shape-3dots" style="font-size: 25px;color: #2d3e93;font-weight: bold !important;"></i>
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">Your Connectors </p>
-                                              </div>
-                                              <p class="pnp-datasource-details-p text-align-start">Your current connectors</p>
-                                            </div>
-                                        </div>
-                                      </div> 
-          
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option cursor-pointer">
-                                          <div>
-                                            <img  src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">Woocommerce</p>                                
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Connect to your woocommerce store</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
-                                          <div>
-                                            <img src="./assets/logos/pnp-create-model-shopify-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">Shopify</p>
-                                                 <p class="pnp-datasource-status-p">(premium)</p> 
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Connect to your Shopify store</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
-                                          <div>
-                                            <img src="./assets/logos/pnp-create-model-mssql-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">MS SQL DB </p>
-                                                 <p class="pnp-datasource-status-p">(premium)</p> 
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Connect to Microsoft SQL DB</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
-                                          <div>
-                                            <img src="./assets/logos/pnp-create-model-mysql-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">MySQL </p>
-                                                 <p class="pnp-datasource-status-p">(premium)</p> 
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Connect to Mysql DB</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
-                                          <div>
-                                            <img src="./assets/logos/pnp-create-model-excel-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">Excel </p>
-                                                 
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Upload excel file</p>
-                                            </div>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-6 mb-3">
-                                        <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
-                                          <div>
-                                            <img src="./assets/logos/pnp-create-model-api-logo.svg" class="mt-1 pnp-logo-img" />
-                                          </div>
-                                            <div style="margin-left: 20px;">
-                                              <div class="d-flex align-items-center">
-                                                <p class="pnp-datasource-name-p">API </p>
-                                                 <p class="pnp-datasource-status-p">(premium)</p> 
-                                              </div>
-                                              <p class="pnp-datasource-details-p">Connect to you own API</p>
-                                            </div>
-                                        </div>
-                                      </div> 
-          
-          
+                      </div>
+                      
+                      <!--Data Source-->
+                      <div class="multisteps-form__panel  p-4 rounded" data-animation="fadeIn">
+                        <div class="multisteps-form__content">
+                          <div class="row">
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer"  data-bs-toggle="modal" data-bs-target="#myConnectors">
+                                <div>
+                                  <i class="fi fi-shape-3dots" style="font-size: 25px;color: #2d3e93;font-weight: bold !important;"></i>
+                                </div>
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">Your Connectors </p>
                                     </div>
-                                </div> 
-                                <button class="btn btn-primary ml-auto next action-button float-end" type="button" title="Next">Next</button>
-                                <button class="btn btn--oultine-primary previous action-button-previous float-start " type="button" title="Prev">Prev</button>
-                            </fieldset>
+                                    <p class="pnp-datasource-details-p text-align-start">Your current connectors</p>
+                                  </div>
+                              </div>
+                            </div> 
 
-                            <!-- Configuration -->
-                            <fieldset>
-                              <div class="form-card">
-                                <div class="mb-6">
-                                  <label for="exampleFormControlInput1" class="form-label">Website URL</label>
-                                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the website URL..">
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option cursor-pointer">
+                                <div>
+                                  <img  src="./assets/logos/pnp-create-model-woocommerce-logo.svg" class="mt-1 pnp-logo-img" />
                                 </div>
-                                <div class="mb-6">
-                                  <label for="exampleFormControlInput1" class="form-label">Requested Data</label>
-                                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Requested Data..">
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">Woocommerce</p>                                
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Connect to your woocommerce store</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
+                                <div>
+                                  <img src="./assets/logos/pnp-create-model-shopify-logo.svg" class="mt-1 pnp-logo-img" />
                                 </div>
-                                <div class="mb-6">
-                                  <label for="exampleFormControlInput1" class="form-label">Consumer Key</label>
-                                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Key..">
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">Shopify</p>
+                                       <p class="pnp-datasource-status-p">(premium)</p> 
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Connect to your Shopify store</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
+                                <div>
+                                  <img src="./assets/logos/pnp-create-model-mssql-logo.svg" class="mt-1 pnp-logo-img" />
                                 </div>
-                                <div class="mb-6">
-                                  <label for="exampleFormControlInput1" class="form-label">Consumer Secret</label>
-                                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Secret..">
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">MS SQL DB </p>
+                                       <p class="pnp-datasource-status-p">(premium)</p> 
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Connect to Microsoft SQL DB</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
+                                <div>
+                                  <img src="./assets/logos/pnp-create-model-mysql-logo.svg" class="mt-1 pnp-logo-img" />
                                 </div>
-                              </div> 
-                              <button class="btn btn-primary ml-auto pnp-start-button float-end" type="button" title="Next">See Samples</button>
-                              <button class="btn btn--oultine-primary previous action-button-previous float-start " type="button" title="Prev">Prev</button>
-                           </fieldset>
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">MySQL </p>
+                                       <p class="pnp-datasource-status-p">(premium)</p> 
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Connect to Mysql DB</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
+                                <div>
+                                  <img src="./assets/logos/pnp-create-model-excel-logo.svg" class="mt-1 pnp-logo-img" />
+                                </div>
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">Excel </p>
+                                       
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Upload excel file</p>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                              <div class="bg-white shadow-md text-dark rounded text-center border-0 p-3 pnp-btn-datasource-option d-flex cursor-pointer">
+                                <div>
+                                  <img src="./assets/logos/pnp-create-model-api-logo.svg" class="mt-1 pnp-logo-img" />
+                                </div>
+                                  <div style="margin-left: 20px;">
+                                    <div class="d-flex align-items-center">
+                                      <p class="pnp-datasource-name-p">API </p>
+                                       <p class="pnp-datasource-status-p">(premium)</p> 
+                                    </div>
+                                    <p class="pnp-datasource-details-p">Connect to you own API</p>
+                                  </div>
+                              </div>
+                            </div> 
+
 
                           </div>
+
+                          <div class="row">
+                            <div class="button-row d-flex mt-4 col-12 justify-content-between">
+                              <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                              <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+        
+                      <!--Configuratiob-->
+                      <div class="multisteps-form__panel  p-4 rounded bg-white" data-animation="fadeIn">
+                        <div class="multisteps-form__content">
+
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Website URL</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter the website URL..">
+                          </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Requested Data</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Requested Data..">
+                          </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Consumer Key</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Key..">
+                          </div>
+                          <div class="mb-6">
+                            <label for="exampleFormControlInput1" class="form-label">Consumer Secret</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Consumer Secret..">
+                          </div>
+
+                          <div class="button-row d-flex mt-4 justify-content-between">
+                            <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                            <button class="btn btn-primary ml-auto pnp-start-button" type="button" title="Send">See Samples</button>
+                          </div>
+
+                        </div>
+                      </div>
+        
                     </div>
+                  </div>
                 </div>
+        
+              </div>
             </div>
           </div>
-
-
-
 
           <!--Sample Loader-->
           <div class="pnp-container-loader">
@@ -887,19 +760,19 @@
             <a class="btn btn-primary ml-auto col-2 mt-3" href="pnp-main-page.html"margin-top: 30px;">Your Dashboard</a>
           </div>
 
-        
+            
+          </div>
           
         </main>
         <!-- main-panel ends -->
       </div>    
 
     </div>
-
-
+      <!-- page-body-wrapper ends -->
 
 
       <!-- my connector modal -->
-       <div class="modal fade" id="myConnectors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLg" aria-hidden="true">
+      <div class="modal fade" id="myConnectors" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLg" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
       
@@ -994,7 +867,7 @@
                 <i class="fi fi-check"></i>
                 Save
               </button>
-              <button type="button" class="btn btn-outline-secondary hove-" data-bs-dismiss="modal">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                 <i class="fi fi-close"></i>
                 Close
               </button>
@@ -1003,8 +876,6 @@
           </div>
         </div>
       </div>
-
-      <!-- page-body-wrapper ends -->
 
 
     <script src="assets/js/vendor.bundle.base.js"></script>
@@ -1015,6 +886,193 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/vendor_bundle.min.js"></script>
     <script src="assets/js/vendor.datatables.js"></script>
+
+    <script >
+      //DOM elements
+          const DOMstrings = {
+            stepsBtnClass: 'multisteps-form__progress-btn',
+            stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
+            stepsBar: document.querySelector('.multisteps-form__progress'),
+            stepsForm: document.querySelector('.multisteps-form__form'),
+            stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
+            stepFormPanelClass: 'multisteps-form__panel',
+            stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
+            stepPrevBtnClass: 'js-btn-prev',
+            stepNextBtnClass: 'js-btn-next' };
+          
+          
+          //remove class from a set of items
+          const removeClasses = (elemSet, className) => {
+          
+            elemSet.forEach(elem => {
+          
+              elem.classList.remove(className);
+          
+            });
+          
+          };
+          
+          //return exect parent node of the element
+          const findParent = (elem, parentClass) => {
+          
+            let currentNode = elem;
+          
+            while (!currentNode.classList.contains(parentClass)) {
+              currentNode = currentNode.parentNode;
+            }
+          
+            return currentNode;
+          
+          };
+          
+          //get active button step number
+          const getActiveStep = elem => {
+            return Array.from(DOMstrings.stepsBtns).indexOf(elem);
+          };
+          
+          //set all steps before clicked (and clicked too) to active
+          const setActiveStep = activeStepNum => {
+          
+            //remove active state from all the state
+            removeClasses(DOMstrings.stepsBtns, 'js-active');
+          
+            //set picked items to active
+            DOMstrings.stepsBtns.forEach((elem, index) => {
+          
+              if (index <= activeStepNum) {
+                elem.classList.add('js-active');
+              }
+          
+            });
+          };
+          
+          //get active panel
+          const getActivePanel = () => {
+          
+            let activePanel;
+          
+            DOMstrings.stepFormPanels.forEach(elem => {
+          
+              if (elem.classList.contains('js-active')) {
+          
+                activePanel = elem;
+          
+              }
+          
+            });
+          
+            return activePanel;
+          
+          };
+          
+          //open active panel (and close unactive panels)
+          const setActivePanel = activePanelNum => {
+          
+            //remove active class from all the panels
+            removeClasses(DOMstrings.stepFormPanels, 'js-active');
+          
+            //show active panel
+            DOMstrings.stepFormPanels.forEach((elem, index) => {
+              if (index === activePanelNum) {
+          
+                elem.classList.add('js-active');
+          
+                setFormHeight(elem);
+          
+              }
+            });
+          
+          };
+          
+          //set form height equal to current panel height
+          const formHeight = activePanel => {
+          
+            const activePanelHeight = activePanel.offsetHeight;
+          
+            DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
+          
+          };
+          
+          const setFormHeight = () => {
+            const activePanel = getActivePanel();
+          
+            formHeight(activePanel);
+          };
+          
+          //STEPS BAR CLICK FUNCTION
+          DOMstrings.stepsBar.addEventListener('click', e => {
+          
+            //check if click target is a step button
+            const eventTarget = e.target;
+          
+            if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
+              return;
+            }
+          
+            //get active button step number
+            const activeStep = getActiveStep(eventTarget);
+          
+            //set all steps before clicked (and clicked too) to active
+            setActiveStep(activeStep);
+          
+            //open active panel
+            setActivePanel(activeStep);
+          });
+          
+          //PREV/NEXT BTNS CLICK
+          DOMstrings.stepsForm.addEventListener('click', e => {
+          
+            const eventTarget = e.target;
+          
+            //check if we clicked on `PREV` or NEXT` buttons
+            if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)))
+            {
+              return;
+            }
+          
+            //find active panel
+            const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
+          
+            let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
+          
+            //set active step and active panel onclick
+            if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
+              activePanelNum--;
+          
+            } else {
+          
+              activePanelNum++;
+          
+            }
+          
+            setActiveStep(activePanelNum);
+            setActivePanel(activePanelNum);
+          
+          });
+          
+          //SETTING PROPER FORM HEIGHT ONLOAD
+          window.addEventListener('load', setFormHeight, false);
+          
+          //SETTING PROPER FORM HEIGHT ONRESIZE
+          window.addEventListener('resize', setFormHeight, false);
+          
+          //changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
+          
+          const setAnimationType = newType => {
+            DOMstrings.stepFormPanels.forEach(elem => {
+              elem.dataset.animation = newType;
+            });
+          };
+          
+          //selector onchange - changing animation
+          const animationSelect = document.querySelector('.pick-animation__select');
+          
+          animationSelect.addEventListener('change', () => {
+      const newAnimationType = animationSelect.value;
+    
+      setAnimationType(newAnimationType);
+    });
+    </script>
 
     
 

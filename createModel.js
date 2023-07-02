@@ -47,10 +47,10 @@ fetch('data.json')
     });
 
     function showUseCases(industry) {
-      // Clear existing use cases
-      const useCasesContainer = document.getElementById('useCasesContainer');
-      
+      clearUseCases();
+
       // Create and display use cases
+      const useCasesContainer = document.getElementById('useCasesContainer');
       const useCasesElement = document.createElement('div');
       useCasesElement.classList.add('use-cases');
       useCasesElement.classList.add('row');
@@ -78,19 +78,29 @@ fetch('data.json')
       useCasesContainer.appendChild(useCasesElement);
     }
 
+    // Function to clear the use cases
+    function clearUseCases() {
+      const useCasesContainer = document.getElementById('useCasesContainer');
+      useCasesContainer.innerHTML = '';
+    }
+
+    // Add an event listener to the previous button
+    document.getElementById('previous').addEventListener('click', handlePreviousClick);
+
+    // Function to handle the previous button click
+    function handlePreviousClick() {
+      clearUseCases();
+    }
   })
   .catch(error => {
     console.error('Error:', error);
   });
 
-  
-
 $(document).ready(function () {
-  
-    $('.pnp-industry-big-sqr').click(function () {
-      $('.pnp-industry-big-sqr').removeClass('pnp-industry-big-sqr-selected');
-      $(this).addClass('pnp-industry-big-sqr-selected');
-    });
+  $('.pnp-industry-big-sqr').click(function () {
+    $('.pnp-industry-big-sqr').removeClass('pnp-industry-big-sqr-selected');
+    $(this).addClass('pnp-industry-big-sqr-selected');
+  });
 
   $('.pnp-btn-datasource-option').click(function () {
     $('.pnp-btn-datasource-option').removeClass('pnp-btn-datasource-option-selected');
@@ -101,8 +111,6 @@ $(document).ready(function () {
     $('.pnp-connector-modal').removeClass('pnp-connector-modal-selected');
     $(this).addClass('pnp-connector-modal-selected');
   });
-
-
 
   $('.pnp-container-loader').css("display", "none");
   $('.pnp-container-data-table-testing').css("display", "none");
@@ -115,10 +123,81 @@ $(document).ready(function () {
     }, 5000);
   });
 
-
-
   $('.pnp-start-training-btn').click(function () {
     $('.pnp-container-data-table-testing').css("display", "none");
     $('.pnp-create-model-training-loader').css("display", "flex");
+  });
+});
+
+$(document).ready(function(){
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var opacity;
+  var current = 1;
+  var steps = $("fieldset").length;
+  
+  setProgressBar(current);
+  
+  $(".next").click(function(){
+    current_fs = $(this).parent();
+    next_fs = $(this).parent().next();
+  
+    // Add Class Active
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+  
+    // Show the next fieldset
+    next_fs.show();
+  
+    // Hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now) {
+        // For making fieldset appear animation
+        opacity = 1 - now;
+        current_fs.css({
+          'display': 'none',
+          'position': 'relative'
+        });
+        next_fs.css({'opacity': opacity});
+      },
+      duration: 500
+    });
+  
+    setProgressBar(++current);
+  });
+  
+  $(".previous").click(function(){
+    current_fs = $(this).parent();
+    previous_fs = $(this).parent().prev();
+  
+    // Remove class active
+    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+  
+    // Show the previous fieldset
+    previous_fs.show();
+  
+    // Hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now) {
+        // For making fieldset appear animation
+        opacity = 1 - now;
+        current_fs.css({
+          'display': 'none',
+          'position': 'relative'
+        });
+        previous_fs.css({'opacity': opacity});
+      },
+      duration: 500
+    });
+  
+    setProgressBar(--current);
+  });
+  
+  function setProgressBar(curStep){
+    var percent = parseFloat(100 / steps) * curStep;
+    percent = percent.toFixed();
+    $(".progress-bar").css("width",percent+"%");
+  }
+  
+  $(".submit").click(function(){
+    return false;
   });
 });

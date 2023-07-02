@@ -8,7 +8,7 @@
     <!-- plugins:css -->
 
     
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="./assets/logos/pnp-color-mark.png">
     
     <!-- up to 10% speed up for external res -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
@@ -269,15 +269,15 @@
           </button>
           
           <li class="nav-item menu-items mb-3 ">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="pnp-main-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-squared-unequal"></i>
               </span>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item menu-items mb-3 active">
-            <a class="nav-link" href="">
+          <li class="nav-item menu-items mb-3">
+            <a class="nav-link" href="pnp-models-page.html">
               <span class="menu-icon">
                 <i class="fi fi-squared-graph"></i>
               </span>
@@ -285,7 +285,7 @@
             </a>
           </li>
           <li class="nav-item menu-items mb-3">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="pnp-connectors-page.html">
               <span class="menu-icon">
                 <i class="fi fi-shape-3dots"></i>
               </span>
@@ -303,8 +303,8 @@
             </a>
             <div class="collapse" id="ui-basic2">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Overview</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">Tickets</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pnp-support-center-page.html">Overview</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pnp-ticket-page.html">Tickets</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">Tutorial</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">FAQ</a></li>
                 <li class="nav-item"> <a class="nav-link" href="">License</a></li>
@@ -347,193 +347,6 @@
     <script src="assets/js/core.min.js"></script>
     <script src="assets/js/vendor_bundle.min.js"></script>
     <script src="assets/js/vendor.datatables.js"></script>
-
-    <script >
-      //DOM elements
-          const DOMstrings = {
-            stepsBtnClass: 'multisteps-form__progress-btn',
-            stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
-            stepsBar: document.querySelector('.multisteps-form__progress'),
-            stepsForm: document.querySelector('.multisteps-form__form'),
-            stepsFormTextareas: document.querySelectorAll('.multisteps-form__textarea'),
-            stepFormPanelClass: 'multisteps-form__panel',
-            stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
-            stepPrevBtnClass: 'js-btn-prev',
-            stepNextBtnClass: 'js-btn-next' };
-          
-          
-          //remove class from a set of items
-          const removeClasses = (elemSet, className) => {
-          
-            elemSet.forEach(elem => {
-          
-              elem.classList.remove(className);
-          
-            });
-          
-          };
-          
-          //return exect parent node of the element
-          const findParent = (elem, parentClass) => {
-          
-            let currentNode = elem;
-          
-            while (!currentNode.classList.contains(parentClass)) {
-              currentNode = currentNode.parentNode;
-            }
-          
-            return currentNode;
-          
-          };
-          
-          //get active button step number
-          const getActiveStep = elem => {
-            return Array.from(DOMstrings.stepsBtns).indexOf(elem);
-          };
-          
-          //set all steps before clicked (and clicked too) to active
-          const setActiveStep = activeStepNum => {
-          
-            //remove active state from all the state
-            removeClasses(DOMstrings.stepsBtns, 'js-active');
-          
-            //set picked items to active
-            DOMstrings.stepsBtns.forEach((elem, index) => {
-          
-              if (index <= activeStepNum) {
-                elem.classList.add('js-active');
-              }
-          
-            });
-          };
-          
-          //get active panel
-          const getActivePanel = () => {
-          
-            let activePanel;
-          
-            DOMstrings.stepFormPanels.forEach(elem => {
-          
-              if (elem.classList.contains('js-active')) {
-          
-                activePanel = elem;
-          
-              }
-          
-            });
-          
-            return activePanel;
-          
-          };
-          
-          //open active panel (and close unactive panels)
-          const setActivePanel = activePanelNum => {
-          
-            //remove active class from all the panels
-            removeClasses(DOMstrings.stepFormPanels, 'js-active');
-          
-            //show active panel
-            DOMstrings.stepFormPanels.forEach((elem, index) => {
-              if (index === activePanelNum) {
-          
-                elem.classList.add('js-active');
-          
-                setFormHeight(elem);
-          
-              }
-            });
-          
-          };
-          
-          //set form height equal to current panel height
-          const formHeight = activePanel => {
-          
-            const activePanelHeight = activePanel.offsetHeight;
-          
-            DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
-          
-          };
-          
-          const setFormHeight = () => {
-            const activePanel = getActivePanel();
-          
-            formHeight(activePanel);
-          };
-          
-          //STEPS BAR CLICK FUNCTION
-          DOMstrings.stepsBar.addEventListener('click', e => {
-          
-            //check if click target is a step button
-            const eventTarget = e.target;
-          
-            if (!eventTarget.classList.contains(`${DOMstrings.stepsBtnClass}`)) {
-              return;
-            }
-          
-            //get active button step number
-            const activeStep = getActiveStep(eventTarget);
-          
-            //set all steps before clicked (and clicked too) to active
-            setActiveStep(activeStep);
-          
-            //open active panel
-            setActivePanel(activeStep);
-          });
-          
-          //PREV/NEXT BTNS CLICK
-          DOMstrings.stepsForm.addEventListener('click', e => {
-          
-            const eventTarget = e.target;
-          
-            //check if we clicked on `PREV` or NEXT` buttons
-            if (!(eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) || eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)))
-            {
-              return;
-            }
-          
-            //find active panel
-            const activePanel = findParent(eventTarget, `${DOMstrings.stepFormPanelClass}`);
-          
-            let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
-          
-            //set active step and active panel onclick
-            if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
-              activePanelNum--;
-          
-            } else {
-          
-              activePanelNum++;
-          
-            }
-          
-            setActiveStep(activePanelNum);
-            setActivePanel(activePanelNum);
-          
-          });
-          
-          //SETTING PROPER FORM HEIGHT ONLOAD
-          window.addEventListener('load', setFormHeight, false);
-          
-          //SETTING PROPER FORM HEIGHT ONRESIZE
-          window.addEventListener('resize', setFormHeight, false);
-          
-          //changing animation via animation select !!!YOU DON'T NEED THIS CODE (if you want to change animation type, just change form panels data-attr)
-          
-          const setAnimationType = newType => {
-            DOMstrings.stepFormPanels.forEach(elem => {
-              elem.dataset.animation = newType;
-            });
-          };
-          
-          //selector onchange - changing animation
-          const animationSelect = document.querySelector('.pick-animation__select');
-          
-          animationSelect.addEventListener('change', () => {
-      const newAnimationType = animationSelect.value;
-    
-      setAnimationType(newAnimationType);
-    });
-    </script>
 
 
     

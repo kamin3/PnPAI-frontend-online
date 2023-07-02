@@ -219,7 +219,7 @@ opacity: 0;
 visibility: hidden;
 }
 .multisteps-form__panel.js-active {
-height: auto;
+height: 943px;
 opacity: 1;
 visibility: visible;
 }
@@ -604,6 +604,26 @@ h2 {
     height: auto !important;
   }
 }
+
+/* .pnp-first-step{
+  height: 960px !important;
+}
+
+@media (max-width: 1200px){
+  
+  .pnp-first-step{
+    height: 1060px !important;
+  }
+  
+}
+
+@media (max-width: 900px){
+  
+  .pnp-first-step{
+    height: 1360px !important;
+  }
+  
+} */
 
 
 .pnp-connector-modal{
