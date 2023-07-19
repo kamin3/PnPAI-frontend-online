@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Layout</title>
+    <!-- plugins:css -->
+
+    
+    <link rel="shortcut icon" href="./assets/logos/pnp-color-mark.png">
+    
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <link rel="stylesheet" href="assets/css/core.min.css">
+    <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+    
+    <link rel="stylesheet" href="create-model-stye.css">
+    <link rel="stylesheet" href="style-layout.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="createModel.js"></script>
+
+
+  </head>
+
+  <body>
+    <!--  header nav -->
+    <header id="header" class="d-flex align-items-center shadow-xs" style="height:80px;">
+
+      <!-- Navbar -->
+      <div class="container-fluid position-relative">
+
+        <nav class="header-navbar navbar navbar-expand-lg navbar-light justify-content-between header-navbar-collapsed" style="padding-left: 30px;">
+
+          <!-- logo, navigation toggler -->
+          <div class="align-items-start pnp-mobile-logo">
+            
+            <!-- sidebar toggler -->
+            <button class="navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas" style="background: none; border: none;">
+              <span class="fi fi-bars-2 "></span>
+            </button>
+
+            <!-- logo : mobile only -->
+            <a class="navbar-brand d-inline-block d-lg-none mx-2" href="index.html">
+              <img src="assets/logos/pnp-color-logo.svg" width="100" height="38" alt="...">
+            </a>
+
+          </div>
+
+          <!-- navbar : navigation -->
+          <div class="collapse navbar-collapse" id="navbarMainNav">
+
+            <!-- navbar : mobile menu -->
+            <div class="navbar-xs d-none">
+              <!-- close button -->
+
+
+            </div>
+            <!-- /navbar : mobile menu -->
+
+            <!-- -->
+            <ul class="navbar-nav align-items-center" style="width: 75%;">
+              <!-- Search -->
+              <!--
+                <li class="nav-item dropdown col-12">
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1" style="background-color: #f64e60;"><i class="fi fi-search text-white"></i></span>
+                    <input type="text" class="form-control" placeholder="Search.." aria-label="Username" aria-describedby="basic-addon1" class="shadow" >
+                  </div>
+                </li>
+
+              -->
+              <button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation" style="    border-right-color: transparent!important;">
+                <svg width="20" viewBox="0 0 20 20">
+                  <path d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z"></path>
+                </svg>
+              </button>
+            </ul>
+            <!--  -->
+          </div>
+          <!-- /navbar : navigation -->
+
+          <!-- options -->
+          <ul class="list-inline list-unstyled mb-0 d-flex align-items-center ">
+
+            <!-- notifications -->
+            <li class="list-inline-item mx-1 dropdown" style=" padding: 5px;border-radius: 50px;background: #e6e6fd;">
+              <a href="#" id="dropdownNotificationOptions" class="rounded-circle text-primary-hover dropdown-toggle pnp-notify" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true" aria-label="Notifications" style="color: #13226b;">
+                <span class="badge bg-danger pnp-notify-icon-alert">2</span>
+                <!-- svg icon -->
+                <span style="margin-top: -3px;">
+                  <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <path fill="currentColor" d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z"></path>
+                      <rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+                    </g>
+                  </svg>
+                </span>
+              </a>
+              <div aria-labelledby="dropdownNotificationOptions" class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-fadeindown end-0 p-0 mt-2 w-400">
+                <!-- <div class="dropdown-header p-4">1 new notification</div>
+                <div class="dropdown-divider"></div> -->
+                <div class="max-vh-50 scrollable-vertical">
+                  
+                  <!-- <div class="py-5 text-gray-400 text-center">NO ITEMS!</div> -->
+
+                  
+                  <!-- item -->
+                  <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+                    <span class="badge bg-success float-end fw-normal mt-1">new</span>
+                    <!-- icon -->
+                    <div class="float-start avatar avatar-sm rounded-circle bg-success fs-5">
+                      <i class="fi fi-check text-white"></i>
+                    </div>
+
+                    <p class="small fw-bold m-0 text-truncate">Your training has been done</p>
+                    <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+                  </a>
+                  <!-- /item -->
+
+                  <!-- item -->
+                  <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+
+                    <!-- icon -->
+                    <div class="float-start avatar avatar-sm rounded-circle bg-danger fs-5">
+                      <i class="fi fi-close text-white"></i>
+                    </div>
+
+                    <p class="small fw-bold m-0 text-truncate">An error occured!</p>
+                    <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+
+                  </a>
+                  <!-- /item -->
+
+                    <!-- item -->
+                    <!-- <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+                    
+                      <span class="badge bg-success float-end fw-normal mt-1">new</span>
+  
+                      
+                      <div class="float-start avatar avatar-sm rounded-circle bg-gray-200 fs-5">
+                        <i class="fi fi-cart-1"></i>
+                      </div>
+  
+                      <p class="small fw-bold m-0 text-truncate">2 new orders</p>
+                      <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+  
+                    </a> -->
+                    <!-- /item -->
+                    
+                  <!-- item -->
+                  <!-- <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+                  
+                    <div class="float-start avatar avatar-sm rounded-circle bg-gray-200 fs-5">
+                      <i class="fi fi-shield-ok"></i>
+                    </div>
+
+                    <p class="small fw-bold m-0 text-truncate">AI self repair success!</p>
+                    <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+                  </a> -->
+                  <!-- /item -->
+
+
+                </div>
+              </div>
+
+            </li>
+            <!-- Account Settings -->
+            <li class=" ms-4 list-inline-item mx-1 dropdown" >
+
+              <a role="button" href="#" id="dropdownAccountOptions" class="rounded-circle text-primary-hover dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true" aria-label="Messages">
+                <!-- Account Img -->
+                <div class="d-flex align-items-center" >
+                  <img src="assets/img/300-1.jpg" width="50px" style="border-radius:50%; box-shadow: 8px 4px 12px rgb(0 0 0 /18%)!important;" >
+                  <div class="ms-2 d-flex text-truncate">
+                    <p class="m-0 fw-bold" style="color:#13226b">Kareem Amin</p>
+                    <i class="fi fi-arrow-down ms-2" ></i>
+                  </div>
+                </div>
+              </a>
+              <div aria-labelledby="dropdownAccountOptions" class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-fadeindown p-0 mt-2 w-300">
+                <!-- user detail -->
+                <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4" style="background-color: #13226b;">
+                  <span class="d-block fw-medium text-truncate">Kareem AMin</span>
+                  <span class="d-block smaller fw-medium text-truncate">kareem.amin@gmail.com</span>
+                  <span class="d-block smaller"><b>Last Login:</b> 2019-09-03 01:48</span>
+                </div>
+                <div class="dropdown-divider mb-3"></div>
+
+                <a href="#" class="dropdown-item text-truncate">
+                  <span class="fw-medium">My Profile</span>
+                  <small class="d-block text-muted smaller">account settings and more</small>
+                </a>
+
+                <!-- <a href="#" class="dropdown-item text-truncate">
+                  <small class="badge bg-success-soft float-end">1 new</small>
+                  <span class="fw-medium">My Messages</span>
+                  <small class="d-block text-muted smaller">inbox, projects, tasts</small>
+                </a> -->
+
+                <a href="#" class="dropdown-item text-truncate">
+                  <small class="badge bg-danger-soft float-end">2 days left</small>
+                  <span class="fw-medium">My Subscription</span>
+                  <small class="d-block text-muted smaller">your monthly billing</small>
+                </a>
+
+                <!-- <a href="#" class="dropdown-item text-truncate">
+                  <span class="fw-medium">Account Settings</span>
+                  <small class="d-block text-muted smaller">profile, password and more...</small>
+                </a> -->
+
+                <!-- <a href="#" class="dropdown-item text-truncate">
+                  <span class="fw-medium">Upgrade</span>
+                  <small class="d-block text-muted smaller">upgrade your account</small>
+                </a> -->
+
+                <div class="dropdown-divider mb-0 mt-3"></div>
+
+                <a href="#" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore fw-medium py-3 px-4">
+                  <i class="fi fi-power float-start"></i>
+                  Log Out
+                </a>
+              </div>
+
+            </li>
+
+            <!-- navigation toggler (mobile) -->
+            <li class="list-inline-item d-inline-block d-lg-none">
+              <button class="btn p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fi fi-search m-0"></i>
+              </button>
+            </li>
+
+          </ul>
+          <!-- /options -->
+
+
+        </nav>
+
+      </div>
+      <!-- /Navbar -->
+
+    </header>
+    <!-- /Header -->
+    
+    <div class="container-scroller">
+      <!-- sidebar -->
+      <nav class="sidebar sidebar-offcanvas shadow z-index-100" id="sidebar">
+
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center" style="position: absolute; top:-80px">
+          <a class="sidebar-brand brand-logo"><img src="assets/logos/pnp-color-logo.png" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini"><img src="assets/logos/pnp-color-mark.png" alt="logo" /></a>
+        </div>
+
+        <ul class="nav">
+          <button class="align-self-center border-0 bg-white mb-4" type="button" data-toggle="minimize">
+            <span class="fi fi-bars-2 text-dark"></span>
+          </button>
+          
+          <li class="nav-item menu-items mb-3 ">
+            <a class="nav-link" href="pnp-main-page.html">
+              <span class="menu-icon">
+                <i class="fi fi-shape-squared-unequal"></i>
+              </span>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items mb-3 active">
+            <a class="nav-link" href="pnp-models-page.html">
+              <span class="menu-icon">
+                <i class="fi fi-squared-graph"></i>
+              </span>
+              <span class="menu-title">Org.</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items mb-3">
+            <a class="nav-link" href="pnp-connectors-page.html">
+              <span class="menu-icon">
+                <i class="fi fi-shape-3dots"></i>
+              </span>
+              <span class="menu-title">Teams</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items mb-3">
+            <a class="nav-link" href="pnp-connectors-page.html">
+              <span class="menu-icon">
+                <i class="fi fi-shape-3dots"></i>
+              </span>
+              <span class="menu-title">Use Cases</span>
+            </a>
+          </li>
+
+          <li class="nav-item menu-items mb-3">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
+              <span class="menu-icon">
+                <i class="fi fi-support-headphones"></i>
+              </span>
+              <span class="menu-title">Support Center</span>
+              <i class="fi fi-arrow-down ms-4"></i>
+            </a>
+            <div class="collapse" id="ui-basic2">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pnp-support-center-page.html">Overview</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pnp-ticket-page.html">Tickets</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Tutorial</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">FAQ</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">License</a></li>
+                <li class="nav-item"> <a class="nav-link" href="">Contact Us</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item menu-items mb-3">
+            <a class="nav-link" href="">
+              <span class="menu-icon">
+                <i class="fi fi-folder-full"></i>
+              </span>
+              <span class="menu-title">Documentation</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="page-body-wrapper">    
+        <!-- main-panel ends -->    
+        <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding:20px;">
+          
+
+          <div class="card mb-4">
+
+            <div class="card-header py-5 text-white" style="background-color: #13226b;" >
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <strong class="w-100 d-flex align-items-center h5 mb-0 fw-bold">
+                      <span>PnP Company Name</span>
+                  </strong> 
+                  <p class="mt-2" > kareem_amin@pnp.ai </p>
+                </div>
+                <a class="text-white rounded p-3" style="background-color: #021850;">
+                  <i class="fi fi-pencil"></i>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="card-body">
+              
+              <div class="row mb-4">
+                <div class="col-lg-4 small">
+                  <p class="mb-0 fw-bold">Country</p>
+                  <p class="mb-0">Netherlands</p>
+                </div>
+                <div class="col-lg-4 small">
+                  <p class="mb-0 fw-bold">Mobile</p>
+                  <p class="mb-0">E-commerce</p>
+                </div>
+
+                <!-- address detail -->
+                <div class="col-lg-4 small">
+                  <p class="mb-0 fw-bold">Joined Date</p>
+                  <p class="mb-0">12-06-2023</p>
+                </div>
+
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="card mb-3">
+            <div class="card-body p-lg-4">
+            
+              <div class="row g-4 position-relative">
+                  <div class="d-flex link-normal fw-medium stretched-link justify-content-between">
+                    <span class="d-block">
+                      <b>Subscription no</b>: 2455
+                    </span>
+                    
+                    <div class="text-end">
+                      <span class="d-block text-success">Ongoing</span>
+                    </div>
+                    
+                  </div>
+                <div class="row mb-4 mt-4">
+                  <div class="col-lg-4 small">
+                    <p class="mb-0 fw-bold">Subscription Type</p>
+                    <p class="mb-0">Monthly</p>
+                  </div>
+                  <div class="col-lg-4 small">
+                    <p class="mb-0 fw-bold">Activation Date</p>
+                    <p class="mb-0">13-7-2023</p>
+                  </div>
+  
+                  <!-- address detail -->
+                  <div class="col-lg-4 small">
+                    <p class="mb-0 fw-bold">Expiry Date</p>
+                    <p class="mb-0">12-08-2023</p>
+                  </div>
+  
+                </div>
+              </div>
+
+            </div>
+          </div>
+        
+          
+        </main>
+        <!-- main-panel ends -->
+      </div>    
+
+    </div>
+      <!-- page-body-wrapper ends -->
+
+
+    <script src="assets/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/layout.js"></script>
+
+    
+    <!-- Core javascripts -->
+    <script src="assets/js/core.min.js"></script>
+    <script src="assets/js/vendor_bundle.min.js"></script>
+    <script src="assets/js/vendor.datatables.js"></script>
+
+
+    
+
+    <!-- Your custom javascripts -->
+  </body>
+</html>

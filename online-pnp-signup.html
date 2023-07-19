@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Smarty v5</title>
+    <meta name="description" content="...">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=5, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+    <!-- up to 10% speed up for external res -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <!-- preloading icon font is helping to speed up a little bit -->
+    <link rel="preload" href="assets/fonts/flaticon/Flaticon.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/core.min.css">
+    <link rel="stylesheet" href="assets/css/vendor_bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="demo.files/logo/icon_512x512.png">
+
+    <link rel="manifest" href="assets/images/manifest/manifest.json">
+    <meta name="theme-color" content="#377dff">
+
+    <link rel="stylesheet" href="create-model-stye.css">
+  </head>
+  <body>
+
+    <div class="row g-0 bg-danger min-vh-100 align-items-center">
+      <div class="col-lg-12 text-center text-lg-start overflow-hidden z-index-2">
+        <div class="px-3 py-6">
+
+          <!-- back button -->
+          
+    
+          <div class="">
+            <div class="container bg-white p-6 shadow-lg rounded-2"  >
+              <div class="d-flex flex-column align-items-center " >
+                <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
+  
+                <h1 class="fw-bold mb-5 mt-5">Sign Up</h1>
+                
+                <p class="small mb-3 pb-3 border-bottom text-dark">
+                  Thank you for choosing <span class="fw-bold" style="color: crimson;">PnP.ai 's</span> plug-and-play AI solutions. Please fill out the form below to get started on your AI journey. 
+                </p>
+
+              </div>
+
+              
+              <form novalidate class="bs-validate" method="POST" action="#">
+
+                <div class="row g-3 mb-3">
+
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input required placeholder="Full Name" id="account_full_name" name="account_first_name" type="text" class="form-control">
+                      <label for="account_first_name">Full Name</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input required placeholder="Job Title" id="account_job_title" name="account_job_title" type="text" class="form-control">
+                      <label for="account_last_name">Job Title</label>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input required placeholder="Company Name" id="account_company_name" name="account_company_name" type="text" class="form-control">
+                      <label for="account_last_name">Company Name</label>
+                    </div>
+                  </div>
+                        
+                  <div class="col-12">
+                    <select  required class="form-select form-select-lg" aria-label="Default select example">
+                      <option value="">Industry</option>
+                      <option value="1">E-commerce</option>
+                      <option value="2">Healthcare</option>
+                      <option value="3">Manufacturing</option>
+                      <option value="4">Cross-industry (Generic)</option>
+                      <option value="5">Marketing and Advertising</option>
+                      <option value="1">Retail</option>
+                      <option value="2">Banking</option>
+                      <option value="3">Telecommunication</option>
+                    </select>
+                  </div>
+                  
+                </div>
+
+                  <div class="form-floating mb-3">
+                    <input required placeholder="Email" id="account_email" name="account_email" type="email" class="form-control">
+                    <label for="account_email">Email</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input required placeholder="Phone Number" id="account_phone_number" name="account_email" type="number" class="form-control">
+                    <label for="account_phone">Phone Number</label>
+                  </div>
+
+
+                  <div class="input-group-over">
+                    <div class="form-floating mb-3">
+                      <input required placeholder="Password" id="account_password" type="password" class="form-control">
+                      <label for="account_password">Password</label>
+                    </div>
+
+                    <!-- `SOW : Form Advanced` plugin used -->
+                    <a href="#" class="btn smaller btn-password-type-toggle" data-target="#account_password">
+                      <span class="group-icon">
+                        <i class="fi fi-eye m-0"></i>
+                        <i class="fi fi-close m-0"></i>
+                      </span>
+                    </a>
+
+                  </div>
+                  <div id="error-message" class="error-message" style="font-size: 12px;
+                  margin-left: 12px;
+                  /* padding: 10px 20px; */
+                  color: red;
+                  margin-bottom: 30px; text-align: left;"></div>
+
+
+                <div class="mb-4">
+                  <h6 class="mb-4 fw-normal">Preferred Contact Method: </h6>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input form-check-input-default" type="checkbox" id="Checkbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1" >Email </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input form-check-input-default" type="checkbox" id="Checkbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2" >Phone</label>
+                  </div>
+                </div>
+
+                <!--
+
+                  <div class="mb-4">
+                    <h6 class="mb-4 fw-normal">AI Use Case of Interest: </h6>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <label class="form-check-label" for="inlineCheckbox1" >Ecommerce  </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" id="inlineCheckbox2" value="option2">
+                      <label class="form-check-label" for="inlineCheckbox2" >Retail </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" id="inlineCheckbox3" value="option3">
+                      <label class="form-check-label" for="inlineCheckbox2" >Healthcare </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" id="inlineCheckbox4" value="option4">
+                      <label class="form-check-label" for="inlineCheckbox2" >Finance </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input form-check-input-primary" type="checkbox" id="inlineCheckbox5" value="option5">
+                      <label class="form-check-label" for="inlineCheckbox2" >Other</label>
+                    </div>
+                  </div>
+                -->
+
+
+                  <!-- GDPR CONSENT -->
+                  <div class="mb-3 border p-3 rounded">
+                    <div class="form-check">
+                      <input required class="form-check-input" id="contact_gdpr" name="contact_gdpr" type="checkbox" value="1">
+                      <label class="form-check-label" for="contact_gdpr">
+                        I do accept PnP <a class="text-decoration-none" href="" target="_blank">terms & conditions</a>.
+                      </label>
+                    </div>
+                  </div>
+                  <!-- /GDPR CONSENT -->
+
+                <!-- submot button -->
+                <div class="d-grid mb-4">
+                  <button type="submit" class="btn btn-primary" onclick="validatePassword()">
+                    <span>Sign Up</span>
+                   </button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/core.min.js"></script>
+    <script>
+
+
+        function validatePassword() {
+              var password = document.getElementById('account_password').value;
+              var errorContainer = document.getElementById('error-message');
+              var errorMessages = [];
+
+            
+              // Reset error container
+              errorContainer.innerHTML = '';
+
+              // Check if the password meets the required criteria
+              if (!/[A-Z]/.test(password)) {
+                errorMessages.push('Password must contain at least one uppercase letter.');
+              }
+              if (!/[0-9]/.test(password)) {
+                errorMessages.push('Password must contain at least one digit.');
+              }
+              if (!/[!@#$%^&*]/.test(password)) {
+                errorMessages.push('Password must contain at least one special character (!@#$%^&*).');
+              }
+              if (password.length < 8) {
+                errorMessages.push('Password must be at least 8 characters long.');
+              }
+
+              // Display the error messages if any
+              if (errorMessages.length > 0) {
+                errorContainer.innerHTML = errorMessages.join('<br>');
+              } else {
+                errorContainer.innerHTML = '';
+              }
+            }
+
+            function clearError() {
+              var errorContainer = document.getElementById('error-message');
+              errorContainer.innerHTML = '';
+            }
+
+    </script>
+    
+  </body>
+</html>
