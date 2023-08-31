@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docker Run Command</title>
+  <!-- Add tippy.js and tippy.css -->
+  <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/tippy.js@6.3.1/dist/tippy.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    pre {
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .copy-btn {
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>Run Docker Container</h3>
+    <pre class="pnp-pre"><code class="text-white">docker run -d -p 5200:5200 <br> --name pnpai-churn quay.io/pnpai-customer-churn:latest</code></pre>
+    <button class="copy-btn">Copy</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const copyButton = document.querySelector('.copy-btn');
+      const codePre = document.querySelector('.pnp-pre');
+
+      copyButton.addEventListener('click', function() {
+        // Copy the content of the code block to the clipboard
+        const textToCopy = codePre.textContent;
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          // Show the tooltip with "Copied" content
+          tippy(copyButton, {
+            content: 'Copied!',
+            trigger: 'manual',
+            placement: 'bottom',
+            arrow: true,
+            duration: 1000,
+          }).show();
+        }).catch(function(error) {
+          console.error('Unable to copy to clipboard:', error);
+        });
+      });
+    });
+  </script>aa
+</body>
+</html>

@@ -341,10 +341,10 @@
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding-top: 35px; padding: 20px;">
           
 
-          <nav class="nav-deep nav-deep-light nav-deep-hover nav-deep-xs nav-deep-bordered	bordered links bg-white p-5">
+          <nav class="nav-deep nav-deep-light nav-deep-hover nav-deep-xs links p-5">
             <ul class="nav flex-column">
           
-              <li class="nav-item">
+              <li class="nav-item pnp-nav-accord-teams shadow">
                 <a class="nav-link" href="#">
                   <span class="group-icon float-end">
                     <i class="fi fi-arrow-end-slim"></i>
@@ -353,11 +353,11 @@
                   Developers
                 </a>
           
-                <ul class="nav flex-column">
+                <ul class="nav flex-column p-0">
           
-                  <li class="nav-item">
+                  <li class="nav-item ">
                     <a class="nav-link " href="">
-                      <table class="table-datatable table table-bordered table-hover table-striped"
+                      <table class="table-datatable table table-bordered table-hover table-striped pnp-teams-table"
                       data-lng-empty="No data available in table"
                       data-lng-page-info="Showing _START_ to _END_ of _TOTAL_ entries"
                       data-lng-filtered="(filtered from _MAX_ total entries)"
@@ -400,110 +400,106 @@
                       <thead>
                         <tr>
                           <th>Name</th>
-                          <th>Position</th>
-                          <th>Office</th>
-                          <th>Age</th>
-                          <th>Start date</th>
-                          <th>Salary</th>
+                          <th>Title</th>
+                          <th>Email</th>
+                          <th>Passowrd</th>
+                          <th>Action</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Tiger Nixon</td>
-                          <td>System Architect</td>
-                          <td>Edinburgh</td>
-                          <td>61</td>
-                          <td>2011/04/25</td>
-                          <td>$320,800</td>
-                        </tr>
-                        <tr>
-                          <td>Garrett Winters</td>
-                          <td>Accountant</td>
-                          <td>Tokyo</td>
-                          <td>63</td>
-                          <td>2011/07/25</td>
-                          <td>$170,750</td>
-                        </tr>
-                        <tr>
-                          <td>Ashton Cox</td>
-                          <td>Junior Technical Author</td>
-                          <td>San Francisco</td>
-                          <td>66</td>
-                          <td>2009/01/12</td>
-                          <td>$86,000</td>
-                        </tr>
-                        <tr>
-                          <td>Cedric Kelly</td>
-                          <td>Senior Javascript Developer</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2012/03/29</td>
-                          <td>$433,060</td>
-                        </tr>
-                        <tr>
-                          <td>Airi Satou</td>
-                          <td>Accountant</td>
-                          <td>Tokyo</td>
-                          <td>33</td>
-                          <td>2008/11/28</td>
-                          <td>$162,700</td>
-                        </tr>
-                        <tr>
-                          <td>Brielle Williamson</td>
-                          <td>Integration Specialist</td>
-                          <td>New York</td>
-                          <td>61</td>
-                          <td>2012/12/02</td>
-                          <td>$372,000</td>
-                        </tr>
-                        <tr>
-                          <td>Herrod Chandler</td>
-                          <td>Sales Assistant</td>
-                          <td>San Francisco</td>
-                          <td>59</td>
-                          <td>2012/08/06</td>
-                          <td>$137,500</td>
-                        </tr>
-                        <tr>
-                          <td>Rhona Davidson</td>
-                          <td>Integration Specialist</td>
-                          <td>Tokyo</td>
-                          <td>55</td>
-                          <td>2010/10/14</td>
-                          <td>$327,900</td>
-                        </tr>
-                        <tr>
-                          <td>Colleen Hurst</td>
-                          <td>Javascript Developer</td>
-                          <td>San Francisco</td>
-                          <td>39</td>
-                          <td>2009/09/15</td>
-                          <td>$205,500</td>
-                        </tr>
-                        <tr>
-                          <td>Sonya Frost</td>
+                          <td>Adam Nixon</td>
                           <td>Software Engineer</td>
-                          <td>Edinburgh</td>
-                          <td>23</td>
-                          <td>2008/12/13</td>
-                          <td>$103,600</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Jena Gaines</td>
-                          <td>Office Manager</td>
-                          <td>London</td>
-                          <td>30</td>
-                          <td>2008/12/19</td>
-                          <td>$90,560</td>
+                          <td>Adam Nixon</td>
+                          <td>Software Engineer</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
                         </tr>
                         <tr>
-                          <td>Quinn Flynn</td>
-                          <td>Support Lead</td>
-                          <td>Edinburgh</td>
-                          <td>22</td>
-                          <td>2013/03/03</td>
-                          <td>$342,000</td>
+                          <td>Adam Nixon</td>
+                          <td>Software Engineer</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
                         </tr>
+                        <tr>
+                          <td>Adam Nixon</td>
+                          <td>Software Engineer</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Adam Nixon</td>
+                          <td>Software Engineer</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Adam Nixon</td>
+                          <td>Software Engineer</td>
+                          <td>nixon.adam@pnp.ai</td>
+                          <td>61dk522</td>
+                          <td class="d-flex justify-content-between">
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#editTeamMemberModal">
+                              <i class="fi fi-pencil"></i>
+                            </a>
+
+                            <a class=" text-truncate" href="#" data-bs-toggle="modal" data-bs-target="#deleteTeamInfoModal">
+                                <i class="fi fi-thrash text-danger"></i>                              
+                            </a>
+                          </td>
+                        </tr>
+                        
+                       
 
                       </tbody>
                   
@@ -515,7 +511,7 @@
           
               </li>
           
-              <li class="nav-item">
+              <li class="nav-item pnp-nav-accord-teams shadow">
                 <a class="nav-link" href="#">
                   <span class="group-icon float-end">
                     <i class="fi fi-arrow-end-slim"></i>
@@ -541,6 +537,112 @@
         <!-- main-panel ends -->
       </div>    
 
+
+      <div class="modal fade" id="editTeamMemberModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLg" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabelLg">Edit Info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+      
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="member-name" value="Adam Nixon">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="member-email" value="nixon.adam@pnp.ai">
+              </div>
+              <div class="mb-3">
+                <label for="member-title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="member-title" value="Software Engineer">
+              </div>
+            </div>
+
+            <label class="d-flex align-items-center mb-3 ms-4">
+              <input class="d-none-cloaked" type="checkbox" name="switch-checkbox" value="1" id="toggleInput">
+              <i class="switch-icon"></i>
+              <span class="px-3 user-select-none">Change Passowrd</span>
+            </label>
+            <div>
+
+            </div>
+
+            <div id="inputFieldContainer" style="display: none;" class="p-3">
+              <div class="input-group-over">
+                <div class="form-floating mb-3">
+                  <input required placeholder="Password" id="account_password" type="password" class="form-control">
+                  <label for="account_password">New Password</label>
+                </div>
+                <a href="#" class="btn smaller btn-password-type-toggle" data-target="#account_password">
+                  <span class="group-icon">
+                    <i class="fi fi-eye m-0"></i>
+                    <i class="fi fi-close m-0"></i>
+                  </span>
+                </a>
+              </div>
+              
+              <div class="input-group-over">
+                <div class="form-floating mb-3">
+                  <input required placeholder="Password" id="confirm_password" type="password" class="form-control">
+                  <label for="confirm_password">Confirm Password</label>
+                </div>
+                <a href="#" class="btn smaller btn-password-type-toggle" data-target="#confirm_password">
+                  <span class="group-icon">
+                    <i class="fi fi-eye m-0"></i>
+                    <i class="fi fi-close m-0"></i>
+                  </span>
+                </a>
+              </div>
+        
+            </div>
+      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="saveMemberInfo">
+                <i class="fi fi-check"></i>
+                Save changes
+              </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                <i class="fi fi-close"></i>
+                Close
+              </button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="deleteTeamInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLg" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabelLg">Delete Info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+      
+            <div class="modal-body">
+              Are you sure you want to delete this data 
+            </div>
+      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="deleteMemberInfo">
+                <i class="fi fi-check"></i>
+                Delete
+              </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                <i class="fi fi-close"></i>
+                Close
+              </button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+
     </div>
       <!-- page-body-wrapper ends -->
 
@@ -560,3 +662,36 @@
     <!-- Your custom javascripts -->
   </body>
 </html>
+
+
+
+<script>
+  document.getElementById('toggleInput').addEventListener('change', function () {
+    const inputFieldContainer = document.getElementById('inputFieldContainer');
+    if (this.checked) {
+      inputFieldContainer.style.display = 'block';
+    } else {
+      inputFieldContainer.style.display = 'none';
+    }
+  });
+</script>
+
+
+<script>
+  $(document).on('click', '#saveMemberInfo', function(e) {
+  swal(
+    'Success',
+    'Your data have been saved',
+    'success'
+  )
+});
+
+
+$(document).on('click', '#deleteMemberInfo', function(e) {
+  swal(
+    'Success',
+    'Your data have been deleted',
+    'success'
+  )
+});
+</script>

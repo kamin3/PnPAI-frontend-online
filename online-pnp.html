@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Main Online Dashboard</title>
+    <title>Online Onboarding</title>
     <!-- plugins:css -->
 
     
@@ -342,24 +342,280 @@
       <div class="page-body-wrapper">    
         <!-- main-panel ends -->    
         <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding:35px 20px;">
-          
-            <!-- <img src="./assets//logos/pnp-color-logo.png" width="150" class="mb-4" > -->
-            <p class="bg-red fw-bold fs-3"> Welcome to your dashboard</p>
 
-            <a class="shadow-md rounded text-center border-0 pnp-new-btn mt-3"  href="./online-pnp.html"  style="width: 280px;">
-                <span class="d-inline-flex align-items-center justify-content-center bg-light text-gray-900 rounded-circle" style="width:35px;height:35px;margin-right: 20px;" >
-                  <i class="fi fi-folder-empty" style="font-size: 25px;color: #2d3e93;font-weight: bold !important;"></i>
-                </span>
-                <p class=" m-0">Select Usecase</p>
-              </a>        
+          <div style=" margin-top:20px">
+
+              <div  id="usecases-container"  class=" rounded-2 shadow-lg pnp-usecases-online-container" style="height:100% !important">
+    
+                <div  class="pnp-use-cases-container row ">
+                  <p class="mb-3">E-commerece Use Cases :</p>
+              
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase26">
+                      <p class="">Personalized Recommendations - Product-based</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase27">
+                      <p class="">Personalized Recommendations - User-based</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase28">
+                      <p class="">Customer Segmentation</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase29">
+                      <p class="">Customer Churn Prediction</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase30">
+                      <p class="">Customer Sentiment Analysis</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase31">
+                      <p class="">Price Optimization</p>
+                    </button>
+                  </div>
+              
+                </div>
+    
+                <div  class="pnp-use-cases-container row">
+                  <p class="mb-3">Cross Industry Usecases :</p>     
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase30">
+                      <p class="">Text Classification and Categorization</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase31">
+                      <p class="">Text Summarization</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase32">
+                      <p class="">Entity Recognition Mapping</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase33">
+                      <p class="">Sentiment Analysis</p>
+                    </button>
+                  </div>
+                </div>
+    
+                <div  class="pnp-use-cases-container row">
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase30">
+                      <p class="">Object Detection</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase31">
+                      <p class="">Image enhancement</p>
+                    </button>
+                  </div>
+                  <div class="col-lg-4 col-md-6 usecase-card">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option" id="useCase32">
+                      <p class="">Entity Recognition Mapping</p>
+                    </button>
+                  </div>
+                </div>   
+                
+                <div class="row" >
+                  <div>
+                    <button id="step-one-next-btn" type="button" class="btn btn-primary m-4 float-end" >
+                      Generate your token
+                    </button>
+                  </div>
+                </div>
+              </div>
+    
+              <div   id="token-container" class="rounded-2 shadow-lg pnp-token-online-container" >
+    
+                
+                <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+                  <h3>Token Generation</h3>
+                  <p class="mb-5">In order to enhance security and provide you with seamless access to our resources, we will generate a unique token for you. This token will serve as your credential to pull Docker images from our repository. Rest assured, your data and interactions are of utmost importance to us, and this token ensures a secure connection.</p>
+                  <div style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
+                    <button id="copy-token-btn" class="copy-btn">Copy</button>
+                </div>
+                <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdW</code></pre>
+            
+                </div>
+    
+                <div style="width: 100%;" class="d-flex justify-content-between">
+                  <button id="step-one-back-btn" type="button" class="btn btn--outline-primary m-4 " >
+                    back
+                    </button>
+                  <button id="step-two-next-btn"  type="button" class="btn btn-primary m-4 " >
+                    Next Step
+                  </button>
+                </div>
+              </div>
+    
+              <div  id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container" >
+                <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+                  <h3>Pulling Your  Images</h3>
+                  <p class="mb-5">Once you have your token ready, you'll be all set to dive into the exciting world of Docker images. In the next step, we'll walk you through the process of pulling an image using the token you've been provided. This will empower you to harness the power of containerization and unlock the potential of our platform.</p>
+                  <div style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
+                    <button id="copy-commands-btn" class="copy-btn">Copy</button>
+                  </div>
+                  <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white"> curl -X POST \-H "Content-Type: application/json" \-d '{"key": "value"}' \https://example.com/api/endpoint</code> </pre>
+                </div>
+    
+                <div style="width: 100%;" class="d-flex justify-content-between">
+                  <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4">
+                    back
+                    </button>
+                  <button id="step-three-next-btn" type="button" class="btn btn-primary m-4">
+                    Finish
+                  </button>
+                </div>
+              </div>
+    
+              <div id="loading-container" class="rounded-2 shadow-lg pnp-loading-online-container" >
+                <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+                  <h3>We're excited to have you join our platform.</h3>
+                  <p class="mb-5">As you embark on your user journey, we want to guide you through the initial steps of getting started.</p>
+    
+    
+                </div>
+    
+                <div style="width: 100%;" class="d-flex justify-content-between">
+                  <a type="button" class="btn btn-primary m-4" href="./online-pnp-main.html">
+                    Go to Dashboard
+                  </a>
+                </div>
+              </div>
+          </div>
+
+          
           
         </main>
         <!-- main-panel ends -->
       </div>    
 
-    </div>
-      <!-- page-body-wrapper ends -->
+    </div>\
 
+    <!-- // jQuery function to handle onboarding steps -->
+    <script> 
+      $(document).ready(function() {
+        $('#step-one-next-btn').click(function() {
+          $("#usecases-container").css("display", "none");
+          $("#token-container").css("display", "block");   
+        });
+
+        $('#step-one-back-btn').click(function() {
+          $("#token-container").css("display", "none");
+          $("#usecases-container").css("display", "block");   
+        });
+
+
+        $('#step-two-next-btn').click(function() {
+          $("#token-container").css("display", "none");
+          $("#commands-container").css("display", "block");   
+        });
+
+        $('#step-two-back-btn').click(function() {
+          $("#commands-container").css("display", "none");
+          $("#token-container").css("display", "block");   
+        });
+
+        $('#step-three-next-btn').click(function() {
+          $("#commands-container").css("display", "none");
+          $("#loading-container").css("display", "block");   
+        });
+
+    });
+    </script>
+
+    <!-- copy token function -->
+    <script>
+      $(document).ready(function() {
+          $("#copy-token-btn").click(function() {
+              // Select the text within the <code> element with the class 'pnp-token-code'
+              var textToCopy = $(".pnp-token-code code").text();
+
+              // Create a new text area element to hold the text temporarily
+              var textArea = document.createElement("textarea");
+              textArea.value = textToCopy;
+
+              // Append the text area element to the document
+              document.body.appendChild(textArea);
+
+              // Select the text within the text area
+              textArea.select();
+
+              // Copy the selected text to the clipboard
+              document.execCommand("copy");
+
+              // Remove the text area element from the document
+              document.body.removeChild(textArea);
+
+              // Show a tooltip or any other visual feedback to indicate that the text has been copied
+              $("#copy-token-btn").attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Copied to clipboard").tooltip("show");
+
+              // Hide the tooltip after a short delay (e.g., 2 seconds)
+              setTimeout(function() {
+                  $("#copy-token-btn").tooltip("hide");
+              }, 2000);
+          });
+      });
+
+
+    </script>
+
+    <!-- copy token function -->
+    <script>
+      $(document).ready(function() {
+          $("#copy-commands-btn").click(function() {
+              // Select the text within the <code> element with the class 'pnp-commands-code'
+              var textToCopy = $(".pnp-commands-code code").text();
+
+              // Create a new text area element to hold the text temporarily
+              var textArea = document.createElement("textarea");
+              textArea.value = textToCopy;
+
+              // Append the text area element to the document
+              document.body.appendChild(textArea);
+
+              // Select the text within the text area
+              textArea.select();
+
+              // Copy the selected text to the clipboard
+              document.execCommand("copy");
+
+              // Remove the text area element from the document
+              document.body.removeChild(textArea);
+
+              // Show a tooltip or any other visual feedback to indicate that the text has been copied
+              $("#copy-commands-btn").attr("data-toggle", "tooltip").attr("data-placement", "top").attr("title", "Copied to clipboard").tooltip("show");
+
+              // Hide the tooltip after a short delay (e.g., 2 seconds)
+              setTimeout(function() {
+                  $("#copy-commands-btn").tooltip("hide");
+              }, 2000);
+          });
+      });
+
+
+    </script>
+
+    <!-- // jQuery function to handle the use case button selection -->
+    <script>
+      $(document).ready(function() {
+        $('.pnp-usecase-option').click(function() {
+          // Remove the class from all use case buttons
+          $('.pnp-usecase-option').removeClass('pnp-usecase-option-selected');
+          // Add the class to the clicked use case button
+          $(this).addClass('pnp-usecase-option-selected');
+        });
+      });
+    </script>
 
     <script src="assets/js/vendor.bundle.base.js"></script>
     <script src="assets/js/layout.js"></script>
