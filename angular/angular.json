@@ -33,11 +33,13 @@
               }
             ],
             "styles": [
-              "src/styles.css",
               "src/assets/css/core.min.css",
-              "src/assets/css/vendor_bundle.min.css"
+              "src/assets/css/vendor_bundle.min.css",
+              "src/styles.css"
             ],
             "scripts": [
+              "src/assets/js/jquery-3.6.0.min.js",
+              "src/assets/js/vendor.bundle.base.js",
               "src/assets/js/core.min.js",
               "src/assets/js/vendor_bundle.min.js",
               "src/assets/js/vendor.datatables.min.js",

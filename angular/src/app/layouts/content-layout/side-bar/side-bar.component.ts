@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { CONFIG } from '@app/shared/configs';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-side-bar',
+  templateUrl: './side-bar.component.html',
+  styleUrls: ['./side-bar.component.css']
 })
-export class NavComponent implements OnInit {
+export class SideBarComponent implements OnInit {
 
   navItems = [
     { link: CONFIG.dashboard.children.home.route, title: CONFIG.dashboard.children.home.name },

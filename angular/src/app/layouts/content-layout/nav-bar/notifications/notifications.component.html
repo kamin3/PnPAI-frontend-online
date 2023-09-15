@@ -1,0 +1,55 @@
+<!-- notifications -->
+<li class="list-inline-item mx-1 dropdown" style=" padding: 5px;border-radius: 50px;background: #e6e6fd;">
+    <a href="#" id="dropdownNotificationOptions" class="rounded-circle text-primary-hover dropdown-toggle pnp-notify"
+        data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
+        aria-label="Notifications" style="color: #13226b;">
+        <span class="badge bg-danger pnp-notify-icon-alert">2</span>
+        <!-- svg icon -->
+        <span style="margin-top: -3px;">
+            <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <path fill="currentColor"
+                        d="M17,12 L18.5,12 C19.3284271,12 20,12.6715729 20,13.5 C20,14.3284271 19.3284271,15 18.5,15 L5.5,15 C4.67157288,15 4,14.3284271 4,13.5 C4,12.6715729 4.67157288,12 5.5,12 L7,12 L7.5582739,6.97553494 C7.80974924,4.71225688 9.72279394,3 12,3 C14.2772061,3 16.1902508,4.71225688 16.4417261,6.97553494 L17,12 Z">
+                    </path>
+                    <rect fill="#000000" opacity="0.3" x="10" y="16" width="4" height="4" rx="2"></rect>
+                </g>
+            </svg>
+        </span>
+    </a>
+    <div aria-labelledby="dropdownNotificationOptions"
+        class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-fadeindown end-0 p-0 mt-2 w-400">
+        <!-- <div class="dropdown-header p-4">1 new notification</div>
+        <div class="dropdown-divider"></div> -->
+        <div class="max-vh-50 scrollable-vertical">
+
+            <!-- <div class="py-5 text-gray-400 text-center">NO ITEMS!</div> -->
+
+
+            <!-- item -->
+            <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+                <span class="badge bg-success float-end fw-normal mt-1">new</span>
+                <!-- icon -->
+                <div class="float-start avatar avatar-sm rounded-circle bg-success fs-5">
+                    <i class="fi fi-check text-white"></i>
+                </div>
+
+                <p class="small fw-bold m-0 text-truncate">Your training has been done</p>
+                <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+            </a>
+            <!-- /item -->
+
+            <!-- item -->
+            <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+
+                <!-- icon -->
+                <div class="float-start avatar avatar-sm rounded-circle bg-danger fs-5">
+                    <i class="fi fi-close text-white"></i>
+                </div>
+
+                <p class="small fw-bold m-0 text-truncate">An error occured!</p>
+                <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
+
+            </a>
+        </div>
+    </div>
+</li>
