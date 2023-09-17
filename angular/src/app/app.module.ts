@@ -9,7 +9,8 @@ import { SideBarComponent } from '@app/layouts/content-layout/side-bar/side-bar.
 import { SharedModule } from '@shared/shared.module';
 import { NavBarComponent } from './layouts/content-layout/nav-bar/nav-bar.component';
 import { NotificationsComponent } from './layouts/content-layout/nav-bar/notifications/notifications.component';
-import { AccountSettingsComponent } from './layouts/content-layout/nav-bar/account-settings/account-settings.component';
+import { AccountTabComponent } from './layouts/content-layout/nav-bar/account-tab/account-tab.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { AccountSettingsComponent } from './layouts/content-layout/nav-bar/accou
     SideBarComponent,
     NavBarComponent,
     NotificationsComponent,
-    AccountSettingsComponent,
+    AccountTabComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

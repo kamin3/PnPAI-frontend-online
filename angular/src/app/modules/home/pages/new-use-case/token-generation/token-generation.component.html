@@ -1,0 +1,27 @@
+<div id="token-container" class="rounded-2 shadow-lg pnp-token-online-container">
+
+    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+        <h3>Token Generation</h3>
+        <p class="mb-5">In order to enhance security and provide you with seamless access to our resources, we will
+            generate a unique token for you. This token will serve as your credential to pull Docker images from our
+            repository. Rest assured, your data and interactions are of utmost importance to us, and this token ensures
+            a secure connection.</p>
+        <div
+            style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
+            <button id="copy-token-btn" class="copy-btn" data-toggle="tooltip" data-placement="top"
+                title="Copied to clipboard">
+                Copy</button>
+        </div>
+        <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{token}}</code></pre>
+
+    </div>
+
+    <div style="width: 100%;" class="d-flex justify-content-between">
+        <button id="step-one-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
+            back
+        </button>
+        <button id="step-two-next-btn" type="button" class="btn btn-primary m-4" (click)="goNextStep()">
+            Next Step
+        </button>
+    </div>
+</div>

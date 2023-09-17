@@ -1,0 +1,29 @@
+<div style=" margin-top:20px">
+
+    <div id="usecases-container" class=" rounded-2 shadow-lg pnp-usecases-online-container"
+        style="height:100% !important">
+
+
+
+        <div class="pnp-use-cases-container row" *ngFor="let item of useCases" id="{{item.value}}">
+            <p class="mb-3">{{item.name}} Use Cases :</p>
+
+            <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let case of item.cases">
+                <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
+                    id="{{case.value}}" (click)="selectCase(case.value)"
+                    [class.pnp-usecase-option-selected]="selectedCaseValue == case.value">
+                    <p class="">{{case.name}}</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div>
+                <button id="step-one-next-btn" type="button" class="btn btn-primary m-4 float-end"
+                    (click)="generateToken()" [disabled]="selectedCaseValue == 0 ">
+                    Generate your token
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

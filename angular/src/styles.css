@@ -1678,6 +1678,7 @@
         -moz-border-radius:0px 0px 5px 5px;
         -ms-border-radius:0px 0px 5px 5px;
         -o-border-radius:0px 0px 5px 5px;
+        background: #25324c;
   }
 
       .copy-btn {
@@ -1697,7 +1698,6 @@
   .pnp-token-online-container,
   .pnp-command-online-container,
   .pnp-loading-online-container{
-    display:none;
     height: 100%;
   }
   fieldset{

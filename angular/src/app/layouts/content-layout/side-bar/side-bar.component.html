@@ -1,4 +1,4 @@
-<nav class="sidebar sidebar-offcanvas shadow z-index-100" id="sidebar">
+<nav class="sidebar sidebar-offcanvas shadow z-index-100" [class.active]="showMobileSidebar" id="sidebar">
 
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center"
     style="position: absolute; top:-80px">
@@ -7,71 +7,27 @@
   </div>
 
   <ul class="nav">
-    <button class="align-self-center border-0 bg-white mb-4" type="button" data-toggle="minimize">
+    <button class="align-self-center border-0 bg-white mb-4" type="button" data-toggle="minimize"
+      (click)="toggleSidebar()">
       <span class="fi fi-bars-2 text-dark"></span>
     </button>
-
-    <li class="nav-item menu-items mb-3 ">
-      <a class="nav-link" href="pnp-main-page.html">
+    <li class="nav-item menu-items mb-3" *ngFor="let item of navItems; index as idx;">
+      <a class="nav-link" [routerLink]="item.children && item.children.length > 0 ? '#ui-basic'+idx: item.link"
+        [attr.data-toggle]="item.children && item.children.length > 0 ?'collapse':null"
+        [attr.aria-expanded]="item.children && item.children.length > 0 ?'false':null"
+        [attr.aria-controls]="item.children && item.children.length > 0 ?'ui-basic'+idx:null">
         <span class="menu-icon">
-          <i class="fi fi-shape-squared-unequal"></i>
+          <i class="{{item.iconClass}}"></i>
         </span>
-        <span class="menu-title">Dashboard</span>
+        <span class="menu-title">{{item.title}}</span>
+        <i *ngIf="item.children" class="fi fi-arrow-down ms-4"></i>
       </a>
-    </li>
-    <li class="nav-item menu-items mb-3">
-      <a class="nav-link" href="pnp-models-page.html">
-        <span class="menu-icon">
-          <i class="fi fi-squared-graph"></i>
-        </span>
-        <span class="menu-title">Org.</span>
-      </a>
-    </li>
-    <li class="nav-item menu-items mb-3">
-      <a class="nav-link" href="pnp-connectors-page.html">
-        <span class="menu-icon">
-          <i class="fi fi-shape-3dots"></i>
-        </span>
-        <span class="menu-title">Teams</span>
-      </a>
-    </li>
-
-    <li class="nav-item menu-items mb-3">
-      <a class="nav-link" href="pnp-connectors-page.html">
-        <span class="menu-icon">
-          <i class="fi fi-shape-3dots"></i>
-        </span>
-        <span class="menu-title">Use Cases</span>
-      </a>
-    </li>
-
-    <li class="nav-item menu-items mb-3">
-      <a class="nav-link" data-toggle="collapse" href="#ui-basic2" aria-expanded="false" aria-controls="ui-basic">
-        <span class="menu-icon">
-          <i class="fi fi-support-headphones"></i>
-        </span>
-        <span class="menu-title">Support Center</span>
-        <i class="fi fi-arrow-down ms-4"></i>
-      </a>
-      <div class="collapse" id="ui-basic2">
+      <div *ngIf="item.children" class="collapse" [id]="'ui-basic'+idx">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="pnp-support-center-page.html">Overview</a></li>
-          <li class="nav-item"> <a class="nav-link" href="pnp-ticket-page.html">Tickets</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">Tutorial</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">FAQ</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">License</a></li>
-          <li class="nav-item"> <a class="nav-link" href="">Contact Us</a></li>
+          <li *ngFor="let subItem of item.children" class="nav-item"> <a class="nav-link"
+              routerLink="{{subItem.link}}">{{subItem.title}}</a></li>
         </ul>
       </div>
-    </li>
-
-    <li class="nav-item menu-items mb-3">
-      <a class="nav-link" href="">
-        <span class="menu-icon">
-          <i class="fi fi-folder-full"></i>
-        </span>
-        <span class="menu-title">Documentation</span>
-      </a>
     </li>
   </ul>
 </nav>

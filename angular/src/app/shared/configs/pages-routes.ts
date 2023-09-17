@@ -1,25 +1,30 @@
 export const CONFIG = {
-  dashboard: { name: 'dashboard', route: '/dashboard' ,
-  children: {
-    home: { name: 'home', route: '/dashboard/home' },
-    model: { name: 'model', route: '/dashboard/model' },
-    conncetor: { name: 'connector', route: '/dashboard/connector' },
-  }},
-  home: { name: 'home', route: '/home' },
-  about: { name: 'About', route: '/about', },
-  contact: { name: 'contact', route: '/contact', },
+  home: {
+    name: 'home', route: '/home',
+    children: {
+      dashboard: { name: 'dashboard', route: '/home/dashboard' },
+      newUseCase: { name: 'newusecase', route: '/home/newusecase' },
+      org: { name: 'org', route: '/home/org' },
+      teams: { name: 'teams', route: '/home/teams' },
+      usecases: { name: 'usecases', route: '/home/usecases' },
+      support: {
+        name: 'support', route: '/home/support',
+        children: {
+          overview: { name: 'overview', route: '/home/support/overview' },
+          tickets: { name: 'tickets', route: '/home/support/tickets' },
+          tutorial: { name: 'tutorial', route: '/home/support/tutorial' },
+          faq: { name: 'faq', route: '/home/support/faq' },
+          license: { name: 'license', route: '/home/support/license' },
+          contactus: { name: 'contactus', route: '/home/support/contactus' },
+        }
+      },
+    }
+  },
   auth: {
     name: 'auth', route: '/auth',
     children: {
       login: { name: 'login', route: '/auth/login' },
       register: { name: 'register', route: '/auth/register' },
-    }
-  },
-  products: {
-    name: 'products', route: '/products',
-    children: {
-      list: { name: 'list', route: '/products/list' },
-      details: { name: 'details', route: '/products/details' }
     }
   },
 };

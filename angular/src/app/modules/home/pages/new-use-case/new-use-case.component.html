@@ -1,0 +1,6 @@
+<app-use-cases *ngIf="useCaseState == 1" (selectedCaseEmit)="getSelectedCase($event)"></app-use-cases>
+<app-token-generation *ngIf="useCaseState == 2" (getBackEvent)="getBack()" (nextStepEvent)="goToPullImage()"
+    [token]="generatedToken"></app-token-generation>
+<app-pull-image *ngIf="useCaseState == 3" [curlCommand]="curlCommand" (getBackEvent)="getBack()"
+    (finishStepEvent)="finish()"></app-pull-image>
+<app-use-case-result *ngIf="useCaseState == 4"></app-use-case-result>

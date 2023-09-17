@@ -1,9 +1,9 @@
-<!-- notifications -->
 <li class="list-inline-item mx-1 dropdown" style=" padding: 5px;border-radius: 50px;background: #e6e6fd;">
     <a href="#" id="dropdownNotificationOptions" class="rounded-circle text-primary-hover dropdown-toggle pnp-notify"
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
-        aria-label="Notifications" style="color: #13226b;">
-        <span class="badge bg-danger pnp-notify-icon-alert">2</span>
+        aria-label="Notifications" style="color: #13226b;" (click)="containNew = false">
+        <span class=" badge bg-danger pnp-notify-icon-alert"
+            [class.fade-out]="!containNew">{{notifications.length}}</span>
         <!-- svg icon -->
         <span style="margin-top: -3px;">
             <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -18,37 +18,24 @@
     </a>
     <div aria-labelledby="dropdownNotificationOptions"
         class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-fadeindown end-0 p-0 mt-2 w-400">
-        <!-- <div class="dropdown-header p-4">1 new notification</div>
-        <div class="dropdown-divider"></div> -->
         <div class="max-vh-50 scrollable-vertical">
+            <a *ngFor="let item of notifications" href="{{item.link}}"
+                class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
 
-            <!-- <div class="py-5 text-gray-400 text-center">NO ITEMS!</div> -->
+                <span *ngIf="!item.isRead" [ngClass]="{'bg-success':item.state == 0, 'bg-danger':item.state == 1}"
+                    class="badge float-end fw-normal mt-1">new</span>
 
-
-            <!-- item -->
-            <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
-                <span class="badge bg-success float-end fw-normal mt-1">new</span>
-                <!-- icon -->
-                <div class="float-start avatar avatar-sm rounded-circle bg-success fs-5">
+                <div *ngIf="item.state == 0" class="float-start avatar avatar-sm rounded-circle bg-success fs-5">
                     <i class="fi fi-check text-white"></i>
                 </div>
 
-                <p class="small fw-bold m-0 text-truncate">Your training has been done</p>
-                <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
-            </a>
-            <!-- /item -->
-
-            <!-- item -->
-            <a href="#" class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
-
-                <!-- icon -->
-                <div class="float-start avatar avatar-sm rounded-circle bg-danger fs-5">
+                <div *ngIf="item.state == 1" class="float-start avatar avatar-sm rounded-circle bg-danger fs-5">
                     <i class="fi fi-close text-white"></i>
                 </div>
 
-                <p class="small fw-bold m-0 text-truncate">An error occured!</p>
-                <small class="d-block smaller fw-normal text-muted">Oct 22, 2019 / 02:21:46pm</small>
-
+                <p class="small fw-bold m-0 text-truncate">{{item.message}}</p>
+                <small class="d-block smaller fw-normal text-muted">
+                    {{item.date | date:'MMM dd, yyyy / hh:mm:ss a'}}</small>
             </a>
         </div>
     </div>

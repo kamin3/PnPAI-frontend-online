@@ -1,0 +1,16 @@
+{
+    "Notifications": [
+        {
+            "state": 0,
+            "message": "Your training has been done",
+            "date": "2019-10-22T02:21:46.000Z",
+            "isread": false
+        },
+        {
+            "state": 1,
+            "message": "An error occured!",
+            "date": "2019-10-21T21:12:43.000Z",
+            "isread": true
+        }
+    ]
+}

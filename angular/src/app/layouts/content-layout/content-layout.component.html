@@ -2,76 +2,13 @@
 
   <div class="container-fluid position-relative">
 
-    <nav class="header-navbar  navbar navbar-expand-lg navbar-light justify-content-between header-navbar-collapsed"
-      style="padding-left: 30px;">
-
-      <!-- logo, navigation toggler -->
-      <div class="align-items-start pnp-mobile-logo">
-
-        <!-- sidebar toggler -->
-        <button class="navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas"
-          style="background: none; border: none;">
-          <span class="fi fi-bars-2 "></span>
-        </button>
-
-        <!-- logo : mobile only -->
-        <a class="navbar-brand d-inline-block d-lg-none mx-2" href="index.html">
-          <img src="assets/logos/pnp-color-logo.svg" width="100" height="38" alt="...">
-        </a>
-
-      </div>
-
-      <!-- navbar : navigation -->
-      <div class="collapse navbar-collapse" id="navbarMainNav">
-
-        <!-- navbar : mobile menu -->
-        <div class="navbar-xs d-none">
-          <!-- close button -->
-
-
-        </div>
-        <!-- /navbar : mobile menu -->
-
-        <!-- -->
-        <ul class="navbar-nav align-items-center" style="width: 75%;">
-          <!-- Search -->
-          <!--
-                <li class="nav-item dropdown col-12">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1" style="background-color: #f64e60;"><i class="fi fi-search text-white"></i></span>
-                    <input type="text" class="form-control" placeholder="Search.." aria-label="Username" aria-describedby="basic-addon1" class="shadow" >
-                  </div>
-                </li>
-
-              -->
-          <button class="navbar-toggler pt-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav"
-            aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation"
-            style="    border-right-color: transparent!important;">
-            <svg width="20" viewBox="0 0 20 20">
-              <path
-                d="M 20.7895 0.977 L 19.3752 -0.4364 L 10.081 8.8522 L 0.7869 -0.4364 L -0.6274 0.977 L 8.6668 10.2656 L -0.6274 19.5542 L 0.7869 20.9676 L 10.081 11.679 L 19.3752 20.9676 L 20.7895 19.5542 L 11.4953 10.2656 L 20.7895 0.977 Z">
-              </path>
-            </svg>
-          </button>
-        </ul>
-        <!--  -->
-      </div>
-      <!-- /navbar : navigation -->
-
-      <!-- options -->
-      <ul class="list-inline list-unstyled mb-0 d-flex align-items-center ">
-
-        <app-notifications></app-notifications>
-        <app-account-settings></app-account-settings>
-
-      </ul>
-    </nav>
+    <app-nav-bar [showSidebar]="showSidebar"></app-nav-bar>
 
   </div>
 </header>
 <div class="container-scroller">
-  <app-side-bar></app-side-bar>
-  <div class="page-body-wrapper">
+  <app-side-bar (toggleSideBarEvent)="toggleSidebar()"></app-side-bar>
+  <div class="page-body-wrapper" [class.page-body-wrapper-collapsed]="!showSidebar">
     <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding:35px 20px;">
       <router-outlet></router-outlet>
     </main>
