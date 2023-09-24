@@ -11,24 +11,24 @@ export class UseCasesComponent implements OnInit {
 
   @Output() selectedCaseEmit = new EventEmitter<number>();
 
-  useCases: UseCaseCategory[] = []
-  selectedCaseValue: number = 0
+  useCases: UseCaseCategory[] = [];
+  selectedCaseValue: number = 0;
   constructor(private useCaseService: UseCaseService) {
 
   }
   ngOnInit(): void {
     this.useCaseService.get().subscribe({
       next: (value: UseCaseCategory[]) => {
-        this.useCases = value
+        this.useCases = value;
       },
       error: (err) => {
-        console.log(err)
+        console.log(err);
       },
-    })
+    });
   }
 
   selectCase(value: number) {
-    this.selectedCaseValue = value
+    this.selectedCaseValue = value;
   }
 
   generateToken() {

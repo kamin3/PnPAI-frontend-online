@@ -11,6 +11,8 @@ import { PullImageComponent } from './pages/new-use-case/pull-image/pull-image.c
 import { UseCaseResultComponent } from './pages/new-use-case/use-case-result/use-case-result.component';
 import { NewUseCaseComponent } from './pages/new-use-case/new-use-case.component';
 import { TeamsComponent } from './pages/teams/teams.component';
+import { SharedModule } from '@app/shared/shared.module';
+import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-cases.component';
 
 
 @NgModule({
@@ -22,12 +24,14 @@ import { TeamsComponent } from './pages/teams/teams.component';
     PullImageComponent,
     UseCaseResultComponent,
     NewUseCaseComponent,
-    TeamsComponent
+    TeamsComponent,
+    CurrentUseCasesComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

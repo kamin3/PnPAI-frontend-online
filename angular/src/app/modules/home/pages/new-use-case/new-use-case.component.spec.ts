@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewUseCaseComponent } from './new-use-case.component';
+import { UseCasesComponent } from './new-use-case.component';
 
-describe('NewUseCaseComponent', () => {
-  let component: NewUseCaseComponent;
-  let fixture: ComponentFixture<NewUseCaseComponent>;
+describe('UseCasesComponent', () => {
+  let component: UseCasesComponent;
+  let fixture: ComponentFixture<UseCasesComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NewUseCaseComponent]
+      declarations: [UseCasesComponent]
     });
-    fixture = TestBed.createComponent(NewUseCaseComponent);
+    fixture = TestBed.createComponent(UseCasesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

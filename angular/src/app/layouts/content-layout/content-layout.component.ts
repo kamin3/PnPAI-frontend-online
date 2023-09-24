@@ -1,5 +1,4 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { map } from 'rxjs/operators';
 
 
 @Component({

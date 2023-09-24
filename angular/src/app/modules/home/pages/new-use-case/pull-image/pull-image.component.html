@@ -7,7 +7,8 @@
             potential of our platform.</p>
         <div
             style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
-            <button id="copy-commands-btn" class="copy-btn">Copy</button>
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN [cdkCopyToClipboard]="curlCommand"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">Copy</button>
         </div>
         <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{curlCommand}}</code> </pre>
     </div>

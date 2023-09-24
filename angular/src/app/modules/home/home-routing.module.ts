@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CONFIG } from '@shared/configs';
 import { NewUseCaseComponent } from './pages/new-use-case/new-use-case.component';
 import { TeamsComponent } from './pages/teams/teams.component';
+import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-cases.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: CONFIG.home.children.newUseCase.name,
     component: NewUseCaseComponent
+  },
+  {
+    path: CONFIG.home.children.usecases.name,
+    component: CurrentUseCasesComponent
   }
 ];
 

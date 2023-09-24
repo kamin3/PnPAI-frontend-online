@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-token-generation',
@@ -10,7 +10,7 @@ export class TokenGenerationComponent {
   @Input() token: string = '';
   @Output() getBackEvent = new EventEmitter<null>();
   @Output() nextStepEvent = new EventEmitter<null>();
-
+  @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
 
   constructor() {
 
@@ -21,6 +21,14 @@ export class TokenGenerationComponent {
 
   goNextStep() {
     this.nextStepEvent.emit();
+  }
+
+  onClipboardCopy(successful: boolean): void {
+    if (!successful) return;
+    this.copyBTN.nativeElement.innerText = 'Copied';
+    this.copyBTN.nativeElement.classList.remove('copy-btn');
+    this.copyBTN.nativeElement.classList.add('copied-btn');
+    this.copyBTN.nativeElement.disabled = true;
   }
 
 

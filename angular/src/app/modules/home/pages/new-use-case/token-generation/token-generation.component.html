@@ -8,8 +8,8 @@
             a secure connection.</p>
         <div
             style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
-            <button id="copy-token-btn" class="copy-btn" data-toggle="tooltip" data-placement="top"
-                title="Copied to clipboard">
+            <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
                 Copy</button>
         </div>
         <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{token}}</code></pre>

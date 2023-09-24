@@ -1,16 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { filter } from 'rxjs';
 
 import { CONFIG } from '@app/shared/configs';
 import { ToggleSidebarService } from '@app/shared/services/toggleSidebar.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.css']
 })
-export class SideBarComponent implements OnInit {
+export class SideBarComponent implements OnInit, AfterViewInit {
 
 
   showMobileSidebar: boolean = false;
@@ -35,17 +36,56 @@ export class SideBarComponent implements OnInit {
     },
   ];
 
-  constructor(private toggleSidebarService: ToggleSidebarService, private router: Router) { }
+  constructor(
+    private toggleSidebarService: ToggleSidebarService,
+    private router: Router,
+    private elRef: ElementRef,
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   ngOnInit() {
     this.toggleSidebarService.getMobileFlag().subscribe((flag: boolean) => {
       this.showMobileSidebar = flag;
     });
+  }
 
+  ngAfterViewInit(): void {
+    this.setIsActive(this.router.url);
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route) => {
-      console.log(route);
+      this.setIsActive(this.router.url);
     });
   }
+
+  setIsActive(route: string) {
+    let fullRoute = this.document.location.origin + route;
+    let elements = this.elRef.nativeElement.querySelectorAll("a.nav-link");
+    for (let elem of elements) {
+      if (elem.href == fullRoute) {
+        this.addIsActive(elem);
+      }
+      else {
+        this.removeIsActive(elem);
+      }
+    }
+
+  }
+
+  addIsActive(element: any) {
+    if (element.classList.contains('sub-link')) {
+      element.classList.add('active');
+      return;
+    }
+    element.parentElement.classList.add('active');
+  }
+
+  removeIsActive(element: any) {
+    if (element.classList.contains('sub-link')) {
+      element.classList.remove('active');
+      return;
+    }
+    element.parentElement.classList.remove('active');
+  }
+
 
   toggleSidebar() {
     this.toggleSideBarEvent.emit();

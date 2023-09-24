@@ -1,4 +1,4 @@
-import { Observable, of, pipe, map } from 'rxjs';
+import { Observable, of, map } from 'rxjs';
 import data from '@app/data/json/account_data.json';
 import { Injectable } from '@angular/core';
 import { Account } from '../schema/account';
@@ -14,7 +14,7 @@ export class AccountService {
         email: item.Email,
         lastLoginDate: item.LastLoginDate,
         name: item.Name,
-        subscriptionDaysLeft:item.SubscriptionDaysLeft
+        subscriptionDaysLeft: item.SubscriptionDaysLeft
       } as Account))
     );
   }
