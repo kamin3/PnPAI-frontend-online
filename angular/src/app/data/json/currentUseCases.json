@@ -34,7 +34,8 @@
             "Industry": "E-commerce",
             "LastTrained": "2023-11-24T21:12:43.000Z",
             "DataSource": "API",
-            "Status": 3
+            "Status": 3,
+            "ErrorMessage": "Error occured"
         }
     ]
 }

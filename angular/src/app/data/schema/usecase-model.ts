@@ -8,6 +8,7 @@ export interface UseCaseModel {
     dataSource: string;
     dataSourceImage: string;
     industryIcon: string;
+    errorMessage: string | undefined;
 }
 
 

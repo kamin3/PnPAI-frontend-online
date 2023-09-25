@@ -2,7 +2,6 @@
     "UseCases": {
         "CreateNewModel": "Deploy New Use Case",
         "YourModelCards": "Your Model Cards",
-        "LastTrained": "Last Trained",
-        "ErrorOccured": "An error occured!"
+        "LastTrained": "Last Trained"
     }
 }

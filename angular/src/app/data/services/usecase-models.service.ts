@@ -1,5 +1,5 @@
 import { Observable, of, pipe, map, toArray } from 'rxjs';
-import data from '@app/data/json/models.json';
+import data from '@app/data/json/currentUseCases.json';
 import { Injectable } from '@angular/core';
 import { UseCaseModel } from '../schema/usecase-model';
 
@@ -17,6 +17,7 @@ export class UseCaseModelsService {
                 status: item.Status,
                 dataSource: item.DataSource,
                 lastTrainedDate: new Date(item.LastTrained),
+                errorMessage: item.ErrorMessage,
             } as UseCaseModel))
             , toArray()
         );

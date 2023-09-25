@@ -95,11 +95,11 @@
                             <i class="switch-icon"></i>
                         </label>
 
-                        <div *ngIf="model.status == 3" class="pnp-lable-card-container"
+                        <div *ngIf="model.status == 3 && model.errorMessage" class="pnp-lable-card-container"
                             style="background-color: #ffeded !important;">
                             <i class="fi fi-round-info-full me-2 text-red-800"></i>
                             <p style="margin-bottom: 0px !important; margin-left: 10x; font-size: 12px;">
-                                {{'UseCases.ErrorOccured' | translate}}
+                                {{model.errorMessage}}
                             </p>
                         </div>
 
