@@ -1,0 +1,64 @@
+{
+    "UseCases": [
+        {
+            "Name": "E-commerece",
+            "Value": 1,
+            "Cases": [
+                {
+                    "Value": 1,
+                    "Name": "Hamada"
+                },
+                {
+                    "Value": 2,
+                    "Name": "Personalized Recommendations - User-based"
+                },
+                {
+                    "Value": 3,
+                    "Name": "Customer Segmentation"
+                },
+                {
+                    "Value": 4,
+                    "Name": "Customer Churn Prediction"
+                },
+                {
+                    "Value": 5,
+                    "Name": "Customer Sentiment Analysis"
+                },
+                {
+                    "Value": 6,
+                    "Name": "Price Optimization"
+                }
+            ]
+        },
+        {
+            "Name": "Cross Industry",
+            "Value": 2,
+            "Cases": [
+                {
+                    "Value": 7,
+                    "Name": "Text Classification and Categorization"
+                },
+                {
+                    "Value": 8,
+                    "Name": "Text Summarization"
+                },
+                {
+                    "Value": 9,
+                    "Name": "Entity Recognition Mapping"
+                },
+                {
+                    "Value": 10,
+                    "Name": "Sentiment Analysis"
+                },
+                {
+                    "Value": 11,
+                    "Name": "Object Detection"
+                },
+                {
+                    "Value": 12,
+                    "Name": "Image enhancement"
+                }
+            ]
+        }
+    ]
+}

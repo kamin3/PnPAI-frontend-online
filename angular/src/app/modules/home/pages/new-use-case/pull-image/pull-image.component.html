@@ -1,0 +1,24 @@
+<div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
+    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+        <h3>Pulling Your Images</h3>
+        <p class="mb-5">Once you have your token ready, you'll be all set to dive into the exciting world of
+            Docker images. In the next step, we'll walk you through the process of pulling an image using the token
+            you've been provided. This will empower you to harness the power of containerization and unlock the
+            potential of our platform.</p>
+        <div
+            style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN [cdkCopyToClipboard]="curlCommand"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">Copy</button>
+        </div>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{curlCommand}}</code> </pre>
+    </div>
+
+    <div style="width: 100%;" class="d-flex justify-content-between">
+        <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
+            back
+        </button>
+        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="finish()">
+            Finish
+        </button>
+    </div>
+</div>

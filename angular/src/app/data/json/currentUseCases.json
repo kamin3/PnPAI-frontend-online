@@ -1,0 +1,41 @@
+{
+    "CurrentModels": [
+        {
+            "Id": 1,
+            "Name": "customer-churn-prediction-v4",
+            "UseCase": "Customer Churn Prediction",
+            "Industry": "E-commerce",
+            "LastTrained": "2019-10-21T21:12:43.000Z",
+            "DataSource": "Excel",
+            "Status": 0
+        },
+        {
+            "Id": 2,
+            "Name": "recommender-system-user-v2",
+            "UseCase": "Recommender System - User Based",
+            "Industry": "E-commerce",
+            "LastTrained": "2020-03-19T11:19:43.000Z",
+            "DataSource": "Woocommerce",
+            "Status": 1
+        },
+        {
+            "Id": 3,
+            "Name": "recommender-system-product-v3",
+            "UseCase": "System - Product Based",
+            "Industry": "E-commerce",
+            "LastTrained": "2022-03-21T17:34:43.000Z",
+            "DataSource": "Woocommerce",
+            "Status": 2
+        },
+        {
+            "Id": 4,
+            "Name": "sentiment-analysis-v9",
+            "UseCase": "Sentiment Analysis",
+            "Industry": "E-commerce",
+            "LastTrained": "2023-11-24T21:12:43.000Z",
+            "DataSource": "API",
+            "Status": 3,
+            "ErrorMessage": "Error occured"
+        }
+    ]
+}

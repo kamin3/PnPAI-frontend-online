@@ -1,0 +1,7 @@
+{
+    "UseCases": {
+        "CreateNewModel": "Deploy New Use Case",
+        "YourModelCards": "Your Model Cards",
+        "LastTrained": "Last Trained"
+    }
+}

@@ -1,0 +1,42 @@
+<nav class="sidebar sidebar-offcanvas shadow z-index-100" [class.active]="showMobileSidebar" id="sidebar">
+
+  <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center"
+    style="position: absolute; top:-80px">
+    <a class="sidebar-brand brand-logo"><img src="assets/logos/pnp-color-logo.png" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo-mini"><img src="assets/logos/pnp-color-mark.png" alt="logo" /></a>
+  </div>
+
+  <ul class="nav">
+    <button class="align-self-center border-0 bg-white mb-4" type="button" data-toggle="minimize"
+      (click)="toggleSidebar()">
+      <span class="fi fi-bars-2 text-dark"></span>
+    </button>
+
+    <li class="nav-item menu-items mb-3" *ngFor="let item of navItems; index as idx;">
+      <ng-container *ngIf="!item.children">
+        <a class="nav-link" [routerLink]="item.link">
+          <span class="menu-icon">
+            <i class="{{item.iconClass}}"></i>
+          </span>
+          <span class="menu-title">{{item.title}}</span>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="item.children && item.children.length > 0">
+        <a class="nav-link" [href]="'#ui-basic'+idx" [attr.data-toggle]="'collapse'" [attr.aria-expanded]="'false'"
+          [attr.aria-controls]="'ui-basic'">
+          <span class="menu-icon">
+            <i class="{{item.iconClass}}"></i>
+          </span>
+          <span class="menu-title">{{item.title}}</span>
+          <i class="fi fi-arrow-down ms-4"></i>
+        </a>
+        <div class="collapse" [id]="'ui-basic'+idx">
+          <ul class="nav flex-column sub-menu">
+            <li *ngFor="let subItem of item.children" class="nav-item"> <a class="nav-link sub-link"
+                routerLink="{{subItem.link}}">{{subItem.title}}</a></li>
+          </ul>
+        </div>
+      </ng-container>
+    </li>
+  </ul>
+</nav>
