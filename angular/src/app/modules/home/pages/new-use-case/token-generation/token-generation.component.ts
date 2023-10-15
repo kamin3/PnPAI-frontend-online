@@ -13,7 +13,6 @@ export class TokenGenerationComponent {
   @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
 
   constructor() {
-
   }
   getBack() {
     this.getBackEvent.emit();

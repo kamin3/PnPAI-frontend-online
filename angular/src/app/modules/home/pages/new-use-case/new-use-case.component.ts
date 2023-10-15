@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DockerConfigVolumes } from '@app/data/schema/docker-config';
+import { DockerConfigService } from '@app/data/services/docker-config.service';
 
 
 enum UseCaseState {
@@ -17,14 +19,23 @@ export class NewUseCaseComponent {
 
   useCaseState: UseCaseState = UseCaseState.Select;
   generatedToken: string = '';
-  curlCommand: string = '';
-  constructor() {
-
+  dockerComposeFile: string = '';
+  volumesToConfig: DockerConfigVolumes[] = [];
+  constructor(private dockerconfigService: DockerConfigService) {
   }
 
   getSelectedCase(caseValue: number) {
-    this.generatedToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdW';
-    this.useCaseState = UseCaseState.TokenGenerated;
+    this.dockerconfigService.getDockerCompose(caseValue).subscribe({
+      next: (value) => {
+        this.generatedToken = value.body.token;
+        this.dockerComposeFile = value.body.file;
+        this.volumesToConfig = value.body.volumesToConfigure ?? [];
+        this.useCaseState = UseCaseState.TokenGenerated;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 
   getBack() {
@@ -32,7 +43,6 @@ export class NewUseCaseComponent {
   }
 
   goToPullImage() {
-    this.curlCommand = `curl -X POST \\-H "Content-Type: application/json" \\-d '{"key": "value"}' \\https://example.com/api/endpoint`;
     this.useCaseState = UseCaseState.ImagePull;
   }
 
