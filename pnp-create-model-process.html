@@ -173,6 +173,81 @@
 
     </style>
 
+<style>
+  .section {
+       display: none;
+       margin-top: 20px;
+   }
+
+   .section.disabled {
+       background-color: #ccc;
+       cursor: not-allowed;
+   }
+
+   .column {
+       display: flex;
+       justify-content: space-between;
+       margin: 10px 0;
+   }
+
+   .row {
+       display: flex;
+       align-items: center;
+       margin: 5px 0;
+   }
+
+   .switch {
+       position: relative;
+       display: inline-block;
+       width: 40px;
+       height: 20px;
+   }
+
+   .slider {
+       position: absolute;
+       cursor: pointer;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background-color: #ccc;
+       border-radius: 34px;
+       -webkit-transition: .4s;
+       transition: .4s;
+   }
+
+   .slider:before {
+       position: absolute;
+       content: "";
+       height: 16px;
+       width: 16px;
+       left: 2px;
+       bottom: 2px;
+       background-color: white;
+       border-radius: 50%;
+       -webkit-transition: .4s;
+       transition: .4s;
+   }
+
+   input:checked + .slider {
+       background-color: #2196F3;
+   }
+
+   input:focus + .slider {
+       box-shadow: 0 0 1px #2196F3;
+   }
+
+   input:checked + .slider:before {
+       -webkit-transform: translateX(20px);
+       -ms-transform: translateX(20px);
+       transform: translateX(20px);
+   }
+   .disabled-section {
+     background-color: #a0a0a0; /* Set a background color to indicate it's disabled */
+     pointer-events: none; /* Disable mouse and keyboard events */
+     opacity: 0.6; /* Reduce opacity to indicate it's disabled */
+ }
+</style>
 
   </head>
 
@@ -850,13 +925,68 @@
 
             <div class="button-row d-flex mt-4 justify-content-between">
               <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Back</button>
-              <button class="btn btn-primary ml-auto apnp-start-button pnp-start-training-btn">Start Training</button>
+              <button class="btn btn-primary ml-auto apnp-start-button pnp-start-training-btn">Choose your data</button>
             </div>
           </div>
 
+          <!--Sample Data Table Columns-->
+          <div class="pnp-container-data-table-column ">
+            <div class="container">
+              <div class="d-flex bg-white p-5 shadow-lg rounded">
+                <p class="me-2">Enable Customizing Data Table</p>
+                <label class="switch">
+                    <input type="checkbox" id="customization-switch" class="m-1">
+                    <span class="slider"></span>
+                </label>
+              </div>
+              <!--  -->
+              <div class=" bg-white px-5 py-4 shadow-sm rounded mt-3 disabled" id="customization-section">
+                <div class="row mb-3 border-bottom-lg pb-2">
+                    <div class="column-name col-6 fw-bold fs-5">Columns</div>
+                    <div class="column-name col-6 fw-bold fs-5">Included</div>
+                </div>
+                <div class="row py-3">
+                    <div class="column-name col-6">Event Time</div>
+                    <div class="col-6">
+                      <label class="switch">
+                          <input type="checkbox" class="m-1">
+                          <span class="slider"></span>
+                      </label>
+                    </div>
+                </div>
+  
+                <div class="row py-3">
+                  <div class="column-name col-6">Product</div>
+                  <div class="col-6">
+                    <label class="switch">
+                        <input type="checkbox" class="m-1">
+                        <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="row py-3">
+                <div class="column-name col-6">Order ID</div>
+                <div class="col-6">
+                  <label class="switch">
+                      <input type="checkbox" class="m-1">
+                      <span class="slider"></span>
+                  </label>
+                </div>
+                </div>
+              </div>
+              <div class="button-row d-flex mt-4 justify-content-between">
+                  <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Back</button>
+                  <button class="btn btn-primary ml-auto apnp-start-button pnp-data-table-column">Start Training</button>
+              </div>
+            </div>
+            
+          </div>
+
+
           <!-- Training Loader -->
-          <div class=" pnp-create-model-training-loader" style="flex-direction: column; margin-top: 80px;align-items: center;">
-            <div class="loader">
+          <div class=" pnp-create-model-training-loader" style="flex-direction: column; ;align-items: center;">
+            <!-- <div class="loader">
               <div class="loader_overlay"></div>
               <div class="loader_cogs">
                 <div class="loader_cogs__top">
@@ -872,9 +1002,11 @@
                   <div class="bottom_hole"></div>
                 </div>
               </div>
-            </div>
-            <p class="pnp-datasource-name-p" style="margin-right: 60px !important;margin-top: 170px;"> The training process may take a while, we will notify you immediately after it is finished  </p>
-            <a class="btn btn-primary ml-auto col-2 mt-3" href="pnp-main-page.html"margin-top: 30px;">Your Dashboard</a>
+            </div> -->
+
+            <div id="lottie-container" class="pnp-training-loader" style="width: 50%;"></div>
+            <p class="pnp-datasource-name-p" style="margin-right: 60px !important;"> The training process may take a while, we will notify you immediately after it is finished  </p>
+            <a class="btn btn-primary ml-auto col-2 mt-3" href="pnp-main-page.html" >Your Dashboard</a>
           </div>
 
         
@@ -1016,7 +1148,28 @@
 				'success'
 			)
 		});
+
+        document.getElementById('customization-switch').addEventListener('change', function() {
+        const customizationSection = document.getElementById('customization-section');
+        customizationSection.classList.toggle('disabled', !this.checked);
+        });
+
     </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.7/lottie.min.js"></script>
+
+     <script>
+      // Select the container div where the animation will be displayed
+      const container = document.getElementById("lottie-container");
+
+      // Create a Lottie player
+      const animation = bodymovin.loadAnimation({
+          container: container, // Specify the container
+          renderer: 'svg', // Use SVG renderer
+          loop: true, // Loop the animation
+          autoplay: true, // Autoplay the animation
+          path: 'assets/img/pnp-loading.json' // Path to your Lottie JSON file
+      });
+  </script>
     <!-- Your custom javascripts -->
   </body>
 </html>

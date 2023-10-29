@@ -114,6 +114,8 @@ $(document).ready(function () {
 
   $('.pnp-container-loader').css("display", "none");
   $('.pnp-container-data-table-testing').css("display", "none");
+  $('.pnp-container-data-table-column').css("display", "none");
+
   $('.pnp-start-button').click(function () {
     $('.pnp-container-model-process').css("display", "none");
     $('.pnp-container-loader').css("display", "flex");
@@ -125,8 +127,14 @@ $(document).ready(function () {
 
   $('.pnp-start-training-btn').click(function () {
     $('.pnp-container-data-table-testing').css("display", "none");
+    $('.pnp-container-data-table-column').css("display", "flex");
+  });
+
+  $('.pnp-data-table-column').click(function () {
+    $('.pnp-container-data-table-column').css("display", "none");
     $('.pnp-create-model-training-loader').css("display", "flex");
   });
+
 });
 
 $(document).ready(function(){
@@ -201,3 +209,6 @@ $(document).ready(function(){
     return false;
   });
 });
+
+
+
