@@ -5,13 +5,13 @@
 
 
 
-        <div class="pnp-use-cases-container row" *ngFor="let item of useCases" id="{{item.value}}">
+        <div class="pnp-use-cases-container row" *ngFor="let item of industries" id="{{item.id}}">
             <p class="mb-3">{{item.name}} Use Cases :</p>
 
-            <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let case of item.cases">
+            <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let case of item.usecases">
                 <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
-                    id="{{case.value}}" (click)="selectCase(case.value)"
-                    [class.pnp-usecase-option-selected]="selectedCaseValue == case.value">
+                    id="{{case.id}}" (click)="selectCase(case.id)"
+                    [class.pnp-usecase-option-selected]="selectedCaseValue == case.id">
                     <p class="">{{case.name}}</p>
                 </button>
             </div>
@@ -20,7 +20,7 @@
         <div class="row">
             <div>
                 <button id="step-one-next-btn" type="button" class="btn btn-primary m-4 float-end"
-                    (click)="generateToken()" [disabled]="selectedCaseValue == 0 ">
+                    (click)="generateToken()" [disabled]="selectedCaseValue == '' ">
                     Generate your token
                 </button>
             </div>

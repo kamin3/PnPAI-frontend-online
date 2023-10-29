@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { UseCase, UseCaseCategory } from '@app/data/schema/usecase';
-import { UseCaseService } from '@app/data/services/use-case.service';
+import { Industry } from '@schema/industry';
+import { IndustryService } from '@app/data/services/industry.service';
 
 @Component({
   selector: 'app-use-cases',
@@ -9,17 +9,17 @@ import { UseCaseService } from '@app/data/services/use-case.service';
 })
 export class UseCasesComponent implements OnInit {
 
-  @Output() selectedCaseEmit = new EventEmitter<number>();
+  @Output() selectedCaseEmit = new EventEmitter<string>();
 
-  useCases: UseCaseCategory[] = [];
-  selectedCaseValue: number = 0;
-  constructor(private useCaseService: UseCaseService) {
+  industries: Industry[] = [];
+  selectedCaseValue: string = "";
+  constructor(private industryService: IndustryService) {
 
   }
   ngOnInit(): void {
-    this.useCaseService.get().subscribe({
-      next: (value: UseCaseCategory[]) => {
-        this.useCases = value;
+    this.industryService.getall("IND-123").subscribe({
+      next: (value) => {
+        this.industries = value.message;
       },
       error: (err) => {
         console.log(err);
@@ -27,7 +27,7 @@ export class UseCasesComponent implements OnInit {
     });
   }
 
-  selectCase(value: number) {
+  selectCase(value: string) {
     this.selectedCaseValue = value;
   }
 

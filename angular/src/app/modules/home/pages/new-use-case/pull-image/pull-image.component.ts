@@ -49,4 +49,25 @@ export class PullImageComponent implements OnInit {
     this.copyBTN.nativeElement.classList.add('copied-btn');
     this.copyBTN.nativeElement.disabled = true;
   }
+
+  downloadDockerCompose() {
+    // Create a Blob with the text content
+    const blob = new Blob([this.dockerComposeFile], { type: 'text/plain' });
+
+    // Create a URL for the Blob
+    const url = window.URL.createObjectURL(blob);
+
+    // Create an anchor element for the download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'dockerComposeFile.yaml';
+
+    // Trigger a click event on the anchor to start the download
+    a.click();
+
+    // Clean up by revoking the Blob URL
+    window.URL.revokeObjectURL(url);
+  }
+
+
 }

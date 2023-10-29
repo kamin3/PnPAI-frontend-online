@@ -1,12 +1,7 @@
-export interface UseCaseCategory {
-    cases: UseCase[];
-    value: number;
+export interface UseCase {
+    id: string;
     name: string;
+    description: string;
+    industry_id: string;
+    image_id: number;
 }
-
-
-export interface UseCase{
-    name: string;
-    value: number;
-}
-  

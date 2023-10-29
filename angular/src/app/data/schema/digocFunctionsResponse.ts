@@ -1,3 +1,3 @@
 export interface digocFunctionsResponse<T> {
-    body: T;
+    message: T;
 }

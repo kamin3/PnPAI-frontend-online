@@ -24,12 +24,12 @@ export class NewUseCaseComponent {
   constructor(private dockerconfigService: DockerConfigService) {
   }
 
-  getSelectedCase(caseValue: number) {
+  getSelectedCase(caseValue: string) {
     this.dockerconfigService.getDockerCompose(caseValue).subscribe({
       next: (value) => {
-        this.generatedToken = value.body.token;
-        this.dockerComposeFile = value.body.file;
-        this.volumesToConfig = value.body.volumesToConfigure ?? [];
+        this.generatedToken = value.message.token;
+        this.dockerComposeFile = value.message.file;
+        this.volumesToConfig = value.message.volumesToConfigure ?? [];
         this.useCaseState = UseCaseState.TokenGenerated;
       },
       error: (err) => {
