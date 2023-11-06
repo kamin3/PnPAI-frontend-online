@@ -8,14 +8,13 @@
         <ng-container *ngIf="volumes && volumes != {}">
             <div *ngFor="let volume of volumes | keyvalue">
                 <label>Enter the required directory name for {{volume.value!.for!.toString()}}</label>
-                <input type="text" [value]="volume.value!.oldValue"
-                    (input)="setVolumeName($event, volume.value!.oldValue, volume.key)" />
+                <input type="text" [value]="volume.value!.oldValue" (input)="setVolumeName($event, volume.key)" />
             </div>
         </ng-container>
         <div
             style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
             <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
-                [cdkCopyToClipboard]="dockerComposeFile"
+                [cdkCopyToClipboard]="getDockerComposeFile()"
                 (cdkCopyToClipboardCopied)="onClipboardCopy($event)">Copy</button>
             <button type="button" class="copy-btn" (click)="downloadDockerCompose()">Download</button>
         </div>
@@ -24,7 +23,7 @@
 
     <div style="width: 100%;" class="d-flex justify-content-between">
         <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
-            back
+            Back
         </button>
         <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="finish()">
             Finish

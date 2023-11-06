@@ -14,7 +14,7 @@ export class PullImageComponent implements OnInit {
   @Output() getBackEvent = new EventEmitter<null>();
   @Output() finishStepEvent = new EventEmitter<null>();
   @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
-  volumes: { [key: string]: { for: string[]; oldValue: string; }; } = {};
+  volumes: { [key: string]: { for: string[]; oldValue: string; newValue: string; }; } = {};
   constructor() { }
 
   ngOnInit(): void {
@@ -23,16 +23,15 @@ export class PullImageComponent implements OnInit {
         this.volumes[volume.key] = {
           'for': this.volumes[volume.key] ? [...this.volumes[volume.key].for, volume.for] : [volume.for],
           'oldValue': volume.key,
+          'newValue': volume.key
         };
       }
     }
   }
 
-  setVolumeName(event: Event, oldName: string, volumeKey: string) {
+  setVolumeName(event: Event, volumeKey: string) {
     let newName = (event.target as HTMLInputElement).value;
-    this.dockerComposeFile = this.dockerComposeFile.replaceAll(oldName, newName);
-    this.volumes[volumeKey].oldValue = newName;
-    console.log(this.dockerComposeFile);
+    this.volumes[volumeKey].newValue = newName;
   }
   getBack() {
     this.getBackEvent.emit();
@@ -42,6 +41,13 @@ export class PullImageComponent implements OnInit {
     this.finishStepEvent.emit();
   }
 
+  getDockerComposeFile(): string {
+    let file = this.dockerComposeFile;
+    for (let key in this.volumes) {
+      file = file.replaceAll(this.volumes[key].oldValue, this.volumes[key].newValue);
+    }
+    return file;
+  }
   onClipboardCopy(successful: boolean): void {
     if (!successful) return;
     this.copyBTN.nativeElement.innerText = 'Copied';
@@ -51,21 +57,17 @@ export class PullImageComponent implements OnInit {
   }
 
   downloadDockerCompose() {
-    // Create a Blob with the text content
-    const blob = new Blob([this.dockerComposeFile], { type: 'text/plain' });
+    const file = this.getDockerComposeFile();
+    const blob = new Blob([file], { type: 'text/plain' });
 
-    // Create a URL for the Blob
     const url = window.URL.createObjectURL(blob);
 
-    // Create an anchor element for the download
     const a = document.createElement('a');
     a.href = url;
     a.download = 'dockerComposeFile.yaml';
 
-    // Trigger a click event on the anchor to start the download
     a.click();
 
-    // Clean up by revoking the Blob URL
     window.URL.revokeObjectURL(url);
   }
 

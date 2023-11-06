@@ -3,5 +3,4 @@ export interface UseCase {
     name: string;
     description: string;
     industry_id: string;
-    image_id: number;
 }

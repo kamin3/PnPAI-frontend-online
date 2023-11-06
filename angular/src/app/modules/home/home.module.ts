@@ -13,6 +13,7 @@ import { NewUseCaseComponent } from './pages/new-use-case/new-use-case.component
 import { TeamsComponent } from './pages/teams/teams.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-cases.component';
+import { ImagesVersionsComponent } from './pages/new-use-case/images-versions/images-versions.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-
     UseCaseResultComponent,
     NewUseCaseComponent,
     TeamsComponent,
-    CurrentUseCasesComponent
+    CurrentUseCasesComponent,
+    ImagesVersionsComponent
   ],
   imports: [
     CommonModule,

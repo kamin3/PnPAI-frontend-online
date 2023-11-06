@@ -1,0 +1,23 @@
+<div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
+    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
+        <h3>Select the use case version</h3>
+
+        <ng-container *ngIf="images">
+            <select class="form-select mb-3" (change)="selectImage($event)">
+                <option [value]="images[0].id" selected>Latest - {{images[0].tag}}</option>
+                <ng-container *ngFor="let image of images.slice(1)">
+                    <option [value]="image.id">{{image.tag}}</option>
+                </ng-container>
+            </select>
+        </ng-container>
+    </div>
+
+    <div style="width: 100%;" class="d-flex justify-content-between">
+        <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
+            Back
+        </button>
+        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="generateToken()">
+            Next
+        </button>
+    </div>
+</div>

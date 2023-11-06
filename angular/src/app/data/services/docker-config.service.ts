@@ -4,24 +4,38 @@ import { environment } from 'src/environments/environment';
 import { DockerConfig } from '@schema/docker-config';
 import { Observable } from 'rxjs';
 import { digocFunctionsResponse } from '@schema/digocFunctionsResponse';
+import { Image } from '@schema/image';
 @Injectable({
   providedIn: 'root'
 })
 export class DockerConfigService {
 
   constructor(private httpclient: HttpClient) { }
-  headers = {
+  private headers = {
     "Content-Type": "application/json",
     "Authorization": `Basic ${environment.digitaloceanFunctionsURLToken}`
   };
+  private domainURL = environment.digitaloceanFunctionsURL + 'postgres/image_controller?blocking=true&result=true';
 
 
-  getDockerCompose(usecase_id: string): Observable<digocFunctionsResponse<DockerConfig>> {
-    let domainURL = environment.digitaloceanFunctionsURL + 'postgres/image_controller?blocking=true&result=true';
+
+  getUsecaseImages(usecaseId: string): Observable<digocFunctionsResponse<Image[]>> {
+    let input = {
+      "operation": "get_usecase_images",
+      "usecase_id": usecaseId
+    };
+    return this.httpclient.post<digocFunctionsResponse<Image[]>>(
+      this.domainURL, input,
+      { headers: this.headers });
+  }
+
+  getDockerCompose(imageId: string): Observable<digocFunctionsResponse<DockerConfig>> {
     let input = {
       "operation": "get_docker_compose",
-      "usecase_id": usecase_id
+      "image_id": imageId
     };
-    return this.httpclient.post<digocFunctionsResponse<DockerConfig>>(domainURL, input, { headers: this.headers });
+    return this.httpclient.post<digocFunctionsResponse<DockerConfig>>(
+      this.domainURL, input,
+      { headers: this.headers });
   }
 }
