@@ -1,32 +1,29 @@
 <div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
-    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
-        <h3>Pull Your Image</h3>
-        <p class="mb-5">Once you have your token ready, you'll be all set to dive into the exciting world of
-            Docker images. In the next step, we'll walk you through the process of pulling an image using the token
-            you've been provided. This will empower you to harness the power of containerization and unlock the
-            potential of our platform.</p>
+    <div class="pnp-container-snippet">
+        <h3>{{'NewUsecase.PullImageLabel' | translate}}</h3>
+        <p class="mb-5">{{'NewUsecase.PullImageDesc' | translate}}</p>
         <ng-container *ngIf="volumes && volumes != {}">
             <div *ngFor="let volume of volumes | keyvalue">
-                <label>Enter the required directory name for {{volume.value!.for!.toString()}}</label>
+                <label>{{'NewUsecase.DirectoryName' | translate}} {{volume.value!.for!.toString()}}</label>
                 <input type="text" [value]="volume.value!.oldValue" (input)="setVolumeName($event, volume.key)" />
             </div>
         </ng-container>
-        <div
-            style="width: 100%; background-color: #171927; border-radius: 8px 8px 0px 0px; display: flex;justify-content: flex-end;">
+        <div class="copy-token-div">
             <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
                 [cdkCopyToClipboard]="getDockerComposeFile()"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">Copy</button>
-            <button type="button" class="copy-btn" (click)="downloadDockerCompose()">Download</button>
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+            <button type="button" class="copy-btn" (click)="downloadDockerCompose()">
+                {{'Buttons.Download' | translate}}</button>
         </div>
         <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{dockerComposeFile}}</code> </pre>
     </div>
 
     <div style="width: 100%;" class="d-flex justify-content-between">
         <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
-            Back
+            {{'Buttons.Back' | translate}}
         </button>
         <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="finish()">
-            Finish
+            {{'Buttons.Finish' | translate}}
         </button>
     </div>
 </div>

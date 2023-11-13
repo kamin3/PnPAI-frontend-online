@@ -1,0 +1,29 @@
+.pnp-new-btn {
+    display: flex;
+    align-items: center;
+    padding: 22px 30px;
+    background-color: #ffffff;
+    color: #3548a3;
+    width: 280px;
+}
+
+.pnp-new-btn:hover {
+    transition: 0.3s;
+    background-color: #3548a3;
+    color: white;
+    width: 280px;
+
+}
+
+
+.pnp-new-btn-span {
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+}
+
+.pnp-new-btn-span-icon {
+    font-size: 25px;
+    color: #2d3e93;
+    font-weight: bold !important;
+}

@@ -1,0 +1,59 @@
+.pnp-container-snippet {
+    padding: 40px;
+    border-radius: 5px;
+    width: 100%;
+    background-color: aliceblue;
+    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.pnp-pre {
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 2.5;
+    -webkit-border-radius: 0px 0px 5px 5px;
+    -moz-border-radius: 0px 0px 5px 5px;
+    -ms-border-radius: 0px 0px 5px 5px;
+    -o-border-radius: 0px 0px 5px 5px;
+    background: #25324c;
+}
+
+.copy-btn {
+    cursor: pointer;
+    background-color: #202124;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.copied-btn {
+    background-color: #202124;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.copy-btn:hover {
+    background-color: #313236;
+
+}
+
+.pnp-token-online-container,
+.pnp-command-online-container,
+.pnp-loading-online-container {
+    height: 100%;
+}
+
+.copy-token-div {
+    width: 100%;
+    background-color: #171927;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+}

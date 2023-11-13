@@ -1,10 +1,9 @@
-<div style=" margin-top:20px">
+<div style="margin-top:20px">
 
-    <div id="usecases-container" class="rounded-2 shadow-lg pnp-usecases-online-container"
-        style="height:100% !important">
+    <div id="usecases-container" class="rounded-2 shadow-lg pnp-use-cases-online-container">
 
         <div class="pnp-use-cases-container row" *ngFor="let item of industries" id="{{item.id}}">
-            <p class="mb-3">{{item.name}} Use Cases :</p>
+            <p class="mb-3">{{item.name}} {{'NewUsecase.UsecasesLabel' | translate}} :</p>
 
             <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let case of item.usecases">
                 <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
@@ -19,7 +18,7 @@
             <div>
                 <button id="step-one-next-btn" type="button" class="btn btn-primary m-4 float-end"
                     (click)="generateToken()" [disabled]="selectedCaseValue == '' ">
-                    Generate your token
+                    {{'Buttons.GenerateToken' | translate}}
                 </button>
             </div>
         </div>

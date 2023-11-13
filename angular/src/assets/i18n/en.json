@@ -3,5 +3,30 @@
         "CreateNewModel": "Deploy New Use Case",
         "YourModelCards": "Your Model Cards",
         "LastTrained": "Last Trained"
+    },
+    "Dashboard": {
+        "Welcome": "Welcome to your dashboard"
+    },
+    "NewUsecase": {
+        "SelectLabel": "Select Usecase",
+        "SelectVersionLabel": "Select the use case version",
+        "PullImageLabel": "Pull Your Image",
+        "PullImageDesc": "Once you have your token ready, you'll be all set to dive into the exciting world of Docker images. In the next step, we'll walk you through the process of pulling an image using the token you've been provided. This will empower you to harness the power of containerization and unlock the potential of our platform.",
+        "DirectoryName": "Enter the required directory name for",
+        "TokenGenerationLabel": "Token Generation",
+        "TokenGenerationDesc": "In order to enhance security and provide you with seamless access to our resources, we will generate a unique token for you. This token will serve as your credential to pull Docker images from our repository. Rest assured, your data and interactions are of utmost importance to us, and this token ensures a secure connection.",
+        "UsecasesLabel": "Use cases",
+        "SuccessMessage": "We're excited to have you join our platform.",
+        "SuccessMessageSteps": "As you embark on your user journey, we want to guide you through the initial steps of getting started."
+    },
+    "Buttons": {
+        "Back": "Back",
+        "Next": "Next",
+        "Finish": "Finish",
+        "Copy": "Copy",
+        "Copied": "Copied",
+        "Download": "Download",
+        "GenerateToken": "Generate your token",
+        "GoToDashboard": "Go to Dashboard"
     }
 }

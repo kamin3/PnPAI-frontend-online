@@ -1,0 +1,13 @@
+.pnp-account-image {
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 8px 4px 12px rgb(0 0 0 /18%) !important;
+}
+
+.pnp-account-name {
+    color: #13226b;
+}
+
+.pnp-account-details {
+    background-color: #13226b;
+}

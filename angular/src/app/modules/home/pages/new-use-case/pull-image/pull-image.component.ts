@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DockerConfigVolumes } from '@app/data/schema/docker-config';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pull-image',
@@ -15,7 +16,7 @@ export class PullImageComponent implements OnInit {
   @Output() finishStepEvent = new EventEmitter<null>();
   @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
   volumes: { [key: string]: { for: string[]; oldValue: string; newValue: string; }; } = {};
-  constructor() { }
+  constructor(private translate: TranslateService) { }
 
   ngOnInit(): void {
     if (this.volumesToRename && this.volumesToRename.length > 0) {
@@ -50,7 +51,8 @@ export class PullImageComponent implements OnInit {
   }
   onClipboardCopy(successful: boolean): void {
     if (!successful) return;
-    this.copyBTN.nativeElement.innerText = 'Copied';
+    let copiedText = this.translate.instant('Buttons.Copied');
+    this.copyBTN.nativeElement.innerText = copiedText;
     this.copyBTN.nativeElement.classList.remove('copy-btn');
     this.copyBTN.nativeElement.classList.add('copied-btn');
     this.copyBTN.nativeElement.disabled = true;

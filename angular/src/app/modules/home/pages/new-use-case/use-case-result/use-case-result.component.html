@@ -1,15 +1,14 @@
 <div id="loading-container" class="rounded-2 shadow-lg pnp-loading-online-container">
-    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
-        <h3>We're excited to have you join our platform.</h3>
-        <p class="mb-5">As you embark on your user journey, we want to guide you through the initial steps of
-            getting started.</p>
+    <div class="pnp-container-snippet">
+        <h3>{{'NewUsecase.SuccessMessage' | translate}}</h3>
+        <p class="mb-5">{{'NewUsecase.SuccessMessageSteps' | translate}}</p>
 
 
     </div>
 
     <div style="width: 100%;" class="d-flex justify-content-between">
         <a type="button" class="btn btn-primary m-4" [routerLink]="dashboardRoute">
-            Go to Dashboard
+            {{'Buttons.GoToDashboard' | translate}}
         </a>
     </div>
 </div>

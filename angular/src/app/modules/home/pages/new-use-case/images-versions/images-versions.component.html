@@ -1,6 +1,6 @@
 <div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
-    <div class="pnp-container-snippet" style="background-color: aliceblue; margin-top:20px ; margin-top: 30px;">
-        <h3>Select the use case version</h3>
+    <div class="pnp-container-snippet">
+        <h3>{{'NewUsecase.SelectVersionLabel' | translate}}</h3>
 
         <ng-container *ngIf="images">
             <select class="form-select mb-3" (change)="selectImage($event)">
@@ -14,10 +14,10 @@
 
     <div style="width: 100%;" class="d-flex justify-content-between">
         <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
-            Back
+            {{'Buttons.Back' | translate}}
         </button>
         <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="generateToken()">
-            Next
+            {{'Buttons.Next' | translate}}
         </button>
     </div>
 </div>

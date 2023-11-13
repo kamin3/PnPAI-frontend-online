@@ -1,4 +1,4 @@
-<header id="header" class="d-flex align-items-center shadow-xs" style="height:80px;">
+<header id="header" class="d-flex align-items-center shadow-xs header-style">
 
   <div class="container-fluid position-relative">
 
@@ -9,7 +9,7 @@
 <div class="container-scroller">
   <app-side-bar (toggleSideBarEvent)="toggleSidebar()"></app-side-bar>
   <div class="page-body-wrapper" [class.page-body-wrapper-collapsed]="!showSidebar">
-    <main id="middle" class="flex-fill mx-auto" style="background-color: ghostwhite; padding:35px 20px;">
+    <main id="middle" class="flex-fill mx-auto main-style">
       <router-outlet></router-outlet>
     </main>
   </div>

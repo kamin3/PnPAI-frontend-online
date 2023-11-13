@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-token-generation',
@@ -12,7 +13,7 @@ export class TokenGenerationComponent {
   @Output() nextStepEvent = new EventEmitter<null>();
   @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
 
-  constructor() {
+  constructor(private translate: TranslateService) {
   }
   getBack() {
     this.getBackEvent.emit();
@@ -24,7 +25,8 @@ export class TokenGenerationComponent {
 
   onClipboardCopy(successful: boolean): void {
     if (!successful) return;
-    this.copyBTN.nativeElement.innerText = 'Copied';
+    let copiedText = this.translate.instant('Buttons.Copied');
+    this.copyBTN.nativeElement.innerText = copiedText;
     this.copyBTN.nativeElement.classList.remove('copy-btn');
     this.copyBTN.nativeElement.classList.add('copied-btn');
     this.copyBTN.nativeElement.disabled = true;

@@ -1,11 +1,11 @@
-<li class="list-inline-item mx-1 dropdown" style=" padding: 5px;border-radius: 50px;background: #e6e6fd;">
+<li class="list-inline-item mx-1 dropdown notification-list">
     <a href="#" id="dropdownNotificationOptions" class="rounded-circle text-primary-hover dropdown-toggle pnp-notify"
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
-        aria-label="Notifications" style="color: #13226b;" (click)="containNew = false">
+        aria-label="Notifications" (click)="containNew = false">
         <span class=" badge bg-danger pnp-notify-icon-alert"
             [class.fade-out]="!containNew">{{notifications.length}}</span>
         <!-- svg icon -->
-        <span style="margin-top: -3px;">
+        <span class="pnp-notify-svg-icon">
             <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <path fill="currentColor"
