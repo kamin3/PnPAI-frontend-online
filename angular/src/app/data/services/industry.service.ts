@@ -1,5 +1,4 @@
 import { Observable, of, pipe, map, toArray } from 'rxjs';
-import data from '@app/data/json/usecases.json';
 import { Injectable } from '@angular/core';
 import { Industry } from '@schema/industry';
 import { HttpClient } from '@angular/common/http';

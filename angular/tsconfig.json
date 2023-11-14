@@ -27,6 +27,7 @@
       "@modules/*": ["src/app/modules/*"],
       "@layouts/*": ["src/app/layouts/*"],
       "@schema/*": ["src/app/data/schema/*"],
+      "@assets/*": ["src/assets/*"],
     },
     "lib": [
       "ES2022",
