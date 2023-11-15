@@ -5,7 +5,7 @@ import { IndustryService } from '@app/data/services/industry.service';
 @Component({
   selector: 'app-use-cases',
   templateUrl: './use-cases.component.html',
-  styleUrls: ['./use-cases.component.css']
+  styleUrls: ['./use-cases.component.css', '../new-use-case.component.css']
 })
 export class UseCasesComponent implements OnInit {
 

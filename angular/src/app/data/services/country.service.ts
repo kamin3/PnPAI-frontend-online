@@ -10,13 +10,13 @@ import { City } from '../schema/city';
 })
 export class CountryService {
 
-    countries_data: { [key: string]: string[]; } = data;
+    countries_data: { name: string; states: { name: string; }[]; }[] = data;
     getall(): Observable<Country[]> {
         let countries: Country[] = [];
-        for (const key in this.countries_data) {
-            let cities: City[] = this.countries_data[key].map((item) => { return { name: item }; });
+        for (const country_data of this.countries_data) {
+            let cities: City[] = country_data.states.map((item) => { return { name: item.name }; });
             let country = {
-                name: key,
+                name: country_data.name,
                 cities: cities
             };
             countries.push(country);

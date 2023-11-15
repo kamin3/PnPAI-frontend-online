@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-token-generation',
   templateUrl: './token-generation.component.html',
-  styleUrls: ['./token-generation.component.css']
+  styleUrls: ['./token-generation.component.css', '../new-use-case.component.css']
 })
 export class TokenGenerationComponent {
 

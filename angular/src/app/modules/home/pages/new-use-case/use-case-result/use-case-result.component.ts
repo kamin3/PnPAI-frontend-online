@@ -4,7 +4,7 @@ import { CONFIG } from '@app/shared/configs';
 @Component({
   selector: 'app-use-case-result',
   templateUrl: './use-case-result.component.html',
-  styleUrls: ['./use-case-result.component.css']
+  styleUrls: ['./use-case-result.component.css', '../new-use-case.component.css']
 })
 export class UseCaseResultComponent {
 

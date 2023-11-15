@@ -9,7 +9,7 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.css', '../content-layout.component.css']
 })
 export class SideBarComponent implements OnInit, AfterViewInit {
 

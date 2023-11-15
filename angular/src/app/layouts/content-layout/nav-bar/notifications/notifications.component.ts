@@ -4,7 +4,7 @@ import { Notification } from '@app/data/schema/notification';
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
+  styleUrls: ['./notifications.component.css', '../nav-bar.component.css']
 })
 export class NotificationsComponent implements OnInit {
 

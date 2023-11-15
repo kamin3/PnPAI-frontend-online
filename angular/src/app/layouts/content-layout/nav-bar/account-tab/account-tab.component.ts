@@ -5,7 +5,7 @@ import { AccountService } from '@app/data/services/account.service';
 @Component({
   selector: 'app-account-tab',
   templateUrl: './account-tab.component.html',
-  styleUrls: ['./account-tab.component.css']
+  styleUrls: ['./account-tab.component.css', '../nav-bar.component.css']
 })
 export class AccountTabComponent implements OnInit {
 

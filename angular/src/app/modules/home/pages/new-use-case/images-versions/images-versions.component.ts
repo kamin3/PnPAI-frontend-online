@@ -4,7 +4,7 @@ import { Image } from '@schema/image';
 @Component({
   selector: 'app-images-versions',
   templateUrl: './images-versions.component.html',
-  styleUrls: ['./images-versions.component.css']
+  styleUrls: ['./images-versions.component.css', '../new-use-case.component.css']
 })
 export class ImagesVersionsComponent implements OnInit {
 

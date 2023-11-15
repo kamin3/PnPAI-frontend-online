@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-pull-image',
   templateUrl: './pull-image.component.html',
-  styleUrls: ['./pull-image.component.css']
+  styleUrls: ['./pull-image.component.css', '../new-use-case.component.css']
 })
 export class PullImageComponent implements OnInit {
 
