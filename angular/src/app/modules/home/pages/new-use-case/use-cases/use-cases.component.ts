@@ -17,7 +17,7 @@ export class UseCasesComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    this.industryService.getall("IND-123").subscribe({
+    this.industryService.getWithUseCases("IND-123").subscribe({
       next: (value) => {
         this.industries = value.message;
       },

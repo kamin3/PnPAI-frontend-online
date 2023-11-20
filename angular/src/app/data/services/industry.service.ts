@@ -18,14 +18,16 @@ export class IndustryService {
     };
 
 
-    getall(industry_id: string, include_usecases: boolean = false): Observable<digocFunctionsResponse<Industry[]>> {
+    getAll(): Observable<digocFunctionsResponse<Industry[]>> {
         let domainURL = environment.digitaloceanFunctionsURL + 'postgres/industry_controller?blocking=true&result=true';
-        if (include_usecases) {
-            let input = {
-                "operation": "getall"
-            };
-            return this.httpclient.post<digocFunctionsResponse<Industry[]>>(domainURL, input, { headers: this.headers });
-        }
+        let input = {
+            "operation": "getall"
+        };
+        return this.httpclient.post<digocFunctionsResponse<Industry[]>>(domainURL, input, { headers: this.headers });
+    }
+
+    getWithUseCases(industry_id: string): Observable<digocFunctionsResponse<Industry[]>> {
+        let domainURL = environment.digitaloceanFunctionsURL + 'postgres/industry_controller?blocking=true&result=true';
         let input = {
             "operation": "get_with_usecases",
             "industry_id": industry_id // "IND-123"

@@ -2,7 +2,7 @@ import { Observable, of, pipe, map, toArray } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Country } from '@schema/country';
 import data from '@assets/data/countries_cities.json';
-import { City } from '../schema/city';
+import { City } from '@schema/city';
 
 
 @Injectable({

@@ -28,5 +28,10 @@
         "Download": "Download",
         "GenerateToken": "Generate your token",
         "GoToDashboard": "Go to Dashboard"
+    },
+    "Register": {
+        "ThanksParagraphStart": "Thank you for choosing",
+        "ThanksParagraphEnd": "plug-and-play AI solutions. Please fill out the form below to get started on your AI journey.",
+        "SignUpFormTitle": "Sign Up"
     }
 }
