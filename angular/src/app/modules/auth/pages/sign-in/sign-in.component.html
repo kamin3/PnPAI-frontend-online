@@ -1,4 +1,59 @@
-<p>sign-in works!</p>
-<a type="button" class="btn btn-primary m-4" [routerLink]="homeRoute">
-    Go to home
-</a>
+
+<div class="bg-white min-vh-100 align-items-center" style="margin-top: 150px;">
+    <div class="col-lg-12 text-center text-lg-start overflow-hidden z-index-2">
+
+
+  
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-9 col-xl-12 mx-auto max-w-450">
+            <div class="mb-4 d-flex" >
+              <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
+            </div>
+
+            <h1 class="fw-bold mb-5 text-black">Sign in</h1>
+
+            <form>
+
+              <!-- email address -->
+              <div class="form-floating mb-3">
+                <input  type="email" class="form-control" id="account_email" placeholder="Email address">
+                <label for="account_email">Email address</label>
+              </div>
+
+              <!-- password -->
+              <div class="form-floating mb-3">
+                <input  type="password" class="form-control" id="account_passwd" placeholder="Password" autocomplete="new-password">
+                <label for="account_passwd">Password</label>
+
+                <!-- forgot -->
+                <a href="account-full-signin-password-1.html" class="btn bg-transparent shadow-none link-muted position-absolute top-0 end-0 m-1">
+                  Forgot
+                </a>
+              </div>
+
+              <!-- submot button -->
+              <div class="d-grid mb-3">
+                <a type="submit" class="btn btn-primary" href="pnp-main-page.html">
+                  <span>Sign in</span>
+                  <svg class="rtl-flip" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path>
+                  </svg>
+                </a>
+              </div>
+
+            </form>
+            <!-- create account -->
+            <div class="text-center mt-4">
+              <a href="pnp-main-page.html" class="link-muted">
+                Don't have an account yet?
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+
+
+    </div>
+
+  </div>
