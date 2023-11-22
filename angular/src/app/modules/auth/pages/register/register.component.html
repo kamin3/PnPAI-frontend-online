@@ -26,15 +26,16 @@
           </div>
 
           <div>
-            <form [formGroup]="reactiveForm!" (ngSubmit)="onSubmit()">
+            <form [formGroup]="registrationForm!" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="mb-3 col-4">
                   <label for="exampleFormControlInput1" class="form-label ">Company Name</label>
                   <input type="text" formControlName="companyName" class="form-control form-control-sm"
                     placeholder="Enter Company Name">
 
-                  <div *ngIf="reactiveForm!.get('companyName')!.touched || reactiveForm!.get('companyName')!.dirty">
-                    <div *ngIf="reactiveForm!.get('companyName')!.hasError('required')">
+                  <div
+                    *ngIf="registrationForm!.get('companyName')!.touched || registrationForm!.get('companyName')!.dirty">
+                    <div *ngIf="registrationForm!.get('companyName')!.hasError('required')">
                       <span class="text-danger">Company Name is required.</span>
                     </div>
                   </div>
@@ -46,8 +47,8 @@
                     <option selected value="">Select Country</option>
                     <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
                   </select>
-                  <div *ngIf="reactiveForm!.get('country')!.touched || reactiveForm!.get('country')!.dirty">
-                    <div *ngIf="reactiveForm!.get('country')!.hasError('required')">
+                  <div *ngIf="registrationForm!.get('country')!.touched || registrationForm!.get('country')!.dirty">
+                    <div *ngIf="registrationForm!.get('country')!.hasError('required')">
                       <span class="text-danger">Country is required.</span>
                     </div>
                   </div>
@@ -58,8 +59,8 @@
                     <option selected value="">Select City</option>
                     <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
                   </select>
-                  <div *ngIf="reactiveForm!.get('city')!.touched || reactiveForm!.get('city')!.dirty">
-                    <div *ngIf="reactiveForm!.get('city')!.hasError('required')">
+                  <div *ngIf="registrationForm!.get('city')!.touched || registrationForm!.get('city')!.dirty">
+                    <div *ngIf="registrationForm!.get('city')!.hasError('required')">
                       <span class="text-danger">City is required.</span>
                     </div>
                   </div>
@@ -143,7 +144,7 @@
 
               <!-- submit button -->
               <div class="d-grid mb-4" (mouseenter)="setAllTouched()">
-                <button type="submit" [disabled]="!reactiveForm!.valid" class="btn btn-primary">
+                <button type="submit" [disabled]="!registrationForm!.valid" class="btn btn-primary">
                   <span>Sign Up</span>
                 </button>
               </div>
@@ -153,6 +154,34 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<button hidden #showresult type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registeration result</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"
+        [ngStyle]="{'background-color': (resgiterationSuccess) ? '#c3ffa9 !important;' : '#ffeded !important;'}">
+        {{resultMessage}}
+      </div>
+      <div class="modal-footer">
+        <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
+          data-dismiss="modal">Close</button>
+        <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" type="button" class="btn btn-secondary"
+          data-dismiss="modal">Login</a>
+      </div>
     </div>
   </div>
 </div>
