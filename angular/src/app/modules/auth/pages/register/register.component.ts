@@ -8,6 +8,8 @@ import { CountryService } from '@app/data/services/country.service';
 import { IndustryService } from '@app/data/services/industry.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CONFIG } from '@app/shared/configs';
+import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
+
 
 @Component({
   selector: 'app-register',
@@ -38,15 +40,15 @@ export class RegisterComponent implements OnInit {
     this.registrationForm = this.fb.group({
       companyName: ["", Validators.required],
       country: ["", Validators.required],
-      city: ["", Validators.required],
+      city: [""],
       street: [""],
-      postalCode: ["", Validators.required],
+      postalCode: [""],
       websiteurl: [""], // should validate against valid url
       industryId: ["", Validators.required],
       firstName: ["", [Validators.required]],
       lastName: ["", [Validators.required]],
-      phoneNumber: [""], // should validate against start with code + or 00
-      email: ["", [Validators.required, Validators.email]], // should validate against business email
+      phoneNumber: ["", [Validators.pattern(/^(00|\+)\d+$/)]],
+      email: ["", [Validators.required, Validators.email, ValidateBusinessEmail]], // should validate against business email
       password: ["", [Validators.required]],
       acceptTerms: ["", Validators.requiredTrue],
     });
@@ -106,17 +108,28 @@ export class RegisterComponent implements OnInit {
 
     this.accountService.userSignup(input).subscribe({
       next: (value) => {
-        this.resultMessage = "Registeration successful";
-        this.resgiterationSuccess = true;
-        this.showModalBTN.nativeElement.click();
+        if (value.status_code == 200)
+          return this.registerSuccess();
+        this.registerFailed(value.message);
       },
       error: (err) => {
-        this.resultMessage = err;
-        this.resgiterationSuccess = false;
-        this.showModalBTN.nativeElement.click();
-        console.log(err);
+        this.registerFailed(err);
       },
     });
+  }
+
+
+  private registerSuccess() {
+    this.resultMessage = "Registeration successful";
+    this.resgiterationSuccess = true;
+    this.showModalBTN.nativeElement.click();
+  }
+
+  private registerFailed(err: any) {
+    this.resultMessage = err;
+    this.resgiterationSuccess = false;
+    this.showModalBTN.nativeElement.click();
+    console.log(err);
   }
 
   setAllTouched() {

@@ -65,10 +65,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">State</label>
-                  <input type="text" class="form-control form-control-sm" placeholder="Enter State">
-                </div> -->
               </div>
               <div class="row">
                 <div class="mb-3 col-8">
@@ -95,6 +91,12 @@
                     <option selected value="">Select Indusrty</option>
                     <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
                   </select>
+                  <div
+                    *ngIf="registrationForm!.get('industryId')!.touched || registrationForm!.get('industryId')!.dirty">
+                    <div *ngIf="registrationForm!.get('industryId')!.hasError('required')">
+                      <span class="text-danger">Industry is required.</span>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -104,16 +106,32 @@
                   <label for="exampleFormControlInput1" class="form-label ">First Name</label>
                   <input type="text" formControlName="firstName" class="form-control form-control-sm"
                     placeholder="Enter First Name">
+                  <div *ngIf="registrationForm!.get('firstName')!.touched || registrationForm!.get('firstName')!.dirty">
+                    <div *ngIf="registrationForm!.get('firstName')!.hasError('required')">
+                      <span class="text-danger">First Name is required.</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="mb-3 col-4">
                   <label for="exampleFormControlInput1" class="form-label ">Last Name</label>
                   <input type="text" formControlName="lastName" class="form-control form-control-sm"
                     placeholder="Enter Last Name">
+                  <div *ngIf="registrationForm!.get('lastName')!.touched || registrationForm!.get('lastName')!.dirty">
+                    <div *ngIf="registrationForm!.get('lastName')!.hasError('required')">
+                      <span class="text-danger">Last Name is required.</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="mb-3 col-4">
                   <label for="exampleFormControlInput1" class="form-label ">Phone Number</label>
                   <input type="number" formControlName="phoneNumber" class="form-control form-control-sm"
                     placeholder="Enter Phone Number">
+                  <div
+                    *ngIf="registrationForm!.get('phoneNumber')!.touched || registrationForm!.get('phoneNumber')!.dirty">
+                    <div *ngIf="registrationForm!.get('phoneNumber')!.hasError('pattern')">
+                      <span class="text-danger">PhoneNumber must start with 00 or +.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -121,6 +139,16 @@
                   <label for="exampleFormControlInput1" class="form-label ">Email </label>
                   <input type="text" formControlName="email" class="form-control form-control-sm"
                     placeholder="Enter Email">
+                  <div *ngIf="registrationForm!.get('email')!.touched || registrationForm!.get('email')!.dirty">
+                    <div *ngIf="registrationForm!.get('email')!.hasError('required')">
+                      <span class="text-danger">Email is required.</span>
+                    </div>
+                  </div>
+                  <div *ngIf="registrationForm!.get('email')!.touched || registrationForm!.get('email')!.dirty">
+                    <div *ngIf="registrationForm!.get('email')!.hasError('invalidBusinessEmail')">
+                      <span class="text-danger">Email must be a business email.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -128,6 +156,11 @@
                   <label for="exampleFormControlInput1" class="form-label ">Password </label>
                   <input type="password" formControlName="password" class="form-control form-control-sm"
                     placeholder="Enter Password">
+                  <div *ngIf="registrationForm!.get('password')!.touched || registrationForm!.get('password')!.dirty">
+                    <div *ngIf="registrationForm!.get('password')!.hasError('required')">
+                      <span class="text-danger">Password is required.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
 

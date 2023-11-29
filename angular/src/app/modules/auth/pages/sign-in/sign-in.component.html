@@ -1,8 +1,6 @@
 <div class="bg-white min-vh-100 align-items-center" style="margin-top: 150px;">
   <div class="col-lg-12 text-center text-lg-start overflow-hidden z-index-2">
 
-
-
     <div class="row">
       <div class="col-sm-8 col-md-6 col-lg-9 col-xl-12 mx-auto max-w-450">
         <div class="mb-4 d-flex">
@@ -11,30 +9,40 @@
 
         <h1 class="fw-bold mb-5 text-black">Sign in</h1>
 
-        <form>
+        <form [formGroup]="signinForm!" (ngSubmit)="onSubmit()">
 
           <!-- email address -->
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="account_email" placeholder="Email address">
+            <input type="email" class="form-control" formControlName="email" id="account_email"
+              placeholder="Email address">
             <label for="account_email">Email address</label>
+            <div *ngIf="signinForm!.get('email')!.touched || signinForm!.get('email')!.dirty">
+              <div *ngIf="signinForm!.get('email')!.hasError('required')">
+                <span class="text-danger">Email is required.</span>
+              </div>
+            </div>
           </div>
 
           <!-- password -->
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="account_passwd" placeholder="Password"
-              autocomplete="new-password">
+            <input type="password" class="form-control" formControlName="password" id="account_passwd"
+              placeholder="Password" autocomplete="new-password">
             <label for="account_passwd">Password</label>
+            <div *ngIf="signinForm!.get('password')!.touched || signinForm!.get('password')!.dirty">
+              <div *ngIf="signinForm!.get('password')!.hasError('required')">
+                <span class="text-danger">Password is required.</span>
+              </div>
+            </div>
 
             <!-- forgot -->
-            <a href="account-full-signin-password-1.html"
-              class="btn bg-transparent shadow-none link-muted position-absolute top-0 end-0 m-1">
+            <a href="#" class="btn bg-transparent shadow-none link-muted position-absolute top-0 end-0 m-1">
               Forgot
             </a>
           </div>
 
-          <!-- submot button -->
-          <div class="d-grid mb-3">
-            <a type="submit" class="btn btn-primary" href="pnp-main-page.html">
+          <!-- submit button -->
+          <div class="d-grid mb-3" (mouseenter)="setAllTouched()">
+            <button type="submit" [disabled]="!signinForm!.valid" class="btn btn-primary">
               <span>Sign in</span>
               <svg class="rtl-flip" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor">
@@ -42,13 +50,13 @@
                   d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z">
                 </path>
               </svg>
-            </a>
+            </button>
           </div>
 
         </form>
         <!-- create account -->
         <div class="text-center mt-4">
-          <a href="pnp-main-page.html" class="link-muted">
+          <a [routerLink]="registerRoute" class="link-muted">
             Don't have an account yet?
           </a>
         </div>
@@ -60,65 +68,4 @@
 
   </div>
 
-</div>
-<div class="row g-0  min-vh-100 align-items-center">
-  <div class="col-lg-12 text-center text-lg-start overflow-hidden z-index-2">
-    <div class="row">
-
-      <div class="col-5">
-        <div class="d-flex justify-content-center pt-6">
-          <img src="./assets/img/pnp-signup-img.svg" alt="" srcset="" width="500">
-        </div>
-
-        <div class="pnp-register-message">
-          <div class="ms-5 mb-4 d-flex justify-content-center">
-            <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
-          </div>
-          <p class="text-center small mb-2 pb-3 border-bottom text-dark ms-5 mb-4">
-            {{'Register.ThanksParagraphStart' | translate}} <span class="fw-bold pnp-name-color">PnP.ai
-              's</span>
-            {{'Register.ThanksParagraphEnd' | translate}}
-          </p>
-        </div>
-      </div>
-
-      <div class="col-md-7 d-flex justify-content-center py-5">
-        <div class="col-12 col-lg-10 px-6 py-2 shadow-lg rounded-2 my-2">
-          <div class="d-flex flex-column align-items-center ">
-            <h1 class="fw-bold mb-3 mt-5">Sign in</h1>
-
-          </div>
-
-          <div>
-            <form [formGroup]="signinForm!" (ngSubmit)="onSubmit()">
-
-              <div class="row">
-                <div class="mb-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label ">Email </label>
-                  <input type="text" formControlName="email" class="form-control form-control-sm"
-                    placeholder="Enter Email">
-                </div>
-              </div>
-              <div class="row">
-                <div class="mb-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label ">Password </label>
-                  <input type="password" formControlName="password" class="form-control form-control-sm"
-                    placeholder="Enter Password">
-                </div>
-              </div>
-
-              <!-- submit button -->
-              <div class="d-grid mb-4" (mouseenter)="setAllTouched()">
-                <button type="submit" [disabled]="!signinForm!.valid" class="btn btn-primary">
-                  <span>Login</span>
-                </button>
-              </div>
-            </form>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </div>

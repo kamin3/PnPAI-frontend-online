@@ -28,31 +28,16 @@
             <small class="d-block text-muted smaller">account settings and more</small>
         </a>
 
-        <!-- <a href="#" class="dropdown-item text-truncate">
-          <small class="badge bg-success-soft float-end">1 new</small>
-          <span class="fw-medium">My Messages</span>
-          <small class="d-block text-muted smaller">inbox, projects, tasts</small>
-        </a> -->
-
         <a href="#" class="dropdown-item text-truncate">
             <small class="badge bg-danger-soft float-end">2 days left</small>
             <span class="fw-medium">My Subscription</span>
             <small class="d-block text-muted smaller">your monthly billing</small>
         </a>
 
-        <!-- <a href="#" class="dropdown-item text-truncate">
-          <span class="fw-medium">Account Settings</span>
-          <small class="d-block text-muted smaller">profile, password and more...</small>
-        </a> -->
-
-        <!-- <a href="#" class="dropdown-item text-truncate">
-          <span class="fw-medium">Upgrade</span>
-          <small class="d-block text-muted smaller">upgrade your account</small>
-        </a> -->
-
         <div class="dropdown-divider mb-0 mt-3"></div>
 
-        <a href="#" class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore fw-medium py-3 px-4">
+        <a type="button" (click)="logout()"
+            class="prefix-icon-ignore dropdown-footer dropdown-custom-ignore fw-medium py-3 px-4">
             <i class="fi fi-power float-start"></i>
             Log Out
         </a>

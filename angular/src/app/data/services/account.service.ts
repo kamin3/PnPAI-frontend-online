@@ -14,6 +14,7 @@ import { userSigninResponse } from '@schema/userSigninResponse';
 })
 export class AccountService {
 
+  private token_key = 'accessToken';
   constructor(private httpclient: HttpClient) { }
   headers = {
     "Content-Type": "application/json",
@@ -40,5 +41,21 @@ export class AccountService {
   signin(input: userSigninInput): Observable<userSigninResponse> {
     let domainURL = environment.digitaloceanFunctionsURL + 'account_services/login?blocking=true&result=true';
     return this.httpclient.post<userSigninResponse>(domainURL, input, { headers: this.headers });
+  }
+
+  saveToken(token: string) {
+    localStorage.setItem(this.token_key, token);
+  }
+
+  getToken(): string | null {
+    return localStorage.getItem(this.token_key);
+  }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem(this.token_key) != null;
+  }
+
+  logout() {
+    localStorage.removeItem(this.token_key);
   }
 }

@@ -29,9 +29,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { LoaderComponent } from './components/loader/loader.component';
+import { TokenInterceptor } from '@app/shared/interceptors/token.interceptor';
+import { LoaderInterceptor } from '@app/shared/interceptors/loader.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,
@@ -56,7 +59,9 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  declarations: [],
+  declarations: [
+    LoaderComponent
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -64,8 +69,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule,
     FontAwesomeModule,
     TranslateModule,
-    ClipboardModule
-  ]
+    ClipboardModule,
+    LoaderComponent
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
 })
 export class SharedModule {
   constructor(faIconLibrary: FaIconLibrary) {

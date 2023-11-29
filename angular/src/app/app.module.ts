@@ -11,7 +11,6 @@ import { NavBarComponent } from './layouts/content-layout/nav-bar/nav-bar.compon
 import { NotificationsComponent } from './layouts/content-layout/nav-bar/notifications/notifications.component';
 import { AccountTabComponent } from './layouts/content-layout/nav-bar/account-tab/account-tab.component';
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,

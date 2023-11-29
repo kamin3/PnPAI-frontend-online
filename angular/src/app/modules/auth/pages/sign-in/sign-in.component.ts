@@ -4,6 +4,7 @@ import { userSigninInput } from '@schema/userSigninInput';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
@@ -12,6 +13,7 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
 
   homeRoute = CONFIG.home.route;
+  registerRoute = CONFIG.auth.children.register.route;
 
   signinForm: FormGroup | undefined;
 
@@ -42,14 +44,20 @@ export class SignInComponent implements OnInit {
 
     this.accountService.signin(input).subscribe({
       next: (value) => {
-        localStorage.setItem('accessToken', value.jwt_token);
-        this.router.navigateByUrl(this.homeRoute);
+        if (value.status_code == 200)
+          return this.signinSuccess(value.jwt_token);
+        console.log(value.message);
       },
       error: (err) => {
         console.log(err);
       },
     });
   };
+
+  private signinSuccess(token: string) {
+    this.accountService.saveToken(token);
+    this.router.navigateByUrl(this.homeRoute);
+  }
 
   setAllTouched() {
     Object.keys(this.signinForm!.controls).forEach(controlName => {
