@@ -14,9 +14,9 @@ export class LandingPageComponent implements OnInit {
     private planService: PlansService,
     private accountService: AccountService
   ) { }
-  plans_data: Plan[] = [];
+  plansData: Plan[] = [];
   plans: PlanRepresent[] = [];
-  plans_styles = [
+  plansStyles = [
     {
       order: 1,
       title_class: 'bg-danger',
@@ -54,24 +54,24 @@ export class LandingPageComponent implements OnInit {
       button_class: 'enter-price-button',
     },
   ];
-  is_user_logged_in: boolean = false;
-  login_route = CONFIG.auth.children.login.route;
-  register_route = CONFIG.auth.children.register.route;
+  isUserLoggedIn: boolean = false;
+  loginRoute = CONFIG.auth.children.login.route;
+  registerRoute = CONFIG.auth.children.register.route;
   landingRoute = CONFIG.landing.children.landing.route;
-  current_url = window.location.href;
+  currentUrl = window.location.href;
   @ViewChild('guestWarning')
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;
 
   ngOnInit(): void {
-    this.is_user_logged_in = this.accountService.isLoggedIn();
+    this.isUserLoggedIn = this.accountService.isLoggedIn();
     this.getAllPlans();
   }
 
   private getAllPlans() {
     this.planService.getAll().subscribe({
       next: (value) => {
-        this.plans_data = value.message;
-        this.plans = this.mapPlans(this.plans_data);
+        this.plansData = value.message;
+        this.plans = this.mapPlans(this.plansData);
       },
       error: (err) => {
         console.log(err);
@@ -79,10 +79,10 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  private mapPlans(plans_data: Plan[]): PlanRepresent[] {
-    plans_data = plans_data.sort((o1, o2) => o1.order - o2.order);
+  private mapPlans(plansData: Plan[]): PlanRepresent[] {
+    plansData = plansData.sort((o1, o2) => o1.order - o2.order);
 
-    for (const plan of plans_data) {
+    for (const plan of plansData) {
       let monthly_price = plan.prices.find(
         (p) => p.period_unit == 'month' && p.period == 1
       );
@@ -104,8 +104,8 @@ export class LandingPageComponent implements OnInit {
         annual_price: annual_price!.price / 100,
         annual_discount: Math.floor(annual_price!.discount * 100),
         has_trial: monthly_price!.trial_period > 0,
-        trial_period: monthly_price!.period,
-        trial_period_unit: monthly_price!.period_unit,
+        trial_period: monthly_price!.trial_period,
+        trial_period_unit: monthly_price!.trial_period_unit,
       };
 
       this.plans.push(new_plan);
@@ -115,9 +115,9 @@ export class LandingPageComponent implements OnInit {
   }
 
   buyPlan(plan_id: string) {
-    if (!this.is_user_logged_in)
+    if (!this.isUserLoggedIn)
       this.showGuestWarningModalBTN.nativeElement.click();
-    let requested_plan = this.plans_data.find(p => p.id == plan_id)
+    let requested_plan = this.plansData.find(p => p.id == plan_id)
     let monthly_price = requested_plan?.prices.find(
       (p) => p.period_unit == 'month' && p.period == 1
     )!;
