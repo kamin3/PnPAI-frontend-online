@@ -35,6 +35,7 @@ export const CONFIG = {
     route: '/landing',
     children: {
       landing: { name: 'landing', route: '/landing/landing' },
+      checkoutresult: { name: 'checkoutresult', route: '/landing/checkoutresult' },
     },
   },
 };

@@ -14,6 +14,7 @@ export class LandingPageComponent implements OnInit {
     private planService: PlansService,
     private accountService: AccountService
   ) { }
+  plans_data: Plan[] = [];
   plans: PlanRepresent[] = [];
   plans_styles = [
     {
@@ -68,8 +69,8 @@ export class LandingPageComponent implements OnInit {
   private getAllPlans() {
     this.planService.getAll().subscribe({
       next: (value) => {
-        let plans_data = value.message;
-        this.plans = this.mapPlans(plans_data);
+        this.plans_data = value.message;
+        this.plans = this.mapPlans(this.plans_data);
       },
       error: (err) => {
         console.log(err);
@@ -112,10 +113,25 @@ export class LandingPageComponent implements OnInit {
     return this.plans;
   }
 
-  checkout(plan_id: string) {
+  buyPlan(plan_id: string) {
     if (!this.is_user_logged_in)
       this.showGuestWarningModalBTN.nativeElement.click();
+    let requested_plan = this.plans_data.find(p => p.id == plan_id)
+    let monthly_price = requested_plan?.prices.find(
+      (p) => p.period_unit == 'month' && p.period == 1
+    )!;
+    this.checkout(monthly_price.id);
+  }
 
-    console.log(plan_id);
+  private checkout(monthly_price_id: string) {
+    this.planService.checkout(monthly_price_id).subscribe({
+      next: (value) => {
+        let url = value.message.url;
+        window.open(url, "_blank");
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }
