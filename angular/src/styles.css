@@ -768,12 +768,17 @@
 .navbar {
   font-weight: normal;
   background: #ffffff;
-  left: 244px;
   transition: left 0.25s ease;
   -webkit-transition: left 0.25s ease;
   -moz-transition: left 0.25s ease;
   -ms-transition: left 0.25s ease;
 }
+
+.navbar-left{
+  left: 244px;
+
+}
+
 
 @media (max-width: 992px) {
   .navbar {

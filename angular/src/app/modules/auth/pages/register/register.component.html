@@ -192,7 +192,7 @@
 </div>
 
 <button hidden #showresult type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
+
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -204,17 +204,16 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body"
-        [ngStyle]="{'background-color': (resgiterationSuccess) ? '#c3ffa9 !important;' : '#ffeded !important;'}">
-        {{resultMessage}}
-      </div>
-      <div class="modal-footer">
-        <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
-          data-dismiss="modal">Close</button>
-        <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" type="button" class="btn btn-secondary"
-          data-dismiss="modal">Login</a>
+        <div class="modal-body"
+          [ngStyle]="{'background-color': (resgiterationSuccess) ? '#c3ffa9 !important;' : '#ffeded !important;'}">
+          {{resultMessage}}
+        </div>
+        <div class="modal-footer">
+          <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
+            data-dismiss="modal">Close</button>
+          <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" type="button" class="btn btn-secondary"
+            data-dismiss="modal">Login</a>
+        </div>
       </div>
     </div>
   </div>
-</div>

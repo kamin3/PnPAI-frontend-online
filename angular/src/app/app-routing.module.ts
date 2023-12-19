@@ -8,8 +8,8 @@ import { authGuard } from '@app/shared/services/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: CONFIG.auth.children.login.route,
-    pathMatch: 'full'
+    redirectTo: CONFIG.landing.children.landing.route,
+    pathMatch: 'full',
   },
   {
     path: '',
@@ -17,22 +17,32 @@ const routes: Routes = [
     children: [
       {
         path: CONFIG.home.name,
-        loadChildren: () => import('@modules/home/home.module').then(m => m.HomeModule)
-      }
+        loadChildren: () =>
+          import('@modules/home/home.module').then((m) => m.HomeModule),
+      },
     ],
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
   {
     path: CONFIG.auth.name,
     component: AuthLayoutComponent,
     loadChildren: () =>
-      import('@modules/auth/auth.module').then(m => m.AuthModule)
+      import('@modules/auth/auth.module').then((m) => m.AuthModule),
   },
-  { path: '**', redirectTo: CONFIG.auth.children.login.route, pathMatch: 'full' }
+  {
+    path: CONFIG.landing.name,
+    loadChildren: () =>
+      import('@modules/landing/landing.module').then((m) => m.LandingModule),
+  },
+  {
+    path: '**',
+    redirectTo: CONFIG.landing.children.landing.route,
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

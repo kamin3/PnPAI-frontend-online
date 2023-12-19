@@ -1,0 +1,10 @@
+<svg width="3098" height="1464" viewBox="0 0 3098 1464" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.525391 0H3097.47V1464H0.525391V0Z" fill="#E4EEFF"/>
+<mask id="mask0_133_118" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="3098" height="1464">
+<rect x="0.525391" width="3096.95" height="1464" fill="#FFDFB8"/>
+</mask>
+<g mask="url(#mask0_133_118)">
+<ellipse cx="3135.38" cy="519.157" rx="878.275" ry="1226.38" fill="white" fill-opacity="0.57"/>
+<ellipse cx="81.9815" cy="1577.74" rx="878.275" ry="1226.38" fill="white" fill-opacity="0.57"/>
+</g>
+</svg>
