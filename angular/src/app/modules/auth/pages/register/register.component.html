@@ -211,8 +211,8 @@
         <div class="modal-footer">
           <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
             data-dismiss="modal">Close</button>
-          <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" type="button" class="btn btn-secondary"
-            data-dismiss="modal">Login</a>
+          <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" queryParamsHandling="merge" type="button"
+            class="btn btn-secondary" data-dismiss="modal">Login</a>
         </div>
       </div>
     </div>

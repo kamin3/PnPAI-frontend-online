@@ -64,8 +64,17 @@
       </div>
 
       <!-- OPTIONS -->
-      <a class="btn px-4 border-1 border-dark text-dark" [href]="login_route">Log in</a>
-      <a class="btn px-4 btn-danger" [href]="register_route">Sign Up</a>
+      <ng-container *ngIf="is_user_logged_in; else loggedOut">
+        <app-account-tab></app-account-tab>
+      </ng-container>
+      <ng-template #loggedOut>
+        <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="login_route"
+          [queryParams]="{ 'returnUrl': landingRoute }">Log in</a>
+
+        <a class="btn px-4 btn-danger" [routerLink]="register_route" [queryParams]="{ 'returnUrl': landingRoute }">Sign
+          Up</a>
+      </ng-template>
+
 
       <!-- /OPTIONS -->
     </nav>
@@ -828,8 +837,10 @@
         You need to have an account before joining us.
       </div>
       <div class="modal-footer">
-        <a class="btn px-4 border-1 border-dark text-dark" [href]="login_route">Log in</a>
-        <a class="btn px-4 btn-danger" [href]="register_route">Sign Up</a>
+        <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="login_route"
+          [queryParams]="{ 'returnUrl': landingRoute }">Log in</a>
+        <a class="btn px-4 btn-danger" [routerLink]="register_route" [queryParams]="{ 'returnUrl': landingRoute }">Sign
+          Up</a>
       </div>
     </div>
   </div>

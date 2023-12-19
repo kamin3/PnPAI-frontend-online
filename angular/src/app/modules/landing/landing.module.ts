@@ -10,4 +10,4 @@ import { CheckoutResultComponent } from './pages/checkout-result/checkout-result
   declarations: [LandingPageComponent, CheckoutResultComponent],
   imports: [CommonModule, RouterModule, LandingRoutingModule, SharedModule],
 })
-export class LandingModule {}
+export class LandingModule { }

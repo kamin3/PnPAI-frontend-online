@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { userSigninInput } from '@schema/userSigninInput';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -20,7 +20,8 @@ export class SignInComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
 
   ) {
 
@@ -56,7 +57,8 @@ export class SignInComponent implements OnInit {
 
   private signinSuccess(token: string) {
     this.accountService.saveToken(token);
-    this.router.navigateByUrl(this.homeRoute);
+    const returnUrl = this.route.snapshot.queryParams['returnUrl'] || this.homeRoute;
+    this.router.navigateByUrl(returnUrl);
   }
 
   setAllTouched() {

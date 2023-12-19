@@ -7,7 +7,7 @@ import { CONFIG } from '@app/shared/configs';
 @Component({
   selector: 'app-account-tab',
   templateUrl: './account-tab.component.html',
-  styleUrls: ['./account-tab.component.css', '../nav-bar.component.css']
+  styleUrls: ['./account-tab.component.css']
 })
 export class AccountTabComponent implements OnInit {
 

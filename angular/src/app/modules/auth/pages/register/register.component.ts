@@ -9,6 +9,7 @@ import { IndustryService } from '@app/data/services/industry.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CONFIG } from '@app/shared/configs';
 import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({

@@ -35,6 +35,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TokenInterceptor } from '@app/shared/interceptors/token.interceptor';
 import { LoaderInterceptor } from '@app/shared/interceptors/loader.interceptor';
+import { AccountTabComponent } from './components/account-tab/account-tab.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,
@@ -60,7 +61,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     }),
   ],
   declarations: [
-    LoaderComponent
+    LoaderComponent,
+    AccountTabComponent
   ],
   exports: [
     CommonModule,
@@ -70,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FontAwesomeModule,
     TranslateModule,
     ClipboardModule,
-    LoaderComponent
+    LoaderComponent,
+    AccountTabComponent
   ],
   providers: [
     {
