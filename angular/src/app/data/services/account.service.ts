@@ -17,29 +17,21 @@ export class AccountService {
   private token_key = 'accessToken';
   constructor(private httpclient: HttpClient) { }
   headers = {
-    "Content-Type": "application/json",
-    "Authorization": `Basic ${environment.digitaloceanFunctionsURLToken}`
+    "Content-Type": "application/json"
   };
 
   get(): Observable<Account> {
-    return of(data.AccountsTab).pipe(
-      map((item: any) => ({
-        image: item.Image,
-        email: item.Email,
-        lastLoginDate: item.LastLoginDate,
-        name: item.Name,
-        subscriptionDaysLeft: item.SubscriptionDaysLeft
-      } as Account))
-    );
+    let domainURL = environment.kongURL + 'account_services/user_details?blocking=true&result=true';
+    return this.httpclient.post<Account>(domainURL, { headers: this.headers });
   }
 
   userSignup(input: userSignupInput): Observable<digocFunctionsResponse<string>> {
-    let domainURL = environment.digitaloceanFunctionsURL + 'account_services/user_signup?blocking=true&result=true';
+    let domainURL = environment.kongURL + 'account_services/user_signup?blocking=true&result=true';
     return this.httpclient.post<digocFunctionsResponse<string>>(domainURL, input, { headers: this.headers });
   }
 
   signin(input: userSigninInput): Observable<userSigninResponse> {
-    let domainURL = environment.digitaloceanFunctionsURL + 'account_services/login?blocking=true&result=true';
+    let domainURL = environment.kongURL + 'account_services/login?blocking=true&result=true';
     return this.httpclient.post<userSigninResponse>(domainURL, input, { headers: this.headers });
   }
 

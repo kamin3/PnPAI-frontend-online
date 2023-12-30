@@ -10,6 +10,8 @@ import { SharedModule } from '@shared/shared.module';
 import { NavBarComponent } from './layouts/content-layout/nav-bar/nav-bar.component';
 import { NotificationsComponent } from './layouts/content-layout/nav-bar/notifications/notifications.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     NotificationsComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     SharedModule,

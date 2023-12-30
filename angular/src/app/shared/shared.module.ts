@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
@@ -35,7 +34,10 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TokenInterceptor } from '@app/shared/interceptors/token.interceptor';
 import { LoaderInterceptor } from '@app/shared/interceptors/loader.interceptor';
+import { HostInterceptor } from '@app/shared/interceptors/host.interceptor';
 import { AccountTabComponent } from './components/account-tab/account-tab.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { CommonModule } from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,
@@ -44,8 +46,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
+    CommonModule,
     ReactiveFormsModule,
     RouterModule,
     FontAwesomeModule,
@@ -62,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   declarations: [
     LoaderComponent,
-    AccountTabComponent
+    AccountTabComponent,
+    AlertComponent
   ],
   exports: [
     CommonModule,
@@ -73,7 +76,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule,
     ClipboardModule,
     LoaderComponent,
-    AccountTabComponent
+    AccountTabComponent,
+    AlertComponent
   ],
   providers: [
     {
@@ -84,6 +88,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HostInterceptor,
       multi: true
     }
   ],

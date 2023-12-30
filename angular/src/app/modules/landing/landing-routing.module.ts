@@ -4,6 +4,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { CONFIG } from '@shared/configs';
 import { CheckoutResultComponent } from './pages/checkout-result/checkout-result.component';
 import { authGuard } from '@app/shared/services/auth.guard';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { FaqComponent } from './pages/faq/faq.component';
 
 const routes: Routes = [
   {
@@ -19,6 +21,14 @@ const routes: Routes = [
     path: CONFIG.landing.children.checkoutresult.name,
     component: CheckoutResultComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: CONFIG.landing.children.privacypolicy.name,
+    component: PrivacyPolicyComponent,
+  },
+  {
+    path: CONFIG.landing.children.faq.name,
+    component: FaqComponent,
   },
 ];
 

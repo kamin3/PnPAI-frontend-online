@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Industry } from '@app/data/schema/industry';
 import { Plan, PlanRepresent } from '@app/data/schema/plan';
 import { AccountService } from '@app/data/services/account.service';
+import { IndustryService } from '@app/data/services/industry.service';
 import { PlansService } from '@app/data/services/plans.service';
 import { CONFIG } from '@app/shared/configs';
 
@@ -10,10 +12,7 @@ import { CONFIG } from '@app/shared/configs';
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
-  constructor(
-    private planService: PlansService,
-    private accountService: AccountService
-  ) { }
+
   plansData: Plan[] = [];
   plans: PlanRepresent[] = [];
   plansStyles = [
@@ -61,9 +60,17 @@ export class LandingPageComponent implements OnInit {
   currentUrl = window.location.href;
   @ViewChild('guestWarning')
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;
+  industries: Industry[] = [];
+
+  constructor(
+    private planService: PlansService,
+    private accountService: AccountService,
+    private indusrtyService: IndustryService
+  ) { }
 
   ngOnInit(): void {
     this.isUserLoggedIn = this.accountService.isLoggedIn();
+    this.getIndustries();
     this.getAllPlans();
   }
 
@@ -99,8 +106,8 @@ export class LandingPageComponent implements OnInit {
         features: plan.description.trim().split('\n'),
         order: plan.order,
         monthly_price: monthly_price!.price / 100,
-        quarter_price: quarter_price!.price / 100,
-        quarter_discount: Math.floor(quarter_price!.discount * 100),
+        quarter_price: quarter_price ? quarter_price.price / 100 : quarter_price,
+        quarter_discount: quarter_price ? Math.floor(quarter_price.discount * 100) : quarter_price,
         annual_price: annual_price!.price / 100,
         annual_discount: Math.floor(annual_price!.discount * 100),
         has_trial: monthly_price!.trial_period > 0,
@@ -112,6 +119,17 @@ export class LandingPageComponent implements OnInit {
     }
 
     return this.plans;
+  }
+
+  getIndustries() {
+    this.indusrtyService.getAll().subscribe({
+      next: (value) => {
+        this.industries = value.message;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   buyPlan(plan_id: string) {

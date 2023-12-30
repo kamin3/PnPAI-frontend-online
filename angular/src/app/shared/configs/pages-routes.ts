@@ -36,6 +36,8 @@ export const CONFIG = {
     children: {
       landing: { name: 'landing', route: '/landing/landing' },
       checkoutresult: { name: 'checkoutresult', route: '/landing/checkoutresult' },
+      privacypolicy: { name: 'privacypolicy', route: '/landing/privacypolicy' },
+      faq: { name: 'faq', route: '/landing/faq' },
     },
   },
 };

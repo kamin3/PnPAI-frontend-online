@@ -12,13 +12,12 @@ import { HostedPage } from '@schema/hostedPage';
 export class PlansService {
   constructor(private httpclient: HttpClient) { }
   headers = {
-    'Content-Type': 'application/json',
-    Authorization: `Basic ${environment.digitaloceanFunctionsURLToken}`,
+    'Content-Type': 'application/json'
   };
 
   getAll(): Observable<digocFunctionsResponse<Plan[]>> {
     let domainURL =
-      environment.digitaloceanFunctionsURL +
+      environment.kongURL +
       'payment_services/plans?blocking=true&result=true';
     return this.httpclient.post<digocFunctionsResponse<Plan[]>>(
       domainURL,
@@ -31,7 +30,7 @@ export class PlansService {
 
   checkout(plan_price_id: string): Observable<digocFunctionsResponse<HostedPage>> {
     let domainURL =
-      environment.digitaloceanFunctionsURL +
+      environment.kongURL +
       'payment_services/checkout?blocking=true&result=true';
     return this.httpclient.post<digocFunctionsResponse<HostedPage>>(
       domainURL,

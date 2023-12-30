@@ -4,6 +4,7 @@ import { userSigninInput } from '@schema/userSigninInput';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from '@app/shared/services/alert.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -21,7 +22,8 @@ export class SignInComponent implements OnInit {
     private fb: FormBuilder,
     private accountService: AccountService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alert: AlertService
 
   ) {
 
@@ -45,11 +47,10 @@ export class SignInComponent implements OnInit {
 
     this.accountService.signin(input).subscribe({
       next: (value) => {
-        if (value.status_code == 200)
-          return this.signinSuccess(value.jwt_token);
-        console.log(value.message);
+        return this.signinSuccess(value.jwt_token);
       },
       error: (err) => {
+        this.alert.showAlert(err.error.message)
         console.log(err);
       },
     });

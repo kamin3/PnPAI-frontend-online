@@ -38,8 +38,8 @@ export interface PlanRepresent {
   name: string;
   order: number;
   monthly_price: number;
-  quarter_price: number;
-  quarter_discount: number;
+  quarter_price?: number;
+  quarter_discount?: number;
   annual_price: number;
   annual_discount: number;
   has_trial: boolean;

@@ -13,13 +13,12 @@ export class IndustryService {
 
     constructor(private httpclient: HttpClient) { }
     headers = {
-        "Content-Type": "application/json",
-        "Authorization": `Basic ${environment.digitaloceanFunctionsURLToken}`
+        "Content-Type": "application/json"
     };
 
 
     getAll(): Observable<digocFunctionsResponse<Industry[]>> {
-        let domainURL = environment.digitaloceanFunctionsURL + 'postgres/industry_controller?blocking=true&result=true';
+        let domainURL = environment.kongURL + 'postgres/industry_controller?blocking=true&result=true';
         let input = {
             "operation": "getall"
         };
@@ -27,7 +26,7 @@ export class IndustryService {
     }
 
     getWithUseCases(industry_id: string): Observable<digocFunctionsResponse<Industry[]>> {
-        let domainURL = environment.digitaloceanFunctionsURL + 'postgres/industry_controller?blocking=true&result=true';
+        let domainURL = environment.kongURL + 'postgres/industry_controller?blocking=true&result=true';
         let input = {
             "operation": "get_with_usecases",
             "industry_id": industry_id // "IND-123"

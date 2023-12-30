@@ -12,10 +12,9 @@ export class DockerConfigService {
 
   constructor(private httpclient: HttpClient) { }
   private headers = {
-    "Content-Type": "application/json",
-    "Authorization": `Basic ${environment.digitaloceanFunctionsURLToken}`
+    "Content-Type": "application/json"
   };
-  private domainURL = environment.digitaloceanFunctionsURL + 'postgres/image_controller?blocking=true&result=true';
+  private domainURL = environment.kongURL + 'postgres/image_controller?blocking=true&result=true';
 
 
 
