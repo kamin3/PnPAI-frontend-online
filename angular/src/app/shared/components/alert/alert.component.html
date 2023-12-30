@@ -1,0 +1,8 @@
+<div [@alertTrigger]="(alert.showsAlert$ | async) ? 'open' : 'close'" class="alert-class">
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+        <div>
+            {{ alert.alertMessage$ | async }}
+        </div>
+        <button type="button" class="btn-close" (click)="dismiss()" aria-label="Close"></button>
+    </div>
+</div>

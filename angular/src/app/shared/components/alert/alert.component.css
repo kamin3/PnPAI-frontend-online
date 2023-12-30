@@ -1,0 +1,7 @@
+.alert-class {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    max-width: 300px;
+    z-index: 10;
+}
