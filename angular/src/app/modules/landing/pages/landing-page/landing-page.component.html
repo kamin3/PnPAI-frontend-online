@@ -135,11 +135,11 @@
       <div class="col-lg-4 mb-4" *ngFor="let item of plans; index as idx">
         <div class="pricing-table p-3">
           <div class="p-3">
-            <div class="text-white px-3 py-2 rounded-2 mb-2 text-center d-flex align-items-center justify-content-evenly {{
+            <div class="text-white px-3 py-2 rounded-2 mb-4 text-center d-flex align-items-center justify-content-evenly {{
                 plansStyles[idx].title_class
               }}">
               <img src="{{ plansStyles[idx].title_icon }}" width="80" />
-              <h2 class="fw-bold mb-0">{{ item.name }}</h2>
+              <h2 class="fw-bold mb-0 text-white fs-3">{{ item.name }}</h2>
             </div>
             <h3 class="h4 text-center">
               <span class="fs-4 fw-normal">$</span>
@@ -325,24 +325,26 @@
   <div class="container text-center-xs justify-content-between">
     <div class="row">
       <div class="col-lg-4 mb-4">
-        <div class="bg-primary shadow-md rounded-2 p-4">
-          <div class="pnp-first-big-card-bg d-flex flex-column">
-            <p class="fw-bold fs-3 text-white">Simplify AI Implementation</p>
-            <p class="fs-6 text-white" style="margin-bottom: 200px">
-              We understand that every business is unique. That’s why PnPAI goes
-              the extra mile by offering expert consultation services.
-            </p>
+        <div class="bg-primary shadow-md rounded-2 p-4" style="height: 620px;">
+          <div class="pnp-first-big-card-bg d-flex flex-column justify-content-between"  style="height: 100%;">
+            <div>
+              <p class="fw-bold fs-3 text-white pb-3">Simplify AI Implementation</p>
+              <p class="fs-6 text-white" >
+                We understand that every business is unique. That’s why PnPAI goes
+                the extra mile by offering expert consultation services.
+              </p>
+            </div>
             <img src="./assets/img/first-card-img.svg" alt="" srcset="" />
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-4">
-        <div class="bg-danger shadow-md rounded-2">
-          <div class="d-flex flex-column">
+        <div class="bg-danger shadow-md rounded-2" style="height: 620px;">
+          <div class="d-flex flex-column justify-content-between" style="height: 100%;">
             <img src="./assets/img/second-card-img.png" alt="" srcset="" />
             <div class="p-3">
-              <p class="fw-bold fs-3 text-white" style="margin-top: 170px">
+              <p class="fw-bold fs-3 text-white" >
                 Optimize Efficiency and Enhance Customer Experiences
               </p>
               <p class="fs-6 text-white">
@@ -355,14 +357,16 @@
       </div>
 
       <div class="col-lg-4 mb-4">
-        <div class="p-3 shadow-md rounded-2" style="background-color: #002469">
-          <div class="d-flex flex-column">
-            <p class="fw-bold fs-3 text-white">Accelerate Your AI Journey</p>
-            <p class="fs-6 text-white" style="margin-bottom: 185px">
-              Say goodbye to the complexities of AI development. PnPAI
-              specializes in crafting ready-to-deploy, containerized AI
-              solutions.
-            </p>
+        <div class="p-3 shadow-md rounded-2" style="background-color: #002469; height: 620px;">
+          <div class="d-flex flex-column justify-content-between" style="height: 100%;">
+            <div>
+              <p class="fw-bold fs-3 text-white pb-3">Accelerate Your AI Journey</p>
+              <p class="fs-6 text-white" style="margin-bottom: 185px">
+                Say goodbye to the complexities of AI development. PnPAI
+                specializes in crafting ready-to-deploy, containerized AI
+                solutions.
+              </p>
+            </div>
             <img src="./assets/img/third-card-img.svg" alt="" srcset="" />
           </div>
         </div>
@@ -374,7 +378,7 @@
 <!-- Our Process  Section -->
 <div class="section text-white bg-primary" id="ourprocess">
   <div class="container-fluid">
-    <h2 class="h1 fw-bold text-center mb-4">Our Process</h2>
+    <h2 class="h1 fw-bold text-center mb-4 text-white">Our Process</h2>
     <div class="row justify-content-between p-4">
       <div class="col-md-7">
         <div class="d-flex flex-column">
