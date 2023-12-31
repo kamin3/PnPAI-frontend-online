@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Account } from '@app/data/schema/account';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
+import { AlertService } from '@app/shared/services/alert.service';
 
 @Component({
   selector: 'app-account-tab',
@@ -16,7 +17,8 @@ export class AccountTabComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
-    private router: Router) {
+    private router: Router,
+    private alertService: AlertService) {
 
   }
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class AccountTabComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
+        this.alertService.showAlert(err.error.error)
       },
     });
   }

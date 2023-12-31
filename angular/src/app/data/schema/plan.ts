@@ -42,6 +42,7 @@ export interface PlanRepresent {
   quarter_discount?: number;
   annual_price: number;
   annual_discount: number;
+  monthly_price_annual_plan: number;
   has_trial: boolean;
   trial_period: number;
   trial_period_unit: string;

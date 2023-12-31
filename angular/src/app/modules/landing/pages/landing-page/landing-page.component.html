@@ -116,7 +116,8 @@
         <span class="text-gray-600 pe-4 fs-3">Monthly</span>
 
         <label class="form-switch form-switch-pill form-switch-primary" style="top: 9px">
-          <input type="checkbox" value="1" checked data-count-target=".pricetable-count" />
+          <input type="checkbox" value="1" checked data-count-target=".pricetable-count"
+            (change)="onPlanPeriodChange($event)" />
           <i></i>
         </label>
 
@@ -144,7 +145,8 @@
                 data-count-duration="1000" data-count-toggle='[
                   {"from":"0", "to":"255", "duration":800},
                   {"from":"255", "to":"299", "duration":800}
-              ]'>{{ item.monthly_price | number }}</span>
+              ]'>{{ monthlyPlanChecked ? (item.monthly_price | number) : (item.monthly_price_annual_plan |
+                number)}}</span>
               <span class="fs-4 fw-normal">/mo</span>
             </h3>
           </div>
@@ -205,6 +207,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Reseller  Section -->
 <div class="section bg-light mt-1 py-6 reseller-container">

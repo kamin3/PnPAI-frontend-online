@@ -23,7 +23,7 @@ export class SignInComponent implements OnInit {
     private accountService: AccountService,
     private router: Router,
     private route: ActivatedRoute,
-    private alert: AlertService
+    private alertService: AlertService
 
   ) {
 
@@ -50,7 +50,7 @@ export class SignInComponent implements OnInit {
         return this.signinSuccess(value.jwt_token);
       },
       error: (err) => {
-        this.alert.showAlert(err.error.message)
+        this.alertService.showAlert(err.error.message)
         console.log(err);
       },
     });
