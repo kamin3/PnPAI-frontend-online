@@ -319,3 +319,15 @@
 	}
 
 }
+
+
+.pnp-second-btn:hover{
+	background-color: #001949;
+	color: white !important;
+	transition: 0.3s;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	
+}
