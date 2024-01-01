@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Industry } from '@app/data/schema/industry';
 import { Plan, PlanRepresent } from '@app/data/schema/plan';
 import { AccountService } from '@app/data/services/account.service';
@@ -57,16 +58,18 @@ export class LandingPageComponent implements OnInit {
   loginRoute = CONFIG.auth.children.login.route;
   registerRoute = CONFIG.auth.children.register.route;
   landingRoute = CONFIG.landing.children.landing.route;
+  dashboardRoute = CONFIG.home.children.dashboard.route;
   currentUrl = window.location.href;
   @ViewChild('guestWarning')
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;
   industries: Industry[] = [];
-  monthlyPlanChecked: boolean = false
+  monthlyPlanChecked: boolean = false;
 
   constructor(
     private planService: PlansService,
     private accountService: AccountService,
-    private indusrtyService: IndustryService
+    private indusrtyService: IndustryService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -136,15 +139,15 @@ export class LandingPageComponent implements OnInit {
   }
 
   onPlanPeriodChange(event: Event) {
-    const ischecked = (<HTMLInputElement>event.target).checked
-    this.monthlyPlanChecked = !ischecked
+    const ischecked = (<HTMLInputElement>event.target).checked;
+    this.monthlyPlanChecked = !ischecked;
   }
 
   buyPlan(plan_id: string) {
     if (!this.isUserLoggedIn)
       this.showGuestWarningModalBTN.nativeElement.click();
-    let requested_plan = this.plansData.find(p => p.id == plan_id)
-    let periodUnit = this.monthlyPlanChecked ? 'month' : 'year'
+    let requested_plan = this.plansData.find(p => p.id == plan_id);
+    let periodUnit = this.monthlyPlanChecked ? 'month' : 'year';
     let price = requested_plan?.prices.find(
       (p) => p.period_unit == periodUnit && p.period == 1
     )!;
@@ -165,8 +168,8 @@ export class LandingPageComponent implements OnInit {
               console.log("errrrroooooooooooor");
               console.log(err);
             },
-          })
-        })
+          });
+        });
       },
       loaded: () => {
         console.log("checkout opened");
@@ -179,8 +182,9 @@ export class LandingPageComponent implements OnInit {
       close: () => {
         console.log("checkout closed");
       },
-      success: function (hostedPageId: string) {
+      success: (hostedPageId: string) => {
         console.log('hosted page success', hostedPageId);
+        this.router.navigateByUrl(this.dashboardRoute);
       },
       step: (value: any) => {
         // value -> which step in checkout
@@ -201,7 +205,7 @@ export class LandingPageComponent implements OnInit {
   private loadChargebeeScript() {
     let body = <HTMLDivElement>document.body;
     let script = document.createElement('script');
-    script.onload = this.initChargebee
+    script.onload = this.initChargebee;
     script.src = 'https://js.chargebee.com/v2/chargebee.js';
     body.appendChild(script);
   }

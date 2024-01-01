@@ -8,7 +8,7 @@
         </div>
 
         <div class="pnp-register-message">
-          <a class="ms-5 mb-4 d-flex justify-content-center" href="angular/src/app/modules/landing/pages/landing-page/landing-page.component.html">
+          <a class="ms-5 mb-4 d-flex justify-content-center" [routerLink]="landingPageRoute">
             <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
           </a>
           <p class="text-center small mb-2 pb-3 border-bottom text-dark ms-5 mb-4">
@@ -170,7 +170,8 @@
                   <input class="form-check-input" id="contact_gdpr" name="contact_gdpr" type="checkbox"
                     formControlName="acceptTerms">
                   <label class="form-check-label" for="contact_gdpr">
-                    I do accept PnP <a class="text-decoration-none" href="" target="_blank">terms & conditions</a>.
+                    I do accept PnP <a class="text-decoration-none" [routerLink]="" target="_blank">terms &
+                      conditions</a>.
                   </label>
                 </div>
               </div>
@@ -178,7 +179,7 @@
               <!-- submit button -->
               <div class="d-grid mb-4" (mouseenter)="setAllTouched()">
                 <button type="submit" [disabled]="!registrationForm!.valid" class="btn btn-primary">
-                  <span>Sign Up</span>
+                  <span>{{'Buttons.SignUp' | translate}}</span>
                 </button>
               </div>
             </form>
@@ -195,25 +196,30 @@
 
 </button>
 
+
+
+
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registeration result</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{'Register.RegisterationResultModalTitle' | translate}} </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <div class="modal-body"
-          [ngStyle]="{'background-color': (resgiterationSuccess) ? '#c3ffa9 !important;' : '#ffeded !important;'}">
-          {{resultMessage}}
-        </div>
-        <div class="modal-footer">
-          <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
-            data-dismiss="modal">Close</button>
-          <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" queryParamsHandling="merge" type="button"
-            class="btn btn-secondary" data-dismiss="modal">Login</a>
-        </div>
+      </div>
+      <div class="modal-body"
+        [ngStyle]="{'background-color': (resgiterationSuccess) ? '#c3ffa9 !important;' : '#ffeded !important;'}">
+        {{resultMessage}}
+      </div>
+      <div class="modal-footer">
+
+        <button *ngIf="!resgiterationSuccess" type="button" class="btn btn-secondary"
+          data-dismiss="modal">{{'Buttons.Close' | translate}} </button>
+        <a *ngIf="resgiterationSuccess" routerLink="{{loginLink}}" queryParamsHandling="merge" type="button"
+          class="btn btn-secondary" data-dismiss="modal">{{'Buttons.LogIn' | translate}} </a>
       </div>
     </div>
   </div>
+</div>

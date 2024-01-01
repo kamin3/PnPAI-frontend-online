@@ -11,7 +11,9 @@ import { NavBarComponent } from './layouts/content-layout/nav-bar/nav-bar.compon
 import { NotificationsComponent } from './layouts/content-layout/nav-bar/notifications/notifications.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
+import { HeaderComponent } from './layouts/landing-layout/header/header.component';
+import { FooterComponent } from './layouts/landing-layout/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SideBarComponent,
     NavBarComponent,
     NotificationsComponent,
+    LandingLayoutComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserAnimationsModule,

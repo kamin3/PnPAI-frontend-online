@@ -27,6 +27,7 @@ export class RegisterComponent implements OnInit {
   resultMessage: string | undefined = undefined;
   resgiterationSuccess: boolean = false;
   loginLink = CONFIG.auth.children.login.route;
+  landingPageRoute = CONFIG.landing.children.landing.route;
   @ViewChild('showresult') showModalBTN!: ElementRef<HTMLButtonElement>;
 
   constructor(
@@ -109,9 +110,7 @@ export class RegisterComponent implements OnInit {
 
     this.accountService.userSignup(input).subscribe({
       next: (value) => {
-        if (value.status_code == 200)
-          return this.registerSuccess();
-        this.registerFailed(value.message);
+        return this.registerSuccess();
       },
       error: (err) => {
         this.registerFailed(err);
@@ -127,7 +126,7 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerFailed(err: any) {
-    this.resultMessage = err;
+    this.resultMessage = err.error.message;
     this.resgiterationSuccess = false;
     this.showModalBTN.nativeElement.click();
     console.log(err);

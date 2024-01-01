@@ -27,11 +27,34 @@
         "Copied": "Copied",
         "Download": "Download",
         "GenerateToken": "Generate your token",
-        "GoToDashboard": "Go to Dashboard"
+        "GoToDashboard": "Go to Dashboard",
+        "Close": "Close",
+        "LogIn": "Log in",
+        "LogOut": "Log out",
+        "Forgot": "Forgot",
+        "SignUp": "Sign Up",
+        "SignIn": "Sign in"
+
     },
     "Register": {
         "ThanksParagraphStart": "Thank you for choosing",
         "ThanksParagraphEnd": "plug-and-play AI solutions. Please fill out the form below to get started on your AI journey.",
-        "SignUpFormTitle": "Sign Up"
+        "SignUpFormTitle": "Sign Up",
+        "RegisterationResultModalTitle": "Registeration result"
+    },
+    "SignIn": {
+        "SignInFormTitle": "Sign in",
+        "NoAccountAnchor":"Don't have an account yet?"
+    },
+    "Form":{
+        "Fields": {
+            "Email": "Email address",
+            "Password": "Password"
+        },
+        "Errors":{
+            "EmailRequired":"Email address is required",
+            "EmailInvalid":"Email address must be a valid email",
+            "PasswordRequired": "Password is required"
+        }
     }
 }

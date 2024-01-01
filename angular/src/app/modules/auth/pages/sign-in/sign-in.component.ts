@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
 
   homeRoute = CONFIG.home.route;
   registerRoute = CONFIG.auth.children.register.route;
+  failedLoginMessage?: string = undefined;
 
   signinForm: FormGroup | undefined;
 
@@ -31,7 +32,7 @@ export class SignInComponent implements OnInit {
   }
   ngOnInit(): void {
     this.signinForm = this.fb.group({
-      email: ["", Validators.required],
+      email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required]
     });
   }
@@ -40,6 +41,7 @@ export class SignInComponent implements OnInit {
   onSubmit() {
     if (!this.signinForm!.valid) {
     }
+    this.failedLoginMessage = undefined;
     let input: userSigninInput = {
       "login_email": this.signinForm?.value.email,
       "raw_password": this.signinForm?.value.password
@@ -50,7 +52,11 @@ export class SignInComponent implements OnInit {
         return this.signinSuccess(value.jwt_token);
       },
       error: (err) => {
-        this.alertService.showAlert(err.error.message)
+        if (err.status != 500) {
+          this.failedLoginMessage = err.error.message;
+          return;
+        }
+        this.alertService.showAlert(err.error.message);
         console.log(err);
       },
     });

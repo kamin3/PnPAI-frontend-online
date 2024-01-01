@@ -7,7 +7,8 @@
           <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
         </div>
 
-        <h1 class="fw-bold mb-5 text-black">Sign in</h1>
+        <h1 class="fw-bold mb-5 text-black">{{'SignIn.SignInFormTitle' | translate}}</h1>
+        <span *ngIf="failedLoginMessage" class="text-danger">{{failedLoginMessage}}</span>
 
         <form [formGroup]="signinForm!" (ngSubmit)="onSubmit()">
 
@@ -15,10 +16,15 @@
           <div class="form-floating mb-3">
             <input type="email" class="form-control" formControlName="email" id="account_email"
               placeholder="Email address">
-            <label for="account_email">Email address</label>
+            <label for="account_email">{{'Form.Fields.Email' | translate}}</label>
             <div *ngIf="signinForm!.get('email')!.touched || signinForm!.get('email')!.dirty">
               <div *ngIf="signinForm!.get('email')!.hasError('required')">
-                <span class="text-danger">Email is required.</span>
+                <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
+              </div>
+            </div>
+            <div *ngIf="signinForm!.get('email')!.touched || signinForm!.get('email')!.dirty">
+              <div *ngIf="signinForm!.get('email')!.hasError('email')">
+                <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
               </div>
             </div>
           </div>
@@ -27,23 +33,23 @@
           <div class="form-floating mb-3">
             <input type="password" class="form-control" formControlName="password" id="account_passwd"
               placeholder="Password" autocomplete="new-password">
-            <label for="account_passwd">Password</label>
+            <label for="account_passwd">{{'Form.Fields.Password' | translate}}</label>
             <div *ngIf="signinForm!.get('password')!.touched || signinForm!.get('password')!.dirty">
               <div *ngIf="signinForm!.get('password')!.hasError('required')">
-                <span class="text-danger">Password is required.</span>
+                <span class="text-danger">{{'Form.Errors.PasswordRequired' | translate}}</span>
               </div>
             </div>
 
             <!-- forgot -->
             <a href="#" class="btn bg-transparent shadow-none link-muted position-absolute top-0 end-0 m-1">
-              Forgot
+              {{'Buttons.Forgot' | translate}}
             </a>
           </div>
 
           <!-- submit button -->
           <div class="d-grid mb-3" (mouseenter)="setAllTouched()">
             <button type="submit" [disabled]="!signinForm!.valid" class="btn btn-primary">
-              <span>Sign in</span>
+              <span>{{'Buttons.SignIn' | translate}}</span>
               <svg class="rtl-flip" height="18px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor">
                 <path fill-rule="evenodd"
@@ -57,7 +63,7 @@
         <!-- create account -->
         <div class="text-center mt-4">
           <a [routerLink]="registerRoute" class="link-muted">
-            Don't have an account yet?
+            {{'SignIn.NoAccountAnchor' | translate}}
           </a>
         </div>
 

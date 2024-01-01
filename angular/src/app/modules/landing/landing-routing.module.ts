@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { CONFIG } from '@shared/configs';
-import { CheckoutResultComponent } from './pages/checkout-result/checkout-result.component';
 import { authGuard } from '@app/shared/services/auth.guard';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { FaqComponent } from './pages/faq/faq.component';
@@ -16,11 +15,6 @@ const routes: Routes = [
   {
     path: CONFIG.landing.children.landing.name,
     component: LandingPageComponent,
-  },
-  {
-    path: CONFIG.landing.children.checkoutresult.name,
-    component: CheckoutResultComponent,
-    canActivate: [authGuard]
   },
   {
     path: CONFIG.landing.children.privacypolicy.name,
