@@ -10,6 +10,7 @@
     "NewUsecase": {
         "SelectLabel": "Select Usecase",
         "SelectVersionLabel": "Select the use case version",
+        "SelectConnectorLabel": "Select the suitable image connector",
         "PullImageLabel": "Pull Your Image",
         "PullImageDesc": "Once you have your token ready, you'll be all set to dive into the exciting world of Docker images. In the next step, we'll walk you through the process of pulling an image using the token you've been provided. This will empower you to harness the power of containerization and unlock the potential of our platform.",
         "DirectoryName": "Enter the required directory name for",

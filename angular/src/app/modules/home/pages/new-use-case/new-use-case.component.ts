@@ -6,9 +6,10 @@ import { Image } from '@schema/image';
 enum UseCaseState {
   Select = 1,
   ImagesVersions = 2,
-  TokenGenerated = 3,
-  ImagePull = 4,
-  Finished = 5
+  ImageConnectors = 3,
+  TokenGenerated = 4,
+  ImagePull = 5,
+  Finished = 6
 }
 
 @Component({
@@ -23,7 +24,8 @@ export class NewUseCaseComponent {
   dockerComposeFile: string = '';
   volumesToConfig: DockerConfigVolumes[] = [];
   images: Image[] = [];
-
+  connectors: Image[] = [];
+  imageId: string | undefined = undefined;
   constructor(private dockerconfigService: DockerConfigService) {
   }
 
@@ -35,7 +37,7 @@ export class NewUseCaseComponent {
         if (this.images && this.images.length > 1)
           this.useCaseState = UseCaseState.ImagesVersions;
         else
-          this.getDockerCompose(this.images[0].id);
+          this.getImageConnectors(this.images[0].id);
       },
       error: (err) => {
         console.log(err);
@@ -43,8 +45,28 @@ export class NewUseCaseComponent {
     });
   }
 
-  getDockerCompose(imageId: string) {
-    this.dockerconfigService.getDockerCompose(imageId).subscribe({
+  getImageConnectors(imageId: string) {
+    this.imageId = imageId;
+    this.dockerconfigService.getImageConnectors(imageId).subscribe({
+      next: (value) => {
+        this.connectors = value.message;
+        if (this.connectors && this.connectors.length > 1)
+          this.useCaseState = UseCaseState.ImageConnectors;
+        else
+          this.getDockerCompose(imageId);
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
+
+  getDockerComposeWithConnectorId(connector_id: string) {
+    this.getDockerCompose(this.imageId!, connector_id);
+  }
+
+  getDockerCompose(imageId: string, connectorId: string | undefined = undefined) {
+    this.dockerconfigService.getDockerCompose(imageId, connectorId).subscribe({
       next: (value) => {
         this.generatedToken = value.message.token;
         this.dockerComposeFile = value.message.file;

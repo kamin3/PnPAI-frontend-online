@@ -28,10 +28,21 @@ export class DockerConfigService {
       { headers: this.headers });
   }
 
-  getDockerCompose(imageId: string): Observable<digocFunctionsResponse<DockerConfig>> {
+  getImageConnectors(imageId: string): Observable<digocFunctionsResponse<Image[]>> {
+    let input = {
+      "operation": "get_image_connectors",
+      "image_id": imageId
+    };
+    return this.httpclient.post<digocFunctionsResponse<Image[]>>(
+      this.domainURL, input,
+      { headers: this.headers });
+  }
+
+  getDockerCompose(imageId: string, connectorId: string | undefined = undefined): Observable<digocFunctionsResponse<DockerConfig>> {
     let input = {
       "operation": "get_docker_compose",
-      "image_id": imageId
+      "image_id": imageId,
+      "connector_id": connectorId
     };
     return this.httpclient.post<digocFunctionsResponse<DockerConfig>>(
       this.domainURL, input,

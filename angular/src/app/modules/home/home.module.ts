@@ -13,6 +13,7 @@ import { TeamsComponent } from './pages/teams/teams.component';
 import { SharedModule } from '@app/shared/shared.module';
 import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-cases.component';
 import { ImagesVersionsComponent } from './pages/new-use-case/images-versions/images-versions.component';
+import { ImageConnectorsComponent } from './pages/new-use-case/image-connectors/image-connectors.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ImagesVersionsComponent } from './pages/new-use-case/images-versions/im
     NewUseCaseComponent,
     TeamsComponent,
     CurrentUseCasesComponent,
-    ImagesVersionsComponent
+    ImagesVersionsComponent,
+    ImageConnectorsComponent
   ],
   imports: [
     RouterModule,

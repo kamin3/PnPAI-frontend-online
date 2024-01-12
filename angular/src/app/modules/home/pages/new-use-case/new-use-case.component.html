@@ -1,8 +1,10 @@
 <app-use-cases *ngIf="useCaseState == 1" (selectedCaseEmit)="getSelectedCaseImages($event)"></app-use-cases>
-<app-images-versions *ngIf="useCaseState == 2" (selectedImageEmit)="getDockerCompose($event)" (getBackEvent)="getBack()"
-    [images]="images"></app-images-versions>
-<app-token-generation *ngIf="useCaseState == 3" (getBackEvent)="getBack()" (nextStepEvent)="goToPullImage()"
+<app-images-versions *ngIf="useCaseState == 2" (selectedImageEmit)="getImageConnectors($event)"
+    (getBackEvent)="getBack()" [images]="images"></app-images-versions>
+<app-image-connectors *ngIf="useCaseState == 3" (selectedConnectorEmit)="getDockerComposeWithConnectorId($event)"
+    (getBackEvent)="getBack()" [connectors]="connectors"></app-image-connectors>
+<app-token-generation *ngIf="useCaseState == 4" (getBackEvent)="getBack()" (nextStepEvent)="goToPullImage()"
     [token]="generatedToken"></app-token-generation>
-<app-pull-image *ngIf="useCaseState == 4" [dockerComposeFile]="dockerComposeFile" [volumesToRename]="volumesToConfig"
+<app-pull-image *ngIf="useCaseState == 5" [dockerComposeFile]="dockerComposeFile" [volumesToRename]="volumesToConfig"
     (getBackEvent)="getBack()" (finishStepEvent)="finish()"></app-pull-image>
-<app-use-case-result *ngIf="useCaseState == 5"></app-use-case-result>
+<app-use-case-result *ngIf="useCaseState == 6"></app-use-case-result>

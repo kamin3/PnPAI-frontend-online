@@ -1,0 +1,24 @@
+<div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
+    <div class="pnp-container-snippet">
+        <h3>{{'NewUsecase.SelectConnectorLabel' | translate}}</h3>
+
+        <ng-container *ngIf="connectors">
+            <select class="form-select mb-3" (change)="selectImage($event)">
+                <ng-container *ngFor="let image of connectors; index as idx;">
+                    <option [value]="image.id" [selected]="idx == 0">
+                        <div>{{image.container_name}}</div><span>{{image.description}}</span>
+                    </option>
+                </ng-container>
+            </select>
+        </ng-container>
+    </div>
+
+    <div style="width: 100%;" class="d-flex justify-content-between">
+        <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
+            {{'Buttons.Back' | translate}}
+        </button>
+        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="generateToken()">
+            {{'Buttons.Next' | translate}}
+        </button>
+    </div>
+</div>
