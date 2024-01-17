@@ -144,8 +144,10 @@ export class LandingPageComponent implements OnInit {
   }
 
   buyPlan(plan_id: string) {
-    if (!this.isUserLoggedIn)
+    if (!this.isUserLoggedIn) {
       this.showGuestWarningModalBTN.nativeElement.click();
+      return;
+    }
     let requested_plan = this.plansData.find(p => p.id == plan_id);
     let periodUnit = this.monthlyPlanChecked ? 'month' : 'year';
     let price = requested_plan?.prices.find(

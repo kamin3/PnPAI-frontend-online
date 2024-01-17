@@ -6,7 +6,7 @@
             <select class="form-select mb-3" (change)="selectImage($event)">
                 <ng-container *ngFor="let image of connectors; index as idx;">
                     <option [value]="image.id" [selected]="idx == 0">
-                        <div>{{image.container_name}}</div><span>{{image.description}}</span>
+                        <div>{{image.container_name}} -- {{image.description}}</div>
                     </option>
                 </ng-container>
             </select>

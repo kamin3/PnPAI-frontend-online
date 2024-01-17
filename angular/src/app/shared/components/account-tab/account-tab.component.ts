@@ -14,6 +14,7 @@ export class AccountTabComponent implements OnInit {
 
   account!: Account;
   signinRoute: string = CONFIG.auth.children.login.route;
+  dashboardRoute: string = CONFIG.home.children.dashboard.route;
 
   constructor(
     private accountService: AccountService,
@@ -28,7 +29,7 @@ export class AccountTabComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.alertService.showAlert(err.error.error)
+        this.alertService.showAlert(err.error.error);
       },
     });
   }

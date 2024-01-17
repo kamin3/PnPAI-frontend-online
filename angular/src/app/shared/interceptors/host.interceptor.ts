@@ -20,7 +20,7 @@ export class HostInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     req = req.clone({
       setHeaders: {
-        "X-Host-Override": environment.kongHost
+        "Host": environment.kongHost
       }
     });
     return next.handle(req);
