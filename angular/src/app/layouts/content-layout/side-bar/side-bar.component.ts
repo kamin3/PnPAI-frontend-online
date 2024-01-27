@@ -19,19 +19,19 @@ export class SideBarComponent implements OnInit, AfterViewInit {
   @Output() toggleSideBarEvent = new EventEmitter<null>();
 
   navItems = [
-    { link: CONFIG.home.children.dashboard.route, title: 'Dashboard', iconClass: "fi fi-shape-squared-unequal" },
-    { link: CONFIG.home.children.org.route, title: 'Org.', iconClass: "fi fi-squared-graph" },
-    { link: CONFIG.home.children.teams.route, title: 'Teams', iconClass: "fi fi-shape-3dots" },
-    { link: CONFIG.home.children.usecases.route, title: 'Use Cases', iconClass: "fi fi-shape-3dots" },
+    { link: CONFIG.dashboard.children.dashboard.route, title: 'Dashboard', iconClass: "fi fi-shape-squared-unequal" },
+    { link: CONFIG.dashboard.children.org.route, title: 'Org.', iconClass: "fi fi-squared-graph" },
+    { link: CONFIG.dashboard.children.teams.route, title: 'Teams', iconClass: "fi fi-shape-3dots" },
+    { link: CONFIG.dashboard.children.usecases.route, title: 'Use Cases', iconClass: "fi fi-shape-3dots" },
     {
       title: 'Support Center', iconClass: "fi fi-support-headphones",
       children: [
-        { link: CONFIG.home.children.support.children.overview.route, title: 'Overview' },
-        { link: CONFIG.home.children.support.children.tickets.route, title: 'Tickets' },
-        { link: CONFIG.home.children.support.children.tutorial.route, title: 'Tutorial' },
-        { link: CONFIG.home.children.support.children.faq.route, title: 'FAQ' },
-        { link: CONFIG.home.children.support.children.license.route, title: 'License' },
-        { link: CONFIG.home.children.support.children.contactus.route, title: 'Contact us' },
+        { link: CONFIG.dashboard.children.support.children.overview.route, title: 'Overview' },
+        { link: CONFIG.dashboard.children.support.children.tickets.route, title: 'Tickets' },
+        { link: CONFIG.dashboard.children.support.children.tutorial.route, title: 'Tutorial' },
+        { link: CONFIG.dashboard.children.support.children.faq.route, title: 'FAQ' },
+        { link: CONFIG.dashboard.children.support.children.license.route, title: 'License' },
+        { link: CONFIG.dashboard.children.support.children.contactus.route, title: 'Contact us' },
       ]
     },
   ];

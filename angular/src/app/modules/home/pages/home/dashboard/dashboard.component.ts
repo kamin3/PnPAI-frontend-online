@@ -8,7 +8,7 @@ import { CONFIG } from '@app/shared/configs';
 })
 export class DashboardComponent {
 
-  newUseCaseRoute: string = CONFIG.home.children.newUseCase.route;
+  newUseCaseRoute: string = CONFIG.dashboard.children.newUseCase.route;
 
   constructor() {
 

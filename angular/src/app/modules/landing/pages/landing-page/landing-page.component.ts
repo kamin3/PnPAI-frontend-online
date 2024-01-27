@@ -58,7 +58,7 @@ export class LandingPageComponent implements OnInit {
   loginRoute = CONFIG.auth.children.login.route;
   registerRoute = CONFIG.auth.children.register.route;
   landingRoute = CONFIG.landing.children.landing.route;
-  dashboardRoute = CONFIG.home.children.dashboard.route;
+  dashboardRoute = CONFIG.dashboard.children.dashboard.route;
   currentUrl = window.location.href;
   @ViewChild('guestWarning')
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;

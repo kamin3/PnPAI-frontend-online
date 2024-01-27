@@ -13,7 +13,7 @@ import { AlertService } from '@app/shared/services/alert.service';
 })
 export class SignInComponent implements OnInit {
 
-  homeRoute = CONFIG.home.route;
+  homeRoute = CONFIG.dashboard.route;
   registerRoute = CONFIG.auth.children.register.route;
   failedLoginMessage?: string = undefined;
 

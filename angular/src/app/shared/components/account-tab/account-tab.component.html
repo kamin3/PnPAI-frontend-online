@@ -1,14 +1,14 @@
 <!-- Account Settings -->
-<li class=" ms-4 list-inline-item mx-1 dropdown" *ngIf="account">
+<li class=" ms-4 list-inline-item mx-1 dropdown">
 
     <a role="button" href="#" id="dropdownAccountOptions" class="rounded-circle text-primary-hover dropdown-toggle"
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
         aria-label="Messages">
         <!-- Account Img -->
         <div class="d-flex align-items-center">
-            <img src="{{account.image}}" class="pnp-account-image">
+            <img [src]="account ? account.image : null" alt="user image" class="pnp-account-image">
             <div class="ms-2 d-flex text-truncate">
-                <p class="m-0 fw-bold" class="pnp-account-name">{{account.name}}</p>
+                <p class="m-0 fw-bold" class="pnp-account-name">{{account ? account.name : 'error occured'}}</p>
                 <i class="fi fi-arrow-down ms-2"></i>
             </div>
         </div>
@@ -16,28 +16,38 @@
     <div aria-labelledby="dropdownAccountOptions"
         class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-fadeindown p-0 mt-2 w-300">
         <!-- user detail -->
-        <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4 pnp-account-details">
-            <span class="d-block fw-medium text-truncate">{{account.name}}</span>
-            <span class="d-block smaller fw-medium text-truncate">{{account.email}}</span>
-            <span class="d-block smaller"><b>Last Login: </b>{{account.lastLoginDate | date: 'yyyy-MM-dd hh:mm'}}</span>
-        </div>
-        <div class="dropdown-divider mb-3"></div>
+        <ng-container *ngIf="account; else accountError">
+            <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4 pnp-account-details">
+                <span class="d-block fw-medium text-truncate">{{account.name}}</span>
+                <span class="d-block smaller fw-medium text-truncate">{{account.email}}</span>
+                <span class="d-block smaller"><b>Last Login: </b>{{account.lastLoginDate |
+                    date:'yyyy-MM-ddhh:mm'}}</span>
+            </div>
+            <div class="dropdown-divider mb-3"></div>
 
-        <a [routerLink]="dashboardRoute" class="dropdown-item text-truncate">
-            <span class="fw-medium">Dashboard</span>
-            <small class="d-block text-muted smaller">Manage your services</small>
-        </a>
+            <a [routerLink]="dashboardRoute" class="dropdown-item text-truncate">
+                <span class="fw-medium">Dashboard</span>
+                <small class="d-block text-muted smaller">Manage your services</small>
+            </a>
 
-        <a href="#" class="dropdown-item text-truncate">
-            <span class="fw-medium">My Profile</span>
-            <small class="d-block text-muted smaller">account settings and more</small>
-        </a>
+            <a href="#" class="dropdown-item text-truncate">
+                <span class="fw-medium">My Profile</span>
+                <small class="d-block text-muted smaller">account settings and more</small>
+            </a>
 
-        <a href="#" class="dropdown-item text-truncate">
-            <small class="badge bg-danger-soft float-end">{{account.subscriptionDaysLeft}} days left</small>
-            <span class="fw-medium">My Subscription</span>
-            <small class="d-block text-muted smaller">your monthly billing</small>
-        </a>
+            <a href="#" class="dropdown-item text-truncate">
+                <small class="badge bg-danger-soft float-end">{{account.subscriptionDaysLeft}} days
+                    left</small>
+                <span class="fw-medium">My Subscription</span>
+                <small class="d-block text-muted smaller">your monthly billing</small>
+            </a>
+        </ng-container>
+
+        <ng-template #accountError>
+            <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4 pnp-account-details">
+                <span class="d-block fw-medium text-truncate">error occured ...</span>
+            </div>
+        </ng-template>
 
         <div class="dropdown-divider mb-0 mt-3"></div>
 

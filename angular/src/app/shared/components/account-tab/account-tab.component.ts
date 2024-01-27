@@ -12,9 +12,9 @@ import { AlertService } from '@app/shared/services/alert.service';
 })
 export class AccountTabComponent implements OnInit {
 
-  account!: Account;
+  account: Account | undefined;
   signinRoute: string = CONFIG.auth.children.login.route;
-  dashboardRoute: string = CONFIG.home.children.dashboard.route;
+  dashboardRoute: string = CONFIG.dashboard.children.dashboard.route;
 
   constructor(
     private accountService: AccountService,

@@ -17,7 +17,7 @@ const routes: Routes = [
     component: ContentLayoutComponent,
     children: [
       {
-        path: CONFIG.home.name,
+        path: CONFIG.dashboard.name,
         loadChildren: () =>
           import('@modules/home/home.module').then((m) => m.HomeModule),
       },

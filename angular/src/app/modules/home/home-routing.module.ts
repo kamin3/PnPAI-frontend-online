@@ -9,23 +9,23 @@ import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-
 const routes: Routes = [
   {
     path: '',
-    redirectTo: CONFIG.home.children.dashboard.route,
+    redirectTo: CONFIG.dashboard.children.dashboard.route,
     pathMatch: 'full'
   },
   {
-    path: CONFIG.home.children.dashboard.name,
+    path: CONFIG.dashboard.children.dashboard.name,
     component: HomeComponent
   },
   {
-    path: CONFIG.home.children.teams.name,
+    path: CONFIG.dashboard.children.teams.name,
     component: TeamsComponent
   },
   {
-    path: CONFIG.home.children.newUseCase.name,
+    path: CONFIG.dashboard.children.newUseCase.name,
     component: NewUseCaseComponent
   },
   {
-    path: CONFIG.home.children.usecases.name,
+    path: CONFIG.dashboard.children.usecases.name,
     component: CurrentUseCasesComponent
   }
 ];

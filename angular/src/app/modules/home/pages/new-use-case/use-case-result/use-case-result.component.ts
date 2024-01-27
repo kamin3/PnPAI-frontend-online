@@ -9,7 +9,7 @@ import { CONFIG } from '@app/shared/configs';
 export class UseCaseResultComponent {
 
 
-  dashboardRoute = CONFIG.home.children.dashboard.route;
+  dashboardRoute = CONFIG.dashboard.children.dashboard.route;
   constructor() {
 
   }

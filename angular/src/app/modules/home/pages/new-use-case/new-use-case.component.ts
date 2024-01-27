@@ -20,6 +20,7 @@ enum UseCaseState {
 export class NewUseCaseComponent {
 
   useCaseState: UseCaseState = UseCaseState.Select;
+  useCaseSteps: UseCaseState[] = [UseCaseState.Select];
   generatedToken: string = '';
   dockerComposeFile: string = '';
   volumesToConfig: DockerConfigVolumes[] = [];
@@ -34,8 +35,10 @@ export class NewUseCaseComponent {
     this.dockerconfigService.getUsecaseImages(usecaseId).subscribe({
       next: (value) => {
         this.images = value.message;
-        if (this.images && this.images.length > 1)
+        if (this.images && this.images.length > 1) {
           this.useCaseState = UseCaseState.ImagesVersions;
+          this.useCaseSteps.push(UseCaseState.ImagesVersions);
+        }
         else
           this.getImageConnectors(this.images[0].id);
       },
@@ -50,8 +53,10 @@ export class NewUseCaseComponent {
     this.dockerconfigService.getImageConnectors(imageId).subscribe({
       next: (value) => {
         this.connectors = value.message;
-        if (this.connectors && this.connectors.length > 1)
+        if (this.connectors && this.connectors.length > 1) {
           this.useCaseState = UseCaseState.ImageConnectors;
+          this.useCaseSteps.push(UseCaseState.ImageConnectors);
+        }
         else
           this.getDockerCompose(imageId);
       },
@@ -72,6 +77,7 @@ export class NewUseCaseComponent {
         this.dockerComposeFile = value.message.file;
         this.volumesToConfig = value.message.volumesToConfigure ?? [];
         this.useCaseState = UseCaseState.TokenGenerated;
+        this.useCaseSteps.push(UseCaseState.TokenGenerated);
       },
       error: (err) => {
         console.log(err);
@@ -80,15 +86,19 @@ export class NewUseCaseComponent {
   }
 
   getBack() {
-    this.useCaseState = this.useCaseState - 1;
+    this.useCaseSteps.pop();
+    this.useCaseState = this.useCaseSteps[this.useCaseSteps.length - 1];
+    ;
   }
 
   goToPullImage() {
     this.useCaseState = UseCaseState.ImagePull;
+    this.useCaseSteps.push(UseCaseState.ImagePull);
   }
 
   finish() {
     this.useCaseState = UseCaseState.Finished;
+    this.useCaseSteps.push(UseCaseState.Finished);
   }
 
 
