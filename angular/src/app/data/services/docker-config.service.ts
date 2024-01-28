@@ -14,7 +14,7 @@ export class DockerConfigService {
   private headers = {
     "Content-Type": "application/json"
   };
-  private domainURL = environment.kongURL + 'postgres/image_controller?blocking=true&result=true';
+  private domainURL = environment.kongURL + 'postgres/image_controller';
 
 
 

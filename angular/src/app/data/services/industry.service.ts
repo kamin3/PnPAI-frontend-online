@@ -18,7 +18,7 @@ export class IndustryService {
 
 
     getAll(): Observable<digocFunctionsResponse<Industry[]>> {
-        let domainURL = environment.kongURL + 'postgres/industry_controller?blocking=true&result=true';
+        let domainURL = environment.kongURL + 'postgres/industry_controller';
         let input = {
             "operation": "getall"
         };
@@ -26,7 +26,7 @@ export class IndustryService {
     }
 
     getWithUseCases(industry_id: string): Observable<digocFunctionsResponse<Industry[]>> {
-        let domainURL = environment.kongURL + 'postgres/industry_controller?blocking=true&result=true';
+        let domainURL = environment.kongURL + 'postgres/industry_controller';
         let input = {
             "operation": "get_with_usecases",
             "industry_id": industry_id // "IND-123"

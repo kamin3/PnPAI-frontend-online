@@ -16,11 +16,9 @@ export class ImageConnectorsComponent implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
-    this.selectedConnectorId = this.connectors[0].id;
   }
 
-  selectImage(event: Event) {
-    let imageId = (event.target as HTMLSelectElement).value;
+  selectImage(imageId: string) {
     this.selectedConnectorId = imageId;
   }
   generateToken() {

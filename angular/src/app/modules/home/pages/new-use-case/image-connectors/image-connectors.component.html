@@ -1,15 +1,23 @@
-<div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
-    <div class="pnp-container-snippet">
+<div id="usecases-container" class="rounded-2 shadow-lg pnp-use-cases-online-container">
+    <div class="pnp-use-cases-container row">
         <h3>{{'NewUsecase.SelectConnectorLabel' | translate}}</h3>
 
         <ng-container *ngIf="connectors">
-            <select class="form-select mb-3" (change)="selectImage($event)">
+            <!-- <select class="form-select mb-3" (change)="selectImage($event)">
                 <ng-container *ngFor="let image of connectors; index as idx;">
                     <option [value]="image.id" [selected]="idx == 0">
                         <div>{{image.container_name}} -- {{image.description}}</div>
                     </option>
                 </ng-container>
-            </select>
+            </select> -->
+            <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let image of connectors">
+                <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
+                    id="{{image.id}}" (click)="selectImage(image.id)"
+                    [class.pnp-usecase-option-selected]="selectedConnectorId == image.id">
+                    <p class="">{{image.container_name}}</p>
+                    <p class="">{{image.description}}</p>
+                </button>
+            </div>
         </ng-container>
     </div>
 
@@ -17,7 +25,8 @@
         <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
             {{'Buttons.Back' | translate}}
         </button>
-        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="generateToken()">
+        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4"
+            [disabled]="selectedConnectorId == '' " (click)="generateToken()">
             {{'Buttons.Next' | translate}}
         </button>
     </div>

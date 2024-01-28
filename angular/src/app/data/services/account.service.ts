@@ -1,5 +1,4 @@
 import { Observable, of, map } from 'rxjs';
-import data from '@app/data/json/account_data.json';
 import { Injectable } from '@angular/core';
 import { Account } from '@schema/account';
 import { userSigninInput } from '@app/data/schema/userSigninInput';
@@ -21,17 +20,17 @@ export class AccountService {
   };
 
   get(): Observable<Account> {
-    let domainURL = environment.kongURL + 'account_services/user_details?blocking=true&result=true';
+    let domainURL = environment.kongURL + 'account_services/user_details';
     return this.httpclient.post<Account>(domainURL, { headers: this.headers });
   }
 
   userSignup(input: userSignupInput): Observable<digocFunctionsResponse<string>> {
-    let domainURL = environment.kongURL + 'account_services/user_signup?blocking=true&result=true';
+    let domainURL = environment.kongURL + 'account_services/user_signup';
     return this.httpclient.post<digocFunctionsResponse<string>>(domainURL, input, { headers: this.headers });
   }
 
   signin(input: userSigninInput): Observable<userSigninResponse> {
-    let domainURL = environment.kongURL + 'account_services/login?blocking=true&result=true';
+    let domainURL = environment.kongURL + 'account_services/login';
     return this.httpclient.post<userSigninResponse>(domainURL, input, { headers: this.headers });
   }
 

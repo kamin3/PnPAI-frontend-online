@@ -1,0 +1,9 @@
+.disable-link{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}

@@ -6,6 +6,11 @@ import { AccountService } from '@app/data/services/account.service';
 import { IndustryService } from '@app/data/services/industry.service';
 import { PlansService } from '@app/data/services/plans.service';
 import { CONFIG } from '@app/shared/configs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
+import { ContactUsInput } from '@app/data/schema/contactusInput';
+import { ContactUsService } from '@app/data/services/contactus.service';
+import { AlertService } from '@app/shared/services/alert.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -64,15 +69,29 @@ export class LandingPageComponent implements OnInit {
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;
   industries: Industry[] = [];
   monthlyPlanChecked: boolean = false;
+  contactusForm: FormGroup | undefined;
+
 
   constructor(
     private planService: PlansService,
+    private fb: FormBuilder,
     private accountService: AccountService,
     private indusrtyService: IndustryService,
+    private contactusService: ContactUsService,
+    private alertService: AlertService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.contactusForm = this.fb.group({
+      companyName: ["", Validators.required],
+      role: ["", [Validators.required]],
+      message: ["", [Validators.required]],
+      name: ["", [Validators.required]],
+      industryId: ["", Validators.required],
+      phoneNumber: ["", [Validators.pattern(/^(00|\+)\d+$/)]],
+      email: ["", [Validators.required, Validators.email, ValidateBusinessEmail]]
+    });
     this.isUserLoggedIn = this.accountService.isLoggedIn();
     this.getIndustries();
     this.getAllPlans();
@@ -218,4 +237,29 @@ export class LandingPageComponent implements OnInit {
       site: 'pnpai-service-test'
     });
   }
+
+  onContactUsSubmit() {
+
+    let industryName = this.industries.find(i => i.id == this.contactusForm?.value.industryId)!.name;
+    let input: ContactUsInput = {
+      "submitter_email": this.contactusForm?.value.email,
+      "submitter_name": this.contactusForm?.value.name,
+      "phone": this.contactusForm?.value.phoneNumber,
+      "message": this.contactusForm?.value.message,
+      "company": this.contactusForm?.value.companyName,
+      "role": this.contactusForm?.value.role,
+      "industry": industryName,
+    };
+
+    this.contactusService.sendContactUsEmail(input).subscribe({
+      next: (value) => {
+        this.alertService.showAlert("Email sent successfully");
+        this.contactusForm?.reset();
+      },
+      error: (err) => {
+        this.alertService.showAlert(err.error.message);
+      },
+    });
+  }
+
 }
