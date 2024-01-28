@@ -4,6 +4,7 @@ import { Industry } from '@schema/industry';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { digocFunctionsResponse } from '@schema/digocFunctionsResponse';
+import { AccountService } from '@app/data/services/account.service';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,10 @@ import { digocFunctionsResponse } from '@schema/digocFunctionsResponse';
 export class IndustryService {
 
 
-    constructor(private httpclient: HttpClient) { }
+    constructor(
+        private httpclient: HttpClient,
+        private accountService: AccountService,
+    ) { }
     headers = {
         "Content-Type": "application/json"
     };
@@ -32,5 +36,11 @@ export class IndustryService {
             "industry_id": industry_id // "IND-123"
         };
         return this.httpclient.post<digocFunctionsResponse<Industry[]>>(domainURL, input, { headers: this.headers });
+    }
+
+    getUserIndustryId() {
+        let userToken = this.accountService.getToken();
+        let payload = JSON.parse(atob(userToken!.split('.')[1]));
+        return payload['industry_id'];
     }
 }
