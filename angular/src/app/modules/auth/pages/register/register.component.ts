@@ -9,7 +9,6 @@ import { IndustryService } from '@app/data/services/industry.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CONFIG } from '@app/shared/configs';
 import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
-import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -84,27 +83,29 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     if (!this.registrationForm!.valid) {
     }
+    let industryName = this.industries.find(i => i.id == this.registrationForm?.value.industryId)?.name;
     let input: userSignupInput = {
       "user_data": {
         "user_id": this.registrationForm?.value.email,
         "first_name": this.registrationForm?.value.firstName,
         "last_name": this.registrationForm?.value.lastName,
         "email": this.registrationForm?.value.email,
-        "phone": this.registrationForm?.value.phoneNumber,
+        "phone": this.registrationForm?.value.phoneNumber ? this.registrationForm?.value.phoneNumber : null,
         "role": "User"
       },
       "raw_password": this.registrationForm?.value.password,
       "org_data": {
         "organization_name": this.registrationForm?.value.companyName,
         "address": {
-          "postal_code": this.registrationForm?.value.postalCode,
-          "street": this.registrationForm?.value.street,
-          "city": this.registrationForm?.value.city,
-          "country": this.registrationForm?.value.country
+          "postal_code": this.registrationForm?.value.postalCode ? this.registrationForm?.value.postalCode : null,
+          "street": this.registrationForm?.value.street ? this.registrationForm?.value.street : null,
+          "city": this.registrationForm?.value.city ? this.registrationForm?.value.city : null,
+          "country": this.registrationForm?.value.country ? this.registrationForm?.value.country : null
         },
         "status": "Active",
         "industry_id": this.registrationForm?.value.industryId,
-        "website_url": this.registrationForm?.value.websiteurl
+        "industry_name": industryName,
+        "website_url": this.registrationForm?.value.websiteurl ? this.registrationForm?.value.websiteurl : null
       }
     };
 

@@ -13,11 +13,12 @@
 
     <li class="nav-item menu-items mb-3" *ngFor="let item of navItems; index as idx;">
       <ng-container *ngIf="!item.children">
-        <a class="nav-link" [routerLink]="item.link">
+        <a class="nav-link" [ngClass]="{'disable-link':item.comingSoon}" [routerLink]="item.link">
           <span class="menu-icon">
             <i class="{{item.iconClass}}"></i>
           </span>
-          <span class="menu-title">{{item.title}}</span>
+          <span class="menu-title" [ngClass]="{'strikethrough':item.comingSoon}">{{item.title}}</span>
+          <small *ngIf="item.comingSoon" class="badge bg-gray-700">Coming soon ...</small>
         </a>
       </ng-container>
       <ng-container *ngIf="item.children && item.children.length > 0">
@@ -31,8 +32,13 @@
         </a>
         <div class="collapse" [id]="'ui-basic'+idx">
           <ul class="nav flex-column sub-menu">
-            <li *ngFor="let subItem of item.children" class="nav-item"> <a class="nav-link sub-link"
-                routerLink="{{subItem.link}}">{{subItem.title}}</a></li>
+            <li *ngFor="let subItem of item.children" class="nav-item">
+              <a class="nav-link sub-link" routerLink="{{subItem.link}}"
+                [ngClass]="{'disable-link':subItem.comingSoon}">
+                <span [ngClass]="{'strikethrough':subItem.comingSoon}">{{subItem.title}}</span>
+                <small *ngIf="subItem.comingSoon" class="badge bg-gray-700">Coming soon ...</small>
+              </a>
+            </li>
           </ul>
         </div>
       </ng-container>

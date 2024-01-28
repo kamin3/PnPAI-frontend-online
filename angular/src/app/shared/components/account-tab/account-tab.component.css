@@ -11,3 +11,9 @@
 .pnp-account-details {
     background-color: #13226b;
 }
+
+.disable-link{
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .65;
+}

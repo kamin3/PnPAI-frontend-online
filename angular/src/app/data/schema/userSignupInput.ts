@@ -18,6 +18,7 @@ interface orgData {
     industry_id: string;
     website_url: string | undefined;
     address: orgDataAddress;
+    industry_name: string | undefined;
 }
 interface orgDataAddress {
     postal_code: number,

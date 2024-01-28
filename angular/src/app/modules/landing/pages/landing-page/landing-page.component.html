@@ -565,50 +565,93 @@
   <h3 class="fw-bold mb-5">How can we help?</h3>
   <div class="row">
     <div class="col-lg-6 mb-4">
-      <form>
+      <form [formGroup]="contactusForm!" (ngSubmit)="onContactUsSubmit()">
         <div class="form-floating mb-3">
-          <input required="" placeholder="Name" id="contact_name" name="contact_name" type="text"
+          <input required="" placeholder="Name" formControlName="name" id="contact_name" name="contact_name" type="text"
             class="form-control" />
           <label for="contact_name">Name</label>
+          <div *ngIf="contactusForm!.get('name')!.touched || contactusForm!.get('name')!.dirty">
+            <div *ngIf="contactusForm!.get('name')!.hasError('required')">
+              <span class="text-danger">First Name is required.</span>
+            </div>
+          </div>
+
         </div>
 
         <div class="form-floating mb-3">
-          <input required="" placeholder="Email" id="contact_email" name="contact_email" type="email"
-            class="form-control" />
+          <input required="" formControlName="email" placeholder="Email" id="contact_email" name="contact_email"
+            type="email" class="form-control" />
           <label for="contact_email">Email</label>
+          <div *ngIf="contactusForm!.get('email')!.touched || contactusForm!.get('email')!.dirty">
+            <div *ngIf="contactusForm!.get('email')!.hasError('required')">
+              <span class="text-danger">Email is required.</span>
+            </div>
+          </div>
+          <div *ngIf="contactusForm!.get('email')!.touched || contactusForm!.get('email')!.dirty">
+            <div *ngIf="contactusForm!.get('email')!.hasError('invalidBusinessEmail')">
+              <span class="text-danger">Email must be a business email.</span>
+            </div>
+          </div>
         </div>
 
         <div class="row p-0" style="--bs-gutter-x: 0.5rem">
           <div class="form-floating mb-3 col-md-6">
-            <input required="" placeholder="Phone" id="contact_phone" name="contact_phone" type="text"
-              class="form-control" />
+            <input required="" formControlName="phoneNumber" placeholder="Phone" id="contact_phone" name="contact_phone"
+              type="text" class="form-control" />
             <label for="contact_phone">Phone</label>
+            <div *ngIf="contactusForm!.get('phoneNumber')!.touched || contactusForm!.get('phoneNumber')!.dirty">
+              <div *ngIf="contactusForm!.get('phoneNumber')!.hasError('pattern')">
+                <span class="text-danger">Phone Number must start with 00 or +.</span>
+              </div>
+            </div>
           </div>
 
           <div class="col-md-6">
-            <select required="" class="form-select form-select-lg" aria-label="Default select example">
+            <select required="" formControlName="industryId" class="form-select form-select-lg"
+              aria-label="Default select example">
               <option selected value="">Select Indusrty</option>
               <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
             </select>
           </div>
+          <div *ngIf="contactusForm!.get('industryId')!.touched || contactusForm!.get('industryId')!.dirty">
+            <div *ngIf="contactusForm!.get('industryId')!.hasError('required')">
+              <span class="text-danger">Industry is required.</span>
+            </div>
+          </div>
         </div>
 
         <div class="row p-0" style="--bs-gutter-x: 0.5rem">
           <div class="form-floating mb-3 col-md-6">
-            <input required="" placeholder="Company" id="contact_company" name="contact_company" type="text"
-              class="form-control" />
+            <input required="" formControlName="companyName" placeholder="Company" id="contact_company"
+              name="contact_company" type="text" class="form-control" />
             <label for="contact_company">Company</label>
+
+            <div *ngIf="contactusForm!.get('companyName')!.touched || contactusForm!.get('companyName')!.dirty">
+              <div *ngIf="contactusForm!.get('companyName')!.hasError('required')">
+                <span class="text-danger">Company Name is required.</span>
+              </div>
+            </div>
           </div>
           <div class="form-floating mb-3 col-md-6">
-            <input required="" placeholder="Role" id="contact_role" name="contact_role" type="text"
-              class="form-control" />
+            <input required="" formControlName="role" placeholder="Role" id="contact_role" name="contact_role"
+              type="text" class="form-control" />
             <label for="contact_role">Role</label>
+            <div *ngIf="contactusForm!.get('role')!.touched || contactusForm!.get('role')!.dirty">
+              <div *ngIf="contactusForm!.get('role')!.hasError('required')">
+                <span class="text-danger">Role is required.</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="form-floating mb-3">
-          <textarea required="" placeholder="Message" id="contact_message" name="contact_message" class="form-control"
-            rows="3" style="min-height: 120px"></textarea>
+          <textarea required="" formControlName="message" placeholder="Message" id="contact_message"
+            name="contact_message" class="form-control" rows="3" style="min-height: 120px"></textarea>
           <label for="contact_message">Message</label>
+          <div *ngIf="contactusForm!.get('message')!.touched || contactusForm!.get('message')!.dirty">
+            <div *ngIf="contactusForm!.get('message')!.hasError('required')">
+              <span class="text-danger">Message is required.</span>
+            </div>
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Send Message</button>

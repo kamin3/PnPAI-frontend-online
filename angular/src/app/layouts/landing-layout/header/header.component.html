@@ -72,12 +72,9 @@
                 <app-account-tab></app-account-tab>
             </ng-container>
             <ng-template #loggedOut>
-                <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute"
-                    [queryParams]="{ 'returnUrl': landingRoute }">Log in</a>
+                <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute">Log in</a>
 
-                <a class="btn px-4 btn-danger" [routerLink]="registerRoute"
-                    [queryParams]="{ 'returnUrl': landingRoute }">Sign
-                    Up</a>
+                <a class="btn px-4 btn-danger" [routerLink]="registerRoute">Sign Up</a>
             </ng-template>
 
 

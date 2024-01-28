@@ -18,7 +18,7 @@ export class PlansService {
   getAll(): Observable<digocFunctionsResponse<Plan[]>> {
     let domainURL =
       environment.kongURL +
-      'payment_services/plans?blocking=true&result=true';
+      'payment_services/plans';
     return this.httpclient.post<digocFunctionsResponse<Plan[]>>(
       domainURL,
       {},
@@ -31,7 +31,7 @@ export class PlansService {
   checkout(plan_price_id: string): Observable<digocFunctionsResponse<HostedPage>> {
     let domainURL =
       environment.kongURL +
-      'payment_services/checkout?blocking=true&result=true';
+      'payment_services/checkout';
     return this.httpclient.post<digocFunctionsResponse<HostedPage>>(
       domainURL,
       {
