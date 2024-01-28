@@ -1,6 +1,6 @@
 <div id="usecases-container" class="rounded-2 shadow-lg pnp-use-cases-online-container">
     <div class="pnp-use-cases-container row">
-        <h3>{{'NewUsecase.SelectConnectorLabel' | translate}}</h3>
+        <h3 class="mb-4">{{'NewUsecase.SelectConnectorLabel' | translate}}</h3>
 
         <ng-container *ngIf="connectors">
             <!-- <select class="form-select mb-3" (change)="selectImage($event)">
@@ -14,7 +14,7 @@
                 <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
                     id="{{image.id}}" (click)="selectImage(image.id)"
                     [class.pnp-usecase-option-selected]="selectedConnectorId == image.id">
-                    <p class="">{{image.container_name}}</p>
+                    <p class="mb-2 fw-bold fs-6">{{image.container_name}}</p>
                     <p class="">{{image.description}}</p>
                 </button>
             </div>
@@ -22,7 +22,7 @@
     </div>
 
     <div style="width: 100%;" class="d-flex justify-content-between">
-        <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
+        <button id="step-two-back-btn" type="button" class="btn btn-outline-primary m-4" (click)="getBack()">
             {{'Buttons.Back' | translate}}
         </button>
         <button id="step-three-next-btn" type="button" class="btn btn-primary m-4"
