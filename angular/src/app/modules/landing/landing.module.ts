@@ -5,10 +5,10 @@ import { SharedModule } from '@app/shared/shared.module';
 import { LandingRoutingModule } from './landing-routing.module';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { FaqComponent } from './pages/faq/faq.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { EcommerceComponent } from './pages/ecommerce/ecommerce.component';
 
 @NgModule({
-  declarations: [LandingPageComponent, PrivacyPolicyComponent, FaqComponent, HomePageComponent],
+  declarations: [LandingPageComponent, PrivacyPolicyComponent, FaqComponent, EcommerceComponent],
   imports: [RouterModule, LandingRoutingModule, SharedModule],
 })
 export class LandingModule { }
