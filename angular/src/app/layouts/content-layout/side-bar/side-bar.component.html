@@ -1,8 +1,10 @@
 <nav class="sidebar sidebar-offcanvas shadow z-index-100" [class.active]="showMobileSidebar" id="sidebar">
 
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center">
-    <a class="sidebar-brand brand-logo"><img src="assets/logos/pnp-color-logo.png" alt="logo" /></a>
-    <a class="sidebar-brand brand-logo-mini"><img src="assets/logos/pnp-color-mark.png" alt="logo" /></a>
+    <a class="sidebar-brand brand-logo" [routerLink]="dashboardRoute"><img src="assets/logos/pnp-color-logo.png"
+        alt="logo" /></a>
+    <a class="sidebar-brand brand-logo-mini" [routerLink]="dashboardRoute"><img src="assets/logos/pnp-color-mark.png"
+        alt="logo" /></a>
   </div>
 
   <ul class="nav">

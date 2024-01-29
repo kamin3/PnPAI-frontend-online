@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   landingRoute = CONFIG.landing.children.landing.route;
   loginRoute = CONFIG.auth.children.login.route;
   registerRoute = CONFIG.auth.children.register.route;
+  dashboardRoute = CONFIG.dashboard.children.dashboard.route;
 
   constructor(
     private accountService: AccountService,

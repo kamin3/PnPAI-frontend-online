@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { CONFIG } from '@app/shared/configs';
 import { ToggleSidebarService } from '@app/shared/services/toggleSidebar.service';
-ToggleSidebarService;
+
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -10,6 +11,7 @@ export class NavBarComponent {
 
   @Input() showSidebar!: boolean;
   @Input() showMobileSidebar: boolean = false;
+  dashboardRoute: string = CONFIG.dashboard.children.dashboard.route;
   constructor(private toggleSidebarService: ToggleSidebarService) {
 
   }

@@ -9,6 +9,7 @@ import { IndustryService } from '@app/data/services/industry.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CONFIG } from '@app/shared/configs';
 import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,6 +26,7 @@ export class RegisterComponent implements OnInit {
   registrationForm: FormGroup | undefined;
   resultMessage: string | undefined = undefined;
   resgiterationSuccess: boolean = false;
+  homeRoute = CONFIG.dashboard.route;
   loginLink = CONFIG.auth.children.login.route;
   landingPageRoute = CONFIG.landing.children.landing.route;
   @ViewChild('showresult') showModalBTN!: ElementRef<HTMLButtonElement>;
@@ -33,11 +35,15 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private countryService: CountryService,
     private indusrtyService: IndustryService,
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router: Router
+
   ) {
 
   }
   ngOnInit(): void {
+    if (this.accountService.isLoggedIn())
+      this.router.navigateByUrl(this.homeRoute);
     this.registrationForm = this.fb.group({
       companyName: ["", Validators.required],
       country: ["", Validators.required],

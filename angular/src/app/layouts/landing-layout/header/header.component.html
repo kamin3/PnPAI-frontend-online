@@ -24,7 +24,7 @@
                 </button>
 
                 <!-- navbar : brand (logo) -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" [routerLink]="isUserLoggedIn ? dashboardRoute: landingRoute">
                     <img src="./assets/logos/pnp-color-logo.png" height="38" alt="..." />
                 </a>
             </div>

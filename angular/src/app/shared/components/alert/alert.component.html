@@ -1,5 +1,6 @@
 <div [@alertTrigger]="(alert.showsAlert$ | async) ? 'open' : 'close'" class="alert-class">
-    <div class="alert alert-danger d-flex align-items-center" role="alert">
+    <div class="alert  d-flex align-items-center" [ngClass]="alert.isSuccess? 'alert-success':'alert-danger'"
+        role="alert">
         <div>
             {{ alert.alertMessage$ | async }}
         </div>

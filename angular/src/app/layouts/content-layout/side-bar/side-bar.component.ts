@@ -15,7 +15,7 @@ export class SideBarComponent implements OnInit, AfterViewInit {
 
 
   showMobileSidebar: boolean = false;
-
+  dashboardRoute: string = CONFIG.dashboard.children.dashboard.route;
   @Output() toggleSideBarEvent = new EventEmitter<null>();
 
   navItems = [
@@ -26,11 +26,10 @@ export class SideBarComponent implements OnInit, AfterViewInit {
     {
       title: 'Support Center', iconClass: "fi fi-support-headphones",
       children: [
-        { link: CONFIG.dashboard.children.support.children.overview.route, title: 'Overview', comingSoon: true },
-        { link: CONFIG.dashboard.children.support.children.tickets.route, title: 'Tickets', comingSoon: false },
+        { link: CONFIG.dashboard.children.support.children.tickets.route, title: 'Tickets', comingSoon: true },
         { link: CONFIG.dashboard.children.support.children.tutorial.route, title: 'Tutorial', comingSoon: true },
-        { link: CONFIG.dashboard.children.support.children.faq.route, title: 'FAQ', comingSoon: true },
-        { link: CONFIG.dashboard.children.support.children.license.route, title: 'License', comingSoon: true },
+        // { link: CONFIG.dashboard.children.support.children.faq.route, title: 'FAQ', comingSoon: true },
+        // { link: CONFIG.dashboard.children.support.children.license.route, title: 'License', comingSoon: true },
         { link: CONFIG.dashboard.children.support.children.contactus.route, title: 'Contact us', comingSoon: false },
       ]
     },

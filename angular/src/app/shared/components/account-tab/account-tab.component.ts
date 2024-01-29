@@ -29,7 +29,7 @@ export class AccountTabComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-        this.alertService.showAlert(err.error.message);
+        this.alertService.showFailureAlert(err.error.message);
       },
     });
   }

@@ -31,6 +31,9 @@ export class SignInComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    if (this.accountService.isLoggedIn())
+      this.router.navigateByUrl(this.homeRoute);
+
     this.signinForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required]
@@ -54,9 +57,10 @@ export class SignInComponent implements OnInit {
       error: (err) => {
         if (err.status != 500) {
           this.failedLoginMessage = err.error.message;
+          this.alertService.showFailureAlert(err.error.message);
           return;
         }
-        this.alertService.showAlert(err.error.message);
+        this.alertService.showFailureAlert(err.error.message);
         console.log(err);
       },
     });
