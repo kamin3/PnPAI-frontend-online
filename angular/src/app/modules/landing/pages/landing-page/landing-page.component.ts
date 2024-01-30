@@ -77,6 +77,8 @@ export class LandingPageComponent implements OnInit {
   joinBetaForm: FormGroup | undefined;
   scheduleDemoForm: FormGroup | undefined;
   failedJoinedBetaMessage: string | undefined;
+  @ViewChild('closeJoinBetaBTN') closeJoinBetaBTN!: ElementRef<HTMLButtonElement>;
+  @ViewChild('closeScheduleDemoBTN') closeScheduleDemoBTN!: ElementRef<HTMLButtonElement>;
 
 
   constructor(
@@ -306,6 +308,7 @@ export class LandingPageComponent implements OnInit {
 
     this.joinusService.sendJoinUsEmail(input).subscribe({
       next: (value) => {
+        this.closeJoinBetaBTN.nativeElement.click();
         this.alertService.showSuccessAlert("Email sent successfully");
         this.joinBetaForm?.reset();
       },
@@ -331,6 +334,7 @@ export class LandingPageComponent implements OnInit {
 
     this.scheduleDemoService.ScheduleDemo(input).subscribe({
       next: (value) => {
+        this.closeScheduleDemoBTN.nativeElement.click();
         this.alertService.showSuccessAlert("Email sent successfully");
         this.scheduleDemoForm?.reset();
       },

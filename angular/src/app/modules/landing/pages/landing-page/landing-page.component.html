@@ -787,7 +787,7 @@
           [disabled]="!joinBetaForm!.valid" class="btn btn-danger" id="successAddTicket">
           Join
         </button>
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+        <button #closeJoinBetaBTN type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
           Close
         </button>
       </div>
@@ -883,7 +883,7 @@
           [disabled]="!scheduleDemoForm!.valid" class="btn btn-danger" id="successAddTicket">
           Schedule A Demo
         </button>
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+        <button #closeScheduleDemoBTN type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
           Close
         </button>
       </div>

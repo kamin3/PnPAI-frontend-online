@@ -5,13 +5,19 @@
         <div class="pnp-use-cases-container row" *ngFor="let item of industries" id="{{item.id}}">
             <p class="mb-3">{{item.name}} {{'NewUsecase.UsecasesLabel' | translate}} :</p>
 
-            <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let case of item.usecases">
-                <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
-                    id="{{case.id}}" (click)="selectCase(case.id)"
-                    [class.pnp-usecase-option-selected]="selectedCaseValue == case.id">
-                    <p class="">{{case.name}}</p>
-                </button>
-            </div>
+            <ng-container *ngFor="let case of item.usecases">
+                <div class="col-lg-4 col-md-6 usecase-card" *ngIf="case.status != usecaseStatus.Inactive">
+                    <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
+                        [ngClass]="{'usecase-comingsoon':case.status == usecaseStatus.Comingsoon}"
+                        [disabled]="case.status == usecaseStatus.Comingsoon" id="{{case.id}}"
+                        (click)="selectCase(case.id)"
+                        [class.pnp-usecase-option-selected]="selectedCaseValue == case.id">
+                        <p class="">{{case.name}}</p>
+                        <small *ngIf="case.status == usecaseStatus.Comingsoon" class="badge bg-gray-700">Coming soon
+                            ...</small>
+                    </button>
+                </div>
+            </ng-container>
         </div>
 
         <div class="row">

@@ -12,8 +12,8 @@
     background-color: #13226b;
 }
 
-.disable-link{
+.disable-link {
     pointer-events: none;
     cursor: not-allowed;
-    opacity: .65;
+    opacity: 0.65;
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Industry } from '@schema/industry';
 import { IndustryService } from '@app/data/services/industry.service';
+import { UsecaseStatus } from '@app/data/schema/usecase';
 
 @Component({
   selector: 'app-use-cases',
@@ -13,6 +14,7 @@ export class UseCasesComponent implements OnInit {
 
   industries: Industry[] = [];
   selectedCaseValue: string = "";
+  usecaseStatus = UsecaseStatus;
   constructor(private industryService: IndustryService) {
 
   }
