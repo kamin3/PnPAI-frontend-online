@@ -88,7 +88,6 @@ export class NewUseCaseComponent {
   getBack() {
     this.useCaseSteps.pop();
     this.useCaseState = this.useCaseSteps[this.useCaseSteps.length - 1];
-    ;
   }
 
   goToPullImage() {
