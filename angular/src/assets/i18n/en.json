@@ -35,7 +35,6 @@
         "Forgot": "Forgot",
         "SignUp": "Sign Up",
         "SignIn": "Sign in"
-
     },
     "Register": {
         "ThanksParagraphStart": "Thank you for choosing",
@@ -45,17 +44,20 @@
     },
     "SignIn": {
         "SignInFormTitle": "Sign in",
-        "NoAccountAnchor":"Don't have an account yet?"
+        "NoAccountAnchor": "Don't have an account yet?"
     },
-    "Form":{
+    "Form": {
         "Fields": {
             "Email": "Email address",
             "Password": "Password"
         },
-        "Errors":{
-            "EmailRequired":"Email address is required",
-            "EmailInvalid":"Email address must be a valid email",
+        "Errors": {
+            "EmailRequired": "Email address is required",
+            "EmailInvalid": "Email address must be a valid email",
             "PasswordRequired": "Password is required"
         }
+    },
+    "Errors": {
+        "General": "Sorry! Error just happened"
     }
 }

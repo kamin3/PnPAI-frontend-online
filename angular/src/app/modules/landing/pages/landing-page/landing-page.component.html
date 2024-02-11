@@ -782,7 +782,6 @@
 
 
       <div class="modal-footer">
-        <span *ngIf="failedJoinedBetaMessage" class="mb-5 text-danger">{{failedJoinedBetaMessage}}</span>
         <button type="button" (mouseover)="setAllTouched(joinBetaForm!)" (click)="onJoinBetaSubmit()"
           [disabled]="!joinBetaForm!.valid" class="btn btn-danger" id="successAddTicket">
           Join

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Industry } from '@schema/industry';
 import { IndustryService } from '@app/data/services/industry.service';
 import { UsecaseStatus } from '@app/data/schema/usecase';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 @Component({
   selector: 'app-use-cases',
@@ -15,7 +16,10 @@ export class UseCasesComponent implements OnInit {
   industries: Industry[] = [];
   selectedCaseValue: string = "";
   usecaseStatus = UsecaseStatus;
-  constructor(private industryService: IndustryService) {
+  constructor(
+    private industryService: IndustryService,
+    private httpErrorHandler: HttpErrorHandler
+  ) {
 
   }
   ngOnInit(): void {
@@ -25,7 +29,7 @@ export class UseCasesComponent implements OnInit {
         this.industries = value.message;
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }

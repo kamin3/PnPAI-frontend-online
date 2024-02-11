@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CONFIG } from '@app/shared/configs';
 import { ValidateBusinessEmail } from '@app/shared/validators/businessEmail.validator';
 import { Router } from '@angular/router';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 
 @Component({
@@ -36,7 +37,8 @@ export class RegisterComponent implements OnInit {
     private countryService: CountryService,
     private indusrtyService: IndustryService,
     private accountService: AccountService,
-    private router: Router
+    private router: Router,
+    private httpErrorHandler: HttpErrorHandler
 
   ) {
 
@@ -69,7 +71,7 @@ export class RegisterComponent implements OnInit {
         this.getIndustries();
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -80,7 +82,7 @@ export class RegisterComponent implements OnInit {
         this.industries = value.message;
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -136,7 +138,6 @@ export class RegisterComponent implements OnInit {
     this.resultMessage = err.error.message;
     this.resgiterationSuccess = false;
     this.showModalBTN.nativeElement.click();
-    console.log(err);
   }
 
   setAllTouched() {

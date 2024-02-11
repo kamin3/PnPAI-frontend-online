@@ -4,7 +4,7 @@ import { userSigninInput } from '@schema/userSigninInput';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AlertService } from '@app/shared/services/alert.service';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
     private accountService: AccountService,
     private router: Router,
     private route: ActivatedRoute,
-    private alertService: AlertService
+    private httpErrorHandler: HttpErrorHandler
 
   ) {
 
@@ -55,13 +55,9 @@ export class SignInComponent implements OnInit {
         return this.signinSuccess(value.jwt_token);
       },
       error: (err) => {
-        if (err.status != 500) {
+        if (err.status < 500)
           this.failedLoginMessage = err.error.message;
-          this.alertService.showFailureAlert(err.error.message);
-          return;
-        }
-        this.alertService.showFailureAlert(err.error.message);
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   };

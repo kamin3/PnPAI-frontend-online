@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DockerConfigVolumes } from '@app/data/schema/docker-config';
 import { DockerConfigService } from '@app/data/services/docker-config.service';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 import { Image } from '@schema/image';
 
 enum UseCaseState {
@@ -27,7 +28,10 @@ export class NewUseCaseComponent {
   images: Image[] = [];
   connectors: Image[] = [];
   imageId: string | undefined = undefined;
-  constructor(private dockerconfigService: DockerConfigService) {
+  constructor(
+    private dockerconfigService: DockerConfigService,
+    private httpErrorHandler: HttpErrorHandler
+  ) {
   }
 
 
@@ -43,7 +47,7 @@ export class NewUseCaseComponent {
           this.getImageConnectors(this.images[0].id);
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -61,7 +65,7 @@ export class NewUseCaseComponent {
           this.getDockerCompose(imageId);
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       }
     });
   }
@@ -80,7 +84,7 @@ export class NewUseCaseComponent {
         this.useCaseSteps.push(UseCaseState.TokenGenerated);
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       }
     });
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UseCaseModel } from '@app/data/schema/usecase-model';
 import { UseCaseModelsService } from '@app/data/services/usecase-models.service';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 @Component({
   selector: 'app-current-use-cases',
@@ -12,7 +13,10 @@ export class CurrentUseCasesComponent implements OnInit {
 
   useCaseModels: UseCaseModel[] = [];
 
-  constructor(private useCaseModelsService: UseCaseModelsService) {
+  constructor(
+    private useCaseModelsService: UseCaseModelsService,
+    private httpErrorHandler: HttpErrorHandler
+  ) {
   }
 
   industries = [{
@@ -45,7 +49,7 @@ export class CurrentUseCasesComponent implements OnInit {
         });
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Account } from '@app/data/schema/account';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
-import { AlertService } from '@app/shared/services/alert.service';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 @Component({
   selector: 'app-account-tab',
@@ -19,7 +19,8 @@ export class AccountTabComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private router: Router,
-    private alertService: AlertService) {
+    private httpErrorHandler: HttpErrorHandler
+  ) {
 
   }
   ngOnInit(): void {
@@ -28,8 +29,7 @@ export class AccountTabComponent implements OnInit {
         this.account = value;
       },
       error: (err) => {
-        console.log(err);
-        this.alertService.showFailureAlert(err.error.message);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }

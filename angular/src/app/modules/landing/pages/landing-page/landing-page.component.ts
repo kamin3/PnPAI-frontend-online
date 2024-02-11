@@ -15,6 +15,7 @@ import { JoinUsService } from '@app/data/services/joinus.service';
 import { JoinUsInput } from '@app/data/schema/joinusInput';
 import { ScheduleDemoService } from '@app/data/services/scheduleDemo.service';
 import { ScheduleDemoInput } from '@app/data/schema/scheduleDemoInput';
+import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -76,7 +77,6 @@ export class LandingPageComponent implements OnInit {
   contactusForm: FormGroup | undefined;
   joinBetaForm: FormGroup | undefined;
   scheduleDemoForm: FormGroup | undefined;
-  failedJoinedBetaMessage: string | undefined;
   @ViewChild('closeJoinBetaBTN') closeJoinBetaBTN!: ElementRef<HTMLButtonElement>;
   @ViewChild('closeScheduleDemoBTN') closeScheduleDemoBTN!: ElementRef<HTMLButtonElement>;
 
@@ -90,7 +90,9 @@ export class LandingPageComponent implements OnInit {
     private joinusService: JoinUsService,
     private scheduleDemoService: ScheduleDemoService,
     private alertService: AlertService,
-    private router: Router
+    private router: Router,
+    private httpErrorHandler: HttpErrorHandler
+
   ) { }
 
   ngOnInit(): void {
@@ -132,7 +134,7 @@ export class LandingPageComponent implements OnInit {
         this.plans = this.mapPlans(this.plansData);
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -179,7 +181,7 @@ export class LandingPageComponent implements OnInit {
         this.industries = value.message;
       },
       error: (err) => {
-        console.log(err);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -214,7 +216,7 @@ export class LandingPageComponent implements OnInit {
             },
             error: (err) => {
               console.log("errrrroooooooooooor");
-              console.log(err);
+              this.httpErrorHandler.handleError(err);
             },
           });
         });
@@ -291,7 +293,7 @@ export class LandingPageComponent implements OnInit {
         this.contactusForm?.reset();
       },
       error: (err) => {
-        this.alertService.showFailureAlert(err.error.message);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -314,10 +316,12 @@ export class LandingPageComponent implements OnInit {
       },
       error: (err) => {
         if (err.status == 400) {
-          this.failedJoinedBetaMessage = "Request is already sent";
+          this.closeJoinBetaBTN.nativeElement.click();
+          this.alertService.showFailureAlert("Request is already sent before");
+          this.joinBetaForm?.reset();
           return;
         }
-        this.alertService.showFailureAlert(err.error.message);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
@@ -339,7 +343,7 @@ export class LandingPageComponent implements OnInit {
         this.scheduleDemoForm?.reset();
       },
       error: (err) => {
-        this.alertService.showFailureAlert(err.error.message);
+        this.httpErrorHandler.handleError(err);
       },
     });
   }
