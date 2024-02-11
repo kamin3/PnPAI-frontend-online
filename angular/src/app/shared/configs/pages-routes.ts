@@ -38,6 +38,7 @@ export const CONFIG = {
       checkoutresult: { name: 'checkoutresult', route: '/home/checkoutresult' },
       privacypolicy: { name: 'privacypolicy', route: '/home/privacypolicy' },
       faq: { name: 'faq', route: '/home/faq' },
+      ecommerce: { name: 'ecommerce', route: '/home/ecommerce' },
     },
   },
 };
