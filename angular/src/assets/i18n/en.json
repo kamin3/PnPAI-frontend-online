@@ -1,25 +1,4 @@
 {
-    "UseCases": {
-        "CreateNewModel": "Deploy New Use Case",
-        "YourModelCards": "Your Model Cards",
-        "LastTrained": "Last Trained"
-    },
-    "Dashboard": {
-        "Welcome": "Welcome to your dashboard"
-    },
-    "NewUsecase": {
-        "SelectLabel": "Select Usecase",
-        "SelectVersionLabel": "Select the use case version",
-        "SelectConnectorLabel": "Select the suitable image connector",
-        "PullImageLabel": "Pull Your Image",
-        "PullImageDesc": "Once you have your token ready, you'll be all set to dive into the exciting world of Docker images. In the next step, we'll walk you through the process of pulling an image using the token you've been provided. This will empower you to harness the power of containerization and unlock the potential of our platform.",
-        "DirectoryName": "Enter the required directory name for",
-        "TokenGenerationLabel": "Token Generation",
-        "TokenGenerationDesc": "In order to enhance security and provide you with seamless access to our resources, we will generate a unique token for you. This token will serve as your credential to pull Docker images from our repository. Rest assured, your data and interactions are of utmost importance to us, and this token ensures a secure connection.",
-        "UsecasesLabel": "Use cases",
-        "SuccessMessage": "We're excited to have you join our platform.",
-        "SuccessMessageSteps": "As you embark on your user journey, we want to guide you through the initial steps of getting started."
-    },
     "Buttons": {
         "Back": "Back",
         "Next": "Next",
@@ -34,30 +13,250 @@
         "LogOut": "Log out",
         "Forgot": "Forgot",
         "SignUp": "Sign Up",
-        "SignIn": "Sign in"
+        "SignIn": "Sign in",
+        "StartNow": "Start now",
+        "JoinOurBetaProgram": "Join Our Beta Program",
+        "ScheduleADemo": "Schedule A Demo",
+        "Join": "Join",
+        "GetStarted": "Get Started",
+        "SendMessage": "Send Message"
+    },
+    "Numbers": {
+        "1": 1,
+        "2": 2,
+        "16": 16
+    },
+    "Form": {
+        "Fields": {
+            "Email": "Email address",
+            "Password": "Password",
+            "CompanyName": "Company Name",
+            "Country": "Country",
+            "City": "City",
+            "Street": "Street",
+            "PostalCode": "Postal Code",
+            "CompanyWebsite": "Company Website",
+            "Industry": "Industry",
+            "FirstName": "First Name",
+            "LastName": "Last Name",
+            "PhoneNumber": "Phone Number",
+            "Phone": "Phone",
+            "Name": "Name",
+            "Role": "Role",
+            "Message": "Message",
+            "FullName": "Full Name",
+            "Title": "Title"
+        },
+        "Errors": {
+            "EmailRequired": "Email address is required",
+            "EmailInvalid": "Email address must be a valid email",
+            "EmailInvalidBusiness": "Email must be a business email",
+            "PasswordRequired": "Password is required",
+            "CompanyNameRequired": "Company Name is required.",
+            "CountryRequired": "Country is required.",
+            "CityRequired": "City is required.",
+            "IndustryRequired": "Industry is required.",
+            "FirstNameRequired": "First Name is required.",
+            "LastNameRequired": "Last Name is required.",
+            "PhoneNumberPattern": "Phone Number must start with 00 or +.",
+            "NameRequired": "Name is required.",
+            "RoleRequired": "Role is required.",
+            "MessageRequired": "Message is required.",
+            "FullNameRequired": "Full Name is required."
+        },
+        "OptionsLabels": {
+            "SelectCountry": "Select Country",
+            "SelectCity": "Select City",
+            "SelectIndusrty": "Select Indusrty",
+            "Latest": "Latest -"
+        },
+        "Placeholders": {
+            "EmailWithEnter": "Enter Email address ...",
+            "Email": "Email address...",
+            "Phone": "Phone ...",
+            "PasswordWithEnter": "Enter Password ...",
+            "CompanyNameWithEnter": "Enter Company Name ...",
+            "StreetWithEnter": "Enter Street ...",
+            "PostalCodeWithEnter": "Enter Postal Code ...",
+            "CompanyWebsiteWithEnter": "Enter Company Website ...",
+            "FirstNameWithEnter": "Enter First Name ...",
+            "LastNameWithEnter": "Enter Last Name ...",
+            "PhoneNumberWithEnter": "Enter Phone Number ...",
+            "FullNameWithEnter": "Enter Full Name ...",
+            "TitleWithEnter": "Enter Title ..."
+        }
+    },
+    "Labels": {
+        "ComingSoon": "Coming soon ...",
+        "Phone": "Phone",
+        "Email": "Email",
+        "LastLogin": "Last Login",
+        "PNPAiCompanyName": "PnP.ai",
+        "Before": "Before",
+        "After": "After",
+        "Monthly": "Monthly",
+        "Annual": "Annual",
+        "PerMonth": "/mo",
+        "PerYear": "per year",
+        "PernetageSymbol": "%",
+        "PerQuarter": "per quarter",
+        "HelpCenter": "Help Center"
+    },
+    "Routes": {
+        "Dashboard": "Dashboard",
+        "Org": "Org.",
+        "Teams": "Teams",
+        "SupportCenter": "Support Center",
+        "Tickets": "Tickets",
+        "Tutorial": "Tutorial",
+        "FAQ": "FAQ",
+        "License": "License",
+        "ContactUs": "Contact us",
+        "AboutUs": "About Us",
+        "PrivacyPolicy": "Privacy policy",
+        "Prices": "Prices",
+        "OurProccess": "Our Proccess",
+        "Home": "Home",
+        "MyProfile": "My Profile",
+        "MySubscription": "My Subscription"
+    },
+    "Errors": {
+        "General": "Sorry! Error just happened",
+        "ErrorOccured": "error occured ..."
+    },
+    "Footer": {
+        "Message": "Sign up today! Your journey to AI-driven excellence starts here.",
+        "PNPAIRights": {
+            "RightsReserved": "All rights reserved."
+        },
+        "GetInTouch": {
+            "Title": "GET IN TOUCH",
+            "Description": "With PnPAI, there’s no learning curve or elaborate training needed. You’re now equipped with a powerful AI tool customized for your industry.",
+            "CompanyAddress": {
+                "Street": "2261 Market Street STE 5816",
+                "State": "San Francisco, CA",
+                "Number": "94114"
+            },
+            "Phone": "+49 1774222144",
+            "Email": "Info@pnpai.co"
+        },
+        "LearnMore": {
+            "Title": "LEARN MORE"
+        }
+    },
+    "AccountTab": {
+        "DashboardDescription": "Manage your services",
+        "MyProfileDescription": "Account settings and more",
+        "MySubscriptiopnDescription": "Your monthly billing"
+    },
+    "UseCases": {
+        "CreateNewModel": "Deploy New Use Case",
+        "YourModelCards": "Your Model Cards",
+        "LastTrained": "Last Trained"
+    },
+    "NewUsecase": {
+        "SelectLabel": "Select Usecase",
+        "SelectVersionLabel": "Select the use case version",
+        "SelectConnectorLabel": "Select the suitable image connector",
+        "PullImageLabel": "Pull Your Image",
+        "PullImageDesc": "Once you have your token ready, you'll be all set to dive into the exciting world of Docker images. In the next step, we'll walk you through the process of pulling an image using the token you've been provided. This will empower you to harness the power of containerization and unlock the potential of our platform.",
+        "DirectoryName": "Enter the required directory name for",
+        "TokenGenerationLabel": "Token Generation",
+        "TokenGenerationDesc": "In order to enhance security and provide you with seamless access to our resources, we will generate a unique token for you. This token will serve as your credential to pull Docker images from our repository. Rest assured, your data and interactions are of utmost importance to us, and this token ensures a secure connection.",
+        "UsecasesLabel": "Use cases",
+        "SuccessMessage": "We're excited to have you join our platform.",
+        "SuccessMessageSteps": "As you embark on your user journey, we want to guide you through the initial steps of getting started."
+    },
+    "Dashboard": {
+        "Welcome": "Welcome to your dashboard"
     },
     "Register": {
         "ThanksParagraphStart": "Thank you for choosing",
+        "ThanksParagraphPNPAI": "PnP.ai 's",
         "ThanksParagraphEnd": "plug-and-play AI solutions. Please fill out the form below to get started on your AI journey.",
         "SignUpFormTitle": "Sign Up",
-        "RegisterationResultModalTitle": "Registeration result"
+        "RegisterationResultModalTitle": "Registeration result",
+        "TermsAndConditionsAcceptance": "I do accept PnP",
+        "TermsAndConditions": "terms & conditions"
     },
     "SignIn": {
         "SignInFormTitle": "Sign in",
         "NoAccountAnchor": "Don't have an account yet?"
     },
-    "Form": {
-        "Fields": {
-            "Email": "Email address",
-            "Password": "Password"
-        },
-        "Errors": {
-            "EmailRequired": "Email address is required",
-            "EmailInvalid": "Email address must be a valid email",
-            "PasswordRequired": "Password is required"
-        }
+    "Notifications": {
+        "NewState": "new"
     },
-    "Errors": {
-        "General": "Sorry! Error just happened"
+    "Landing": {
+        "Slogan": "Revolutionize Your Operations with",
+        "SloganDescription": "where we make AI integration seamless and accessible for SMEs.",
+        "Feature": "Explore endless possibilities with",
+        "FeatureDescription": "where we make AI integration seamless and accessible for SMEs.",
+        "AnnualPayment": "Annual Payment",
+        "Discount": "discount",
+        "QuarterlyPayment": "Quarterly Payment",
+        "TrialDescriptionStart": "Enjoy a",
+        "TrialDescriptionEnd": "trial with basic features free of charge.",
+        "ResellerTitle": "Reseller Package - Partnership",
+        "CustomIntegrationDiscussionsTitle": "Custom Integration Discussions",
+        "CustomIntegrationDiscussionsDescription": "Reach out to PnPAI to discuss the terms of custom integration and partnership opportunities.",
+        "WhiteLabelSolutionsTitle": "WhiteLabelSolutions",
+        "WhiteLabelSolutionsDescription": "Offer PnPAI's AI solutions as part of your software offerings with white-label options.",
+        "DedicatedAccountManagerTitle": "Dedicated Account Manager",
+        "DedicatedAccountManagerDescription": "Benefit from a dedicated account manager to facilitate collaboration and support.",
+        "FlexibleLicensingTitle": "Flexible Licensing",
+        "FlexibleLicensingDescription": "Explore flexible licensing options to align with your reselling strategy.",
+        "JointMarketingEffortsTitle": "Joint Marketing Efforts",
+        "JointMarketingEffortsDescription": "Partner with PnPAI on joint marketing efforts to expand your reach and customer base.",
+        "ResellerDescription": "This package is tailored for software houses seeking to enhance their solutions with AI capabilities and looking for a reliable AI partner with flexible licensing options. It allows software houses to seamlessly integrate PnPAI into their offerings and provide AI-driven solutions to their clients.",
+        "InnovationSectionTitle": "Unlocking Innovation Through Artificial Intelligence with",
+        "SimplifyAIImplementationTitle": "Simplify AI Implementation",
+        "SimplifyAIImplementationDescription": "We understand that every business is unique. That’s why PnPAI goes the extra mile by offering expert consultation services.",
+        "OptimizeEfficiencyTitle": "Optimize Efficiency and Enhance Customer Experiences",
+        "OptimizeEfficiencyDescription": "Upon registration, businesses are prompted to select their specific industry.",
+        "AccelerateAITitle": "Accelerate Your AI Journey",
+        "AccelerateAIDescription": "Say goodbye to the complexities of AI development. PnPAI specializes in crafting ready-to-deploy, containerized AI solutions.",
+        "OurProcessSectionTitle": "Our Process",
+        "ResearchTitle": "Research",
+        "ResearchDescription": "We kickstart each use-case with thorough research into the most advanced algorithms relevant to specific industry use-cases. This ensures we employ cutting-edge methods for optimal accuracy and outcomes.",
+        "ImplementationTitle": "Implementation",
+        "ImplementationDescription": "Next, we put our research into action by implementing the most promising algorithms identified during the research phase.",
+        "TestingTitle": "Testing",
+        "TestingDescription": "Rigorous testing follows implementation. We evaluate and benchmark the performance of the developed algorithms to guarantee they meet the highest standards.",
+        "DeploymentTitle": "Deployment",
+        "DeploymentDescription": "The final step is deployment. We roll out the latest use-case versions, complete with state-of-the-art AI algorithms, making them available to all our customers for enhanced business capabilities.",
+        "IntegrationSectionTitle": "Integration",
+        "IntegrationSectionDescription": "Time is of the essence in today's fast-paced business landscape. PnPAI enables you to fast-track your AI implementation.",
+        "EmbracingSimplicitySectionLabel": "Embracing Simplicity",
+        "EmbracingSimplicitySectionTitle": "Facilitating Accessible AI for All",
+        "EmbracingSimplicitySectionDescription": "Proactively envisioned multimedia based expertise and cross-media growth strategies. Seamlessly visualize quality intellectual capital without superior.",
+        "EmbracingSimplicityIndustryAccelerator": "Industry Accelerator (Usecases)",
+        "EmbracingSimplicityIndustries": "Industries",
+        "EmbracingSimplicityWhitePaper": "White Paper",
+        "DownloadWhitePaperButton": "DOWNLOAD WhitePaper NOW",
+        "LetsConnectStart": "Let's connect to share the",
+        "LetsConnectEnd": "best deals and articles",
+        "HelpFormTitle": "How can we help?",
+        "GuestModalTitle": "Welcome",
+        "GuestModalDescription": "You need to have an account before joining us."
+    },
+    "FAQ": {
+        "AnswerQuestions": "will answer most of your questions.",
+        "WhatIsPNPAIQuestion": "What is PnPAI and how does it work?",
+        "WhatIsPNPAIAnswer": "PnPAI is a revolutionary AI integration platform. We provide ready-to-deploy, containerized AI solutions. You can choose your industry, download the solution, set it up on your server or cloud, activate it using an API key, and start leveraging AI effortlessly.",
+        "WhyPNPAIQuestion": "Why choose PnPAI over other AI platforms?",
+        "WhyPNPAIAnswerPartOne": "PnPAI’s key value propositions revolve around accessibility, cost-efficiency, and time-saving in AI integration.",
+        "WhyPNPAIAnswerPartTwo": "PnPAI offers industralized AI soltuions directly from each industry catalog. No need for prior AI Experience in order to use PnPAI platform. No need to build any internal AI teams or pay bulk amounts of money to implement AI and integrate it into your business.",
+        "HowFastIntegratePNPAIQuestion": "How fast can I integrate AI into my business with PnPAI?",
+        "HowFastIntegratePNPAIAnswer": "Integration is swift. Once you sign up, choose your industry, and download the solution, you can have AI up and running in no time. Our goal is to simplify the process and accelerate your journey to data-driven decision-making.",
+        "IsPnPAISuitableQuestion": "Is PnPAI suitable for businesses without a dedicated AI team?",
+        "IsPnPAISuitableAnswer": "Absolutely. PnPAI is designed to democratize AI access. You don’t need a specialized AI team. Our solutions are user-friendly, allowing businesses of all sizes to harness the power of AI without the complexity.",
+        "HowPnPAIPrivacyQuestion": "How does PnPAI ensure data privacy and security?",
+        "HowPnPAIPrivacyAnswer": "PnPAI won’t touch the data you provide. The AI solution will be deployed on your infrastructure and will run independently from PnPAI.",
+        "WhatIndustriesPNPAIQuestion": "What industries does PnPAI cater to?",
+        "WhatIndustriesPNPAIAnswer": "PnPAI is versatile and caters to various industries, including e-commerce, healthcare, finance, and more. Our solutions are customizable to meet the unique needs of different business sectors.",
+        "IsPricingPNPAIQuestion": "Is there a pricing plan available for PnPAI services?",
+        "IsPricingPNPAIAnswer": "Yes, we offer transparent pricing plans to suit different business needs. Visit our pricing page or contact our support team for detailed information.",
+        "WhatIncentivesPNPAIQuestion": "What incentives do I get for joining the waiting list?",
+        "WhatIncentivesPNPAIAnswer": "By joining our waiting list, you unlock 6 months of free access to the entire PnPAI platform. It’s our way of thanking you for being an early adopter of AI excellence."
     }
 }

@@ -23,7 +23,7 @@
                 class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
 
                 <span *ngIf="!item.isRead" [ngClass]="{'bg-success':item.state == 0, 'bg-danger':item.state == 1}"
-                    class="badge float-end fw-normal mt-1">new</span>
+                    class="badge float-end fw-normal mt-1">{{'Notifications.NewState' | translate}}</span>
 
                 <div *ngIf="item.state == 0" class="float-start avatar avatar-sm rounded-circle bg-success fs-5">
                     <i class="fi fi-check text-white"></i>

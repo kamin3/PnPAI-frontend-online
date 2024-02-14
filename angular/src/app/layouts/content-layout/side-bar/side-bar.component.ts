@@ -5,6 +5,7 @@ import { CONFIG } from '@app/shared/configs';
 import { ToggleSidebarService } from '@app/shared/services/toggleSidebar.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-side-bar',
@@ -16,31 +17,56 @@ export class SideBarComponent implements OnInit, AfterViewInit {
 
   showMobileSidebar: boolean = false;
   dashboardRoute: string = CONFIG.dashboard.children.dashboard.route;
-  @Output() toggleSideBarEvent = new EventEmitter<null>();
-
   navItems = [
-    { link: CONFIG.dashboard.children.dashboard.route, title: 'Dashboard', iconClass: "fi fi-shape-squared-unequal", comingSoon: false },
-    { link: CONFIG.dashboard.children.org.route, title: 'Org.', iconClass: "fi fi-squared-graph", comingSoon: true },
-    { link: CONFIG.dashboard.children.teams.route, title: 'Teams', iconClass: "fi fi-shape-3dots", comingSoon: true },
+    {
+      link: CONFIG.dashboard.children.dashboard.route, title: 'Routes.Dashboard',
+      iconClass: "fi fi-shape-squared-unequal", comingSoon: false
+    },
+    {
+      link: CONFIG.dashboard.children.org.route, title: 'Routes.Org',
+      iconClass: "fi fi-squared-graph", comingSoon: true
+    },
+    {
+      link: CONFIG.dashboard.children.teams.route, title: 'Routes.Teams',
+      iconClass: "fi fi-shape-3dots", comingSoon: true
+    },
     // { link: CONFIG.dashboard.children.usecases.route, title: 'Use Cases', iconClass: "fi fi-shape-3dots" },
     {
-      title: 'Support Center', iconClass: "fi fi-support-headphones",
+      title: 'Routes.SupportCenter', iconClass: "fi fi-support-headphones",
       children: [
-        { link: CONFIG.dashboard.children.support.children.tickets.route, title: 'Tickets', comingSoon: true },
-        { link: CONFIG.dashboard.children.support.children.tutorial.route, title: 'Tutorial', comingSoon: true },
-        // { link: CONFIG.dashboard.children.support.children.faq.route, title: 'FAQ', comingSoon: true },
-        // { link: CONFIG.dashboard.children.support.children.license.route, title: 'License', comingSoon: true },
-        { link: CONFIG.dashboard.children.support.children.contactus.route, title: 'Contact us', comingSoon: false },
+        {
+          link: CONFIG.dashboard.children.support.children.tickets.route,
+          title: 'Routes.Tickets', comingSoon: true
+        },
+        {
+          link: CONFIG.dashboard.children.support.children.tutorial.route,
+          title: 'Routes.Tutorial', comingSoon: true
+        },
+        // {
+        //   link: CONFIG.dashboard.children.support.children.faq.route,
+        //   title: 'Routes.FAQ', comingSoon: true
+        // },
+        // {
+        //   link: CONFIG.dashboard.children.support.children.license.route,
+        //   title: 'Routes.License', comingSoon: true
+        // },
+        {
+          link: CONFIG.dashboard.children.support.children.contactus.route,
+          title: 'Routes.ContactUs', comingSoon: false
+        },
       ]
     },
-  ];
+  ]; @Output() toggleSideBarEvent = new EventEmitter<null>();
 
   constructor(
     private toggleSidebarService: ToggleSidebarService,
     private router: Router,
     private elRef: ElementRef,
+    private translateService: TranslateService,
     @Inject(DOCUMENT) private document: Document
-  ) { }
+  ) {
+  }
+
 
   ngOnInit() {
     this.toggleSidebarService.getMobileFlag().subscribe((flag: boolean) => {
@@ -53,7 +79,8 @@ export class SideBarComponent implements OnInit, AfterViewInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((route) => {
       this.setIsActive(this.router.url);
     });
-  }
+  };
+
 
   setIsActive(route: string) {
     let fullRoute = this.document.location.origin + route;

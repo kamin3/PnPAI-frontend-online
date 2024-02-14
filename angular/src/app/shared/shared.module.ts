@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {
@@ -30,7 +30,7 @@ import { faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { LoaderComponent } from './components/loader/loader.component';
 import { TokenInterceptor } from '@app/shared/interceptors/token.interceptor';
 import { LoaderInterceptor } from '@app/shared/interceptors/loader.interceptor';

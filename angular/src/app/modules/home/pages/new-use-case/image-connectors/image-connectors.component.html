@@ -3,13 +3,6 @@
         <h3 class="mb-4">{{'NewUsecase.SelectConnectorLabel' | translate}}</h3>
 
         <ng-container *ngIf="connectors">
-            <!-- <select class="form-select mb-3" (change)="selectImage($event)">
-                <ng-container *ngFor="let image of connectors; index as idx;">
-                    <option [value]="image.id" [selected]="idx == 0">
-                        <div>{{image.container_name}} -- {{image.description}}</div>
-                    </option>
-                </ng-container>
-            </select> -->
             <div class="col-lg-4 col-md-6 usecase-card" *ngFor="let image of connectors">
                 <button class="shadow-md text-dark rounded text-center border-0 px-5 pnp-usecase-option"
                     id="{{image.id}}" (click)="selectImage(image.id)"

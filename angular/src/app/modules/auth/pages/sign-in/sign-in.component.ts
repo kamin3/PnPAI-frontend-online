@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
 
   homeRoute = CONFIG.dashboard.route;
   registerRoute = CONFIG.auth.children.register.route;
+  landingPageRoute = CONFIG.landing.children.landing.route;
   failedLoginMessage?: string = undefined;
 
   signinForm: FormGroup | undefined;
