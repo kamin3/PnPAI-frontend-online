@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { AccountService } from '@app/data/services/account.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,14 +7,26 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './token-generation.component.html',
   styleUrls: ['./token-generation.component.css', '../new-use-case.component.css']
 })
-export class TokenGenerationComponent {
+export class TokenGenerationComponent implements OnInit {
 
   @Input() token: string = '';
   @Output() getBackEvent = new EventEmitter<null>();
   @Output() nextStepEvent = new EventEmitter<null>();
   @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
+  quayIOLoginGuide: string = "";
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    private accountService: AccountService
+  ) {
+  }
+  ngOnInit(): void {
+    let robotName = this.accountService.getUserRobotName();
+    this.translate.get('NewUsecase.QuayIOLoginGuide').subscribe((value: string) => {
+      this.quayIOLoginGuide = value
+        .replace("{{robotName}}", robotName)
+        .replace("{{token}}", this.token);
+    });
   }
   getBack() {
     this.getBackEvent.emit();

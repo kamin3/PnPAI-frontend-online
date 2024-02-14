@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { CONFIG } from '@shared/configs';
-import { authGuard } from '@app/shared/services/auth.guard';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { EcommerceComponent } from './pages/ecommerce/ecommerce.component';

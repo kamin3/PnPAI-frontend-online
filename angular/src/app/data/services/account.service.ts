@@ -46,7 +46,13 @@ export class AccountService {
     return localStorage.getItem(this.token_key) != null;
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem(this.token_key);
+  }
+
+  getUserRobotName(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['robots'][0]['robot_name'];
   }
 }

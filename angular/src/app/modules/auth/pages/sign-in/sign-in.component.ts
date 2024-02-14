@@ -32,9 +32,6 @@ export class SignInComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    if (this.accountService.isLoggedIn())
-      this.router.navigateByUrl(this.homeRoute);
-
     this.signinForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required]

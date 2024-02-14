@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { CONFIG } from '@shared/configs';
 import { ContentLayoutComponent } from '@layouts/content-layout/content-layout.component';
 import { AuthLayoutComponent } from '@layouts/auth-layout/auth-layout.component';
 import { authGuard } from '@app/shared/services/auth.guard';
+import { anonymousGuard } from '@app/shared/services/anonymous.guard';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     loadChildren: () =>
       import('@modules/auth/auth.module').then((m) => m.AuthModule),
+    canActivate: [anonymousGuard]
   },
   {
     path: '',
@@ -48,8 +50,12 @@ const routes: Routes = [
   },
 ];
 
+const routerOptions: ExtraOptions = {
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'top'
+};
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
