@@ -50,17 +50,17 @@
                         <a class="nav-link" [routerLink]="landingRoute"> {{'Routes.Home' | translate}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="landingRoute+'#prices_section'">
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='prices_section'>
                             {{'Routes.Prices' | translate}}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="landingRoute+'#ourprocess'">
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='ourprocess'>
                             {{'Routes.OurProccess' | translate}}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="landingRoute+'#contactus'">
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='contactus'>
                             {{'Routes.ContactUs' | translate}}
                         </a>
                     </li>

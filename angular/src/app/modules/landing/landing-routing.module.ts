@@ -9,25 +9,30 @@ import { EcommerceComponent } from './pages/ecommerce/ecommerce.component';
 const routes: Routes = [
   {
     path: '',
+    children: [
+      {
+        path: CONFIG.landing.children.landing.name,
+        component: LandingPageComponent,
+      },
+      {
+        path: CONFIG.landing.children.privacypolicy.name,
+        component: PrivacyPolicyComponent,
+      },
+      {
+        path: CONFIG.landing.children.faq.name,
+        component: FaqComponent,
+      },
+      {
+        path: CONFIG.landing.children.ecommerce.name,
+        component: EcommerceComponent,
+      }
+    ]
+  },
+  {
+    path: '**',
     redirectTo: CONFIG.landing.children.landing.route,
     pathMatch: 'full',
-  },
-  {
-    path: CONFIG.landing.children.landing.name,
-    component: LandingPageComponent,
-  },
-  {
-    path: CONFIG.landing.children.privacypolicy.name,
-    component: PrivacyPolicyComponent,
-  },
-  {
-    path: CONFIG.landing.children.faq.name,
-    component: FaqComponent,
-  },
-  {
-    path: CONFIG.landing.children.ecommerce.name,
-    component: EcommerceComponent,
-  },
+  }
 ];
 
 @NgModule({

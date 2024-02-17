@@ -37,15 +37,16 @@ const routes: Routes = [
     path: '**',
     redirectTo: CONFIG.landing.children.landing.route,
     pathMatch: 'full',
-  },
+  }
 ];
 
-// const routerOptions: ExtraOptions = {
-//   anchorScrolling: 'enabled',
-//   scrollPositionRestoration: 'top'
-// };
+const routerOptions: ExtraOptions = {
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'top',
+  scrollOffset: [0, 50]
+};
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routerOptions)],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

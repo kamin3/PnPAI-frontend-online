@@ -9,24 +9,29 @@ import { contactUsComponent } from './pages/contactus/contactUs.component';
 const routes: Routes = [
   {
     path: '',
+    children: [
+      {
+        path: CONFIG.dashboard.children.dashboard.name,
+        component: HomeComponent
+      },
+      // {
+      //   path: CONFIG.dashboard.children.teams.name,
+      //   component: TeamsComponent
+      // },
+      {
+        path: CONFIG.dashboard.children.newUseCase.name,
+        component: NewUseCaseComponent
+      },
+      {
+        path: CONFIG.dashboard.children.support.children.contactus.name,
+        component: contactUsComponent
+      }
+    ]
+  },
+  {
+    path: '**',
     redirectTo: CONFIG.dashboard.children.dashboard.route,
-    pathMatch: 'full'
-  },
-  {
-    path: CONFIG.dashboard.children.dashboard.name,
-    component: HomeComponent
-  },
-  // {
-  //   path: CONFIG.dashboard.children.teams.name,
-  //   component: TeamsComponent
-  // },
-  {
-    path: CONFIG.dashboard.children.newUseCase.name,
-    component: NewUseCaseComponent
-  },
-  {
-    path: CONFIG.dashboard.children.support.children.contactus.name,
-    component: contactUsComponent
+    pathMatch: 'full',
   }
 ];
 
