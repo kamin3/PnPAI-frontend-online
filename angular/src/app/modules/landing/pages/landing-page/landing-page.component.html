@@ -5,18 +5,18 @@
     <div class="col-12 col-md-5 pb-5 z-index-2 d-flex justify-content-start" data-aos="fade-up" data-aos-delay="0">
       <div class="mb-5 ps-4">
         <h2 class="fw-bold mb-5" style="font-size: 42px">
-          Revolutionize Your Operations with
-          <span class="text-danger">PnP.ai</span>
+          {{'Landing.Slogan' | translate}}
+          <span class="text-danger">{{'Labels.PNPAiCompanyName' | translate}}</span>
         </h2>
 
         <p class="fw-medium mb-6" style="font-size: 22px">
-          where we make AI integration seamless and accessible for SMEs.
+          {{'Landing.SloganDescription' | translate}}
         </p>
         <div class="d-flex">
-          <a class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#joinBeta">Join Our Beta Program</a>
+          <a class="btn btn-danger px-4" data-bs-toggle="modal"
+            data-bs-target="#joinBeta">{{'Buttons.JoinOurBetaProgram' | translate}}</a>
           <a class="btn px-4 border-1 border-dark text-dark pnp-second-btn shadow-lg-hover hover" data-bs-toggle="modal"
-            data-bs-target="#schDemo">Schedule A
-            Demo</a>
+            data-bs-target="#schDemo">{{'Buttons.ScheduleADemo' | translate}}</a>
         </div>
 
       </div>
@@ -36,16 +36,17 @@
       data-aos-delay="0">
       <div class="mb-5 ps-4">
         <h5 class="fs-2 fw-bold mb-5 mt-6">
-          Explore endless possibilities with
-          <span class="text-danger">PnP.ai</span>
+          {{'Landing.Feature' | translate}}
+          <span class="text-danger">{{'Labels.PNPAiCompanyName' | translate}}</span>
         </h5>
         <p class="h3 fw-medium mb-6">
-          where we make AI integration seamless and accessible for SMEs.
+          {{'Landing.FeatureDescription' | translate}}
         </p>
         <div class="mb-5">
           <img src="./assets/img/features-group.svg" alt="" class="img-fluid" />
         </div>
-        <a class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#joinBeta">Join Our Beta Program</a>
+        <a class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#joinBeta">{{'Buttons.JoinOurBetaProgram'
+          | translate}}</a>
       </div>
     </div>
     <div class="col-12 col-md-5 order-1 order-md-2 pb-5 pt-7 z-index-1" data-aos="fade-up" data-aos-delay="200">
@@ -61,13 +62,14 @@
     <!-- tab 1 -->
     <a class="nav-link mb-3 p-4 rounded border border-primary text-gray-800 shadow-xs bg-white bg-primary-active active"
       id="tab-btn-v-1" href="#tab-v-1" aria-controls="tab-v-1" data-bs-toggle="pill" role="tab" aria-selected="true">
-      <h3 class="h4 d-block fw-light mb-0">Before PnP.ai</h3>
+      <h3 class="h4 d-block fw-light mb-0">{{'Labels.Before' | translate}} {{'Labels.PNPAiCompanyName' | translate}}
+      </h3>
     </a>
     <!-- tab 2 -->
     <a class="nav-link mb-3 p-4 rounded border border-primary text-gray-800 shadow-xs bg-white bg-primary-active"
       id="tab-btn-v-2" href="#tab-v-2" aria-controls="tab-v-2" data-bs-toggle="pill" role="tab" aria-selected="false"
       tabindex="-1">
-      <h3 class="h4 d-block fw-light mb-0">After PnP.ai</h3>
+      <h3 class="h4 d-block fw-light mb-0">{{'Labels.After' | translate}} {{'Labels.PNPAiCompanyName' | translate}}</h3>
     </a>
   </div>
 
@@ -117,7 +119,7 @@
     <div class="p-2 rounded bg-white col-5 mt-6 py-4">
       <!-- Billing Switcher -->
       <div class="d-flex justify-content-center">
-        <span class="text-gray-600 pe-4 fs-3">Monthly</span>
+        <span class="text-gray-600 pe-4 fs-3">{{'Labels.Monthly' | translate}}</span>
 
         <label class="form-switch form-switch-pill form-switch-primary" style="top: 9px">
           <input type="checkbox" value="1" checked data-count-target=".pricetable-count"
@@ -125,7 +127,7 @@
           <i></i>
         </label>
 
-        <span class="text-gray-600 fs-3">Annual</span>
+        <span class="text-gray-600 fs-3">{{'Labels.Annual' | translate}}</span>
       </div>
       <!-- /Billing Switcher -->
     </div>
@@ -151,7 +153,7 @@
                   {"from":"255", "to":"299", "duration":800}
               ]'>{{ monthlyPlanChecked ? (item.monthly_price | number) : (item.monthly_price_annual_plan |
                 number)}}</span>
-              <span class="fs-4 fw-normal">/mo</span>
+              <span class="fs-4 fw-normal">{{'Labels.PerMonth' | translate}}</span>
             </h3>
           </div>
           <div class="pricing-features">
@@ -159,13 +161,14 @@
               <div class="price-quarter-icon-container d-flex align-items-center">
                 <img src="{{ plansStyles[idx].annual_icon }}" width="20" />
                 <p class="mb-0 ms-2 text-gray-600" style="font-size: 14px">
-                  Annual Payment
+                  {{'Landing.AnnualPayment' | translate}}
                 </p>
               </div>
               <div class="d-flex mt-2">
                 <p class="mb-0">
-                  <b>${{ item.annual_price | number }}</b> per year
-                  <b *ngIf="item.annual_discount">({{ item.annual_discount }}% discount)</b>
+                  <b>${{ item.annual_price | number }}</b> {{'Labels.PerYear' | translate}}
+                  <b *ngIf="item.annual_discount">({{ item.annual_discount }}{{'Labels.PernetageSymbol' | translate}}
+                    {{'Landing.Discount' | translate}})</b>
                 </p>
               </div>
             </div>
@@ -173,13 +176,14 @@
               <div class="price-quarter-icon-container d-flex align-items-center">
                 <img src="{{ plansStyles[idx].quarter_icon }}" width="25" />
                 <p class="mb-0 ms-2 text-gray-600" style="font-size: 14px">
-                  Quarterly Payment
+                  {{'Landing.QuarterlyPayment' | translate}}
                 </p>
               </div>
               <div class="d-flex mt-2">
                 <p class="mb-0">
-                  <b>${{ item.quarter_price | number }}</b> per quarter
-                  <b *ngIf="item.quarter_discount">({{ item.quarter_discount }}% discount)</b>
+                  <b>${{ item.quarter_price | number }}</b> {{'Labels.PerQuarter' | translate}}
+                  <b *ngIf="item.quarter_discount">({{ item.quarter_discount }}{{'Labels.PernetageSymbol' | translate}}
+                    {{'Landing.Discount' | translate}})</b>
                 </p>
               </div>
             </div>
@@ -187,8 +191,8 @@
           <div *ngIf="item.has_trial" class="{{ plansStyles[idx].trial_class }}"
             [style.backgroundColor]="plansStyles[idx].trial_bg_color"
             style="font-size: 12px; padding: 10px; border-radius: 6px">
-            Enjoy a {{ item.trial_period }}-{{ item.trial_period_unit }} trial
-            with basic features free of charge.
+            {{'Landing.TrialDescriptionStart' | translate}} {{ item.trial_period }}-{{ item.trial_period_unit }}
+            {{'Landing.TrialDescriptionEnd' | translate}}
           </div>
           <div class="my-3 mx-4 border-top"></div>
 
@@ -204,7 +208,7 @@
           </div>
 
           <a class="{{ plansStyles[idx].button_class }} button" (click)="buyPlan(item.id)">
-            Get Started
+            {{'Buttons.GetStarted' | translate}}
           </a>
         </div>
       </div>
@@ -217,8 +221,7 @@
 <div class="section bg-light mt-1 py-6 reseller-container">
   <div class="container">
     <p class="fw-bold fs-2 text-center text-white">
-      Reseller Package - Partnership
-    </p>
+      {{'Landing.ResellerTitle' | translate}} </p>
     <div class="row">
       <div class="col-6 col-md-4 py-4 m-0-xs d-lg-flex">
         <div
@@ -227,10 +230,9 @@
             <i class="fi fi-brain fs-1"></i>
           </div>
           <div class="flex-lg-fill">
-            <h2 class="h5 fw-bold">Custom Integration Discussions</h2>
+            <h2 class="h5 fw-bold">{{'Landing.CustomIntegrationDiscussionsTitle' | translate}}</h2>
             <p class="mb-0">
-              Reach out to PnPAI to discuss the terms of custom integration and
-              partnership opportunities.
+              {{'Landing.CustomIntegrationDiscussionsDescription' | translate}}
             </p>
           </div>
         </div>
@@ -243,10 +245,9 @@
             <i class="fi fi-graph fs-1"></i>
           </div>
           <div class="flex-lg-fill">
-            <h2 class="h5 fw-bold">White-Label Solutions</h2>
+            <h2 class="h5 fw-bold">{{'Landing.WhiteLabelSolutionsTitle' | translate}}</h2>
             <p class="mb-0">
-              Offer PnPAI's AI solutions as part of your software offerings with
-              white-label options.
+              {{'Landing.WhiteLabelSolutionsDescription' | translate}}
             </p>
           </div>
         </div>
@@ -258,10 +259,9 @@
             <i class="fi fi-lightbulb fs-1"></i>
           </div>
           <div class="flex-lg-fill">
-            <h2 class="h5 fw-bold">Dedicated Account Manager</h2>
+            <h2 class="h5 fw-bold">{{'Landing.DedicatedAccountManagerTitle' | translate}}</h2>
             <p class="mb-0">
-              Benefit from a dedicated account manager to facilitate
-              collaboration and support.
+              {{'Landing.DedicatedAccountManagerDescription' | translate}}
             </p>
           </div>
         </div>
@@ -276,10 +276,9 @@
             <i class="fi fi-folder-full fs-1"></i>
           </div>
           <div class="flex-lg-fill">
-            <h2 class="h5 fw-bold">Flexible Licensing</h2>
+            <h2 class="h5 fw-bold">{{'Landing.FlexibleLicensingTitle' | translate}}</h2>
             <p class="mb-0">
-              Explore flexible licensing options to align with your reselling
-              strategy.
+              {{'Landing.FlexibleLicensingDescription' | translate}}
             </p>
           </div>
         </div>
@@ -291,10 +290,9 @@
             <i class="fi fi-chart-up fs-1"></i>
           </div>
           <div class="flex-lg-fill">
-            <h2 class="h5 fw-bold">Joint Marketing Efforts</h2>
+            <h2 class="h5 fw-bold">{{'Landing.JointMarketingEffortsTitle' | translate}}</h2>
             <p class="mb-0">
-              Partner with PnPAI on joint marketing efforts to expand your reach
-              and customer base
+              {{'Landing.JointMarketingEffortsDescription' | translate}}
             </p>
           </div>
         </div>
@@ -302,17 +300,12 @@
     </div>
     <div class="mt-5 text-center text-white">
       <p>
-        This package is tailored for software houses seeking to enhance their
-        solutions with AI capabilities and looking for a reliable AI partner
-        with flexible licensing options. It allows software houses to seamlessly
-        integrate PnPAI into their offerings and provide AI-driven solutions to
-        their clients.
+        {{'Landing.ResellerDescription' | translate}}
       </p>
     </div>
     <div class="d-flex justify-content-center mt-5">
       <a class="btn px-4" style="background-color: #001949; color: white" data-bs-toggle="modal"
-        data-bs-target="#schDemo">Schedule A
-        Demo</a>
+        data-bs-target="#schDemo">{{'Buttons.ScheduleADemo' | translate}}</a>
     </div>
   </div>
 </div>
@@ -320,8 +313,8 @@
 <!-- intro  Section -->
 <div class="container-fluid min-vh-50 pt-4 mb-5">
   <h2 class="h1 fw-bold mb-5 mt-6 text-center container-sm">
-    Unlocking Innovation Through Artificial Intelligence with
-    <span class="text-danger">PnP.ai</span>
+    {{'Landing.InnovationSectionTitle' | translate}}
+    <span class="text-danger">{{'Labels.PNPAiCompanyName' | translate}}</span>
   </h2>
   <div class="container text-center-xs justify-content-between">
     <div class="row">
@@ -329,10 +322,9 @@
         <div class="bg-primary shadow-md rounded-2 p-4" style="height: 620px;">
           <div class="pnp-first-big-card-bg d-flex flex-column justify-content-between" style="height: 100%;">
             <div>
-              <p class="fw-bold fs-3 text-white pb-3">Simplify AI Implementation</p>
+              <p class="fw-bold fs-3 text-white pb-3">{{'Landing.SimplifyAIImplementationTitle' | translate}}</p>
               <p class="fs-6 text-white">
-                We understand that every business is unique. That’s why PnPAI goes
-                the extra mile by offering expert consultation services.
+                {{'Landing.SimplifyAIImplementationDescription' | translate}}
               </p>
             </div>
             <img src="./assets/img/first-card-img.svg" alt="" srcset="" />
@@ -346,11 +338,10 @@
             <img src="./assets/img/second-card-img.png" alt="" srcset="" />
             <div class="p-3">
               <p class="fw-bold fs-3 text-white">
-                Optimize Efficiency and Enhance Customer Experiences
+                {{'Landing.OptimizeEfficiencyTitle' | translate}}
               </p>
               <p class="fs-6 text-white">
-                Upon registration, businesses are prompted to select their
-                specific industry.
+                {{'Landing.OptimizeEfficiencyDescription' | translate}}
               </p>
             </div>
           </div>
@@ -361,11 +352,9 @@
         <div class="p-3 shadow-md rounded-2" style="background-color: #002469; height: 620px;">
           <div class="d-flex flex-column justify-content-between" style="height: 100%;">
             <div>
-              <p class="fw-bold fs-3 text-white pb-3">Accelerate Your AI Journey</p>
+              <p class="fw-bold fs-3 text-white pb-3">{{'Landing.AccelerateAITitle' | translate}}</p>
               <p class="fs-6 text-white" style="margin-bottom: 185px">
-                Say goodbye to the complexities of AI development. PnPAI
-                specializes in crafting ready-to-deploy, containerized AI
-                solutions.
+                {{'Landing.AccelerateAIDescription' | translate}}
               </p>
             </div>
             <img src="./assets/img/third-card-img.svg" alt="" srcset="" />
@@ -379,7 +368,7 @@
 <!-- Our Process  Section -->
 <div class="section text-white bg-primary" id="ourprocess">
   <div class="container-fluid">
-    <h2 class="h1 fw-bold text-center mb-4 text-white">Our Process</h2>
+    <h2 class="h1 fw-bold text-center mb-4 text-white">{{'Landing.OurProcessSectionTitle' | translate}}</h2>
     <div class="row justify-content-between p-4">
       <div class="col-md-7">
         <div class="d-flex flex-column">
@@ -388,12 +377,9 @@
               <!-- icon -->
               <div class="fi mdi-filter_1 fs-1"></div>
               <div class="mx-4">
-                <h3 class="fs-5">Research:</h3>
+                <h3 class="fs-5">{{'Landing.ResearchTitle' | translate}}:</h3>
                 <p class="fs-5">
-                  We kickstart each use-case with thorough research into the
-                  most advanced algorithms relevant to specific industry
-                  use-cases. This ensures we employ cutting-edge methods for
-                  optimal accuracy and outcomes.
+                  {{'Landing.ResearchDescription' | translate}}
                 </p>
               </div>
             </div>
@@ -401,10 +387,9 @@
               <!-- icon -->
               <div class="fi mdi-filter_2 fs-1"></div>
               <div class="mx-4">
-                <h3 class="fs-5">Implementation:</h3>
+                <h3 class="fs-5">{{'Landing.ImplementationTitle' | translate}}:</h3>
                 <p class="fs-5">
-                  Next, we put our research into action by implementing the most
-                  promising algorithms identified during the research phase.
+                  {{'Landing.ImplementationDescription' | translate}}
                 </p>
               </div>
             </div>
@@ -415,11 +400,9 @@
               <!-- icon -->
               <div class="fi mdi-filter_3 fs-1"></div>
               <div class="mx-4">
-                <h3 class="fs-5">Testing:</h3>
+                <h3 class="fs-5">{{'Landing.TestingTitle' | translate}}:</h3>
                 <p class="fs-5">
-                  Rigorous testing follows implementation. We evaluate and
-                  benchmark the performance of the developed algorithms to
-                  guarantee they meet the highest standards.
+                  {{'Landing.TestingDescription' | translate}}
                 </p>
               </div>
             </div>
@@ -428,12 +411,9 @@
               <!-- icon -->
               <div class="fi mdi-filter_4 fs-1"></div>
               <div class="mx-4">
-                <h3 class="fs-5">Deployment:</h3>
+                <h3 class="fs-5">{{'Landing.DeploymentTitle' | translate}}:</h3>
                 <p class="fs-5">
-                  The final step is deployment. We roll out the latest use-case
-                  versions, complete with state-of-the-art AI algorithms, making
-                  them available to all our customers for enhanced business
-                  capabilities.
+                  {{'Landing.DeploymentDescription' | translate}}
                 </p>
               </div>
             </div>
@@ -456,14 +436,14 @@
       data-aos-delay="0">
       <div class="p-6 pnp-intg-bg">
         <h5 class="fs-2 fw-bold mb-6">
-          <span class="text-danger">PnP.ai</span>
-          Integration
+          <span class="text-danger">{{'Labels.PNPAiCompanyName' | translate}}</span>
+          {{'Landing.IntegrationSectionTitle' | translate}}
         </h5>
         <p class="fw-medium mb-6" style="font-size: 22px">
-          Time is of the essence in today's fast-paced business landscape. PnPAI
-          enables you to fast-track your AI implementation.
+          {{'Landing.IntegrationSectionDescription' | translate}}
         </p>
-        <a class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#schDemo">Schedule A Demo</a>
+        <a class="btn btn-danger px-4" data-bs-toggle="modal" data-bs-target="#schDemo">{{'Buttons.ScheduleADemo' |
+          translate}}</a>
       </div>
     </div>
     <div class="col-12 col-md-5 order-1 order-md-2 z-index-1 d-flex justify-content-center" data-aos="fade-up"
@@ -478,8 +458,8 @@
 <div class="bg-white-paper-container">
   <div class="container container-fluid">
     <h2 class="h1 fw-bold mb-5 pt-4 text-center container-sm text-white">
-      <p class="fs-4 fw-normal">Embracing Simplicity:</p>
-      Facilitating Accessible AI for All
+      <p class="fs-4 fw-normal">{{'Landing.EmbracingSimplicitySectionLabel' | translate}}:</p>
+      {{'Landing.EmbracingSimplicitySectionTitle' | translate}}
     </h2>
     <div class="bg-white shadow-xlg rounded-lg p-4">
       <div class="white-paper-circles d-flex justify-content-end pb-4 border-bottom-lg">
@@ -494,41 +474,39 @@
         </div>
         <div class="col-lg-7 order-1 order-lg-2 d-flex flex-column justify-content-between">
           <p class="fs-4 fw-bold p-4">
-            Proactively envisioned multimedia based expertise and cross-media
-            growth strategies. Seamlessly visualize quality intellectual capital
-            without superior.
+            {{'Landing.EmbracingSimplicitySectionDescription' | translate}}
           </p>
           <div class="row">
             <div class="col-lg-4 mb-4 text-center d-flex flex-column align-items-center">
               <div class="bg-primary-soft rounded-lg p-2">
-                <p class="mb-0 fw-bold fs-2 px-2">16</p>
+                <p class="mb-0 fw-bold fs-2 px-2">{{'Numbers.1' | translate}}</p>
               </div>
               <div class="mt-2">
                 <p class="mb-0 fw-bold text-danger">
-                  Industry Accelerator (Usecases)
+                  {{'Landing.EmbracingSimplicityIndustryAccelerator' | translate}}
                 </p>
               </div>
             </div>
             <div class="col-lg-4 mb-4 text-center d-flex flex-column align-items-center">
               <div class="bg-primary-soft rounded-lg p-2">
-                <p class="mb-0 fw-bold fs-2 px-3">2</p>
+                <p class="mb-0 fw-bold fs-2 px-3">{{'Numbers.2' | translate}}</p>
               </div>
               <div class="mt-2">
-                <p class="mb-0 fw-bold text-danger">Industries</p>
+                <p class="mb-0 fw-bold text-danger">{{'Landing.EmbracingSimplicityIndustries' | translate}}</p>
               </div>
             </div>
             <div class="col-lg-4 mb-4 text-center d-flex flex-column align-items-center">
               <div class="bg-primary-soft rounded-lg p-2">
-                <p class="mb-0 fw-bold fs-2 px-3">1</p>
+                <p class="mb-0 fw-bold fs-2 px-3">{{'Numbers.16' | translate}}</p>
               </div>
               <div class="mt-2">
-                <p class="mb-0 fw-bold text-danger">White Paper</p>
+                <p class="mb-0 fw-bold text-danger">{{'Landing.EmbracingSimplicityWhitePaper' | translate}}</p>
               </div>
             </div>
           </div>
         </div>
         <div class="order-3 d-flex justify-content-center">
-          <a class="white-paper-button bg-danger" href="./online-pnp-signup.html">DOWNLOAD WhitePaper NOW</a>
+          <a class="white-paper-button bg-danger" href="#">{{'Landing.DownloadWhitePaperButton' | translate}}</a>
         </div>
       </div>
     </div>
@@ -541,8 +519,8 @@
     <div class="row g-4 align-items-center">
       <div class="col-10 mx-auto col-lg-8 text-center-md text-center-xs">
         <h3 class="m-0">
-          Let's connect to share the
-          <span class="text-danger">best deals and articles</span>!
+          {{'Landing.LetsConnectStart' | translate}}
+          <span class="text-danger">{{'Landing.LetsConnectEnd' | translate}}</span>!
         </h3>
       </div>
 
@@ -550,7 +528,8 @@
         <form novalidate="" method="post" action="#subscribe_url"
           class="bs-validate py-3 mt-1 input-group-over input-group-pill was-validated" id="js_2MuVq7xgDx">
           <input class="form-control form-control-lg fw-light text-center-md text-center-xs" name="subscriber_email"
-            type="email" value="" placeholder="email address..." aria-label="email address..." />
+            type="email" value="" placeholder="{{'Form.Placeholders.Email' | translate}}"
+            aria-label="email address..." />
 
           <button aria-label="subscribe" type="submit" class="btn bg-transparent shadow-none">
             <i class="fi fi-send fs-4"></i>
@@ -563,104 +542,103 @@
 
 <!-- Contact us  Section -->
 <div class="container mt-5 mb-5" id="contactus">
-  <h3 class="fw-bold mb-5">How can we help?</h3>
+  <h3 class="fw-bold mb-5">{{'Landing.HelpFormTitle' | translate}}</h3>
   <div class="row">
     <div class="col-lg-6 mb-4">
       <form [formGroup]="contactusForm!" (ngSubmit)="onContactUsSubmit()">
         <div class="form-floating mb-3">
-          <input placeholder="Name" formControlName="name" id="contact_name" name="contact_name" type="text"
-            class="form-control" />
-          <label for="contact_name">Name</label>
+          <input placeholder="{{'Form.Fields.Name' | translate}}" formControlName="name" id="contact_name"
+            name="contact_name" type="text" class="form-control" />
+          <label for="contact_name">{{'Form.Fields.Name' | translate}}</label>
           <div *ngIf="contactusForm!.get('name')!.touched || contactusForm!.get('name')!.dirty">
             <div *ngIf="contactusForm!.get('name')!.hasError('required')">
-              <span class="text-danger">First Name is required.</span>
+              <span class="text-danger">{{'Form.Errors.NameRequired' | translate}}</span>
             </div>
           </div>
-
         </div>
 
         <div class="form-floating mb-3">
-          <input formControlName="email" placeholder="Email" id="contact_email" name="contact_email" type="email"
-            class="form-control" />
-          <label for="contact_email">Email</label>
+          <input formControlName="email" placeholder="{{'Form.Fields.Email' | translate}}" id="contact_email"
+            name="contact_email" type="email" class="form-control" />
+          <label for="contact_email">{{'Form.Fields.Email' | translate}}</label>
           <div *ngIf="contactusForm!.get('email')!.touched || contactusForm!.get('email')!.dirty">
             <div *ngIf="contactusForm!.get('email')!.hasError('required')">
-              <span class="text-danger">Email is required.</span>
+              <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
             </div>
           </div>
           <div *ngIf="contactusForm!.get('email')!.touched || contactusForm!.get('email')!.dirty">
             <div *ngIf="contactusForm!.get('email')!.hasError('email')">
-              <span class="text-danger">Email is invalid.</span>
+              <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
             </div>
           </div>
           <div *ngIf="contactusForm!.get('email')!.touched || contactusForm!.get('email')!.dirty">
             <div *ngIf="contactusForm!.get('email')!.hasError('invalidBusinessEmail')">
-              <span class="text-danger">Email must be a business email.</span>
+              <span class="text-danger">{{'Form.Errors.EmailInvalidBusiness' | translate}}</span>
             </div>
           </div>
         </div>
 
         <div class="row p-0" style="--bs-gutter-x: 0.5rem">
           <div class="form-floating mb-3 col-md-6">
-            <input formControlName="phoneNumber" placeholder="Phone" id="contact_phone" name="contact_phone" type="text"
-              class="form-control" />
-            <label for="contact_phone">Phone</label>
+            <input formControlName="phoneNumber" placeholder="{{'Form.Fields.Phone' | translate}}" id="contact_phone"
+              name="contact_phone" type="text" class="form-control" />
+            <label for="contact_phone">{{'Form.Fields.Phone' | translate}}</label>
             <div *ngIf="contactusForm!.get('phoneNumber')!.touched || contactusForm!.get('phoneNumber')!.dirty">
               <div *ngIf="contactusForm!.get('phoneNumber')!.hasError('pattern')">
-                <span class="text-danger">Phone Number must start with 00 or +.</span>
+                <span class="text-danger">{{'Form.Errors.PhoneNumberPattern' | translate}}</span>
               </div>
             </div>
           </div>
 
           <div class="col-md-6">
             <select formControlName="industryId" class="form-select form-select-lg" aria-label="Default select example">
-              <option selected value="">Select Indusrty</option>
+              <option selected value="">{{'Form.OptionsLabels.SelectIndusrty' | translate}}</option>
               <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
             </select>
           </div>
           <div *ngIf="contactusForm!.get('industryId')!.touched || contactusForm!.get('industryId')!.dirty">
             <div *ngIf="contactusForm!.get('industryId')!.hasError('required')">
-              <span class="text-danger">Industry is required.</span>
+              <span class="text-danger">{{'Form.Errors.IndustryRequired' | translate}}</span>
             </div>
           </div>
         </div>
 
         <div class="row p-0" style="--bs-gutter-x: 0.5rem">
           <div class="form-floating mb-3 col-md-6">
-            <input formControlName="companyName" placeholder="Company" id="contact_company" name="contact_company"
-              type="text" class="form-control" />
-            <label for="contact_company">Company</label>
+            <input formControlName="companyName" placeholder="{{'Form.Fields.CompanyName' | translate}}"
+              id="contact_company" name="contact_company" type="text" class="form-control" />
+            <label for="contact_company">{{'Form.Fields.CompanyName' | translate}}</label>
 
             <div *ngIf="contactusForm!.get('companyName')!.touched || contactusForm!.get('companyName')!.dirty">
               <div *ngIf="contactusForm!.get('companyName')!.hasError('required')">
-                <span class="text-danger">Company Name is required.</span>
+                <span class="text-danger">{{'Form.Errors.CompanyNameRequired' | translate}}</span>
               </div>
             </div>
           </div>
           <div class="form-floating mb-3 col-md-6">
-            <input formControlName="role" placeholder="Role" id="contact_role" name="contact_role" type="text"
-              class="form-control" />
-            <label for="contact_role">Role</label>
+            <input formControlName="role" placeholder="{{'Form.Fields.Role' | translate}}" id="contact_role"
+              name="contact_role" type="text" class="form-control" />
+            <label for="contact_role">{{'Form.Fields.Role' | translate}}</label>
             <div *ngIf="contactusForm!.get('role')!.touched || contactusForm!.get('role')!.dirty">
               <div *ngIf="contactusForm!.get('role')!.hasError('required')">
-                <span class="text-danger">Role is required.</span>
+                <span class="text-danger">{{'Form.Errors.RoleRequired' | translate}}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="form-floating mb-3">
-          <textarea formControlName="message" placeholder="Message" id="contact_message" name="contact_message"
-            class="form-control" rows="3" style="min-height: 120px"></textarea>
-          <label for="contact_message">Message</label>
+          <textarea formControlName="message" placeholder="{{'Form.Fields.Message' | translate}}" id="contact_message"
+            name="contact_message" class="form-control" rows="3" style="min-height: 120px"></textarea>
+          <label for="contact_message">{{'Form.Fields.Message' | translate}}</label>
           <div *ngIf="contactusForm!.get('message')!.touched || contactusForm!.get('message')!.dirty">
             <div *ngIf="contactusForm!.get('message')!.hasError('required')">
-              <span class="text-danger">Message is required.</span>
+              <span class="text-danger">{{'Form.Errors.MessageRequired' | translate}}</span>
             </div>
           </div>
         </div>
 
         <button type="submit" (mouseenter)="setAllTouched(contactusForm!)" class="btn btn-primary"
-          [disabled]="!contactusForm!.valid">Send Message</button>
+          [disabled]="!contactusForm!.valid">{{'Buttons.SendMessage' | translate}}</button>
       </form>
     </div>
     <div class="col-lg-6">
@@ -679,19 +657,19 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="guestModalLabel">Welcome</h5>
+        <h5 class="modal-title" id="guestModalLabel">{{'Landing.GuestModalTitle' | translate}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        You need to have an account before joining us.
+        {{'Landing.GuestModalDescription' | translate}}
       </div>
       <div class="modal-footer">
         <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute"
-          [queryParams]="{ 'returnUrl': landingRoute }">Log in</a>
-        <a class="btn px-4 btn-danger" [routerLink]="registerRoute" [queryParams]="{ 'returnUrl': landingRoute }">Sign
-          Up</a>
+          [queryParams]="{ 'returnUrl': landingRoute }">{{'Buttons.LogIn' | translate}}</a>
+        <a class="btn px-4 btn-danger" [routerLink]="registerRoute"
+          [queryParams]="{ 'returnUrl': landingRoute }">{{'Buttons.SignUp' | translate}}</a>
       </div>
     </div>
   </div>
@@ -704,7 +682,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabelXl">Join our Beta Program</h5>
+        <h5 class="modal-title" id="exampleModalLabelXl">{{'Buttons.JoinOurBetaProgram' | translate}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -712,66 +690,66 @@
         <form [formGroup]="joinBetaForm!">
 
           <div class="mb-3">
-            <label for="contact_name" class="form-label">Full Name</label>
+            <label for="contact_name" class="form-label">{{'Form.Fields.FullName' | translate}}</label>
             <input type="text" formControlName="fullName" class="form-control" id="contact_name"
-              placeholder="Enter Full Name ...">
+              placeholder="{{'Form.Placeholders.FullNameWithEnter' | translate}}">
             <div *ngIf="joinBetaForm!.get('fullName')!.touched || joinBetaForm!.get('fullName')!.dirty">
               <div *ngIf="joinBetaForm!.get('fullName')!.hasError('required')">
-                <span class="text-danger">Full Name is required.</span>
+                <span class="text-danger">{{'Form.Errors.FullNameRequired' | translate}}</span>
               </div>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="contact_industry" class="form-label">Industry</label>
+            <label for="contact_industry" class="form-label">{{'Form.Fields.Industry' | translate}}</label>
             <select id="contact_industry" formControlName="industryId" class="form-select mb-3 "
               aria-label="Default select example">
-              <option selected value="">Select Indusrty</option>
+              <option selected value="">{{'Form.OptionsLabels.SelectIndusrty' | translate}}</option>
               <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
             </select>
           </div>
 
           <div class="mb-3">
-            <label for="contact_email" class="form-label">Email</label>
+            <label for="contact_email" class="form-label">{{'Form.Fields.Email' | translate}}</label>
             <input type="text" class="form-control" formControlName="email" id="contact_email"
-              placeholder="Enter Email ...">
+              placeholder="{{'Form.Placeholders.EmailWithEnter' | translate}}">
             <div *ngIf="joinBetaForm!.get('email')!.touched || joinBetaForm!.get('email')!.dirty">
               <div *ngIf="joinBetaForm!.get('email')!.hasError('required')">
-                <span class="text-danger">Email is required.</span>
+                <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
               </div>
             </div>
             <div *ngIf="joinBetaForm!.get('email')!.touched || joinBetaForm!.get('email')!.dirty">
               <div *ngIf="joinBetaForm!.get('email')!.hasError('email')">
-                <span class="text-danger">Email is invalid.</span>
+                <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
               </div>
             </div>
             <div *ngIf="joinBetaForm!.get('email')!.touched || joinBetaForm!.get('email')!.dirty">
               <div *ngIf="joinBetaForm!.get('email')!.hasError('invalidBusinessEmail')">
-                <span class="text-danger">Email must be a business email.</span>
+                <span class="text-danger">{{'Form.Errors.EmailInvalidBusiness' | translate}}</span>
               </div>
             </div>
           </div>
           <div class="mb-3">
-            <label for="contact_phone">Phone</label>
-            <input formControlName="phoneNumber" placeholder="Enter Phone ..." id="contact_phone" name="contact_phone"
-              type="text" class="form-control" />
+            <label for="contact_phone">{{'Form.Fields.Phone' | translate}}</label>
+            <input formControlName="phoneNumber" placeholder="{{'Form.Placeholders.PhoneNumberWithEnter' | translate}}"
+              id="contact_phone" name="contact_phone" type="text" class="form-control" />
             <div *ngIf="joinBetaForm!.get('phoneNumber')!.touched || joinBetaForm!.get('phoneNumber')!.dirty">
               <div *ngIf="joinBetaForm!.get('phoneNumber')!.hasError('pattern')">
-                <span class="text-danger">Phone Number must start with 00 or +.</span>
+                <span class="text-danger">{{'Form.Errors.PhoneNumberPattern' | translate}}</span>
               </div>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="contact_title" class="form-label">Title</label>
+            <label for="contact_title" class="form-label">{{'Form.Fields.Title' | translate}}</label>
             <input type="text" class="form-control" formControlName="title" id="contact_title"
-              placeholder="Enter Your Title ...">
+              placeholder="{{'Form.Placeholders.TitleWithEnter' | translate}}">
           </div>
 
           <div class="mb-3">
-            <label for="contact_company" class="form-label">Company Name</label>
+            <label for="contact_company" class="form-label">{{'Form.Fields.CompanyName' | translate}}</label>
             <input type="text" class="form-control" formControlName="companyName" id="contact_company"
-              placeholder="Enter Company Name ...">
+              placeholder="{{'Form.Placeholders.CompanyNameWithEnter' | translate}}">
           </div>
 
         </form>
@@ -784,10 +762,10 @@
       <div class="modal-footer">
         <button type="button" (mouseover)="setAllTouched(joinBetaForm!)" (click)="onJoinBetaSubmit()"
           [disabled]="!joinBetaForm!.valid" class="btn btn-danger" id="successAddTicket">
-          Join
+          {{'Buttons.Join' | translate}}
         </button>
         <button #closeJoinBetaBTN type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          Close
+          {{'Buttons.Close' | translate}}
         </button>
       </div>
 
@@ -802,7 +780,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabelXl">Schedule A Demo</h5>
+        <h5 class="modal-title" id="exampleModalLabelXl">{{'Buttons.ScheduleADemo' | translate}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -810,66 +788,66 @@
         <form [formGroup]="scheduleDemoForm!">
 
           <div class="mb-3">
-            <label for="contact_name" class="form-label">Full Name</label>
+            <label for="contact_name" class="form-label">{{'Form.Fields.FullName' | translate}}</label>
             <input type="text" formControlName="fullName" class="form-control" id="contact_name"
-              placeholder="Enter Full Name ...">
+              placeholder="{{'Form.Placeholders.FullNameWithEnter' | translate}}">
             <div *ngIf="scheduleDemoForm!.get('fullName')!.touched || scheduleDemoForm!.get('fullName')!.dirty">
               <div *ngIf="scheduleDemoForm!.get('fullName')!.hasError('required')">
-                <span class="text-danger">Full Name is required.</span>
+                <span class="text-danger">{{'Form.Errors.FullNameRequired' | translate}}</span>
               </div>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="contact_industry" class="form-label">Industry</label>
+            <label for="contact_industry" class="form-label">{{'Form.Fields.Industry' | translate}}</label>
             <select id="contact_industry" formControlName="industryId" class="form-select mb-3 "
               aria-label="Default select example">
-              <option selected value="">Select Indusrty</option>
+              <option selected value="">{{'Form.OptionsLabels.SelectIndusrty' | translate}}</option>
               <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
             </select>
           </div>
 
           <div class="mb-3">
-            <label for="contact_email" class="form-label">Email</label>
+            <label for="contact_email" class="form-label">{{'Form.Fields.Email' | translate}}</label>
             <input type="text" class="form-control" formControlName="email" id="contact_email"
-              placeholder="Enter Email ...">
+              placeholder="{{'Form.Placeholders.EmailWithEnter' | translate}}">
             <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
               <div *ngIf="scheduleDemoForm!.get('email')!.hasError('required')">
-                <span class="text-danger">Email is required.</span>
+                <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
               </div>
             </div>
             <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
               <div *ngIf="scheduleDemoForm!.get('email')!.hasError('email')">
-                <span class="text-danger">Email is invalid.</span>
+                <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
               </div>
             </div>
             <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
               <div *ngIf="scheduleDemoForm!.get('email')!.hasError('invalidBusinessEmail')">
-                <span class="text-danger">Email must be a business email.</span>
+                <span class="text-danger">{{'Form.Errors.EmailInvalidBusiness' | translate}}</span>
               </div>
             </div>
           </div>
           <div class="mb-3">
-            <label for="contact_phone">Phone</label>
-            <input formControlName="phoneNumber" placeholder="Enter Phone ..." id="contact_phone" name="contact_phone"
-              type="text" class="form-control" />
+            <label for="contact_phone">{{'Form.Fields.Phone' | translate}}</label>
+            <input formControlName="phoneNumber" placeholder="{{'Form.Placeholders.PhoneNumberWithEnter' | translate}}"
+              id="contact_phone" name="contact_phone" type="text" class="form-control" />
             <div *ngIf="scheduleDemoForm!.get('phoneNumber')!.touched || scheduleDemoForm!.get('phoneNumber')!.dirty">
               <div *ngIf="scheduleDemoForm!.get('phoneNumber')!.hasError('pattern')">
-                <span class="text-danger">Phone Number must start with 00 or +.</span>
+                <span class="text-danger">{{'Form.Errors.PhoneNumberPattern' | translate}}</span>
               </div>
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="contact_title" class="form-label">Title</label>
+            <label for="contact_title" class="form-label">{{'Form.Fields.Title' | translate}}</label>
             <input type="text" class="form-control" formControlName="title" id="contact_title"
-              placeholder="Enter Your Title ...">
+              placeholder="{{'Form.Placeholders.TitleWithEnter' | translate}}">
           </div>
 
           <div class="mb-3">
-            <label for="contact_company" class="form-label">Company Name</label>
+            <label for="contact_company" class="form-label">{{'Form.Fields.CompanyName' | translate}}</label>
             <input type="text" class="form-control" formControlName="companyName" id="contact_company"
-              placeholder="Enter Company Name ...">
+              placeholder="{{'Form.Placeholders.CompanyNameWithEnter' | translate}}">
           </div>
 
         </form>
@@ -880,10 +858,10 @@
       <div class="modal-footer">
         <button type="button" (mouseenter)="setAllTouched(scheduleDemoForm!)" (click)="onScheduleDemoSubmit()"
           [disabled]="!scheduleDemoForm!.valid" class="btn btn-danger" id="successAddTicket">
-          Schedule A Demo
+          {{'Buttons.ScheduleADemo' | translate}}
         </button>
         <button #closeScheduleDemoBTN type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          Close
+          {{'Buttons.Close' | translate}}
         </button>
       </div>
 

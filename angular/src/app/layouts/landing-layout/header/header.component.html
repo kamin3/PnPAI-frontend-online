@@ -47,21 +47,21 @@
                 </div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> Home </a>
+                        <a class="nav-link" [routerLink]="landingRoute"> {{'Routes.Home' | translate}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="currentUrl + '#prices_section'">
-                            Prices
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='prices_section'>
+                            {{'Routes.Prices' | translate}}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="currentUrl + '#ourprocess'">
-                            Our Proccess
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='ourprocess'>
+                            {{'Routes.OurProccess' | translate}}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" [href]="currentUrl + '#contactus'">
-                            Contact Us
+                        <a class="nav-link button" [routerLink]="landingRoute" fragment='contactus'>
+                            {{'Routes.ContactUs' | translate}}
                         </a>
                     </li>
                 </ul>
@@ -72,9 +72,10 @@
                 <app-account-tab></app-account-tab>
             </ng-container>
             <ng-template #loggedOut>
-                <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute">Log in</a>
+                <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute">{{'Buttons.LogIn'
+                    | translate}}</a>
 
-                <a class="btn px-4 btn-danger" [routerLink]="registerRoute">Sign Up</a>
+                <a class="btn px-4 btn-danger" [routerLink]="registerRoute">{{'Buttons.SignUp' | translate}}</a>
             </ng-template>
 
 

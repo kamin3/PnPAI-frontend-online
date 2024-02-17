@@ -1,0 +1,7 @@
+.dashboard-bg {
+    background: url("src/assets/img/dashboard-welcome.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 90%;
+}

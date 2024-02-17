@@ -12,7 +12,8 @@
             <img src="./assets/logos/pnp-color-logo.png" alt="" srcset="" width="300">
           </a>
           <p class="text-center small mb-2 pb-3 border-bottom text-dark ms-5 mb-4">
-            {{'Register.ThanksParagraphStart' | translate}} <span class="fw-bold pnp-name-color">PnP.ai 's</span>
+            {{'Register.ThanksParagraphStart' | translate}} <span
+              class="fw-bold pnp-name-color">{{'Register.ThanksParagraphPNPAI' | translate}}</span>
             {{'Register.ThanksParagraphEnd' | translate}}
           </p>
         </div>
@@ -29,72 +30,77 @@
             <form [formGroup]="registrationForm!" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Company Name</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.CompanyName'
+                    | translate}}</label>
                   <input type="text" formControlName="companyName" class="form-control form-control-sm"
-                    placeholder="Enter Company Name">
+                    placeholder="{{'Form.Placeholders.CompanyNameWithEnter' | translate}}">
 
                   <div
                     *ngIf="registrationForm!.get('companyName')!.touched || registrationForm!.get('companyName')!.dirty">
                     <div *ngIf="registrationForm!.get('companyName')!.hasError('required')">
-                      <span class="text-danger">Company Name is required.</span>
+                      <span class="text-danger">{{'Form.Errors.CompanyNameRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Country</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.Country' |
+                    translate}}</label>
                   <select class="form-select form-select-sm" aria-label="Default select example"
                     (change)="selectCities($event)" formControlName="country">
-                    <option selected value="">Select Country</option>
+                    <option selected value="">{{'Form.OptionsLabels.SelectCountry' | translate}}</option>
                     <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
                   </select>
                   <div *ngIf="registrationForm!.get('country')!.touched || registrationForm!.get('country')!.dirty">
                     <div *ngIf="registrationForm!.get('country')!.hasError('required')">
-                      <span class="text-danger">Country is required.</span>
+                      <span class="text-danger">{{'Form.Errors.CountryRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">City</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.City' | translate}}</label>
                   <select class="form-select form-select-sm" aria-label="Default select example" formControlName="city">
-                    <option selected value="">Select City</option>
+                    <option selected value="">{{'Form.OptionsLabels.SelectCity' | translate}}</option>
                     <option *ngFor="let city of cities" [value]="city.name">{{city.name}}</option>
                   </select>
                   <div *ngIf="registrationForm!.get('city')!.touched || registrationForm!.get('city')!.dirty">
                     <div *ngIf="registrationForm!.get('city')!.hasError('required')">
-                      <span class="text-danger">City is required.</span>
+                      <span class="text-danger">{{'Form.Errors.CityRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-8">
-                  <label for="exampleFormControlInput1" class="form-label ">Street</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.Street' | translate}}</label>
                   <input type="text" formControlName="street" class="form-control form-control-sm"
-                    placeholder="Enter Street">
+                    placeholder="{{'Form.Placeholders.StreetWithEnter' | translate}}">
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Postal Code</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.PostalCode'
+                    | translate}}</label>
                   <input type="number" formControlName="postalCode" class="form-control form-control-sm"
-                    placeholder="Enter Postal Code">
+                    placeholder="{{'Form.Placeholders.PostalCodeWithEnter' | translate}}">
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-8">
-                  <label for="exampleFormControlInput1" class="form-label ">Company Website</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.CompanyWebsite' |
+                    translate}}</label>
                   <input type="text" formControlName="websiteurl" class="form-control form-control-sm"
-                    placeholder="Enter Company Website">
+                    placeholder="{{'Form.Placeholders.CompanyWebsiteWithEnter' | translate}}">
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Industry</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.Industry' |
+                    translate}}</label>
                   <select required class="form-select form-select-sm" aria-label="Default select example"
                     formControlName="industryId">
-                    <option selected value="">Select Indusrty</option>
+                    <option selected value="">{{'Form.OptionsLabels.SelectIndusrty' | translate}}</option>
                     <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
                   </select>
                   <div
                     *ngIf="registrationForm!.get('industryId')!.touched || registrationForm!.get('industryId')!.dirty">
                     <div *ngIf="registrationForm!.get('industryId')!.hasError('required')">
-                      <span class="text-danger">Industry is required.</span>
+                      <span class="text-danger">{{'Form.Errors.IndustryRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
@@ -103,62 +109,71 @@
               <div class="my-3 mx-4 border-top"></div>
               <div class="row">
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">First Name</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.FirstName' |
+                    translate}}</label>
                   <input type="text" formControlName="firstName" class="form-control form-control-sm"
-                    placeholder="Enter First Name">
+                    placeholder="{{'Form.Placeholders.FirstNameWithEnter' | translate}}">
                   <div *ngIf="registrationForm!.get('firstName')!.touched || registrationForm!.get('firstName')!.dirty">
                     <div *ngIf="registrationForm!.get('firstName')!.hasError('required')">
-                      <span class="text-danger">First Name is required.</span>
+                      <span class="text-danger">{{'Form.Errors.FirstNameRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Last Name</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.LastName' |
+                    translate}}</label>
                   <input type="text" formControlName="lastName" class="form-control form-control-sm"
-                    placeholder="Enter Last Name">
+                    placeholder="{{'Form.Placeholders.LastNameWithEnter' | translate}}">
                   <div *ngIf="registrationForm!.get('lastName')!.touched || registrationForm!.get('lastName')!.dirty">
                     <div *ngIf="registrationForm!.get('lastName')!.hasError('required')">
-                      <span class="text-danger">Last Name is required.</span>
+                      <span class="text-danger">{{'Form.Errors.LastNameRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="mb-3 col-4">
-                  <label for="exampleFormControlInput1" class="form-label ">Phone Number</label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.PhoneNumber' |
+                    translate}}</label>
                   <input type="text" formControlName="phoneNumber" class="form-control form-control-sm"
-                    placeholder="Enter Phone Number">
+                    placeholder="{{'Form.Placeholders.PhoneNumberWithEnter' | translate}}">
                   <div
                     *ngIf="registrationForm!.get('phoneNumber')!.touched || registrationForm!.get('phoneNumber')!.dirty">
                     <div *ngIf="registrationForm!.get('phoneNumber')!.hasError('pattern')">
-                      <span class="text-danger">Phone Number must start with 00 or +.</span>
+                      <span class="text-danger">{{'Form.Errors.PhoneNumberPattern' | translate}}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label ">Email </label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.Email' | translate}}</label>
                   <input type="text" formControlName="email" class="form-control form-control-sm"
-                    placeholder="Enter Email">
+                    placeholder="{{'Form.Placeholders.EmailWithEnter' | translate}}">
                   <div *ngIf="registrationForm!.get('email')!.touched || registrationForm!.get('email')!.dirty">
                     <div *ngIf="registrationForm!.get('email')!.hasError('required')">
-                      <span class="text-danger">Email is required.</span>
+                      <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
+                    </div>
+                  </div>
+                  <div *ngIf="registrationForm!.get('email')!.touched || registrationForm!.get('email')!.dirty">
+                    <div *ngIf="registrationForm!.get('email')!.hasError('email')">
+                      <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
                     </div>
                   </div>
                   <div *ngIf="registrationForm!.get('email')!.touched || registrationForm!.get('email')!.dirty">
                     <div *ngIf="registrationForm!.get('email')!.hasError('invalidBusinessEmail')">
-                      <span class="text-danger">Email must be a business email.</span>
+                      <span class="text-danger">{{'Form.Errors.EmailInvalidBusiness' | translate}}</span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="mb-3 col-12">
-                  <label for="exampleFormControlInput1" class="form-label ">Password </label>
+                  <label for="exampleFormControlInput1" class="form-label ">{{'Form.Fields.Password' |
+                    translate}}</label>
                   <input type="password" formControlName="password" class="form-control form-control-sm"
-                    placeholder="Enter Password">
+                    placeholder="{{'Form.Placeholders.PasswordWithEnter' | translate}}">
                   <div *ngIf="registrationForm!.get('password')!.touched || registrationForm!.get('password')!.dirty">
                     <div *ngIf="registrationForm!.get('password')!.hasError('required')">
-                      <span class="text-danger">Password is required.</span>
+                      <span class="text-danger">{{'Form.Errors.PasswordRequired' | translate}}</span>
                     </div>
                   </div>
                 </div>
@@ -170,8 +185,8 @@
                   <input class="form-check-input" id="contact_gdpr" name="contact_gdpr" type="checkbox"
                     formControlName="acceptTerms">
                   <label class="form-check-label" for="contact_gdpr">
-                    I do accept PnP <a class="text-decoration-none" [routerLink]="" target="_blank">terms &
-                      conditions</a>.
+                    {{'Register.TermsAndConditionsAcceptance' | translate}} <a class="text-decoration-none"
+                      [routerLink]="" target="_blank">{{'Register.TermsAndConditions' | translate}}</a>.
                   </label>
                 </div>
               </div>
@@ -204,7 +219,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{'Register.RegisterationResultModalTitle' | translate}} </h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{'Register.RegisterationResultModalTitle' | translate}}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

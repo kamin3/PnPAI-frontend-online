@@ -8,11 +8,6 @@ import { CONFIG } from '@shared/configs';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: CONFIG.auth.name,
-    pathMatch: 'full'
-  },
-  {
-    path: '',
     children: [
       {
         path: CONFIG.auth.children.login.name,

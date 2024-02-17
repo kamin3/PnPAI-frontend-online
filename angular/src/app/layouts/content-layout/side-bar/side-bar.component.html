@@ -19,8 +19,8 @@
           <span class="menu-icon">
             <i class="{{item.iconClass}}"></i>
           </span>
-          <span class="menu-title" [ngClass]="{'strikethrough':item.comingSoon}">{{item.title}}</span>
-          <small *ngIf="item.comingSoon" class="badge bg-gray-700">Coming soon ...</small>
+          <span class="menu-title" [ngClass]="{'strikethrough':item.comingSoon}">{{item.title | translate}}</span>
+          <small *ngIf="item.comingSoon" class="badge bg-gray-700">{{'Labels.ComingSoon' | translate}}</small>
         </a>
       </ng-container>
       <ng-container *ngIf="item.children && item.children.length > 0">
@@ -29,7 +29,7 @@
           <span class="menu-icon">
             <i class="{{item.iconClass}}"></i>
           </span>
-          <span class="menu-title">{{item.title}}</span>
+          <span class="menu-title">{{item.title | translate}}</span>
           <i class="fi fi-arrow-down ms-4"></i>
         </a>
         <div class="collapse" [id]="'ui-basic'+idx">
@@ -37,8 +37,8 @@
             <li *ngFor="let subItem of item.children" class="nav-item">
               <a class="nav-link sub-link" routerLink="{{subItem.link}}"
                 [ngClass]="{'disable-link':subItem.comingSoon}">
-                <span [ngClass]="{'strikethrough':subItem.comingSoon}">{{subItem.title}}</span>
-                <small *ngIf="subItem.comingSoon" class="badge bg-gray-700">Coming soon ...</small>
+                <span [ngClass]="{'strikethrough':subItem.comingSoon}">{{subItem.title | translate}}</span>
+                <small *ngIf="subItem.comingSoon" class="badge bg-gray-700">{{'Labels.ComingSoon' | translate}}</small>
               </a>
             </li>
           </ul>

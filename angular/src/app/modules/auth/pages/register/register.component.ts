@@ -27,7 +27,6 @@ export class RegisterComponent implements OnInit {
   registrationForm: FormGroup | undefined;
   resultMessage: string | undefined = undefined;
   resgiterationSuccess: boolean = false;
-  homeRoute = CONFIG.dashboard.route;
   loginLink = CONFIG.auth.children.login.route;
   landingPageRoute = CONFIG.landing.children.landing.route;
   @ViewChild('showresult') showModalBTN!: ElementRef<HTMLButtonElement>;
@@ -37,15 +36,12 @@ export class RegisterComponent implements OnInit {
     private countryService: CountryService,
     private indusrtyService: IndustryService,
     private accountService: AccountService,
-    private router: Router,
     private httpErrorHandler: HttpErrorHandler
 
   ) {
 
   }
   ngOnInit(): void {
-    if (this.accountService.isLoggedIn())
-      this.router.navigateByUrl(this.homeRoute);
     this.registrationForm = this.fb.group({
       companyName: ["", Validators.required],
       country: ["", Validators.required],

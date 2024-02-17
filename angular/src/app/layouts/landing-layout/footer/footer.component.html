@@ -4,12 +4,12 @@
     <div class="container tet-white py-5 d-lg-flex flex-row align-items-lg-center">
         <div class="row g-4 align-items-center">
             <h3 class="col-lg-8 h2 mb-0">
-                Sign up today! Your journey to AI-driven excellence starts here.
+                {{'Footer.Message' | translate}}
             </h3>
             <div class="col text-lg-end">
-                <a [routerLink]="loginRoute" target="_blank" rel="noopener"
+                <a [routerLink]="registerRoute" target="_blank" rel="noopener"
                     class="btn btn-danger rounded-pill d-inline-flex align-items-center px-4">
-                    <span class="text-white me-2">Start now</span>
+                    <span class="text-white me-2">{{'Buttons.StartNow' | translate}}</span>
                     <svg width="18px" height="18px" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                         class="bi bi-arrow-right-short text-white" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -33,18 +33,18 @@
 
                 <div class="my-4">
                     <!-- copyright -->
-                    <p class="small mb-0">© 2023 PnP.ai</p>
-                    <p class="small mb-0">All rights reserved.</p>
+                    <p class="small mb-0">© 2024 {{'Labels.PNPAiCompanyName' | translate}}</p>
+                    <p class="small mb-0">{{'Footer.PNPAIRights.RightsReserved' | translate}}</p>
                 </div>
 
                 <!-- social icons -->
-                <a href="https://www.linkedin.com/company/pnpai/"
+                <a href="https://www.linkedin.com/company/pnpai/" target="_blank"
                     class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener"
                     aria-label="linkedin page">
                     <i class="fi fi-social-linkedin"></i>
                 </a>
 
-                <a href="https://youtube.com/@PnPAI?si=gm5Asuim4KSpiPTQ"
+                <a href="https://youtube.com/@PnPAI?si=gm5Asuim4KSpiPTQ" target="_blank"
                     class="btn btn-sm text-white transition-hover-top mb-2 rounded-circle bg-gray-700" rel="noopener"
                     aria-label="youtube page">
                     <i class="fi fi-social-youtube"></i>
@@ -52,12 +52,10 @@
             </div>
 
             <div class="col-12 col-lg-4 mb-4">
-                <h3 class="small mb-4">GET IN TOUCH</h3>
+                <h3 class="small mb-4">{{'Footer.GetInTouch.Title' | translate}}</h3>
 
                 <p class="small col-md-10">
-                    With PnPAI, there’s no learning curve or elaborate training needed.
-                    You’re now equipped with a powerful AI tool customized for your
-                    industry.
+                    {{'Footer.GetInTouch.Description' | translate}}
                 </p>
 
                 <div class="small d-flex align-items-start my-3">
@@ -68,9 +66,9 @@
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     <ul class="list-unstyled p-0 m-0 w-100">
-                        <li>2261 Market Street STE 5816</li>
-                        <li>San Francisco, CA</li>
-                        <li>94114</li>
+                        <li>{{'Footer.GetInTouch.CompanyAddress.Street' | translate}}</li>
+                        <li>{{'Footer.GetInTouch.CompanyAddress.State' | translate}}</li>
+                        <li>{{'Footer.GetInTouch.CompanyAddress.Number' | translate}}</li>
                     </ul>
                 </div>
 
@@ -83,36 +81,42 @@
                     </svg>
                     <ul class="list-unstyled p-0 m-0 w-100">
                         <li>
-                            Phone:
-                            <a href="tel:18005652390" class="text-white text-dashed">+49 1774222144</a>
+                            {{'Labels.Phone' | translate}}:
+                            <a href="tel:18005652390" class="text-white text-dashed">{{'Footer.GetInTouch.Phone'
+                                | translate}}</a>
                         </li>
                         <li>
-                            Email:
-                            <a href="mail:myemail@gmail.com" class="text-white text-dashed">Info@pnpai.co</a>
+                            {{'Labels.Email' | translate}}:
+                            <a href="mail:myemail@gmail.com" class="text-white text-dashed">{{'Footer.GetInTouch.Email'
+                                | translate}}</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-12 col-lg-4 mb-4">
-                <h3 class="small mb-4">LEARN MORE</h3>
+                <h3 class="small mb-4">{{'Footer.LearnMore.Title' | translate}}</h3>
 
                 <ul class="list-unstyled">
                     <li class="list-item mb-2">
                         <i class="fi fi-arrow-end me-2 smaller"></i>
-                        <a class="text-gray-400" href="contact-1.html">Contact</a>
+                        <a class="text-gray-400" [routerLink]="landingRoute" fragment='contactus'>{{'Routes.ContactUs'
+                            |
+                            translate}}</a>
+                    </li>
+                    <!-- <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" [routerLink]="landingRoute" fragment=''>{{'Routes.AboutUs' |
+                            translate}}</a>
+                    </li> -->
+                    <li class="list-item mb-2">
+                        <i class="fi fi-arrow-end me-2 smaller"></i>
+                        <a class="text-gray-400" [routerLink]="privacyPolicyRoute">{{'Routes.PrivacyPolicy' |
+                            translate}}</a>
                     </li>
                     <li class="list-item mb-2">
                         <i class="fi fi-arrow-end me-2 smaller"></i>
-                        <a class="text-gray-400" href="about-us-1.html">About Us</a>
-                    </li>
-                    <li class="list-item mb-2">
-                        <i class="fi fi-arrow-end me-2 smaller"></i>
-                        <a class="text-gray-400" [routerLink]="privacyPolicyRoute">Privacy policy</a>
-                    </li>
-                    <li class="list-item mb-2">
-                        <i class="fi fi-arrow-end me-2 smaller"></i>
-                        <a class="text-gray-400" [routerLink]="faqRoute">FAQ</a>
+                        <a class="text-gray-400" [routerLink]="faqRoute">{{'Routes.FAQ' | translate}}</a>
                     </li>
                 </ul>
             </div>

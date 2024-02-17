@@ -2,6 +2,11 @@
     <div class="pnp-container-snippet">
         <h3>{{'NewUsecase.PullImageLabel' | translate}}</h3>
         <p class="mb-5">{{'NewUsecase.PullImageDesc' | translate}}</p>
+
+        <p class="new-line-translation mb-5">
+            {{'NewUsecase.RunDockerComposeSteps' | translate}}
+
+        </p>
         <ng-container *ngIf="volumes && volumes != {}">
             <div *ngFor="let volume of volumes | keyvalue">
                 <label>{{'NewUsecase.DirectoryName' | translate}} {{volume.value!.for!.toString()}}</label>

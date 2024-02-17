@@ -29,8 +29,8 @@ import { FooterComponent } from './layouts/landing-layout/footer/footer.componen
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
+    AppRoutingModule,
     FormsModule
   ],
   providers: [],

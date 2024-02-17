@@ -4,7 +4,8 @@
 
         <ng-container *ngIf="images">
             <select class="form-select mb-3" (change)="selectImage($event)">
-                <option [value]="images[0].id" selected>Latest - {{images[0].tag}}</option>
+                <option [value]="images[0].id" selected>{{'Form.OptionsLabels.Latest' | translate}} {{images[0].tag}}
+                </option>
                 <ng-container *ngFor="let image of images.slice(1)">
                     <option [value]="image.id">{{image.tag}}</option>
                 </ng-container>

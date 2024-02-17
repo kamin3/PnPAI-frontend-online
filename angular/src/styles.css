@@ -772,7 +772,7 @@
   -ms-transition: left 0.25s ease;
 }
 
-.navbar-left{
+.navbar-left {
   left: 244px;
 
 }
@@ -2341,4 +2341,6 @@ fieldset {
 	background-repeat: no-repeat;
 	background-size: cover;
 	
+.new-line-translation {
+  white-space: pre-line;
 }

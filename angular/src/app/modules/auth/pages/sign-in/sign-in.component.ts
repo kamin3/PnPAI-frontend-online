@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
 
   homeRoute = CONFIG.dashboard.route;
   registerRoute = CONFIG.auth.children.register.route;
+  landingPageRoute = CONFIG.landing.children.landing.route;
   failedLoginMessage?: string = undefined;
 
   signinForm: FormGroup | undefined;
@@ -31,9 +32,6 @@ export class SignInComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    if (this.accountService.isLoggedIn())
-      this.router.navigateByUrl(this.homeRoute);
-
     this.signinForm = this.fb.group({
       email: ["", [Validators.required, Validators.email]],
       password: ["", Validators.required]

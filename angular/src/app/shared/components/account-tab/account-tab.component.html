@@ -5,7 +5,7 @@
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
         aria-label="Messages">
         <!-- Account Img -->
-        <div class="d-flex align-items-center">
+        <div *ngIf="account || accountError" class="d-flex align-items-center">
             <img [src]="account ? account.image : null" alt="user image" class="pnp-account-image">
             <div class="ms-2 d-flex text-truncate">
                 <p class="m-0 fw-bold" class="pnp-account-name">{{account ? account.name : 'error occured'}}</p>
@@ -16,42 +16,43 @@
     <div aria-labelledby="dropdownAccountOptions"
         class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-menu-invert dropdown-fadeindown p-0 mt-2 w-300">
         <!-- user detail -->
-        <ng-container *ngIf="account; else accountError">
+        <ng-container *ngIf="account else accountError">
             <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4 pnp-account-details">
                 <span class="d-block fw-medium text-truncate">{{account.name}}</span>
                 <span class="d-block smaller fw-medium text-truncate">{{account.email}}</span>
-                <span class="d-block smaller"><b>Last Login: </b>{{account.lastLoginDate |
+                <span class="d-block smaller"><b>{{'Labels.LastLogin' | translate}}: </b>{{account.lastLoginDate |
                     date:'yyyy-MM-ddhh:mm'}}</span>
             </div>
             <div class="dropdown-divider mb-3"></div>
 
             <a [routerLink]="dashboardRoute" class="dropdown-item text-truncate">
-                <span class="fw-medium">Dashboard</span>
-                <small class="d-block text-muted smaller">Manage your services</small>
+                <span class="fw-medium">{{'Routes.Dashboard' | translate}}</span>
+                <small class="d-block text-muted smaller">{{'AccountTab.DashboardDescription' | translate}}</small>
             </a>
 
-            <a href="#" class="dropdown-item text-truncate disable-link">
+            <a [routerLink]="null" class="dropdown-item text-truncate disable-link">
                 <s>
-                    <small class="badge bg-gray-500 float-end">Coming soon ...</small>
-                    <span class="fw-medium">My Profile</span>
-                    <small class="d-block text-muted smaller">account settings and more</small>
+                    <small class="badge bg-gray-500 float-end">{{'Labels.ComingSoon' | translate}}</small>
+                    <span class="fw-medium">{{'Routes.MyProfile' | translate}}</span>
+                    <small class="d-block text-muted smaller">{{'AccountTab.MyProfileDescription' | translate}}</small>
                 </s>
             </a>
 
-            <a href="#" class="dropdown-item text-truncate disable-link">
+            <a [routerLink]="null" class="dropdown-item text-truncate disable-link">
                 <s>
-                    <small class="badge bg-gray-500 float-end">Coming soon ...</small>
+                    <small class="badge bg-gray-500 float-end">{{'Labels.ComingSoon' | translate}}</small>
                     <!-- <small class="badge bg-danger-soft float-end">{{account.subscriptionDaysLeft}} days
                         left</small> -->
-                    <span class="fw-medium">My Subscription</span>
-                    <small class="d-block text-muted smaller">your monthly billing</small>
+                    <span class="fw-medium">{{'Routes.MySubscription' | translate}}</span>
+                    <small class="d-block text-muted smaller">{{'AccountTab.MySubscriptiopnDescription' |
+                        translate}}</small>
                 </s>
             </a>
         </ng-container>
 
         <ng-template #accountError>
             <div class="dropdown-header rounded rounded-bottom-0 text-white small p-4 pnp-account-details">
-                <span class="d-block fw-medium text-truncate">error occured ...</span>
+                <span class="d-block fw-medium text-truncate">{{'Errors.ErrorOccured' | translate}}</span>
             </div>
         </ng-template>
 

@@ -4,29 +4,34 @@ import { HomeComponent } from './pages/home/home.component';
 import { CONFIG } from '@shared/configs';
 import { NewUseCaseComponent } from './pages/new-use-case/new-use-case.component';
 import { TeamsComponent } from './pages/teams/teams.component';
-import { CurrentUseCasesComponent } from './pages/current-use-cases/current-use-cases.component';
+import { contactUsComponent } from './pages/contactus/contactUs.component';
 
 const routes: Routes = [
   {
     path: '',
+    children: [
+      {
+        path: CONFIG.dashboard.children.dashboard.name,
+        component: HomeComponent
+      },
+      // {
+      //   path: CONFIG.dashboard.children.teams.name,
+      //   component: TeamsComponent
+      // },
+      {
+        path: CONFIG.dashboard.children.newUseCase.name,
+        component: NewUseCaseComponent
+      },
+      {
+        path: CONFIG.dashboard.children.support.children.contactus.name,
+        component: contactUsComponent
+      }
+    ]
+  },
+  {
+    path: '**',
     redirectTo: CONFIG.dashboard.children.dashboard.route,
-    pathMatch: 'full'
-  },
-  {
-    path: CONFIG.dashboard.children.dashboard.name,
-    component: HomeComponent
-  },
-  {
-    path: CONFIG.dashboard.children.teams.name,
-    component: TeamsComponent
-  },
-  {
-    path: CONFIG.dashboard.children.newUseCase.name,
-    component: NewUseCaseComponent
-  },
-  {
-    path: CONFIG.dashboard.children.usecases.name,
-    component: CurrentUseCasesComponent
+    pathMatch: 'full',
   }
 ];
 
