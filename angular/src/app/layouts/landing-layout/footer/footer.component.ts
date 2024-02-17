@@ -9,6 +9,6 @@ import { CONFIG } from '@app/shared/configs';
 export class FooterComponent {
   privacyPolicyRoute = CONFIG.landing.children.privacypolicy.route;
   faqRoute = CONFIG.landing.children.faq.route;
-  loginRoute = CONFIG.auth.children.login.route;
+  registerRoute = CONFIG.auth.children.register.route;
   landingRoute = CONFIG.landing.children.landing.route;
 }

@@ -14,15 +14,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: CONFIG.dashboard.name,
     component: ContentLayoutComponent,
-    children: [
-      {
-        path: CONFIG.dashboard.name,
-        loadChildren: () =>
-          import('@modules/home/home.module').then((m) => m.HomeModule),
-      },
-    ],
+    loadChildren: () =>
+      import('@modules/home/home.module').then((m) => m.HomeModule),
     canActivate: [authGuard],
   },
   {
@@ -33,15 +28,10 @@ const routes: Routes = [
     canActivate: [anonymousGuard]
   },
   {
-    path: '',
+    path: CONFIG.landing.name,
     component: LandingLayoutComponent,
-    children: [
-      {
-        path: CONFIG.landing.name,
-        loadChildren: () =>
-          import('@modules/landing/landing.module').then((m) => m.LandingModule),
-      }
-    ]
+    loadChildren: () =>
+      import('@modules/landing/landing.module').then((m) => m.LandingModule),
   },
   {
     path: '**',
@@ -50,12 +40,12 @@ const routes: Routes = [
   },
 ];
 
-const routerOptions: ExtraOptions = {
-  anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'top'
-};
+// const routerOptions: ExtraOptions = {
+//   anchorScrolling: 'enabled',
+//   scrollPositionRestoration: 'top'
+// };
 @NgModule({
-  imports: [RouterModule.forRoot(routes, routerOptions)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule { }

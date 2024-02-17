@@ -55,4 +55,31 @@ export class AccountService {
     let payload = JSON.parse(atob(userToken!.split('.')[1]));
     return payload['robots'][0]['robot_name'];
   }
+
+  getUserEmail(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['user_email'];
+  }
+
+  getUserIndustryName(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['industry_name'];
+  }
+  getUserIndustryId(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['industry_id'];
+  }
+  getUserFullname(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['user_first_name'] + payload['user_last_name'];
+  }
+  getUserOrganizationName(): string {
+    let userToken = this.getToken();
+    let payload = JSON.parse(atob(userToken!.split('.')[1]));
+    return payload['organization_name'];
+  }
 }

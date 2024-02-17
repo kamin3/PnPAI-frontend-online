@@ -30,7 +30,7 @@
                 <small class="d-block text-muted smaller">{{'AccountTab.DashboardDescription' | translate}}</small>
             </a>
 
-            <a href="#" class="dropdown-item text-truncate disable-link">
+            <a [routerLink]="null" class="dropdown-item text-truncate disable-link">
                 <s>
                     <small class="badge bg-gray-500 float-end">{{'Labels.ComingSoon' | translate}}</small>
                     <span class="fw-medium">{{'Routes.MyProfile' | translate}}</span>
@@ -38,7 +38,7 @@
                 </s>
             </a>
 
-            <a href="#" class="dropdown-item text-truncate disable-link">
+            <a [routerLink]="null" class="dropdown-item text-truncate disable-link">
                 <s>
                     <small class="badge bg-gray-500 float-end">{{'Labels.ComingSoon' | translate}}</small>
                     <!-- <small class="badge bg-danger-soft float-end">{{account.subscriptionDaysLeft}} days

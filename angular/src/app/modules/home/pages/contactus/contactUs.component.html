@@ -1,0 +1,27 @@
+<div class="container mt-5 mb-5" id="contactus">
+    <h3 class="fw-bold mb-5">{{'Landing.HelpFormTitle' | translate}}</h3>
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <form [formGroup]="contactusForm!" (ngSubmit)="onContactUsSubmit()">
+
+                <div class="form-floating mb-3">
+                    <textarea formControlName="message" placeholder="{{'Form.Fields.Message' | translate}}"
+                        id="contact_message" name="contact_message" class="form-control" rows="3"
+                        style="min-height: 120px"></textarea>
+                    <label for="contact_message">{{'Form.Fields.Message' | translate}}</label>
+                    <div *ngIf="contactusForm!.get('message')!.touched || contactusForm!.get('message')!.dirty">
+                        <div *ngIf="contactusForm!.get('message')!.hasError('required')">
+                            <span class="text-danger">{{'Form.Errors.MessageRequired' | translate}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" (mouseenter)="setAllTouched(contactusForm!)" class="btn btn-primary"
+                    [disabled]="!contactusForm!.valid">{{'Buttons.SendMessage' | translate}}</button>
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <img src="./assets/img/contact.svg" width="700" class="img-fluid" />
+        </div>
+    </div>
+</div>
