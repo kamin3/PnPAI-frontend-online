@@ -2334,3 +2334,11 @@ fieldset {
   width: 100%;
   object-fit: cover
 }
+
+.pnp-bg-features-container{
+	background: url("././assets/ecommerce/pnp-bg-features.svg");
+	height: 750px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
