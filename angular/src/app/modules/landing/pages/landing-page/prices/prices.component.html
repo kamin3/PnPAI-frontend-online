@@ -128,7 +128,8 @@
                     [queryParams]="{ 'returnUrl': landingRoute }" data-dismiss="modal"
                     aria-label="Close">{{'Buttons.LogIn' | translate}}</a>
                 <a class="btn px-4 btn-danger" [routerLink]="registerRoute"
-                    [queryParams]="{ 'returnUrl': landingRoute }">{{'Buttons.SignUp' | translate}}</a>
+                    [queryParams]="{ 'returnUrl': landingRoute }" data-dismiss="modal"
+                    aria-label="Close">{{'Buttons.SignUp' | translate}}</a>
             </div>
         </div>
     </div>
