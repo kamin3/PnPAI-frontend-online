@@ -152,7 +152,6 @@ export class PricesComponent implements OnInit {
               resolve(value.message);
             },
             error: (err) => {
-              console.log("errrrroooooooooooor");
               this.httpErrorHandler.handleError(err);
             },
           });
@@ -200,7 +199,7 @@ export class PricesComponent implements OnInit {
   private initChargebee() {
     // @ts-ignore
     window['Chargebee'].init({
-      site: 'pnpai-service-test'
+      site: 'pnpai-service'
     });
   }
 
