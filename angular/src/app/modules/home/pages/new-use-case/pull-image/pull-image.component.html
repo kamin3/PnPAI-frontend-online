@@ -1,18 +1,95 @@
-<div id="commands-container" class="rounded-2 shadow-lg pnp-command-online-container">
-    <div class="pnp-container-snippet">
+<div id="commands-container" class="rounded-2  pnp-command-online-container">
+    
+    <div class="bg-white pnp-container-snippet shadow-lg" >
+        
         <h3>{{'NewUsecase.PullImageLabel' | translate}}</h3>
-        <p class="mb-5">{{'NewUsecase.PullImageDesc' | translate}}</p>
+        <p class="">{{'NewUsecase.PullImageDesc' | translate}}</p>
+        
+    </div>
+    <div class="bg-white pnp-container-snippet shadow-lg">
 
-        <p class="new-line-translation mb-5">
-            {{'NewUsecase.RunDockerComposeSteps' | translate}}
+        <p class="fs-4 fw-bold mb-3">Starting Docker Compose and Accessing PnPAI Frontend</p>
+        <p class="fs-4 fw-bold mb-3">Download Docker Compose File: <span class="fw-normal fs-6">  <em>Ensure you have downloaded the provided Docker Compose file to your localsystem.</em> </span></p>
 
+        <p class="fs-5 fw-bold mb-3">
+            Launch Docker Compose:
         </p>
+
+        <p class="fs-6 fw-bold mb-3">
+            1- Open Terminal.
+        </p>
+        <p class="fs-6 fw-bold mb-3">
+            2- Navigate to the directory containing the downloaded Docker Compose file.
+        </p>
+
+        <p class="fs-6 fw-bold mb-3">
+           3- Execute the command
+        </p>
+        <div class="copy-token-div">
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
+                [cdkCopyToClipboard]="getDockerComposeFile()"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+        </div>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">docker-compose -f docker-file-name.yaml up</code> </pre>
+
+
+        <p  class="fs-6 mt-5" >
+            This command starts the Docker Compose process, downloading all necessary images and initiating them. It iscrucial not to modify any of the image names as the system relies on these specific names.
+        </p>
+
+        <p class="fs-5 fw-bold mt-5">
+            Access PnPAI Frontend:
+        </p>
+
+        <p class="fs-6 fw-bold mb-3">
+            Open a web browser.
+        </p>
+        <p class="fs-6 fw-bold mb-3">
+            2Go to http://localhost:4200 to access the PnPAI frontend. This is the default address.
+        </p>
+
+        <p class="fs-5 fw-bold mt-5">
+            Log In:
+        </p>
+
+        <p class="fs-6 fw-bold mb-3">
+            Username: 
+        </p>
+        <div class="copy-token-div">
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
+                [cdkCopyToClipboard]="getDockerComposeFile()"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+        </div>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">admin</code> </pre>
+
+        <p class="fs-6 fw-bold mb-3">
+            Password:
+        </p>
+        <div class="copy-token-div">
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
+                [cdkCopyToClipboard]="getDockerComposeFile()"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+        </div>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">nG613]+P#=IF</code> </pre>
+
+
+        <p class="fs-5 fw-bold mt-5">
+            You are now ready to enjoy using the PnPAI platform
+        </p>
+        <p class="fs-6 fw-bold mt-5 mb-3">
+            If you encounter any issues, ensure you've followedeach step accurately and consult the support documentation if needed.
+        </p>
+        
+
+
+
         <ng-container *ngIf="volumes && volumes != {}">
             <div *ngFor="let volume of volumes | keyvalue">
                 <label>{{'NewUsecase.DirectoryName' | translate}} {{volume.value!.for!.toString()}}</label>
                 <input type="text" [value]="volume.value!.oldValue" (input)="setVolumeName($event, volume.key)" />
             </div>
         </ng-container>
+
         <div class="copy-token-div">
             <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
                 [cdkCopyToClipboard]="getDockerComposeFile()"
@@ -21,14 +98,15 @@
                 {{'Buttons.Download' | translate}}</button>
         </div>
         <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{dockerComposeFile}}</code> </pre>
+        
+        <div style="width: 100%;" class="d-flex justify-content-between mt-5">
+            <button id="step-two-back-btn" type="button" class="btn btn-outline-primary m-4" (click)="getBack()">
+                {{'Buttons.Back' | translate}}
+            </button>
+            <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="finish()">
+                {{'Buttons.Finish' | translate}}
+            </button>
+        </div>
     </div>
 
-    <div style="width: 100%;" class="d-flex justify-content-between">
-        <button id="step-two-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
-            {{'Buttons.Back' | translate}}
-        </button>
-        <button id="step-three-next-btn" type="button" class="btn btn-primary m-4" (click)="finish()">
-            {{'Buttons.Finish' | translate}}
-        </button>
-    </div>
 </div>

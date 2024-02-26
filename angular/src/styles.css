@@ -2335,12 +2335,6 @@ fieldset {
   object-fit: cover
 }
 
-.pnp-bg-features-container{
-	background: url("././assets/ecommerce/pnp-bg-features.svg");
-	height: 750px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	
 .new-line-translation {
   white-space: pre-line;
 }

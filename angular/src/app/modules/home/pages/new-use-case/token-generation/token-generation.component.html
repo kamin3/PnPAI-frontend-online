@@ -1,26 +1,83 @@
-<div id="token-container" class="rounded-2 shadow-lg pnp-token-online-container">
+<div id="token-container" class="rounded-2  pnp-token-online-container">
 
-    <div class="pnp-container-snippet">
+    
+
+    <div class="pnp-container-snippet bg-white shadow-lg">
         <h3>{{'NewUsecase.TokenGenerationLabel' | translate}}</h3>
-        <p class="mb-5">{{'NewUsecase.TokenGenerationDesc' | translate}}</p>
+        <p class="">{{'NewUsecase.TokenGenerationDesc' | translate}}</p>
+    </div>
+    <div class="pnp-container-snippet bg-white shadow-lg">
+
+        <div class="border-bottom-lg mb-5" >
+
+            <p class="fs-4 fw-bold mb-3">
+                Quick Guide to Logging into PnPAI Repository
+            </p>
+    
+            <p class="fs-5 fw-bold mb-3">
+                1. Launch the Terminal.
+            </p>
+            <div class="mb-3">
+                <p  class="fs-5 fw-bold mb-2" >
+                    2. Enter Login Command:
+                </p>
+                <div class="copy-token-div">
+                    <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
+                        (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
+                        {{'Buttons.Copy' | translate}}</button>
+                </div>
+                <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">docker login quay.io</code></pre>
+                <p  class="fs-6 mb-5" >
+                    into the Terminal and <span class="fw-bold" >press Enter</span>.
+                </p>
+            </div>
+        </div>
+
+        <p class="fs-4 fw-bold mb-3" >
+            Input Credentials
+        </p>
+        <p class="fs-5 fw-bold">
+            Username: 
+        </p>
+        <p class="fs-6 mb-3">
+             Type your robot name 
+        </p>
         <div class="copy-token-div">
             <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
                 (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
                 {{'Buttons.Copy' | translate}}</button>
         </div>
-        <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{token}}</code></pre>
-
-        <p class="new-line-translation mt-5">
-            {{quayIOLoginGuide}}
+        <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">(pnp)</code></pre>
+        <p  class="fs-6 mb-5" >
+                and <span class="fw-bold" >press Enter</span>.
         </p>
+
+
+        <div class="mb-5">
+            <p class="fs-5 fw-bold">
+                Password:
+            </p>
+            <div class="copy-token-div">
+                <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
+                    (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
+                    {{'Buttons.Copy' | translate}}</button>
+            </div>
+            <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{token}}</code></pre>
+        </div>
+
+        
+
+        <!-- <p class="new-line-translation mt-5">
+            {{quayIOLoginGuide}}
+        </p> -->
+        <div style="width: 100%;" class="d-flex justify-content-between">
+            <button id="step-one-back-btn" type="button" class="btn btn-outline-primary m-4" (click)="getBack()">
+                {{'Buttons.Back' | translate}}
+            </button>
+            <button id="step-two-next-btn" type="button" class="btn btn-primary m-4" (click)="goNextStep()">
+                {{'Buttons.Next' | translate}}
+            </button>
+        </div>
     </div>
 
-    <div style="width: 100%;" class="d-flex justify-content-between">
-        <button id="step-one-back-btn" type="button" class="btn btn--outline-primary m-4" (click)="getBack()">
-            {{'Buttons.Back' | translate}}
-        </button>
-        <button id="step-two-next-btn" type="button" class="btn btn-primary m-4" (click)="goNextStep()">
-            {{'Buttons.Next' | translate}}
-        </button>
-    </div>
 </div>
