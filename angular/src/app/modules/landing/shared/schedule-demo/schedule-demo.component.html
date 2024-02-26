@@ -1,0 +1,101 @@
+<a [class]="anchorClass" data-bs-toggle="modal" data-bs-target="#schDemo">{{'Buttons.ScheduleADemo' |
+    translate}}</a>
+
+<div class="modal fade" id="schDemo" tabindex="-1" role="dialog" aria-labelledby="scheduleDemoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="scheduleDemoModalLabel">{{'Buttons.ScheduleADemo' | translate}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="scheduleDemoForm!">
+
+                    <div class="mb-3">
+                        <label for="contact_name" class="form-label">{{'Form.Fields.FullName' | translate}}</label>
+                        <input type="text" formControlName="fullName" class="form-control" id="contact_name"
+                            placeholder="{{'Form.Placeholders.FullNameWithEnter' | translate}}">
+                        <div
+                            *ngIf="scheduleDemoForm!.get('fullName')!.touched || scheduleDemoForm!.get('fullName')!.dirty">
+                            <div *ngIf="scheduleDemoForm!.get('fullName')!.hasError('required')">
+                                <span class="text-danger">{{'Form.Errors.FullNameRequired' | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact_industry" class="form-label">{{'Form.Fields.Industry' | translate}}</label>
+                        <select id="contact_industry" formControlName="industryId" class="form-select mb-3 "
+                            aria-label="Default select example">
+                            <option selected value="">{{'Form.OptionsLabels.SelectIndusrty' | translate}}</option>
+                            <option *ngFor="let ind of industries" [value]="ind.id">{{ind.name}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact_email" class="form-label">{{'Form.Fields.Email' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="email" id="contact_email"
+                            placeholder="{{'Form.Placeholders.EmailWithEnter' | translate}}">
+                        <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
+                            <div *ngIf="scheduleDemoForm!.get('email')!.hasError('required')">
+                                <span class="text-danger">{{'Form.Errors.EmailRequired' | translate}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
+                            <div *ngIf="scheduleDemoForm!.get('email')!.hasError('email')">
+                                <span class="text-danger">{{'Form.Errors.EmailInvalid' | translate}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="scheduleDemoForm!.get('email')!.touched || scheduleDemoForm!.get('email')!.dirty">
+                            <div *ngIf="scheduleDemoForm!.get('email')!.hasError('invalidBusinessEmail')">
+                                <span class="text-danger">{{'Form.Errors.EmailInvalidBusiness' | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact_phone">{{'Form.Fields.Phone' | translate}}</label>
+                        <input formControlName="phoneNumber"
+                            placeholder="{{'Form.Placeholders.PhoneNumberWithEnter' | translate}}" id="contact_phone"
+                            name="contact_phone" type="text" class="form-control" />
+                        <div
+                            *ngIf="scheduleDemoForm!.get('phoneNumber')!.touched || scheduleDemoForm!.get('phoneNumber')!.dirty">
+                            <div *ngIf="scheduleDemoForm!.get('phoneNumber')!.hasError('pattern')">
+                                <span class="text-danger">{{'Form.Errors.PhoneNumberPattern' | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact_title" class="form-label">{{'Form.Fields.Title' | translate}}</label>
+                        <input type="text" class="form-control" formControlName="title" id="contact_title"
+                            placeholder="{{'Form.Placeholders.TitleWithEnter' | translate}}">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contact_company" class="form-label">{{'Form.Fields.CompanyName' |
+                            translate}}</label>
+                        <input type="text" class="form-control" formControlName="companyName" id="contact_company"
+                            placeholder="{{'Form.Placeholders.CompanyNameWithEnter' | translate}}">
+                    </div>
+
+                </form>
+            </div>
+
+
+
+            <div class="modal-footer">
+                <button type="button" (mouseenter)="setAllTouched(scheduleDemoForm!)" (click)="onScheduleDemoSubmit()"
+                    [disabled]="!scheduleDemoForm!.valid" class="btn btn-danger" id="successAddTicket">
+                    {{'Buttons.ScheduleADemo' | translate}}
+                </button>
+                <button #closeScheduleDemoBTN type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    {{'Buttons.Close' | translate}}
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

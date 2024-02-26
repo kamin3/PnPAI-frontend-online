@@ -1,0 +1,136 @@
+<div class="bg-white" id="prices_section">
+    <!-- BILLING SWITCHER -->
+    <div id="section_pricing" class="position-relative z-index-2 justify-content-center d-flex">
+        <div class="p-2 rounded bg-white col-5 mt-6 py-4">
+            <!-- Billing Switcher -->
+            <div class="d-flex justify-content-center">
+                <span class="text-gray-600 pe-4 fs-3">{{'Labels.Monthly' | translate}}</span>
+
+                <label class="form-switch form-switch-pill form-switch-primary" style="top: 9px">
+                    <input type="checkbox" value="1" checked data-count-target=".pricetable-count"
+                        (change)="onPlanPeriodChange($event)" />
+                    <i></i>
+                </label>
+
+                <span class="text-gray-600 fs-3">{{'Labels.Annual' | translate}}</span>
+            </div>
+            <!-- /Billing Switcher -->
+        </div>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-lg-4 mb-4" *ngFor="let item of plans; index as idx">
+                <div class="pricing-table p-3">
+                    <div class="p-3">
+                        <div class="text-white px-3 py-2 rounded-2 mb-4 text-center d-flex align-items-center justify-content-evenly {{
+                  plansStyles[idx].title_class
+                }}">
+                            <img src="{{ plansStyles[idx].title_icon }}" width="80" />
+                            <h2 class="fw-bold mb-0 text-white fs-3">{{ item.name }}</h2>
+                        </div>
+                        <h3 class="h4 text-center">
+                            <span class="fs-4 fw-normal">$</span>
+                            <span class="pricetable-count display-4 fw-medium price-tag {{
+                    plansStyles[idx].number_class
+                  }}" data-toggle="count" data-count-decimals="" data-count-from="0" data-count-to="255"
+                                data-count-duration="1000" data-count-toggle='[
+                    {"from":"0", "to":"255", "duration":800},
+                    {"from":"255", "to":"299", "duration":800}
+                ]'>{{ monthlyPlanChecked ? (item.monthly_price | number) : (item.monthly_price_annual_plan |
+                                number)}}</span>
+                            <span class="fs-4 fw-normal">{{'Labels.PerMonth' | translate}}</span>
+                        </h3>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="d-flex flex-column align-items-center bg-light p-3 rounded-2 mb-3">
+                            <div class="price-quarter-icon-container d-flex align-items-center">
+                                <img src="{{ plansStyles[idx].annual_icon }}" width="20" />
+                                <p class="mb-0 ms-2 text-gray-600" style="font-size: 14px">
+                                    {{'Landing.AnnualPayment' | translate}}
+                                </p>
+                            </div>
+                            <div class="d-flex mt-2">
+                                <p class="mb-0">
+                                    <b>${{ item.annual_price | number }}</b> {{'Labels.PerYear' | translate}}
+                                    <b *ngIf="item.annual_discount">({{ item.annual_discount
+                                        }}{{'Labels.PernetageSymbol' | translate}}
+                                        {{'Landing.Discount' | translate}})</b>
+                                </p>
+                            </div>
+                        </div>
+                        <div *ngIf="item.quarter_price"
+                            class="d-flex flex-column align-items-center bg-light p-3 rounded-2 mb-3">
+                            <div class="price-quarter-icon-container d-flex align-items-center">
+                                <img src="{{ plansStyles[idx].quarter_icon }}" width="25" />
+                                <p class="mb-0 ms-2 text-gray-600" style="font-size: 14px">
+                                    {{'Landing.QuarterlyPayment' | translate}}
+                                </p>
+                            </div>
+                            <div class="d-flex mt-2">
+                                <p class="mb-0">
+                                    <b>${{ item.quarter_price | number }}</b> {{'Labels.PerQuarter' | translate}}
+                                    <b *ngIf="item.quarter_discount">({{ item.quarter_discount
+                                        }}{{'Labels.PernetageSymbol' | translate}}
+                                        {{'Landing.Discount' | translate}})</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="item.has_trial" class="{{ plansStyles[idx].trial_class }}"
+                        [style.backgroundColor]="plansStyles[idx].trial_bg_color"
+                        style="font-size: 12px; padding: 10px; border-radius: 6px">
+                        {{'Landing.TrialDescriptionStart' | translate}} {{ item.trial_period }}-{{
+                        item.trial_period_unit }}
+                        {{'Landing.TrialDescriptionEnd' | translate}}
+                    </div>
+                    <div class="my-3 mx-4 border-top"></div>
+
+                    <div class="bg-light py-3 px-2 d-flex flex-column">
+                        <ng-container *ngFor="let feature of item.features; index as fidx">
+                            <div class="d-flex" [class.mb-5]="fidx + 1 != item.features.length">
+                                <i class="fi fi-check {{ plansStyles[idx].feature_icon_class }}"></i>
+                                <p class="fw-bold mb-0 feature-price-p">
+                                    {{ feature }}
+                                </p>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                    <a class="{{ plansStyles[idx].button_class }} button" (click)="buyPlan(item.id)">
+                        {{'Buttons.GetStarted' | translate}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<button hidden #guestWarning type="button" class="btn btn-primary" data-toggle="modal" data-target="#guestModal">
+
+</button>
+
+<div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="guestModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="guestModalLabel">{{'Landing.GuestModalTitle' | translate}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {{'Landing.GuestModalDescription' | translate}}
+            </div>
+            <div class="modal-footer">
+                <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute"
+                    [queryParams]="{ 'returnUrl': landingRoute }" data-dismiss="modal"
+                    aria-label="Close">{{'Buttons.LogIn' | translate}}</a>
+                <a class="btn px-4 btn-danger" [routerLink]="registerRoute"
+                    [queryParams]="{ 'returnUrl': landingRoute }" data-dismiss="modal"
+                    aria-label="Close">{{'Buttons.SignUp' | translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>

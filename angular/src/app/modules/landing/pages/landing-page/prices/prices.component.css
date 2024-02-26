@@ -1,0 +1,189 @@
+.pricing-table {
+    background: #fff;
+    box-shadow: 0px 1px 17px 3px rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.pricing-table:hover {
+    box-shadow: 0px 1px 10px -4px rgba(0, 0, 0, .15);
+}
+
+.pricing-table .pricing-label {
+    border-radius: 2px;
+    padding: .25rem .5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+
+.pricing-table h5 {
+    color: #B3B3B3;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.pricing-table .pricing-features .feature {
+    font-size: 14px;
+    margin: .5rem 0;
+    color: #B3B3B3;
+}
+
+.pricing-table .pricing-features .feature span {
+    display: inline-block;
+    float: right;
+    color: #3b3b3b;
+    font-weight: 500;
+}
+
+.pricing-table .price-tag {
+    text-align: center;
+    font-weight: 500;
+}
+
+.pricing-table .price-tag .symbol {
+    font-size: 24px;
+}
+
+.pricing-table .price-tag .amount {
+    letter-spacing: -2px;
+    font-size: 64px;
+}
+
+.pricing-table .price-tag .after {
+    color: #3b3b3b;
+    font-weight: 500;
+}
+
+.pricing-table .price-button {
+    display: block;
+    color: #fff;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.pricing-table .price-button:hover {
+    text-decoration: none;
+}
+
+.starter-check-icon {
+    width: 22px;
+    height: 22px;
+    background: #f64e60;
+    padding: 0px 5px;
+    margin-right: 13px;
+    box-shadow: 1px 1px 8px rgb(0 0 0 /17%);
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-price-p {
+    font-size: 14px;
+}
+
+.starter-price-button {
+    display: block;
+    color: #fff;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.starter-price-button:hover {
+    background-color: #ffa3b5 !important;
+    color: #fff !important;
+    transition: .3s;
+}
+
+
+.growth-check-icon {
+    width: 22px;
+    height: 22px;
+    background: #5733e9;
+    padding: 0px 5px;
+    margin-right: 13px;
+    box-shadow: 1px 1px 8px rgb(0 0 0 /17%);
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.growth-price-button {
+    display: block;
+    color: #fff;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.growth-price-button:hover {
+    background-color: #a3acff !important;
+    color: #fff !important;
+    transition: .3s;
+}
+
+.enterprise_bg {
+    background-color: #001949
+}
+
+.enter-check-icon {
+    width: 22px;
+    height: 22px;
+    background: #001949;
+    padding: 0px 5px;
+    margin-right: 13px;
+    box-shadow: 1px 1px 8px rgb(0 0 0 /17%);
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter-darkblue-p {
+    color: #001949
+}
+
+.enter-price-button {
+    background: #001949;
+    display: block;
+    color: #fff;
+    margin-top: 2rem;
+    padding: .75rem;
+    border-radius: 2px;
+    text-align: center;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.enter-price-button:hover {
+    background: #1e4a9c;
+    transition: .3s;
+    color: white;
+}
+
+.pricing-table p {
+    color: #001949;
+}
