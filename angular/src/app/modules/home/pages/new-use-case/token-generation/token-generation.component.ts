@@ -12,21 +12,15 @@ export class TokenGenerationComponent implements OnInit {
   @Input() token: string = '';
   @Output() getBackEvent = new EventEmitter<null>();
   @Output() nextStepEvent = new EventEmitter<null>();
-  @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
-  quayIOLoginGuide: string = "";
-
+  robotName: string = '';
+  loginCommand: string = 'docker login quay.io';
   constructor(
     private translate: TranslateService,
     private accountService: AccountService
   ) {
   }
   ngOnInit(): void {
-    let robotName = this.accountService.getUserRobotName();
-    this.translate.get('NewUsecase.QuayIOLoginGuide').subscribe((value: string) => {
-      this.quayIOLoginGuide = value
-        .replace("{{robotName}}", robotName)
-        .replace("{{token}}", this.token);
-    });
+    this.robotName = this.accountService.getUserRobotName();
   }
   getBack() {
     this.getBackEvent.emit();
@@ -36,13 +30,13 @@ export class TokenGenerationComponent implements OnInit {
     this.nextStepEvent.emit();
   }
 
-  onClipboardCopy(successful: boolean): void {
+  onClipboardCopy(successful: boolean, copyButton: HTMLButtonElement): void {
     if (!successful) return;
     let copiedText = this.translate.instant('Buttons.Copied');
-    this.copyBTN.nativeElement.innerText = copiedText;
-    this.copyBTN.nativeElement.classList.remove('copy-btn');
-    this.copyBTN.nativeElement.classList.add('copied-btn');
-    this.copyBTN.nativeElement.disabled = true;
+    copyButton.innerText = copiedText;
+    copyButton.classList.remove('copy-btn');
+    copyButton.classList.add('copied-btn');
+    copyButton.disabled = true;
   }
 
 

@@ -14,7 +14,9 @@ export class PullImageComponent implements OnInit {
   @Input() volumesToRename: DockerConfigVolumes[] = [];
   @Output() getBackEvent = new EventEmitter<null>();
   @Output() finishStepEvent = new EventEmitter<null>();
-  @ViewChild('copyBTN') copyBTN!: ElementRef<HTMLButtonElement>;
+  dockerComposeCommand: string = 'docker-compose -f docker-file-name.yaml up';
+  username: string = 'admin';
+  password: string = 'nG613]+P#=IF';
   volumes: { [key: string]: { for: string[]; oldValue: string; newValue: string; }; } = {};
   constructor(private translate: TranslateService) { }
 
@@ -49,13 +51,13 @@ export class PullImageComponent implements OnInit {
     }
     return file;
   }
-  onClipboardCopy(successful: boolean): void {
+  onClipboardCopy(successful: boolean, copyButton: HTMLButtonElement): void {
     if (!successful) return;
     let copiedText = this.translate.instant('Buttons.Copied');
-    this.copyBTN.nativeElement.innerText = copiedText;
-    this.copyBTN.nativeElement.classList.remove('copy-btn');
-    this.copyBTN.nativeElement.classList.add('copied-btn');
-    this.copyBTN.nativeElement.disabled = true;
+    copyButton.innerText = copiedText;
+    copyButton.classList.remove('copy-btn');
+    copyButton.classList.add('copied-btn');
+    copyButton.disabled = true;
   }
 
   downloadDockerCompose() {

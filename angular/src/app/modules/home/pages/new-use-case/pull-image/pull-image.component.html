@@ -1,85 +1,91 @@
 <div id="commands-container" class="rounded-2  pnp-command-online-container">
-    
-    <div class="bg-white pnp-container-snippet shadow-lg" >
-        
+
+    <div class="bg-white pnp-container-snippet shadow-lg">
+
         <h3>{{'NewUsecase.PullImageLabel' | translate}}</h3>
         <p class="">{{'NewUsecase.PullImageDesc' | translate}}</p>
-        
+
     </div>
     <div class="bg-white pnp-container-snippet shadow-lg">
 
-        <p class="fs-4 fw-bold mb-3">Starting Docker Compose and Accessing PnPAI Frontend</p>
-        <p class="fs-4 fw-bold mb-3">Download Docker Compose File: <span class="fw-normal fs-6">  <em>Ensure you have downloaded the provided Docker Compose file to your localsystem.</em> </span></p>
+        <p class="fs-4 fw-bold mb-3">{{'NewUsecase.PullImageDockerComposeTitle' | translate}}</p>
+        <p class="fs-4 fw-bold mb-3">{{'NewUsecase.PullImageDockerComposeDownloadTitle' | translate}}: <span
+                class="fw-normal fs-6"> <em>{{'NewUsecase.PullImageDockerComposeDownloadHint' | translate}}</em> </span>
+        </p>
 
         <p class="fs-5 fw-bold mb-3">
-            Launch Docker Compose:
+            {{'NewUsecase.PullImageDockerComposeLaunchTitle' | translate}}:
         </p>
 
         <p class="fs-6 fw-bold mb-3">
-            1- Open Terminal.
+            1- {{'NewUsecase.PullImageDockerComposeOpenTerminal' | translate}}
         </p>
         <p class="fs-6 fw-bold mb-3">
-            2- Navigate to the directory containing the downloaded Docker Compose file.
+            2- {{'NewUsecase.PullImageDockerComposeNavigate' | translate}}
         </p>
 
         <p class="fs-6 fw-bold mb-3">
-           3- Execute the command
+            3- {{'NewUsecase.PullImageDockerComposeExecute' | translate}}
         </p>
         <div class="copy-token-div">
-            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
-                [cdkCopyToClipboard]="getDockerComposeFile()"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+            <button type="button" id="copy-commands-btn" class="copy-btn" #copyDockerComposeCommandBTN
+                [cdkCopyToClipboard]="dockerComposeCommand"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyDockerComposeCommandBTN)">{{'Buttons.Copy' |
+                translate}}</button>
         </div>
-        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">docker-compose -f docker-file-name.yaml up</code> </pre>
+        <pre
+            class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{dockerComposeCommand}}</code> </pre>
 
 
-        <p  class="fs-6 mt-5" >
-            This command starts the Docker Compose process, downloading all necessary images and initiating them. It iscrucial not to modify any of the image names as the system relies on these specific names.
+        <p class="fs-6 mt-5">
+            {{'NewUsecase.PullImageDockerComposeCommandDesc' | translate}}
         </p>
 
         <p class="fs-5 fw-bold mt-5">
-            Access PnPAI Frontend:
+            {{'NewUsecase.PullImageFrontEndAccessTitle' | translate}}:
         </p>
 
         <p class="fs-6 fw-bold mb-3">
-            Open a web browser.
+            {{'NewUsecase.PullImageFrontEndAccessOpenBrowser' | translate}}
         </p>
         <p class="fs-6 fw-bold mb-3">
-            Go to http://localhost:4200 to access the PnPAI frontend. This is the default address.
+            {{'NewUsecase.PullImageFrontEndAccessNavigateToLocalhost' | translate}}
         </p>
 
         <p class="fs-5 fw-bold mt-5">
-            Log In:
+            {{'Labels.LogIn' | translate}}:
         </p>
 
         <p class="fs-6 fw-bold mb-3">
-            Username: 
+            {{'Labels.Username' | translate}}:
         </p>
         <div class="copy-token-div">
-            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
-                [cdkCopyToClipboard]="getDockerComposeFile()"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+            <button type="button" id="copy-username-btn" class="copy-btn" #copyUsernameBTN
+                [cdkCopyToClipboard]="username"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyUsernameBTN)">{{'Buttons.Copy' |
+                translate}}</button>
         </div>
-        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">admin</code> </pre>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{username}}</code> </pre>
 
         <p class="fs-6 fw-bold mb-3">
-            Password:
+            {{'Labels.Password' | translate}}:
         </p>
         <div class="copy-token-div">
-            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
-                [cdkCopyToClipboard]="getDockerComposeFile()"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+            <button type="button" id="copy-password-btn" class="copy-btn" #copyPasswordBTN
+                [cdkCopyToClipboard]="password"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyPasswordBTN)">{{'Buttons.Copy' |
+                translate}}</button>
         </div>
-        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">nG613]+P#=IF</code> </pre>
+        <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{password}}</code> </pre>
 
 
         <p class="fs-5 fw-bold mt-5">
-            You are now ready to enjoy using the PnPAI platform
+            {{'NewUsecase.PullImageReadyMessage' | translate}}
         </p>
         <p class="fs-6 fw-bold mt-5 mb-3">
-            If you encounter any issues, ensure you've followedeach step accurately and consult the support documentation if needed.
+            {{'NewUsecase.PullImageSupportMessage' | translate}}
         </p>
-        
+
 
 
 
@@ -91,14 +97,15 @@
         </ng-container>
 
         <div class="copy-token-div">
-            <button type="button" id="copy-commands-btn" class="copy-btn" #copyBTN
+            <button type="button" id="copy-composefile-btn" class="copy-btn" #copyDockerComposeBTN
                 [cdkCopyToClipboard]="getDockerComposeFile()"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">{{'Buttons.Copy' | translate}}</button>
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyDockerComposeBTN)">{{'Buttons.Copy' |
+                translate}}</button>
             <button type="button" class="copy-btn" (click)="downloadDockerCompose()">
                 {{'Buttons.Download' | translate}}</button>
         </div>
         <pre class="pnp-pre d-flex m-0 pnp-commands-code"><code class="text-white">{{dockerComposeFile}}</code> </pre>
-        
+
         <div style="width: 100%;" class="d-flex justify-content-between mt-5">
             <button id="step-two-back-btn" type="button" class="btn btn-outline-primary m-4" (click)="getBack()">
                 {{'Buttons.Back' | translate}}

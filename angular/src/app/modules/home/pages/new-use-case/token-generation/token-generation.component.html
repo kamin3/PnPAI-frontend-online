@@ -1,6 +1,6 @@
 <div id="token-container" class="rounded-2  pnp-token-online-container">
 
-    
+
 
     <div class="pnp-container-snippet bg-white shadow-lg">
         <h3>{{'NewUsecase.TokenGenerationLabel' | translate}}</h3>
@@ -8,68 +8,66 @@
     </div>
     <div class="pnp-container-snippet bg-white shadow-lg">
 
-        <div class="border-bottom-lg mb-5" >
+        <div class="border-bottom-lg mb-5">
 
             <p class="fs-4 fw-bold mb-3">
-                Quick Guide to Logging into PnPAI Repository
+                {{'NewUsecase.TokenGenerationGuideTitle' | translate}}
             </p>
-    
+
             <p class="fs-5 fw-bold mb-3">
-                1. Launch the Terminal.
+                1. {{'NewUsecase.TokenGenerationGuideTerminalLaunch' | translate}}.
             </p>
             <div class="mb-3">
-                <p  class="fs-5 fw-bold mb-2" >
-                    2. Enter Login Command:
+                <p class="fs-5 fw-bold mb-2">
+                    2. {{'NewUsecase.TokenGenerationGuideTerminalLogin' | translate}}:
                 </p>
                 <div class="copy-token-div">
-                    <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
-                        (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
+                    <button id="copy-login-btn" type="button" class="copy-btn" #copyLoginBTN
+                        [cdkCopyToClipboard]="loginCommand"
+                        (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyLoginBTN)">
                         {{'Buttons.Copy' | translate}}</button>
                 </div>
-                <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">docker login quay.io</code></pre>
-                <p  class="fs-6 mb-5" >
-                    into the Terminal and <span class="fw-bold" >press Enter</span>.
+                <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{loginCommand}}</code></pre>
+                <p class="fs-6 mb-5">
+                    {{'NewUsecase.TokenGenerationGuideTerminalDesc' | translate}} <span
+                        class="fw-bold">{{'NewUsecase.PressEnter' | translate}}</span>.
                 </p>
             </div>
         </div>
 
-        <p class="fs-4 fw-bold mb-3" >
-            Input Credentials
+        <p class="fs-4 fw-bold mb-3">
+            {{'NewUsecase.TokenGenerationGuideCredentials' | translate}}
         </p>
         <p class="fs-5 fw-bold">
-            Username: 
+            {{'Labels.Username' | translate}}:
         </p>
         <p class="fs-6 mb-3">
-             Type your robot name 
+            {{'NewUsecase.TokenGenerationGuideRobotName' | translate}}
         </p>
         <div class="copy-token-div">
-            <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
-                (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
+            <button id="copy-robot-btn" type="button" class="copy-btn" #copyRobotBTN [cdkCopyToClipboard]="robotName"
+                (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyRobotBTN)">
                 {{'Buttons.Copy' | translate}}</button>
         </div>
-        <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">(pnp)</code></pre>
-        <p  class="fs-6 mb-5" >
-                and <span class="fw-bold" >press Enter</span>.
+        <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{robotName}}</code></pre>
+        <p class="fs-6 mb-5">
+            {{'NewUsecase.And' | translate}} <span class="fw-bold">{{'NewUsecase.PressEnter' | translate}}</span>.
         </p>
 
 
         <div class="mb-5">
             <p class="fs-5 fw-bold">
-                Password:
+                {{'Labels.Password' | translate}}:
             </p>
             <div class="copy-token-div">
-                <button id="copy-token-btn" type="button" class="copy-btn" #copyBTN [cdkCopyToClipboard]="token"
-                    (cdkCopyToClipboardCopied)="onClipboardCopy($event)">
+                <button id="copy-token-btn" type="button" class="copy-btn" #copyTokenBTN [cdkCopyToClipboard]="token"
+                    (cdkCopyToClipboardCopied)="onClipboardCopy($event, copyTokenBTN)">
                     {{'Buttons.Copy' | translate}}</button>
             </div>
             <pre class="pnp-pre m-0 pnp-token-code"><code class="text-white ">{{token}}</code></pre>
         </div>
 
-        
 
-        <!-- <p class="new-line-translation mt-5">
-            {{quayIOLoginGuide}}
-        </p> -->
         <div style="width: 100%;" class="d-flex justify-content-between">
             <button id="step-one-back-btn" type="button" class="btn btn-outline-primary m-4" (click)="getBack()">
                 {{'Buttons.Back' | translate}}
