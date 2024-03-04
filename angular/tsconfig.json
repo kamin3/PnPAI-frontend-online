@@ -22,12 +22,24 @@
     "module": "ES2022",
     "useDefineForClassFields": false,
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@shared/*": ["src/app/shared/*"],
-      "@modules/*": ["src/app/modules/*"],
-      "@layouts/*": ["src/app/layouts/*"],
-      "@schema/*": ["src/app/data/schema/*"],
-      "@assets/*": ["src/assets/*"],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@modules/*": [
+        "src/app/modules/*"
+      ],
+      "@layouts/*": [
+        "src/app/layouts/*"
+      ],
+      "@schema/*": [
+        "src/app/data/schema/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
     },
     "lib": [
       "ES2022",

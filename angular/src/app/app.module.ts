@@ -14,6 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
 import { HeaderComponent } from './layouts/landing-layout/header/header.component';
 import { FooterComponent } from './layouts/landing-layout/footer/footer.component';
+import { SendNotificationsComponent } from './modules/send-notifications/send-notifications.component';
+import { environment } from 'src/environments/environment';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideMessaging, getMessaging } from '@angular/fire/messaging';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +29,19 @@ import { FooterComponent } from './layouts/landing-layout/footer/footer.componen
     NotificationsComponent,
     LandingLayoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SendNotificationsComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     SharedModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideMessaging(() => {
+      return getMessaging();
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
