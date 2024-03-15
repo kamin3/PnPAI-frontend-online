@@ -37,6 +37,7 @@ import { LoaderInterceptor } from '@app/shared/interceptors/loader.interceptor';
 import { AccountTabComponent } from './components/account-tab/account-tab.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { CommonModule } from '@angular/common';
+import { ComponentLoaderComponent } from './components/component-loader/component-loader.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,
@@ -64,7 +65,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   declarations: [
     LoaderComponent,
     AccountTabComponent,
-    AlertComponent
+    AlertComponent,
+    ComponentLoaderComponent
   ],
   exports: [
     CommonModule,
@@ -76,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ClipboardModule,
     LoaderComponent,
     AccountTabComponent,
-    AlertComponent
+    AlertComponent,
+    ComponentLoaderComponent
   ],
   providers: [
     {

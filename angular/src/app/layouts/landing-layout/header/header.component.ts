@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   loginRoute = CONFIG.auth.children.login.route;
   registerRoute = CONFIG.auth.children.register.route;
   dashboardRoute = CONFIG.dashboard.children.dashboard.route;
+  showSpecial: Boolean = true;
 
   constructor(
     private accountService: AccountService,

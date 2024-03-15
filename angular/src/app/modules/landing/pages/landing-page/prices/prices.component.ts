@@ -5,6 +5,7 @@ import { AccountService } from '@app/data/services/account.service';
 import { PlansService } from '@app/data/services/plans.service';
 import { CONFIG } from '@app/shared/configs';
 import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
+import { LoaderService } from '@app/shared/services/loader.service';
 
 @Component({
   selector: 'app-prices',
@@ -62,12 +63,14 @@ export class PricesComponent implements OnInit {
   showGuestWarningModalBTN!: ElementRef<HTMLButtonElement>;
   monthlyPlanChecked: boolean = false;
   isUserLoggedIn: boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private planService: PlansService,
     private router: Router,
     private accountService: AccountService,
-    private httpErrorHandler: HttpErrorHandler
+    private httpErrorHandler: HttpErrorHandler,
+    private loaderService: LoaderService
 
   ) {
     this.isUserLoggedIn = this.accountService.isLoggedIn();
@@ -77,6 +80,8 @@ export class PricesComponent implements OnInit {
     this.loadChargebeeScript();
   }
   private getAllPlans() {
+    this.isLoading = true;
+    this.loaderService.suppress();
     this.planService.getAll().subscribe({
       next: (value) => {
         this.plansData = value.message;
@@ -85,6 +90,9 @@ export class PricesComponent implements OnInit {
       error: (err) => {
         this.httpErrorHandler.handleError(err);
       },
+      complete: () => {
+        this.isLoading = false;
+      }
     });
   }
 

@@ -11,6 +11,7 @@ import { JoinUsInput } from '@app/data/schema/joinusInput';
 import { ScheduleDemoService } from '@app/data/services/scheduleDemo.service';
 import { ScheduleDemoInput } from '@app/data/schema/scheduleDemoInput';
 import { HttpErrorHandler } from '@app/shared/services/httpErrorHandler.service';
+import { LoaderService } from '@app/shared/services/loader.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -34,7 +35,8 @@ export class LandingPageComponent implements OnInit {
     private joinusService: JoinUsService,
     private scheduleDemoService: ScheduleDemoService,
     private alertService: AlertService,
-    private httpErrorHandler: HttpErrorHandler
+    private httpErrorHandler: HttpErrorHandler,
+    private loaderService: LoaderService
 
   ) { }
 
@@ -64,6 +66,7 @@ export class LandingPageComponent implements OnInit {
       companyName: [""],
       phoneNumber: ["", [Validators.pattern(/^(00|\+)\d+$/)]],
     });
+    this.loaderService.suppress();
     this.getIndustries();
   }
 

@@ -2,17 +2,20 @@
 <header id="header" class="shadow-xs">
     <!-- Navbar -->
     <div class="container-fluid position-relative">
-        <nav class="fixed-top bg-white navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit  shadow-lg">
+        <nav
+            class="fixed-top bg-white navbar navbar-expand-lg navbar-light justify-content-lg-between justify-content-md-inherit  shadow-lg">
             <div class="w-100">
-                <div class=" bg-danger-light w-100 py-2 px-5" >
+                <div *ngIf="showSpecial" class="bg-danger-light w-100 py-2 px-5">
                     <div class="d-flex justify-content-between">
-                        <div class="d-flex " >
-                            <p class="fw-bold " >🚀 Soft Launch Special:</p> 
-                            <a class="ac-underline ms-2 me-5 cursor-pointer text-danger text-decoration-underline"> Subscribe for FREE! </a>
+                        <div class="d-flex ">
+                            <p class="fw-bold ">🚀 {{'Header.LaunchSpecialTitle' | translate}}:</p>
+                            <a class="ac-underline ms-2 me-5 cursor-pointer text-danger text-decoration-underline">
+                                {{'Header.LaunchSpecialSubscribe' | translate}} </a>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p style="font-size: 14px;">Get full access for the next 3 months and be part of our journey from the start. <span class="text-primary">Unlock your AI experience with PnPAI today! 🌟</span></p>
-                            <i class="fi fi-close ms-4" ></i>
+                            <p style="font-size: 14px;">{{'Header.LaunchSpecialDescription' | translate}} <span
+                                    class="text-primary">{{'Header.LaunchSpecialSlogan' | translate}} 🌟</span></p>
+                            <i (click)="showSpecial = false" class="fi fi-close ms-4"></i>
                         </div>
                     </div>
                 </div>
@@ -20,10 +23,12 @@
 
                     <div class="align-items-start">
                         <!-- mobile menu button : show -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMainNav"
-                            aria-controls="navbarMainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarMainNav" aria-controls="navbarMainNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
                             <svg width="25" viewBox="0 0 20 20">
-                                <path d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z">
+                                <path
+                                    d="M 19.9876 1.998 L -0.0108 1.998 L -0.0108 -0.0019 L 19.9876 -0.0019 L 19.9876 1.998 Z">
                                 </path>
                                 <path
                                     d="M 19.9876 7.9979 L -0.0108 7.9979 L -0.0108 5.9979 L 19.9876 5.9979 L 19.9876 7.9979 Z">
@@ -36,13 +41,13 @@
                                 </path>
                             </svg>
                         </button>
-        
+
                         <!-- navbar : brand (logo) -->
                         <a class="navbar-brand" [routerLink]="isUserLoggedIn ? dashboardRoute: landingRoute">
                             <img src="./assets/logos/pnp-color-logo.png" height="38" alt="..." />
                         </a>
                     </div>
-        
+
                     <!-- Menu -->
                     <div class="collapse navbar-collapse navbar-animate-fadein" id="navbarMainNav">
                         <!-- navbar : mobile menu -->
@@ -80,7 +85,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <!-- OPTIONS -->
                     <ng-container *ngIf="isUserLoggedIn; else loggedOut">
                         <app-account-tab></app-account-tab>
@@ -88,7 +93,7 @@
                     <ng-template #loggedOut>
                         <a class="btn px-4 border-1 border-dark text-dark" [routerLink]="loginRoute">{{'Buttons.LogIn'
                             | translate}}</a>
-        
+
                         <a class="btn px-4 btn-danger" [routerLink]="registerRoute">{{'Buttons.SignUp' | translate}}</a>
                     </ng-template>
                 </div>

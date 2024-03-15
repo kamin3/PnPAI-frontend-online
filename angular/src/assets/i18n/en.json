@@ -126,6 +126,12 @@
         "General": "Sorry! Error just happened",
         "ErrorOccured": "error occured ..."
     },
+    "Header": {
+        "LaunchSpecialTitle": "Soft Launch Special",
+        "LaunchSpecialSubscribe": "Subscribe for FREE!",
+        "LaunchSpecialDescription": "Get full access for the next 3 months and be part of our journey from the start.",
+        "LaunchSpecialSlogan": "Unlock your AI experience with PnPAI today!"
+    },
     "Footer": {
         "Message": "Sign up today! Your journey to AI-driven excellence starts here.",
         "PNPAIRights": {
@@ -282,5 +288,9 @@
         "IsPricingPNPAIAnswer": "Yes, we offer transparent pricing plans to suit different business needs. Visit our pricing page or contact our support team for detailed information.",
         "WhatIncentivesPNPAIQuestion": "What incentives do I get for joining the waiting list?",
         "WhatIncentivesPNPAIAnswer": "By joining our waiting list, you unlock 6 months of free access to the entire PnPAI platform. It’s our way of thanking you for being an early adopter of AI excellence."
+    },
+    "Prof": {
+        "Title": "Associate Prof",
+        "Word": "“I have the pleasure of working with PnPAI for the past 6 months, and been blown by their innovation and expertise in the field of AI. Their cutting-edge technology and forward-thinking approach is transforming the way we approach education. Please adopt this product to bring AI closer to the world!”"
     }
 }
