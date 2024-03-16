@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountService } from '@app/data/services/account.service';
 import { CONFIG } from '@app/shared/configs';
 
@@ -18,11 +19,22 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
+    private router: Router
   ) {
 
   }
 
   ngOnInit(): void {
     this.isUserLoggedIn = this.accountService.isLoggedIn();
+  }
+
+  subscribeInOffer() {
+    if (!this.isUserLoggedIn) {
+      this.router.navigateByUrl(this.registerRoute);
+      return;
+    }
+    this.router.navigate([this.landingRoute], {
+      fragment: "prices_section"
+    });
   }
 }
