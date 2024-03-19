@@ -44,9 +44,6 @@ export class NotificationsComponent implements OnInit {
       this.setNewNotifications();
     });
 
-
-
-
     this.notificationService.getAll().subscribe({
       next: (value: digocFunctionsResponse<Notification[]>) => {
         let notifications = value.message.map(item => {

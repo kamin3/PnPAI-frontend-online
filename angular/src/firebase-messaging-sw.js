@@ -16,8 +16,6 @@ const messaging = getMessaging(
 );
 
 onBackgroundMessage(messaging, (notification) => {
-  console.log("notification");
-  console.log(notification);
   self.registration.showNotification("PNPAI Notification", {
     body: notification.data.message,
     icon: "./assets/icons/health.svg",
