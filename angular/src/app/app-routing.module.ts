@@ -6,17 +6,12 @@ import { AuthLayoutComponent } from '@layouts/auth-layout/auth-layout.component'
 import { authGuard } from '@app/shared/services/auth.guard';
 import { anonymousGuard } from '@app/shared/services/anonymous.guard';
 import { LandingLayoutComponent } from './layouts/landing-layout/landing-layout.component';
-import { SendNotificationsComponent } from './modules/send-notifications/send-notifications.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: CONFIG.landing.children.landing.route,
     pathMatch: 'full',
-  },
-  {
-    path: 'sendnot',
-    component: SendNotificationsComponent,
   },
   {
     path: CONFIG.dashboard.name,

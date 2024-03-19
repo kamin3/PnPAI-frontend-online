@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { HomeRoutingModule } from './home-routing.module';
@@ -38,4 +38,6 @@ import { contactUsComponent } from './pages/contactus/contactUs.component';
     SharedModule
   ]
 })
-export class HomeModule { }
+export class HomeModule {
+
+}

@@ -3,7 +3,7 @@
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" aria-haspopup="true"
         aria-label="Notifications" (click)="containNew = false">
         <span class=" badge bg-danger pnp-notify-icon-alert"
-            [class.fade-out]="!containNew">{{notifications.length}}</span>
+            [class.fade-out]="!containNew">{{newNotificationsLength}}</span>
         <!-- svg icon -->
         <span class="pnp-notify-svg-icon">
             <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -19,8 +19,8 @@
     <div aria-labelledby="dropdownNotificationOptions"
         class="dropdown-menu dropdown-menu-clean dropdown-menu-navbar-autopos dropdown-fadeindown end-0 p-0 mt-2 w-400">
         <div class="max-vh-50 scrollable-vertical">
-            <a *ngFor="let item of notifications" href="{{item.link}}"
-                class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden">
+            <a *ngFor="let item of notifications" (click)="readNotification(item.id)"
+                class="clearfix dropdown-item fw-medium p-3 border-bottom border-light overflow-hidden cursor-pointer">
 
                 <span *ngIf="!item.isRead" [ngClass]="{'bg-success':item.state == 0, 'bg-danger':item.state == 1}"
                     class="badge float-end fw-normal mt-1">{{'Notifications.NewState' | translate}}</span>

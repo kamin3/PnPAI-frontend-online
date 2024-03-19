@@ -4,6 +4,7 @@ export interface Notification {
     date: Date;
     isRead: boolean;
     link: string;
+    id: string;
 }
 
 
