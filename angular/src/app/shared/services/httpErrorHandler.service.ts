@@ -15,10 +15,10 @@ export class HttpErrorHandler {
     ) { }
 
     handleError(error: HttpErrorResponse): void {
-        if (error.status < 500) {
-            this.alertService.showFailureAlert(error.error.message);
-            return;
-        }
+        // if (error.status < 500) {
+        //     this.alertService.showFailureAlert(error.error.message);
+        //     return;
+        // }
         let generalErrorMessage = this.translate.instant('Errors.General');
         this.alertService.showFailureAlert(generalErrorMessage);
     }

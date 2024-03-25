@@ -131,7 +131,7 @@ export class RegisterComponent implements OnInit {
   }
 
   private registerFailed(err: any) {
-    this.resultMessage = err.error.message;
+    this.resultMessage = "Sorry! Registeration Failed, kindly try again";
     this.resgiterationSuccess = false;
     this.showModalBTN.nativeElement.click();
   }
